@@ -1,0 +1,1413 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xone: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:localUnitMasterDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "localUnitMasterDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#localUnitMasterDataType/activityDescription>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/additionalLocationAddress>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/additionalName>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/additionalPostOfficeBoxAddress>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/email>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/localId>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/mainAddress>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/mainUid>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/name>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/nogaCode>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/nogaVersion>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/sizeClassFte>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/status>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/statusDate>,
+        <http://i14y.admin.ch/ns#localUnitMasterDataType/website> .
+
+<http://example.org/xone/ns#zipCodeType> rdf:first <http://example.org/xone/ns#zipCodeType_0> .
+
+<http://example.org/xone/ns#zipCodeType_0> rdf:first i14y:foreignZipCode ;
+    rdf:rest () .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/addressCategory> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressCategoryType ;
+    sh:datatype xone:token ;
+    sh:in ( "correspondenceAddress" "liquidationAddress" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "addressCategory"@en ;
+    sh:order 0 ;
+    sh:path i14y:addressCategory .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/attentionOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:attentionOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 60 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "attentionOfAddressLine"@en ;
+    sh:order 2 ;
+    sh:path i14y:attentionOfAddressLine .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 1 ;
+    sh:path i14y:careOfAddressLine .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 3 ;
+    sh:path i14y:complementAddressLine .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/locationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:locationAddressDetailsType ;
+    sh:class i14y:locationAddressDetailsType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "locationAddressDetails"@en ;
+    sh:order 6 ;
+    sh:path i14y:locationAddressDetails .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 5 ;
+    sh:path i14y:postDeliverabilityCheckDate .
+
+<http://i14y.admin.ch/ns#additionalLocationAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 4 ;
+    sh:path i14y:postDeliverabilityStatus .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/addressCategory> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressCategoryType ;
+    sh:datatype xone:token ;
+    sh:in ( "correspondenceAddress" "liquidationAddress" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "addressCategory"@en ;
+    sh:order 0 ;
+    sh:path i14y:addressCategory .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/attentionOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:attentionOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 60 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "attentionOfAddressLine"@en ;
+    sh:order 1 ;
+    sh:path i14y:attentionOfAddressLine .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/cantonAbbreviation> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "cantonAbbreviation"@en ;
+    sh:order 4 ;
+    sh:path i14y:cantonAbbreviation .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 2 ;
+    sh:path i14y:careOfAddressLine .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 3 ;
+    sh:path i14y:complementAddressLine .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/country> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 5 ;
+    sh:path i14y:country .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 10 ;
+    sh:path i14y:postDeliverabilityCheckDate .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 9 ;
+    sh:path i14y:postDeliverabilityStatus .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postOfficeBoxNumber> a sh:PropertyShape ;
+    dct:conformsTo i14y:postOfficeBoxNumberType ;
+    sh:datatype xone:unsignedInt ;
+    sh:maxCount 1 ;
+    sh:maxInclusive "99999999"^^xone:unsignedInt ;
+    sh:minCount 0 ;
+    sh:name "postOfficeBoxNumber"@en ;
+    sh:order 6 ;
+    sh:path i14y:postOfficeBoxNumber .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/town> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 7 ;
+    sh:path i14y:town .
+
+<http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/zipCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:zipCodeType ;
+    sh:class i14y:zipCodeType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "zipCode"@en ;
+    sh:order 8 ;
+    sh:path i14y:zipCode .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressDetailType/country> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 4 ;
+    sh:path i14y:country .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressDetailType/foreignZipCode> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignZipCode"@en ;
+    sh:order 2 ;
+    sh:path i14y:foreignZipCode .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressDetailType/houseNumber> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "houseNumber"@en ;
+    sh:order 1 ;
+    sh:path i14y:houseNumber .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressDetailType/street> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "street"@en ;
+    sh:order 0 ;
+    sh:path i14y:street .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressDetailType/town> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 3 ;
+    sh:path i14y:town .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 0 ;
+    sh:path i14y:careOfAddressLine .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 1 ;
+    sh:path i14y:complementAddressLine .
+
+<http://i14y.admin.ch/ns#foreignLocationAddressType/foreignLocationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLocationAddressDetailType ;
+    sh:class i14y:foreignLocationAddressDetailType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "foreignLocationAddressDetails"@en ;
+    sh:order 2 ;
+    sh:path i14y:foreignLocationAddressDetails .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/ISICCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:ISICCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 2 ;
+    sh:minCount 0 ;
+    sh:minLength 2 ;
+    sh:name "ISICCode"@en ;
+    sh:order 5 ;
+    sh:path i14y:ISICCode ;
+    sh:pattern "[0-9]{2}" .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/NACECode> a sh:PropertyShape ;
+    dct:conformsTo i14y:NACECodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 0 ;
+    sh:minLength 4 ;
+    sh:name "NACECode"@en ;
+    sh:order 4 ;
+    sh:path i14y:NACECode ;
+    sh:pattern "[0-9]{4}" .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLocationAddressType ;
+    sh:class i14y:foreignLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "foreignAddress"@en ;
+    sh:order 3 ;
+    sh:path i14y:foreignAddress .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignLegalFormCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLegalFormCodeType ;
+    dct:description "\"ELF Code\" of the following CodeList is expected : https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 0 ;
+    sh:minLength 4 ;
+    sh:name "foreignLegalFormCode"@en ;
+    sh:order 7 ;
+    sh:path i14y:foreignLegalFormCode ;
+    sh:pattern "[A-Z0-9]{4}" .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignLegalFormName> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLegalFormNameType ;
+    dct:description "\"Entity Legal Form name Transliterated name\" of the following CodeList is expected : https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignLegalFormName"@en ;
+    sh:order 6 ;
+    sh:path i14y:foreignLegalFormName .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignRegister> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignRegisterType ;
+    sh:class i14y:foreignRegisterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "foreignRegister"@en ;
+    sh:order 0 ;
+    sh:path i14y:foreignRegister .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 1 ;
+    sh:path i14y:name .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/otherName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount sh:unbounded ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "otherName"@en ;
+    sh:order 2 ;
+    sh:path i14y:otherName .
+
+<http://i14y.admin.ch/ns#foreignOrganisationInformationType/qualification> a sh:PropertyShape ;
+    dct:conformsTo i14y:qualificationType ;
+    sh:datatype xone:token ;
+    sh:in ( "ENTITY_SUPPLIED_ONLY" "PARTIALLY_CORROBORATED" "FULLY_CORROBORATED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "qualification"@en ;
+    sh:order 8 ;
+    sh:path i14y:qualification .
+
+<http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterEntryId> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 36 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterEntryId"@en ;
+    sh:order 2 ;
+    sh:path i14y:foreignRegisterEntryId .
+
+<http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterEntryStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignRegisterEntryStatus"@en ;
+    sh:order 3 ;
+    sh:path i14y:foreignRegisterEntryStatus .
+
+<http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterId> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterId"@en ;
+    sh:order 0 ;
+    sh:path i14y:foreignRegisterId .
+
+<http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterName> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterName"@en ;
+    sh:order 1 ;
+    sh:path i14y:foreignRegisterName .
+
+<http://i14y.admin.ch/ns#foreignRegisterType/registrationDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registrationDate"@en ;
+    sh:order 4 ;
+    sh:path i14y:registrationDate .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/activityDescription> a sh:PropertyShape ;
+    dct:conformsTo i14y:activityDescriptionType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10000 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "activityDescription"@en ;
+    sh:order 6 ;
+    sh:path i14y:activityDescription .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/additionalLocationAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalLocationAddressType ;
+    sh:class i14y:additionalLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalLocationAddress"@en ;
+    sh:order 15 ;
+    sh:path i14y:additionalLocationAddress .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/cessationReason> a sh:PropertyShape ;
+    dct:conformsTo i14y:cessationReasonType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "cessationReason"@en ;
+    sh:order 7 ;
+    sh:path i14y:cessationReason .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/commercialRegisterActivationDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterActivationDate"@en ;
+    sh:order 8 ;
+    sh:path i14y:commercialRegisterActivationDate .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/commercialRegisterCessationDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterCessationDate"@en ;
+    sh:order 9 ;
+    sh:path i14y:commercialRegisterCessationDate .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/correspondenceLanguage> a sh:PropertyShape ;
+    dct:conformsTo i14y:correspondenceLanguageType ;
+    sh:datatype xone:token ;
+    sh:in ( "de" "rm" "fr" "it" "en" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "correspondenceLanguage"@en ;
+    sh:order 14 ;
+    sh:path i14y:correspondenceLanguage .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/email> a sh:PropertyShape ;
+    dct:conformsTo i14y:emailType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 12 ;
+    sh:path i14y:email ;
+    sh:pattern "[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*@[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*" .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/firstRegistrationDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "firstRegistrationDate"@en ;
+    sh:order 1 ;
+    sh:path i14y:firstRegistrationDate .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/foreignOrganisationInformation> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignOrganisationInformationType ;
+    sh:class i14y:foreignOrganisationInformationType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignOrganisationInformation"@en ;
+    sh:order 16 ;
+    sh:path i14y:foreignOrganisationInformation .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/legalUnitType> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitTypeType ;
+    sh:datatype xone:token ;
+    sh:in ( "mainLegalUnit" "branchLegalUnit" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "legalUnitType"@en ;
+    sh:order 0 ;
+    sh:path i14y:legalUnitType .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/nogaCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 6 ;
+    sh:minCount 0 ;
+    sh:minLength 6 ;
+    sh:name "nogaCode"@en ;
+    sh:order 4 ;
+    sh:path i14y:nogaCode ;
+    sh:pattern "[0-9]{6}" .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/nogaVersion> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaVersionType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "nogaVersion"@en ;
+    sh:order 5 ;
+    sh:path i14y:nogaVersion .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/otherRegister> a sh:PropertyShape ;
+    dct:conformsTo i14y:otherRegisterType ;
+    sh:class i14y:otherRegisterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "otherRegister"@en ;
+    sh:order 10 ;
+    sh:path i14y:otherRegister .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/publicStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidPublicStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "public" "nonPublic" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "publicStatus"@en ;
+    sh:order 2 ;
+    sh:path i14y:publicStatus .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/replacementUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "replacementUid"@en ;
+    sh:order 3 ;
+    sh:path i14y:replacementUid ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/soleProprietorshipPerson> a sh:PropertyShape ;
+    dct:conformsTo i14y:soleProprietorshipPersonType ;
+    sh:class i14y:soleProprietorshipPersonType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "soleProprietorshipPerson"@en ;
+    sh:order 11 ;
+    sh:path i14y:soleProprietorshipPerson .
+
+<http://i14y.admin.ch/ns#legalUnitAdditionalDataType/website> a sh:PropertyShape ;
+    dct:conformsTo i14y:websiteType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "website"@en ;
+    sh:order 13 ;
+    sh:path i14y:website ;
+    sh:pattern "https?://[a-zA-Z0-9\\\\.-]+\\\\.[a-zA-Z]{2,4}(/\\\\S*)?" .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/commercialRegisterStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterStatus"@en ;
+    sh:order 0 ;
+    sh:path i14y:commercialRegisterStatus .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/legalUnitMasterData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitMasterDataType ;
+    sh:class i14y:legalUnitMasterDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "legalUnitMasterData"@en ;
+    sh:order 7 ;
+    sh:path i14y:legalUnitMasterData .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/lei> a sh:PropertyShape ;
+    dct:conformsTo i14y:leiRegisterStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "ISSUED" "DUPLICATE" "LAPSED" "MERGED" "RETIRED" "ANNULLED" "CANCELLED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "lei"@en ;
+    sh:order 5 ;
+    sh:path i14y:lei .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/leiRegisterRelationStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:leiRegisterStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "ISSUED" "DUPLICATE" "LAPSED" "MERGED" "RETIRED" "ANNULLED" "CANCELLED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "leiRegisterRelationStatus"@en ;
+    sh:order 6 ;
+    sh:path i14y:leiRegisterRelationStatus .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/vatEndOfObligation> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatEndOfObligation"@en ;
+    sh:order 3 ;
+    sh:path i14y:vatEndOfObligation .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/vatRegisterStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatRegisterStatus"@en ;
+    sh:order 1 ;
+    sh:path i14y:vatRegisterStatus .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/vatStartOfObligation> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatStartOfObligation"@en ;
+    sh:order 2 ;
+    sh:path i14y:vatStartOfObligation .
+
+<http://i14y.admin.ch/ns#legalUnitKeyDataType/vatUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "vatUid"@en ;
+    sh:order 4 ;
+    sh:path i14y:vatUid ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/additionalName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "additionalName"@en ;
+    sh:order 3 ;
+    sh:path i14y:additionalName .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/additionalPostOfficeBoxAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalPostOfficeBoxAddressType ;
+    sh:class i14y:additionalPostOfficeBoxAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalPostOfficeBoxAddress"@en ;
+    sh:order 9 ;
+    sh:path i14y:additionalPostOfficeBoxAddress .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/legalForm> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalFormType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 1 ;
+    sh:minLength 4 ;
+    sh:name "legalForm"@en ;
+    sh:order 7 ;
+    sh:path i14y:legalForm ;
+    sh:pattern "[0-9]{4}" .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/mainAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:mainAddressType ;
+    sh:class i14y:mainAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "mainAddress"@en ;
+    sh:order 8 ;
+    sh:path i14y:mainAddress .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/mainUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "mainUid"@en ;
+    sh:order 1 ;
+    sh:path i14y:mainUid ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 2 ;
+    sh:path i14y:name .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/status> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "deleted" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "status"@en ;
+    sh:order 5 ;
+    sh:path i14y:status .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/statusDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "statusDate"@en ;
+    sh:order 6 ;
+    sh:path i14y:statusDate .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/translatedName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "translatedName"@en ;
+    sh:order 4 ;
+    sh:path i14y:translatedName .
+
+<http://i14y.admin.ch/ns#legalUnitMasterDataType/uid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "uid"@en ;
+    sh:order 0 ;
+    sh:path i14y:uid ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+i14y:legalUnitType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitType"@en ;
+    sh:property <http://i14y.admin.ch/ns#legalUnitType/legalUnitAdditionalData>,
+        <http://i14y.admin.ch/ns#legalUnitType/legalUnitKeyData> .
+
+<http://i14y.admin.ch/ns#legalUnitType/legalUnitAdditionalData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitAdditionalDataType ;
+    sh:class i14y:legalUnitAdditionalDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "legalUnitAdditionalData"@en ;
+    sh:order 1 ;
+    sh:path i14y:legalUnitAdditionalData .
+
+<http://i14y.admin.ch/ns#legalUnitType/legalUnitKeyData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitKeyDataType ;
+    sh:class i14y:legalUnitKeyDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "legalUnitKeyData"@en ;
+    sh:order 0 ;
+    sh:path i14y:legalUnitKeyData .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/activityDescription> a sh:PropertyShape ;
+    dct:conformsTo i14y:activityDescriptionType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10000 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "activityDescription"@en ;
+    sh:order 11 ;
+    sh:path i14y:activityDescription .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/additionalLocationAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalLocationAddressType ;
+    sh:class i14y:additionalLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalLocationAddress"@en ;
+    sh:order 13 ;
+    sh:path i14y:additionalLocationAddress .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/additionalName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "additionalName"@en ;
+    sh:order 3 ;
+    sh:path i14y:additionalName .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/additionalPostOfficeBoxAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalPostOfficeBoxAddressType ;
+    sh:class i14y:additionalPostOfficeBoxAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalPostOfficeBoxAddress"@en ;
+    sh:order 14 ;
+    sh:path i14y:additionalPostOfficeBoxAddress .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/email> a sh:PropertyShape ;
+    dct:conformsTo i14y:emailType ;
+    dct:description "Email address"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 7 ;
+    sh:path i14y:email ;
+    sh:pattern "[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*@[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*" .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/localId> a sh:PropertyShape ;
+    dct:conformsTo i14y:localIdType ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:maxLength 9 ;
+    sh:minCount 0 ;
+    sh:minLength 9 ;
+    sh:name "localId"@en ;
+    sh:order 0 ;
+    sh:path i14y:localId ;
+    sh:pattern "[A-B][1-9][0-9]{7}" .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/mainAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:mainAddressType ;
+    sh:class i14y:mainAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "mainAddress"@en ;
+    sh:order 12 ;
+    sh:path i14y:mainAddress .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/mainUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "mainUid"@en ;
+    sh:order 1 ;
+    sh:path i14y:mainUid ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 2 ;
+    sh:path i14y:name .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/nogaCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 6 ;
+    sh:minCount 0 ;
+    sh:minLength 6 ;
+    sh:name "nogaCode"@en ;
+    sh:order 9 ;
+    sh:path i14y:nogaCode ;
+    sh:pattern "[0-9]{6}" .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/nogaVersion> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaVersionType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "nogaVersion"@en ;
+    sh:order 10 ;
+    sh:path i14y:nogaVersion .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/sizeClassFte> a sh:PropertyShape ;
+    dct:conformsTo i14y:sizeClassFteType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xone:nonNegativeInteger ;
+    sh:maxCount 1 ;
+    sh:maxInclusive "12"^^xone:nonNegativeInteger ;
+    sh:minCount 0 ;
+    sh:minInclusive "1"^^xone:nonNegativeInteger ;
+    sh:name "sizeClassFte"@en ;
+    sh:order 6 ;
+    sh:path i14y:sizeClassFte .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/status> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "deleted" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "status"@en ;
+    sh:order 4 ;
+    sh:path i14y:status .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/statusDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "statusDate"@en ;
+    sh:order 5 ;
+    sh:path i14y:statusDate .
+
+<http://i14y.admin.ch/ns#localUnitMasterDataType/website> a sh:PropertyShape ;
+    dct:conformsTo i14y:websiteType ;
+    dct:description "Internet address / web site"@en ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "website"@en ;
+    sh:order 8 ;
+    sh:path i14y:website ;
+    sh:pattern "https?://[a-zA-Z0-9\\\\.-]+\\\\.[a-zA-Z]{2,4}(/\\\\S*)?" .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/EDID> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EDID"@en ;
+    sh:order 11 ;
+    sh:path i14y:EDID .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/EGAID> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EGAID"@en ;
+    sh:order 8 ;
+    sh:path i14y:EGAID .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/EGID> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EGID"@en ;
+    sh:order 10 ;
+    sh:path i14y:EGID .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/ESID> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "ESID"@en ;
+    sh:order 12 ;
+    sh:path i14y:ESID .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/GDEID> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "GDEID"@en ;
+    sh:order 9 ;
+    sh:path i14y:GDEID .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/cantonAbbreviation> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "cantonAbbreviation"@en ;
+    sh:order 3 ;
+    sh:path i14y:cantonAbbreviation .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/coordinatesEast> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "coordinatesEast"@en ;
+    sh:order 14 ;
+    sh:path i14y:coordinatesEast .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/coordinatesNorth> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "coordinatesNorth"@en ;
+    sh:order 13 ;
+    sh:path i14y:coordinatesNorth .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/country> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 7 ;
+    sh:path i14y:country .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/houseNumber> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "houseNumber"@en ;
+    sh:order 1 ;
+    sh:path i14y:houseNumber .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/language> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressLanguageType ;
+    sh:datatype xone:token ;
+    sh:in ( "de" "rm" "fr" "it" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "language"@en ;
+    sh:order 2 ;
+    sh:path i14y:language .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/municipality> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "municipality"@en ;
+    sh:order 4 ;
+    sh:path i14y:municipality .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/street> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "street"@en ;
+    sh:order 0 ;
+    sh:path i14y:street .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/town> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 5 ;
+    sh:path i14y:town .
+
+<http://i14y.admin.ch/ns#locationAddressDetailsType/zipCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:zipCodeType ;
+    sh:class i14y:zipCodeType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "zipCode"@en ;
+    sh:order 6 ;
+    sh:path i14y:zipCode .
+
+<http://i14y.admin.ch/ns#mainAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 0 ;
+    sh:path i14y:careOfAddressLine .
+
+<http://i14y.admin.ch/ns#mainAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 1 ;
+    sh:path i14y:complementAddressLine .
+
+<http://i14y.admin.ch/ns#mainAddressType/locationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:locationAddressDetailsType ;
+    sh:class i14y:locationAddressDetailsType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "locationAddressDetails"@en ;
+    sh:order 4 ;
+    sh:path i14y:locationAddressDetails .
+
+<http://i14y.admin.ch/ns#mainAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 3 ;
+    sh:path i14y:postDeliverabilityCheckDate .
+
+<http://i14y.admin.ch/ns#mainAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 2 ;
+    sh:path i14y:postDeliverabilityStatus .
+
+<http://i14y.admin.ch/ns#otherRegisterType/isResponsibleRegister> a sh:PropertyShape ;
+    sh:datatype xone:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "isResponsibleRegister"@en ;
+    sh:order 6 ;
+    sh:path i14y:isResponsibleRegister .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registerEntryId> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 36 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerEntryId"@en ;
+    sh:order 3 ;
+    sh:path i14y:registerEntryId .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registerEntryIdPrefix> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 30 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerEntryIdPrefix"@en ;
+    sh:order 0 ;
+    sh:path i14y:registerEntryIdPrefix .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registerEntryStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xone:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registerEntryStatus"@en ;
+    sh:order 4 ;
+    sh:path i14y:registerEntryStatus .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registerId> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 1 ;
+    sh:minLength 12 ;
+    sh:name "registerId"@en ;
+    sh:order 1 ;
+    sh:path i14y:registerId ;
+    sh:pattern "REG[1-9][0-9]{8}" .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registerName> a sh:PropertyShape ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerName"@en ;
+    sh:order 2 ;
+    sh:path i14y:registerName .
+
+<http://i14y.admin.ch/ns#otherRegisterType/registrationDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registrationDate"@en ;
+    sh:order 5 ;
+    sh:path i14y:registrationDate .
+
+<http://i14y.admin.ch/ns#soleProprietorshipPersonType/birthDate> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "birthDate"@en ;
+    sh:order 3 ;
+    sh:path i14y:birthDate .
+
+<http://i14y.admin.ch/ns#soleProprietorshipPersonType/deathDate> a sh:PropertyShape ;
+    sh:datatype xone:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "deathDate"@en ;
+    sh:order 4 ;
+    sh:path i14y:deathDate .
+
+<http://i14y.admin.ch/ns#soleProprietorshipPersonType/firstName> a sh:PropertyShape ;
+    dct:conformsTo i14y:firstNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "firstName"@en ;
+    sh:order 1 ;
+    sh:path i14y:firstName .
+
+<http://i14y.admin.ch/ns#soleProprietorshipPersonType/lastName> a sh:PropertyShape ;
+    dct:conformsTo i14y:lastNameType ;
+    sh:datatype xone:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "lastName"@en ;
+    sh:order 2 ;
+    sh:path i14y:lastName .
+
+<http://i14y.admin.ch/ns#soleProprietorshipPersonType/socialSecurityNumber> a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "socialSecurityNumber"@en ;
+    sh:order 0 ;
+    sh:path i14y:socialSecurityNumber .
+
+i14y:foreignLocationAddressDetailType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignLocationAddressDetailType"@en ;
+    sh:property <http://i14y.admin.ch/ns#foreignLocationAddressDetailType/country>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressDetailType/foreignZipCode>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressDetailType/houseNumber>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressDetailType/street>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressDetailType/town> .
+
+i14y:foreignLocationAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignLocationAddressType"@en ;
+    sh:property <http://i14y.admin.ch/ns#foreignLocationAddressType/careOfAddressLine>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressType/complementAddressLine>,
+        <http://i14y.admin.ch/ns#foreignLocationAddressType/foreignLocationAddressDetails> .
+
+i14y:foreignOrganisationInformationType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignOrganisationInformationType"@en ;
+    sh:property <http://i14y.admin.ch/ns#foreignOrganisationInformationType/ISICCode>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/NACECode>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignAddress>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignLegalFormCode>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignLegalFormName>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/foreignRegister>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/name>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/otherName>,
+        <http://i14y.admin.ch/ns#foreignOrganisationInformationType/qualification> .
+
+i14y:foreignRegisterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignRegisterType"@en ;
+    sh:property <http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterEntryId>,
+        <http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterEntryStatus>,
+        <http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterId>,
+        <http://i14y.admin.ch/ns#foreignRegisterType/foreignRegisterName>,
+        <http://i14y.admin.ch/ns#foreignRegisterType/registrationDate> .
+
+i14y:legalUnitAdditionalDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitAdditionalDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/activityDescription>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/additionalLocationAddress>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/cessationReason>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/commercialRegisterActivationDate>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/commercialRegisterCessationDate>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/correspondenceLanguage>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/email>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/firstRegistrationDate>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/foreignOrganisationInformation>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/legalUnitType>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/nogaCode>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/nogaVersion>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/otherRegister>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/publicStatus>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/replacementUid>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/soleProprietorshipPerson>,
+        <http://i14y.admin.ch/ns#legalUnitAdditionalDataType/website> .
+
+i14y:legalUnitKeyDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitKeyDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#legalUnitKeyDataType/commercialRegisterStatus>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/legalUnitMasterData>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/lei>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/leiRegisterRelationStatus>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/vatEndOfObligation>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/vatRegisterStatus>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/vatStartOfObligation>,
+        <http://i14y.admin.ch/ns#legalUnitKeyDataType/vatUid> .
+
+i14y:legalUnitMasterDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitMasterDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#legalUnitMasterDataType/additionalName>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/additionalPostOfficeBoxAddress>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/legalForm>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/mainAddress>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/mainUid>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/name>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/status>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/statusDate>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/translatedName>,
+        <http://i14y.admin.ch/ns#legalUnitMasterDataType/uid> .
+
+i14y:otherRegisterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "otherRegisterType"@en ;
+    sh:property <http://i14y.admin.ch/ns#otherRegisterType/isResponsibleRegister>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registerEntryId>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registerEntryIdPrefix>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registerEntryStatus>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registerId>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registerName>,
+        <http://i14y.admin.ch/ns#otherRegisterType/registrationDate> .
+
+i14y:soleProprietorshipPersonType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "soleProprietorshipPersonType"@en ;
+    sh:property <http://i14y.admin.ch/ns#soleProprietorshipPersonType/birthDate>,
+        <http://i14y.admin.ch/ns#soleProprietorshipPersonType/deathDate>,
+        <http://i14y.admin.ch/ns#soleProprietorshipPersonType/firstName>,
+        <http://i14y.admin.ch/ns#soleProprietorshipPersonType/lastName>,
+        <http://i14y.admin.ch/ns#soleProprietorshipPersonType/socialSecurityNumber> .
+
+i14y:additionalLocationAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "additionalLocationAddressType"@en ;
+    sh:property <http://i14y.admin.ch/ns#additionalLocationAddressType/addressCategory>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/attentionOfAddressLine>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/careOfAddressLine>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/complementAddressLine>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/locationAddressDetails>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/postDeliverabilityCheckDate>,
+        <http://i14y.admin.ch/ns#additionalLocationAddressType/postDeliverabilityStatus> .
+
+i14y:additionalPostOfficeBoxAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "additionalPostOfficeBoxAddressType"@en ;
+    sh:property <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/addressCategory>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/attentionOfAddressLine>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/cantonAbbreviation>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/careOfAddressLine>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/complementAddressLine>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/country>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postDeliverabilityCheckDate>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postDeliverabilityStatus>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/postOfficeBoxNumber>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/town>,
+        <http://i14y.admin.ch/ns#additionalPostOfficeBoxAddressType/zipCode> .
+
+i14y:locationAddressDetailsType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "locationAddressDetailsType"@en ;
+    sh:property <http://i14y.admin.ch/ns#locationAddressDetailsType/EDID>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/EGAID>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/EGID>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/ESID>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/GDEID>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/cantonAbbreviation>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/coordinatesEast>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/coordinatesNorth>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/country>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/houseNumber>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/language>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/municipality>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/street>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/town>,
+        <http://i14y.admin.ch/ns#locationAddressDetailsType/zipCode> .
+
+i14y:mainAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "mainAddressType"@en ;
+    sh:property <http://i14y.admin.ch/ns#mainAddressType/careOfAddressLine>,
+        <http://i14y.admin.ch/ns#mainAddressType/complementAddressLine>,
+        <http://i14y.admin.ch/ns#mainAddressType/locationAddressDetails>,
+        <http://i14y.admin.ch/ns#mainAddressType/postDeliverabilityCheckDate>,
+        <http://i14y.admin.ch/ns#mainAddressType/postDeliverabilityStatus> .
+
+i14y:zipCodeType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "zipCodeType"@en ;
+    sh:xone <http://example.org/xone/ns#zipCodeType> .
+
