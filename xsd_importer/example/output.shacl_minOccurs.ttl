@@ -1,0 +1,1743 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xone: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:UnternehmenType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "UnternehmenType"@en ;
+    sh:property <http://i14y.admin.ch/ns#UnternehmenType/KantonsdatenUnternehmen>,
+        <http://i14y.admin.ch/ns#UnternehmenType/KostentraegerUnternehmen>,
+        <http://i14y.admin.ch/ns#UnternehmenType/Standort>,
+        i14y:ent_id_attr,
+        i14y:version_attr .
+
+<http://i14y.admin.ch/ns#BehandlungType/Operierende> a sh:PropertyShape ;
+    dct:conformsTo i14y:OperierendeType ;
+    sh:class i14y:OperierendeType ;
+    sh:maxCount 10 ;
+    sh:minCount 0 ;
+    sh:name "Operierende"@en ;
+    sh:order 0 ;
+    sh:path i14y:Operierende .
+
+<http://i14y.admin.ch/ns#FallType/Administratives> a sh:PropertyShape ;
+    dct:conformsTo i14y:AdminstrativesType ;
+    sh:class i14y:AdminstrativesType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "Administratives"@en ;
+    sh:order 0 ;
+    sh:path i14y:Administratives .
+
+<http://i14y.admin.ch/ns#FallType/Behandlung> a sh:PropertyShape ;
+    dct:conformsTo i14y:BehandlungType ;
+    sh:class i14y:BehandlungType ;
+    sh:maxCount 2000 ;
+    sh:minCount 0 ;
+    sh:name "Behandlung"@en ;
+    sh:order 5 ;
+    sh:path i14y:Behandlung .
+
+<http://i14y.admin.ch/ns#FallType/Diagnose> a sh:PropertyShape ;
+    dct:conformsTo i14y:DiagnoseType ;
+    sh:class i14y:DiagnoseType ;
+    sh:maxCount 2000 ;
+    sh:minCount 0 ;
+    sh:name "Diagnose"@en ;
+    sh:order 4 ;
+    sh:path i14y:Diagnose .
+
+<http://i14y.admin.ch/ns#FallType/Kantonsdaten> a sh:PropertyShape ;
+    dct:conformsTo i14y:KantonsdatenType ;
+    sh:class i14y:KantonsdatenType ;
+    sh:maxCount 1000 ;
+    sh:minCount 0 ;
+    sh:name "Kantonsdaten"@en ;
+    sh:order 9 ;
+    sh:path i14y:Kantonsdaten .
+
+<http://i14y.admin.ch/ns#FallType/KostentraegerFall> a sh:PropertyShape ;
+    dct:conformsTo i14y:KostentraegerType ;
+    sh:class i14y:KostentraegerType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "KostentraegerFall"@en ;
+    sh:order 3 ;
+    sh:path i14y:KostentraegerFall .
+
+<http://i14y.admin.ch/ns#FallType/Medikament> a sh:PropertyShape ;
+    dct:conformsTo i14y:MedikamentType ;
+    sh:class i14y:MedikamentType ;
+    sh:maxCount 200 ;
+    sh:minCount 0 ;
+    sh:name "Medikament"@en ;
+    sh:order 6 ;
+    sh:path i14y:Medikament .
+
+<http://i14y.admin.ch/ns#FallType/Neugeborene> a sh:PropertyShape ;
+    dct:conformsTo i14y:NeugeboreneType ;
+    sh:class i14y:NeugeboreneType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "Neugeborene"@en ;
+    sh:order 1 ;
+    sh:path i14y:Neugeborene .
+
+<http://i14y.admin.ch/ns#FallType/Patientenbewegung> a sh:PropertyShape ;
+    dct:conformsTo i14y:PatientenbewegungType ;
+    sh:class i14y:PatientenbewegungType ;
+    sh:maxCount 10000 ;
+    sh:minCount 0 ;
+    sh:name "Patientenbewegung"@en ;
+    sh:order 8 ;
+    sh:path i14y:Patientenbewegung .
+
+<http://i14y.admin.ch/ns#FallType/Psychiatrie> a sh:PropertyShape ;
+    dct:conformsTo i14y:PsychiatrieType ;
+    sh:class i14y:PsychiatrieType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "Psychiatrie"@en ;
+    sh:order 2 ;
+    sh:path i14y:Psychiatrie .
+
+<http://i14y.admin.ch/ns#FallType/Rechnung> a sh:PropertyShape ;
+    dct:conformsTo i14y:RechnungType ;
+    sh:class i14y:RechnungType ;
+    sh:maxCount 10000 ;
+    sh:minCount 0 ;
+    sh:name "Rechnung"@en ;
+    sh:order 7 ;
+    sh:path i14y:Rechnung .
+
+i14y:Kanton_Zusatzdaten_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "Kanton_Zusatzdaten"@en ;
+    sh:path i14y:Kanton_Zusatzdaten .
+
+<http://i14y.admin.ch/ns#StandortType/Fall> a sh:PropertyShape ;
+    dct:conformsTo i14y:FallType ;
+    sh:class i14y:FallType ;
+    sh:maxCount 200000 ;
+    sh:minCount 0 ;
+    sh:name "Fall"@en ;
+    sh:order 0 ;
+    sh:path i14y:Fall .
+
+<http://i14y.admin.ch/ns#StandortType/KantonsdatenStandort> a sh:PropertyShape ;
+    dct:conformsTo i14y:KantonsdatenType ;
+    sh:class i14y:KantonsdatenType ;
+    sh:maxCount 10000 ;
+    sh:minCount 0 ;
+    sh:name "KantonsdatenStandort"@en ;
+    sh:order 2 ;
+    sh:path i14y:KantonsdatenStandort .
+
+<http://i14y.admin.ch/ns#StandortType/KostentraegerStandort> a sh:PropertyShape ;
+    dct:conformsTo i14y:KostentraegerType ;
+    sh:class i14y:KostentraegerType ;
+    sh:maxCount 200 ;
+    sh:minCount 0 ;
+    sh:name "KostentraegerStandort"@en ;
+    sh:order 1 ;
+    sh:path i14y:KostentraegerStandort .
+
+<http://i14y.admin.ch/ns#UnternehmenType/KantonsdatenUnternehmen> a sh:PropertyShape ;
+    dct:conformsTo i14y:KantonsdatenType ;
+    sh:class i14y:KantonsdatenType ;
+    sh:maxCount 10000 ;
+    sh:minCount 0 ;
+    sh:name "KantonsdatenUnternehmen"@en ;
+    sh:order 2 ;
+    sh:path i14y:KantonsdatenUnternehmen .
+
+<http://i14y.admin.ch/ns#UnternehmenType/KostentraegerUnternehmen> a sh:PropertyShape ;
+    dct:conformsTo i14y:KostentraegerType ;
+    sh:class i14y:KostentraegerType ;
+    sh:maxCount 200 ;
+    sh:minCount 0 ;
+    sh:name "KostentraegerUnternehmen"@en ;
+    sh:order 1 ;
+    sh:path i14y:KostentraegerUnternehmen .
+
+<http://i14y.admin.ch/ns#UnternehmenType/Standort> a sh:PropertyShape ;
+    dct:conformsTo i14y:StandortType ;
+    sh:class i14y:StandortType ;
+    sh:maxCount 50 ;
+    sh:minCount 0 ;
+    sh:name "Standort"@en ;
+    sh:order 0 ;
+    sh:path i14y:Standort .
+
+i14y:abc_fall_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "abc_fall"@en ;
+    sh:path i14y:abc_fall .
+
+i14y:admin_urlaub_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "admin_urlaub"@en ;
+    sh:path i14y:admin_urlaub .
+
+i14y:alter_U1_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "alter_U1"@en ;
+    sh:path i14y:alter_U1 .
+
+i14y:alter_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "alter"@en ;
+    sh:path i14y:alter .
+
+i14y:art_score_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "art_score"@en ;
+    sh:path i14y:art_score .
+
+i14y:aufenthalt_imc_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "aufenthalt_imc"@en ;
+    sh:path i14y:aufenthalt_imc .
+
+i14y:aufenthalt_ips_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "aufenthalt_ips"@en ;
+    sh:path i14y:aufenthalt_ips .
+
+i14y:aufnahmegewicht_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "aufnahmegewicht"@en ;
+    sh:path i14y:aufnahmegewicht .
+
+i14y:aufwand_imc_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "aufwand_imc"@en ;
+    sh:path i14y:aufwand_imc .
+
+i14y:austritt_aufenthalt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "austritt_aufenthalt"@en ;
+    sh:path i14y:austritt_aufenthalt .
+
+i14y:austritt_behandlung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "austritt_behandlung"@en ;
+    sh:path i14y:austritt_behandlung .
+
+i14y:austrittsdatum_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "austrittsdatum"@en ;
+    sh:path i14y:austrittsdatum .
+
+i14y:austrittsentscheid_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "austrittsentscheid"@en ;
+    sh:path i14y:austrittsentscheid .
+
+i14y:beatmung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "beatmung"@en ;
+    sh:path i14y:beatmung .
+
+i14y:behandlung_auswaerts_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "behandlung_auswaerts"@en ;
+    sh:path i14y:behandlung_auswaerts .
+
+i14y:behandlung_beginn_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "behandlung_beginn"@en ;
+    sh:path i14y:behandlung_beginn .
+
+i14y:behandlung_chop_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "behandlung_chop"@en ;
+    sh:path i14y:behandlung_chop .
+
+i14y:behandlung_id_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "behandlung_id"@en ;
+    sh:path i14y:behandlung_id .
+
+i14y:behandlung_seitigkeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "behandlung_seitigkeit"@en ;
+    sh:path i14y:behandlung_seitigkeit .
+
+i14y:burnr_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "burnr"@en ;
+    sh:path i14y:burnr .
+
+i14y:burnr_episode_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "burnr_episode"@en ;
+    sh:path i14y:burnr_episode .
+
+i14y:burnr_gesv_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "burnr_gesv"@en ;
+    sh:path i14y:burnr_gesv .
+
+i14y:chlz_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "chlz"@en ;
+    sh:path i14y:chlz .
+
+i14y:diagnose_id_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "diagnose_id"@en ;
+    sh:path i14y:diagnose_id .
+
+i14y:diagnose_kode_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "diagnose_kode"@en ;
+    sh:path i14y:diagnose_kode .
+
+i14y:diagnose_poa_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "diagnose_poa"@en ;
+    sh:path i14y:diagnose_poa .
+
+i14y:diagnose_seitigkeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "diagnose_seitigkeit"@en ;
+    sh:path i14y:diagnose_seitigkeit .
+
+i14y:diagnose_zusatz_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "diagnose_zusatz"@en ;
+    sh:path i14y:diagnose_zusatz .
+
+i14y:eintritt_aufenthalt_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "eintritt_aufenthalt"@en ;
+    sh:path i14y:eintritt_aufenthalt .
+
+i14y:eintrittsart_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "eintrittsart"@en ;
+    sh:path i14y:eintrittsart .
+
+i14y:eintrittsdatum_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "eintrittsdatum"@en ;
+    sh:path i14y:eintrittsdatum .
+
+i14y:einw_instanz_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "einw_instanz"@en ;
+    sh:path i14y:einw_instanz .
+
+i14y:ent_id_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "ent_id"@en ;
+    sh:path i14y:ent_id .
+
+i14y:episode_art_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "episode_art"@en ;
+    sh:path i14y:episode_art .
+
+i14y:episode_beginn_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "episode_beginn"@en ;
+    sh:path i14y:episode_beginn .
+
+i14y:episode_ende_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "episode_ende"@en ;
+    sh:path i14y:episode_ende .
+
+i14y:episode_id_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "episode_id"@en ;
+    sh:path i14y:episode_id .
+
+i14y:fall_id_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "fall_id"@en ;
+    sh:path i14y:fall_id .
+
+i14y:fall_id_mutter_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "fall_id_mutter"@en ;
+    sh:path i14y:fall_id_mutter .
+
+i14y:geburtsgewicht_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "geburtsgewicht"@en ;
+    sh:path i14y:geburtsgewicht .
+
+i14y:geburtsrang_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "geburtsrang"@en ;
+    sh:path i14y:geburtsrang .
+
+i14y:geburtszeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "geburtszeit"@en ;
+    sh:path i14y:geburtszeit .
+
+i14y:geschlecht_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "geschlecht"@en ;
+    sh:path i14y:geschlecht .
+
+i14y:gestationsalter1_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "gestationsalter1"@en ;
+    sh:path i14y:gestationsalter1 .
+
+i14y:gestationsalter2_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "gestationsalter2"@en ;
+    sh:path i14y:gestationsalter2 .
+
+i14y:grund_wiedereintritt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "grund_wiedereintritt"@en ;
+    sh:path i14y:grund_wiedereintritt .
+
+i14y:grundversicherung_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "grundversicherung"@en ;
+    sh:path i14y:grundversicherung .
+
+i14y:hauptleistungsstelle_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "hauptleistungsstelle"@en ;
+    sh:path i14y:hauptleistungsstelle .
+
+i14y:kopfumfang_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "kopfumfang"@en ;
+    sh:path i14y:kopfumfang .
+
+i14y:ktr_10_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_10_ank"@en ;
+    sh:path i14y:ktr_10_ank .
+
+i14y:ktr_10_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_10"@en ;
+    sh:path i14y:ktr_10 .
+
+i14y:ktr_20_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_20_ank"@en ;
+    sh:path i14y:ktr_20_ank .
+
+i14y:ktr_20_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_20"@en ;
+    sh:path i14y:ktr_20 .
+
+i14y:ktr_21_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_21_ank"@en ;
+    sh:path i14y:ktr_21_ank .
+
+i14y:ktr_21_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_21"@en ;
+    sh:path i14y:ktr_21 .
+
+i14y:ktr_23_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_23_ank"@en ;
+    sh:path i14y:ktr_23_ank .
+
+i14y:ktr_23_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_23"@en ;
+    sh:path i14y:ktr_23 .
+
+i14y:ktr_24_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_24_ank"@en ;
+    sh:path i14y:ktr_24_ank .
+
+i14y:ktr_24_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_24"@en ;
+    sh:path i14y:ktr_24 .
+
+i14y:ktr_25_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_25_ank"@en ;
+    sh:path i14y:ktr_25_ank .
+
+i14y:ktr_25_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_25"@en ;
+    sh:path i14y:ktr_25 .
+
+i14y:ktr_26_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_26_ank"@en ;
+    sh:path i14y:ktr_26_ank .
+
+i14y:ktr_26_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_26"@en ;
+    sh:path i14y:ktr_26 .
+
+i14y:ktr_27_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_27_ank"@en ;
+    sh:path i14y:ktr_27_ank .
+
+i14y:ktr_27_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_27"@en ;
+    sh:path i14y:ktr_27 .
+
+i14y:ktr_28_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_28_ank"@en ;
+    sh:path i14y:ktr_28_ank .
+
+i14y:ktr_28_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_28"@en ;
+    sh:path i14y:ktr_28 .
+
+i14y:ktr_29_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_29_ank"@en ;
+    sh:path i14y:ktr_29_ank .
+
+i14y:ktr_29_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_29"@en ;
+    sh:path i14y:ktr_29 .
+
+i14y:ktr_30_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_30_ank"@en ;
+    sh:path i14y:ktr_30_ank .
+
+i14y:ktr_30_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_30"@en ;
+    sh:path i14y:ktr_30 .
+
+i14y:ktr_31_1_5_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_1_5_ank"@en ;
+    sh:path i14y:ktr_31_1_5_ank .
+
+i14y:ktr_31_1_5_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_1_5"@en ;
+    sh:path i14y:ktr_31_1_5 .
+
+i14y:ktr_31_6a1_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6a1_ank"@en ;
+    sh:path i14y:ktr_31_6a1_ank .
+
+i14y:ktr_31_6a1_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6a1"@en ;
+    sh:path i14y:ktr_31_6a1 .
+
+i14y:ktr_31_6a2_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6a2_ank"@en ;
+    sh:path i14y:ktr_31_6a2_ank .
+
+i14y:ktr_31_6a2_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6a2"@en ;
+    sh:path i14y:ktr_31_6a2 .
+
+i14y:ktr_31_6b1_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b1_ank"@en ;
+    sh:path i14y:ktr_31_6b1_ank .
+
+i14y:ktr_31_6b1_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b1"@en ;
+    sh:path i14y:ktr_31_6b1 .
+
+i14y:ktr_31_6b2_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b2_ank"@en ;
+    sh:path i14y:ktr_31_6b2_ank .
+
+i14y:ktr_31_6b2_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b2"@en ;
+    sh:path i14y:ktr_31_6b2 .
+
+i14y:ktr_31_6b3_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b3_ank"@en ;
+    sh:path i14y:ktr_31_6b3_ank .
+
+i14y:ktr_31_6b3_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b3"@en ;
+    sh:path i14y:ktr_31_6b3 .
+
+i14y:ktr_31_6b4_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b4_ank"@en ;
+    sh:path i14y:ktr_31_6b4_ank .
+
+i14y:ktr_31_6b4_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b4"@en ;
+    sh:path i14y:ktr_31_6b4 .
+
+i14y:ktr_31_6b5_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b5_ank"@en ;
+    sh:path i14y:ktr_31_6b5_ank .
+
+i14y:ktr_31_6b5_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_31_6b5"@en ;
+    sh:path i14y:ktr_31_6b5 .
+
+i14y:ktr_32_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_32_ank"@en ;
+    sh:path i14y:ktr_32_ank .
+
+i14y:ktr_32_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_32"@en ;
+    sh:path i14y:ktr_32 .
+
+i14y:ktr_33_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_33_ank"@en ;
+    sh:path i14y:ktr_33_ank .
+
+i14y:ktr_33_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_33"@en ;
+    sh:path i14y:ktr_33 .
+
+i14y:ktr_34_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_34_ank"@en ;
+    sh:path i14y:ktr_34_ank .
+
+i14y:ktr_34_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_34"@en ;
+    sh:path i14y:ktr_34 .
+
+i14y:ktr_35_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_35_ank"@en ;
+    sh:path i14y:ktr_35_ank .
+
+i14y:ktr_35_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_35"@en ;
+    sh:path i14y:ktr_35 .
+
+i14y:ktr_36_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_36_ank"@en ;
+    sh:path i14y:ktr_36_ank .
+
+i14y:ktr_36_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_36"@en ;
+    sh:path i14y:ktr_36 .
+
+i14y:ktr_3801_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_3801"@en ;
+    sh:path i14y:ktr_3801 .
+
+i14y:ktr_3802_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_3802"@en ;
+    sh:path i14y:ktr_3802 .
+
+i14y:ktr_3811_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_3811"@en ;
+    sh:path i14y:ktr_3811 .
+
+i14y:ktr_3812_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_3812"@en ;
+    sh:path i14y:ktr_3812 .
+
+i14y:ktr_38_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_38_ank"@en ;
+    sh:path i14y:ktr_38_ank .
+
+i14y:ktr_38_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_38"@en ;
+    sh:path i14y:ktr_38 .
+
+i14y:ktr_39_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_39_ank"@en ;
+    sh:path i14y:ktr_39_ank .
+
+i14y:ktr_39_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_39"@en ;
+    sh:path i14y:ktr_39 .
+
+i14y:ktr_4001_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4001"@en ;
+    sh:path i14y:ktr_4001 .
+
+i14y:ktr_4002_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4002"@en ;
+    sh:path i14y:ktr_4002 .
+
+i14y:ktr_4011_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4011"@en ;
+    sh:path i14y:ktr_4011 .
+
+i14y:ktr_4012_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4012"@en ;
+    sh:path i14y:ktr_4012 .
+
+i14y:ktr_4051_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4051"@en ;
+    sh:path i14y:ktr_4051 .
+
+i14y:ktr_4052_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_4052"@en ;
+    sh:path i14y:ktr_4052 .
+
+i14y:ktr_40_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_40_ank"@en ;
+    sh:path i14y:ktr_40_ank .
+
+i14y:ktr_40_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_40"@en ;
+    sh:path i14y:ktr_40 .
+
+i14y:ktr_40_rest_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_40_rest"@en ;
+    sh:path i14y:ktr_40_rest .
+
+i14y:ktr_41_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_41_ank"@en ;
+    sh:path i14y:ktr_41_ank .
+
+i14y:ktr_41_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_41"@en ;
+    sh:path i14y:ktr_41 .
+
+i14y:ktr_42_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_42_ank"@en ;
+    sh:path i14y:ktr_42_ank .
+
+i14y:ktr_42_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_42"@en ;
+    sh:path i14y:ktr_42 .
+
+i14y:ktr_43_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_43_ank"@en ;
+    sh:path i14y:ktr_43_ank .
+
+i14y:ktr_43_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_43"@en ;
+    sh:path i14y:ktr_43 .
+
+i14y:ktr_44_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_44_ank"@en ;
+    sh:path i14y:ktr_44_ank .
+
+i14y:ktr_44_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_44"@en ;
+    sh:path i14y:ktr_44 .
+
+i14y:ktr_44_rekole_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_44_rekole"@en ;
+    sh:path i14y:ktr_44_rekole .
+
+i14y:ktr_44_vkl_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_44_vkl"@en ;
+    sh:path i14y:ktr_44_vkl .
+
+i14y:ktr_45_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_45_ank"@en ;
+    sh:path i14y:ktr_45_ank .
+
+i14y:ktr_45_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_45"@en ;
+    sh:path i14y:ktr_45 .
+
+i14y:ktr_480_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_480"@en ;
+    sh:path i14y:ktr_480 .
+
+i14y:ktr_485_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_485"@en ;
+    sh:path i14y:ktr_485 .
+
+i14y:ktr_486_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_486"@en ;
+    sh:path i14y:ktr_486 .
+
+i14y:ktr_60_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_60"@en ;
+    sh:path i14y:ktr_60 .
+
+i14y:ktr_61_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_61"@en ;
+    sh:path i14y:ktr_61 .
+
+i14y:ktr_62_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_62"@en ;
+    sh:path i14y:ktr_62 .
+
+i14y:ktr_65_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_65"@en ;
+    sh:path i14y:ktr_65 .
+
+i14y:ktr_66_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_66"@en ;
+    sh:path i14y:ktr_66 .
+
+i14y:ktr_68_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_68"@en ;
+    sh:path i14y:ktr_68 .
+
+i14y:ktr_697_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_697"@en ;
+    sh:path i14y:ktr_697 .
+
+i14y:ktr_69_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_69"@en ;
+    sh:path i14y:ktr_69 .
+
+i14y:ktr_77_ank_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_77_ank"@en ;
+    sh:path i14y:ktr_77_ank .
+
+i14y:ktr_77_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_77"@en ;
+    sh:path i14y:ktr_77 .
+
+i14y:ktr_beschr_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "ktr_beschr"@en ;
+    sh:path i14y:ktr_beschr .
+
+i14y:ktr_kosten_65_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_kosten_65"@en ;
+    sh:path i14y:ktr_kosten_65 .
+
+i14y:ktr_le_ambulant_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_le_ambulant"@en ;
+    sh:path i14y:ktr_le_ambulant .
+
+i14y:ktr_methodik_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "ktr_methodik"@en ;
+    sh:path i14y:ktr_methodik .
+
+i14y:ktr_nicht_pb_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "ktr_nicht_pb"@en ;
+    sh:path i14y:ktr_nicht_pb .
+
+i14y:ktr_typ_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "ktr_typ"@en ;
+    sh:path i14y:ktr_typ .
+
+i14y:laenge_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "laenge"@en ;
+    sh:path i14y:laenge .
+
+i14y:liegeklasse_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "liegeklasse"@en ;
+    sh:path i14y:liegeklasse .
+
+i14y:medi_atc_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "medi_atc"@en ;
+    sh:path i14y:medi_atc .
+
+i14y:medi_dosis_attr a sh:PropertyShape ;
+    sh:datatype xone:decimal ;
+    sh:minCount 0 ;
+    sh:name "medi_dosis"@en ;
+    sh:path i14y:medi_dosis .
+
+i14y:medi_einheit_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "medi_einheit"@en ;
+    sh:path i14y:medi_einheit .
+
+i14y:medi_id_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "medi_id"@en ;
+    sh:path i14y:medi_id .
+
+i14y:medi_verabreichungsart_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "medi_verabreichungsart"@en ;
+    sh:path i14y:medi_verabreichungsart .
+
+i14y:medi_zusatz_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "medi_zusatz"@en ;
+    sh:path i14y:medi_zusatz .
+
+i14y:mehrling_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "mehrling"@en ;
+    sh:path i14y:mehrling .
+
+i14y:missbildungen_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "missbildungen"@en ;
+    sh:path i14y:missbildungen .
+
+i14y:nationalitaet_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "nationalitaet"@en ;
+    sh:path i14y:nationalitaet .
+
+i14y:nems_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "nems"@en ;
+    sh:path i14y:nems .
+
+i14y:op_gln_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "op_gln"@en ;
+    sh:path i14y:op_gln .
+
+i14y:op_liste_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "op_liste"@en ;
+    sh:path i14y:op_liste .
+
+i14y:op_rolle_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "op_rolle"@en ;
+    sh:path i14y:op_rolle .
+
+i14y:psy_austritt_aufenthalt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_austritt_aufenthalt"@en ;
+    sh:path i14y:psy_austritt_aufenthalt .
+
+i14y:psy_austritt_behandlung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_austritt_behandlung"@en ;
+    sh:path i14y:psy_austritt_behandlung .
+
+i14y:psy_behandlung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_behandlung"@en ;
+    sh:path i14y:psy_behandlung .
+
+i14y:psy_behandlungsbereich_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_behandlungsbereich"@en ;
+    sh:path i14y:psy_behandlungsbereich .
+
+i14y:psy_eintritt_arbeitslos_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_arbeitslos"@en ;
+    sh:path i14y:psy_eintritt_arbeitslos .
+
+i14y:psy_eintritt_aufenthalt_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_aufenthalt"@en ;
+    sh:path i14y:psy_eintritt_aufenthalt .
+
+i14y:psy_eintritt_ausbildung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_ausbildung"@en ;
+    sh:path i14y:psy_eintritt_ausbildung .
+
+i14y:psy_eintritt_gesch_arbeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_gesch_arbeit"@en ;
+    sh:path i14y:psy_eintritt_gesch_arbeit .
+
+i14y:psy_eintritt_hausarbeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_hausarbeit"@en ;
+    sh:path i14y:psy_eintritt_hausarbeit .
+
+i14y:psy_eintritt_reha_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_reha"@en ;
+    sh:path i14y:psy_eintritt_reha .
+
+i14y:psy_eintritt_rente_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_rente"@en ;
+    sh:path i14y:psy_eintritt_rente .
+
+i14y:psy_eintritt_teilzeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_teilzeit"@en ;
+    sh:path i14y:psy_eintritt_teilzeit .
+
+i14y:psy_eintritt_unbekannt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_unbekannt"@en ;
+    sh:path i14y:psy_eintritt_unbekannt .
+
+i14y:psy_eintritt_vollzeit_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_eintritt_vollzeit"@en ;
+    sh:path i14y:psy_eintritt_vollzeit .
+
+i14y:psy_einweisende_instanz_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "psy_einweisende_instanz"@en ;
+    sh:path i14y:psy_einweisende_instanz .
+
+i14y:psy_entsch_austritt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_entsch_austritt"@en ;
+    sh:path i14y:psy_entsch_austritt .
+
+i14y:psy_fu_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "psy_fu"@en ;
+    sh:path i14y:psy_fu .
+
+i14y:psy_pp_andere_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_andere"@en ;
+    sh:path i14y:psy_pp_andere .
+
+i14y:psy_pp_antidepressiva_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_antidepressiva"@en ;
+    sh:path i14y:psy_pp_antidepressiva .
+
+i14y:psy_pp_antiepileptika_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_antiepileptika"@en ;
+    sh:path i14y:psy_pp_antiepileptika .
+
+i14y:psy_pp_antiparkinson_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_antiparkinson"@en ;
+    sh:path i14y:psy_pp_antiparkinson .
+
+i14y:psy_pp_depotneuroleptika_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_depotneuroleptika"@en ;
+    sh:path i14y:psy_pp_depotneuroleptika .
+
+i14y:psy_pp_hypnotika_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_hypnotika"@en ;
+    sh:path i14y:psy_pp_hypnotika .
+
+i14y:psy_pp_koerper_medi_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_koerper_medi"@en ;
+    sh:path i14y:psy_pp_koerper_medi .
+
+i14y:psy_pp_lithium_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_lithium"@en ;
+    sh:path i14y:psy_pp_lithium .
+
+i14y:psy_pp_neuroleptika_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_neuroleptika"@en ;
+    sh:path i14y:psy_pp_neuroleptika .
+
+i14y:psy_pp_substitution_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_substitution"@en ;
+    sh:path i14y:psy_pp_substitution .
+
+i14y:psy_pp_suchtaversion_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_suchtaversion"@en ;
+    sh:path i14y:psy_pp_suchtaversion .
+
+i14y:psy_pp_tranquilizer_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_pp_tranquilizer"@en ;
+    sh:path i14y:psy_pp_tranquilizer .
+
+i14y:psy_schulbildung_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "psy_schulbildung"@en ;
+    sh:path i14y:psy_schulbildung .
+
+i14y:psy_zivilstand_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "psy_zivilstand"@en ;
+    sh:path i14y:psy_zivilstand .
+
+i14y:rech_basispreis_attr a sh:PropertyShape ;
+    sh:datatype xone:double ;
+    sh:minCount 0 ;
+    sh:name "rech_basispreis"@en ;
+    sh:path i14y:rech_basispreis .
+
+i14y:rech_betrag_attr a sh:PropertyShape ;
+    sh:datatype xone:double ;
+    sh:minCount 1 ;
+    sh:name "rech_betrag"@en ;
+    sh:path i14y:rech_betrag .
+
+i14y:rech_einheit_attr a sh:PropertyShape ;
+    sh:datatype xone:double ;
+    sh:minCount 0 ;
+    sh:name "rech_einheit"@en ;
+    sh:path i14y:rech_einheit .
+
+i14y:rech_ext_faktor_attr a sh:PropertyShape ;
+    sh:datatype xone:double ;
+    sh:minCount 0 ;
+    sh:name "rech_ext_faktor"@en ;
+    sh:path i14y:rech_ext_faktor .
+
+i14y:rech_id_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "rech_id"@en ;
+    sh:path i14y:rech_id .
+
+i14y:rech_kostentraeger_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "rech_kostentraeger"@en ;
+    sh:path i14y:rech_kostentraeger .
+
+i14y:rech_menge_attr a sh:PropertyShape ;
+    sh:datatype xone:double ;
+    sh:minCount 0 ;
+    sh:name "rech_menge"@en ;
+    sh:path i14y:rech_menge .
+
+i14y:rech_tarifcode_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "rech_tarifcode"@en ;
+    sh:path i14y:rech_tarifcode .
+
+i14y:rech_tariftyp_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "rech_tariftyp"@en ;
+    sh:path i14y:rech_tariftyp .
+
+i14y:rech_unfallnr_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "rech_unfallnr"@en ;
+    sh:path i14y:rech_unfallnr .
+
+i14y:rech_versicherer_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 0 ;
+    sh:name "rech_versicherer"@en ;
+    sh:path i14y:rech_versicherer .
+
+i14y:schwere_score_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "schwere_score"@en ;
+    sh:path i14y:schwere_score .
+
+i14y:tarif_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 1 ;
+    sh:name "tarif"@en ;
+    sh:path i14y:tarif .
+
+i14y:versicherungsklasse_attr a sh:PropertyShape ;
+    sh:datatype xone:positiveInteger ;
+    sh:minCount 1 ;
+    sh:name "versicherungsklasse"@en ;
+    sh:path i14y:versicherungsklasse .
+
+i14y:version_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 1 ;
+    sh:name "version"@en ;
+    sh:path i14y:version .
+
+i14y:vitalstatus_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "vitalstatus"@en ;
+    sh:path i14y:vitalstatus .
+
+i14y:vorh_abbrueche_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "vorh_abbrueche"@en ;
+    sh:path i14y:vorh_abbrueche .
+
+i14y:vorh_fehlgeburten_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "vorh_fehlgeburten"@en ;
+    sh:path i14y:vorh_fehlgeburten .
+
+i14y:vorh_lebendgeburten_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "vorh_lebendgeburten"@en ;
+    sh:path i14y:vorh_lebendgeburten .
+
+i14y:vorh_schwanger_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "vorh_schwanger"@en ;
+    sh:path i14y:vorh_schwanger .
+
+i14y:wiedereintritt_aufenthalt_attr a sh:PropertyShape ;
+    sh:datatype xone:integer ;
+    sh:minCount 0 ;
+    sh:name "wiedereintritt_aufenthalt"@en ;
+    sh:path i14y:wiedereintritt_aufenthalt .
+
+i14y:wohnkanton_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "wohnkanton"@en ;
+    sh:path i14y:wohnkanton .
+
+i14y:wohnland_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "wohnland"@en ;
+    sh:path i14y:wohnland .
+
+i14y:wohnort_medstat_attr a sh:PropertyShape ;
+    sh:datatype xone:string ;
+    sh:minCount 0 ;
+    sh:name "wohnort_medstat"@en ;
+    sh:path i14y:wohnort_medstat .
+
+i14y:AdminstrativesType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "AdminstrativesType"@en ;
+    sh:property i14y:abc_fall_attr,
+        i14y:admin_urlaub_attr,
+        i14y:alter_U1_attr,
+        i14y:alter_attr,
+        i14y:art_score_attr,
+        i14y:aufenthalt_imc_attr,
+        i14y:aufenthalt_ips_attr,
+        i14y:aufwand_imc_attr,
+        i14y:austritt_aufenthalt_attr,
+        i14y:austritt_behandlung_attr,
+        i14y:austrittsdatum_attr,
+        i14y:austrittsentscheid_attr,
+        i14y:beatmung_attr,
+        i14y:burnr_gesv_attr,
+        i14y:chlz_attr,
+        i14y:eintritt_aufenthalt_attr,
+        i14y:eintrittsart_attr,
+        i14y:eintrittsdatum_attr,
+        i14y:einw_instanz_attr,
+        i14y:geschlecht_attr,
+        i14y:grundversicherung_attr,
+        i14y:hauptleistungsstelle_attr,
+        i14y:liegeklasse_attr,
+        i14y:nationalitaet_attr,
+        i14y:nems_attr,
+        i14y:schwere_score_attr,
+        i14y:tarif_attr,
+        i14y:versicherungsklasse_attr,
+        i14y:wohnkanton_attr,
+        i14y:wohnland_attr,
+        i14y:wohnort_medstat_attr .
+
+i14y:BehandlungType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "BehandlungType"@en ;
+    sh:property <http://i14y.admin.ch/ns#BehandlungType/Operierende>,
+        i14y:behandlung_auswaerts_attr,
+        i14y:behandlung_beginn_attr,
+        i14y:behandlung_chop_attr,
+        i14y:behandlung_id_attr,
+        i14y:behandlung_seitigkeit_attr .
+
+i14y:DiagnoseType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "DiagnoseType"@en ;
+    sh:property i14y:diagnose_id_attr,
+        i14y:diagnose_kode_attr,
+        i14y:diagnose_poa_attr,
+        i14y:diagnose_seitigkeit_attr,
+        i14y:diagnose_zusatz_attr .
+
+i14y:FallType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "FallType"@en ;
+    sh:property <http://i14y.admin.ch/ns#FallType/Administratives>,
+        <http://i14y.admin.ch/ns#FallType/Behandlung>,
+        <http://i14y.admin.ch/ns#FallType/Diagnose>,
+        <http://i14y.admin.ch/ns#FallType/Kantonsdaten>,
+        <http://i14y.admin.ch/ns#FallType/KostentraegerFall>,
+        <http://i14y.admin.ch/ns#FallType/Medikament>,
+        <http://i14y.admin.ch/ns#FallType/Neugeborene>,
+        <http://i14y.admin.ch/ns#FallType/Patientenbewegung>,
+        <http://i14y.admin.ch/ns#FallType/Psychiatrie>,
+        <http://i14y.admin.ch/ns#FallType/Rechnung>,
+        i14y:fall_id_attr .
+
+i14y:MedikamentType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "MedikamentType"@en ;
+    sh:property i14y:medi_atc_attr,
+        i14y:medi_dosis_attr,
+        i14y:medi_einheit_attr,
+        i14y:medi_id_attr,
+        i14y:medi_verabreichungsart_attr,
+        i14y:medi_zusatz_attr .
+
+i14y:NeugeboreneType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "NeugeboreneType"@en ;
+    sh:property i14y:aufnahmegewicht_attr,
+        i14y:fall_id_mutter_attr,
+        i14y:geburtsgewicht_attr,
+        i14y:geburtsrang_attr,
+        i14y:geburtszeit_attr,
+        i14y:gestationsalter1_attr,
+        i14y:gestationsalter2_attr,
+        i14y:kopfumfang_attr,
+        i14y:laenge_attr,
+        i14y:mehrling_attr,
+        i14y:missbildungen_attr,
+        i14y:vitalstatus_attr,
+        i14y:vorh_abbrueche_attr,
+        i14y:vorh_fehlgeburten_attr,
+        i14y:vorh_lebendgeburten_attr,
+        i14y:vorh_schwanger_attr .
+
+i14y:OperierendeType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "OperierendeType"@en ;
+    sh:property i14y:op_gln_attr,
+        i14y:op_liste_attr,
+        i14y:op_rolle_attr .
+
+i14y:PatientenbewegungType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "PatientenbewegungType"@en ;
+    sh:property i14y:burnr_episode_attr,
+        i14y:episode_art_attr,
+        i14y:episode_beginn_attr,
+        i14y:episode_ende_attr,
+        i14y:episode_id_attr,
+        i14y:grund_wiedereintritt_attr,
+        i14y:wiedereintritt_aufenthalt_attr .
+
+i14y:PsychiatrieType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "PsychiatrieType"@en ;
+    sh:property i14y:psy_austritt_aufenthalt_attr,
+        i14y:psy_austritt_behandlung_attr,
+        i14y:psy_behandlung_attr,
+        i14y:psy_behandlungsbereich_attr,
+        i14y:psy_eintritt_arbeitslos_attr,
+        i14y:psy_eintritt_aufenthalt_attr,
+        i14y:psy_eintritt_ausbildung_attr,
+        i14y:psy_eintritt_gesch_arbeit_attr,
+        i14y:psy_eintritt_hausarbeit_attr,
+        i14y:psy_eintritt_reha_attr,
+        i14y:psy_eintritt_rente_attr,
+        i14y:psy_eintritt_teilzeit_attr,
+        i14y:psy_eintritt_unbekannt_attr,
+        i14y:psy_eintritt_vollzeit_attr,
+        i14y:psy_einweisende_instanz_attr,
+        i14y:psy_entsch_austritt_attr,
+        i14y:psy_fu_attr,
+        i14y:psy_pp_andere_attr,
+        i14y:psy_pp_antidepressiva_attr,
+        i14y:psy_pp_antiepileptika_attr,
+        i14y:psy_pp_antiparkinson_attr,
+        i14y:psy_pp_depotneuroleptika_attr,
+        i14y:psy_pp_hypnotika_attr,
+        i14y:psy_pp_koerper_medi_attr,
+        i14y:psy_pp_lithium_attr,
+        i14y:psy_pp_neuroleptika_attr,
+        i14y:psy_pp_substitution_attr,
+        i14y:psy_pp_suchtaversion_attr,
+        i14y:psy_pp_tranquilizer_attr,
+        i14y:psy_schulbildung_attr,
+        i14y:psy_zivilstand_attr .
+
+i14y:RechnungType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "RechnungType"@en ;
+    sh:property i14y:rech_basispreis_attr,
+        i14y:rech_betrag_attr,
+        i14y:rech_einheit_attr,
+        i14y:rech_ext_faktor_attr,
+        i14y:rech_id_attr,
+        i14y:rech_kostentraeger_attr,
+        i14y:rech_menge_attr,
+        i14y:rech_tarifcode_attr,
+        i14y:rech_tariftyp_attr,
+        i14y:rech_unfallnr_attr,
+        i14y:rech_versicherer_attr .
+
+i14y:StandortType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "StandortType"@en ;
+    sh:property <http://i14y.admin.ch/ns#StandortType/Fall>,
+        <http://i14y.admin.ch/ns#StandortType/KantonsdatenStandort>,
+        <http://i14y.admin.ch/ns#StandortType/KostentraegerStandort>,
+        i14y:burnr_attr .
+
+i14y:KantonsdatenType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "KantonsdatenType"@en ;
+    sh:property i14y:Kanton_Zusatzdaten_attr .
+
+i14y:KostentraegerType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "KostentraegerType"@en ;
+    sh:property i14y:ktr_10_ank_attr,
+        i14y:ktr_10_attr,
+        i14y:ktr_20_ank_attr,
+        i14y:ktr_20_attr,
+        i14y:ktr_21_ank_attr,
+        i14y:ktr_21_attr,
+        i14y:ktr_23_ank_attr,
+        i14y:ktr_23_attr,
+        i14y:ktr_24_ank_attr,
+        i14y:ktr_24_attr,
+        i14y:ktr_25_ank_attr,
+        i14y:ktr_25_attr,
+        i14y:ktr_26_ank_attr,
+        i14y:ktr_26_attr,
+        i14y:ktr_27_ank_attr,
+        i14y:ktr_27_attr,
+        i14y:ktr_28_ank_attr,
+        i14y:ktr_28_attr,
+        i14y:ktr_29_ank_attr,
+        i14y:ktr_29_attr,
+        i14y:ktr_30_ank_attr,
+        i14y:ktr_30_attr,
+        i14y:ktr_31_1_5_ank_attr,
+        i14y:ktr_31_1_5_attr,
+        i14y:ktr_31_6a1_ank_attr,
+        i14y:ktr_31_6a1_attr,
+        i14y:ktr_31_6a2_ank_attr,
+        i14y:ktr_31_6a2_attr,
+        i14y:ktr_31_6b1_ank_attr,
+        i14y:ktr_31_6b1_attr,
+        i14y:ktr_31_6b2_ank_attr,
+        i14y:ktr_31_6b2_attr,
+        i14y:ktr_31_6b3_ank_attr,
+        i14y:ktr_31_6b3_attr,
+        i14y:ktr_31_6b4_ank_attr,
+        i14y:ktr_31_6b4_attr,
+        i14y:ktr_31_6b5_ank_attr,
+        i14y:ktr_31_6b5_attr,
+        i14y:ktr_32_ank_attr,
+        i14y:ktr_32_attr,
+        i14y:ktr_33_ank_attr,
+        i14y:ktr_33_attr,
+        i14y:ktr_34_ank_attr,
+        i14y:ktr_34_attr,
+        i14y:ktr_35_ank_attr,
+        i14y:ktr_35_attr,
+        i14y:ktr_36_ank_attr,
+        i14y:ktr_36_attr,
+        i14y:ktr_3801_attr,
+        i14y:ktr_3802_attr,
+        i14y:ktr_3811_attr,
+        i14y:ktr_3812_attr,
+        i14y:ktr_38_ank_attr,
+        i14y:ktr_38_attr,
+        i14y:ktr_39_ank_attr,
+        i14y:ktr_39_attr,
+        i14y:ktr_4001_attr,
+        i14y:ktr_4002_attr,
+        i14y:ktr_4011_attr,
+        i14y:ktr_4012_attr,
+        i14y:ktr_4051_attr,
+        i14y:ktr_4052_attr,
+        i14y:ktr_40_ank_attr,
+        i14y:ktr_40_attr,
+        i14y:ktr_40_rest_attr,
+        i14y:ktr_41_ank_attr,
+        i14y:ktr_41_attr,
+        i14y:ktr_42_ank_attr,
+        i14y:ktr_42_attr,
+        i14y:ktr_43_ank_attr,
+        i14y:ktr_43_attr,
+        i14y:ktr_44_ank_attr,
+        i14y:ktr_44_attr,
+        i14y:ktr_44_rekole_attr,
+        i14y:ktr_44_vkl_attr,
+        i14y:ktr_45_ank_attr,
+        i14y:ktr_45_attr,
+        i14y:ktr_480_attr,
+        i14y:ktr_485_attr,
+        i14y:ktr_486_attr,
+        i14y:ktr_60_attr,
+        i14y:ktr_61_attr,
+        i14y:ktr_62_attr,
+        i14y:ktr_65_attr,
+        i14y:ktr_66_attr,
+        i14y:ktr_68_attr,
+        i14y:ktr_697_attr,
+        i14y:ktr_69_attr,
+        i14y:ktr_77_ank_attr,
+        i14y:ktr_77_attr,
+        i14y:ktr_beschr_attr,
+        i14y:ktr_kosten_65_attr,
+        i14y:ktr_le_ambulant_attr,
+        i14y:ktr_methodik_attr,
+        i14y:ktr_nicht_pb_attr,
+        i14y:ktr_typ_attr .
+
