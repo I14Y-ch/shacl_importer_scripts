@@ -1,0 +1,59 @@
+@prefix i14y: <http://i14y.admin.ch/ns#/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:IrisShape a sh:NodeShape ;
+    sh:closed false ;
+    sh:name "Iris" ;
+    sh:property i14y:petal_length,
+        i14y:petal_width,
+        i14y:sepal_length,
+        i14y:sepal_width,
+        i14y:variety .
+
+i14y:variety_values a rdf:List ;
+    rdf:first "Virginica"^^xsd:string ;
+    rdf:rest i14y:variety_values_0 .
+
+i14y:variety_values_0 rdf:first "Versicolor"^^xsd:string ;
+    rdf:rest i14y:variety_values_1 .
+
+i14y:variety_values_1 rdf:first "Setosa"^^xsd:string ;
+    rdf:rest () .
+
+i14y:petal_length a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxInclusive 6.9e+00 ;
+    sh:minInclusive 1e+00 ;
+    sh:name "petal.length" ;
+    sh:path i14y:petal_length .
+
+i14y:petal_width a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxInclusive 2.5e+00 ;
+    sh:minInclusive 1e-01 ;
+    sh:name "petal.width" ;
+    sh:path i14y:petal_width .
+
+i14y:sepal_length a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxInclusive 7.9e+00 ;
+    sh:minInclusive 4.3e+00 ;
+    sh:name "sepal.length" ;
+    sh:path i14y:sepal_length .
+
+i14y:sepal_width a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxInclusive 4.4e+00 ;
+    sh:minInclusive 2e+00 ;
+    sh:name "sepal.width" ;
+    sh:path i14y:sepal_width .
+
+i14y:variety a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:in i14y:variety_values ;
+    sh:maxLength 10 ;
+    sh:name "variety" ;
+    sh:path i14y:variety .
+
