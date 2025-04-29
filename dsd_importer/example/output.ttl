@@ -1,0 +1,179 @@
+@prefix QB: <http://purl.org/linked-data/cube#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:KD_Patientenbewegung_2023 a QB:DataStructureDefinition,
+        sh:NodeShape ;
+    pav:version "1.0.0" ;
+    schema:validFrom "2023-12-31"^^xsd:date ;
+    schema:validUntil "2024-12-30"^^xsd:date ;
+    schema:version "1.0.0" ;
+    sh:name "SpiGes KD Patientenbewegung Variablen"@de ;
+    sh:property i14y:burnr,
+        i14y:burnr_episode,
+        i14y:ent_id,
+        i14y:episode_art,
+        i14y:episode_beginn,
+        i14y:episode_ende,
+        i14y:episode_id,
+        i14y:fall_id,
+        i14y:grund_wiedereintritt,
+        i14y:wiedereintritt_aufenhalt .
+
+i14y:burnr a QB:DimensionProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5b90-519a-898b-c0cfaa59f46d/description> ;
+    dcterms:description "Standort, an dem die Behandlung hauptsächlich stattgefunden hat, d.h. wo die meisten Kosten angefallen sind. Achtstellige Nummer des Standorts gemäss dem Betriebs- und Unternehmensregister des BFS."@de,
+        "Site sur lequel le traitement a été principalement dispensé, à savoir là où la plupart des coûts ont été générés. Numéro du site, à huit chiffres, conforme au registre des entreprises et établissements de l’OFS."@fr,
+        "Sede in cui è stato principalmente eseguito il trattamento, ossia dove è stata sostenuta la maggior parte dei costi. Numero di otto caratteri della sede secondo il Registro delle imprese e degli stabilimenti dell'UST."@it ;
+    dcterms:identifier "burnr" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5b90-519a-898b-c0cfaa59f46d/description> ;
+    QB:order 7 ;
+    sh:datatype xsd:string ;
+    sh:name "Hauptstandort"@de,
+        "Site principal"@fr,
+        "Sede principale"@it ;
+    sh:path i14y:burnr .
+
+i14y:burnr_episode a QB:MeasureProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5b90-519a-898b-c0cfaa59f46d/description> ;
+    dcterms:description "BUR-Nummer des Standorts, an dem sich die Person während der Episode aufgehalten hat. Bei Urlaub und Belastungserprobung wird das Feld leer gelassen. Auch bei externen ambulanten Behandlungen kann die BUR-Nummer des behandelnden Standorts angegeben werden, falls diese bekannt ist. Indiesem Fall ist die Angabe freiwillig. Achtstellige Nummer des Standorts gemäss dem Betriebs- und Unternehmensregister des BFS."@de,
+        "Numéro REE du site où la personne a effectué son séjour pendant l’épisode. En cas de vacances et de sortie d’essai, laisser le champ vide. Si on le connaît, le numéro REE du site dispensant le traitement peut être indiqué même pour les traitements ambulatoires à l’extérieur. Dans ce cas, cette indication est facultative. Numéro du site, à huit chiffres, conforme au registre des entreprises et établissements de l’OFS."@fr,
+        "Numero RIS della sede di degenza della persona durante l'episodio. Per i congedi e le uscite di prova questo campo va lasciato vuoto. Il numero RIS della sede, se noto, può essere indicato su base volontaria anche per i trattamenti ambulatoriali esterni. Numero di otto caratteri della sede secondo il Registro delle imprese e degli stabilimenti dell'UST."@it ;
+    dcterms:identifier "burnr_episode" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5b90-519a-898b-c0cfaa59f46d/description> ;
+    QB:order 2 ;
+    sh:datatype xsd:string ;
+    sh:name "Aufenthalt während Episode"@de,
+        "Séjour pendant l’épisode"@fr,
+        "Luogo di residenza durante l'episodio"@it ;
+    sh:path i14y:burnr_episode .
+
+i14y:ent_id a QB:DimensionProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5539-0948-818b-b8286203ca64/description> ;
+    dcterms:description "Neunstellige Nummer des Spitalunternehmens gemäss dem Betriebs- und Unternehmensregister des BFS. Ersetzt die bisherige BUR-Nr. Die Kodes werden ohne Punkte und ohne Bindestrich erfasst."@de,
+        "Numéro d’une entreprise hospitalière, à neuf chiffres, conforme au registre des entreprises et établissements de l’OFS. Il remplace l’ancien n° REE. Les codes sont saisis sans point ni trait d’union."@fr,
+        "Numero d'identificazione a nove caratteri dell'impresa ospedaliera secondo il Registro delle imprese e degli stabilimenti dell'UST. Sostituisce il numero RIS utilizzato finora. I codici vanno inseriti senza punti né trattini."@it ;
+    dcterms:identifier "ent_id" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08d94abe-5539-0948-818b-b8286203ca64/description> ;
+    QB:order 8 ;
+    sh:datatype xsd:decimal ;
+    sh:name "Unternehmensnummer ENT-ID"@de,
+        "Numéro de l’entreprise ID ENT"@fr,
+        "Numero dell'impresa ENT-ID"@it ;
+    sh:path i14y:ent_id .
+
+i14y:episode_art a QB:CodedProperty,
+        QB:MeasureProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-19b4-1ef1-8bed-455e077ec046/description> ;
+    dcterms:description "Bei Fallzusammenführungen ist die Zeit zwischen Zwischenaustritt und Wiedereintritt als Zwischenaustritt/Wiedereintritt zu erfassen. Urlaub und Belastungserprobung sind anzugeben, wenn ein Patient, eine Patientin das Spital (burnr_gesv) für mehr als 24 Stunden bei bleibender Reservierung eines Bettes verlässt. Findet dies ferienhalber statt, ist dies als Urlaub zu codieren. Belastungserprobungen sind als solche zu codieren. Verlässt ein Patient/eine Patientin das Spital (burnr_gesv) für eine ambulante Behandlung ausserhalb des Spitals, so ist dies mit \"ambulante Behandlung auswärts\" zu kennzeichnen. Wird ein Patient/eine Patientin von einem Standort (burnr) an einen anderen Standort (burnr) desselben Spitals (burnr_gesv) verlegt, ist zweimal eine Episode mit \"Behandlung vor Ort\" zu erfassen."@de,
+        "En cas de regroupement de cas, la durée entre la sortie intermédiaire et la réadmission doit être saisie sous la forme sortie intermédiaire / réadmission. Les vacances et sorties d’essai doivent être indiquées si le patient quitte l'hôpital (burnr_gesv) pendant plus de 24 heures, en gardant un lit réservé. Si cela a lieu pour cause de vacances, il faut le coder comme des vacances. Les sorties d’essai doivent être codées comme telles. Si un patient quitte l’hôpital (burnr_gesv) pour un traitement ambulatoire en dehors, il faut qualifier cet épisode comme Traitement ambulatoire extra-muros. En cas de transfert du patient d’un site (burnr) vers un autre, au sein du même hôpital (burnr_gesv), il convient de saisir deux fois un épisode Traitement sur place."@fr,
+        "Per i raggruppamenti di caso, il tempo intercorso tra dimissione intermedia e riammissione deve essere registrato come dimissione intermedia/riammissione. Congedi e uscite di prova vanno indicati se il paziente lascia l'ospedale (burnr_gesv) per più di 24 ore e il suo letto resta riservato. Nella codifica è necessario distinguere tra congedi e uscite di prova. Qualora un paziente esca dall'ospedale (burnr_gesv) per un trattamento ambulatoriale, l'episodio va codificato come «Trattamento ambulatoriale esterno». Se invece il paziente viene trasferito da una sede (burnr) all'altra dello stesso stabilimento (burnr_gesv), vanno registrati due episodi con il codice «Trattamento sul posto»."@it ;
+    dcterms:identifier "episode_art" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-19b4-1ef1-8bed-455e077ec046/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-19b4-1ef1-8bed-455e077ec046/description> ;
+    QB:order 3 ;
+    sh:name "Art der Episode"@de,
+        "Type d’épisode"@fr,
+        "Tipo di episodio"@it ;
+    sh:path i14y:episode_art .
+
+i14y:episode_beginn a QB:MeasureProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db7711-c5bf-c705-9946-4c62b0326542/description> ;
+    dcterms:description "Datum und Stunde; Das kann der Eintritt am Standort (Standortwechsel), der Beginn des Falls, des Urlaubs, der Belastungserprobung oder der externen ambulanten Behandlung sein."@de,
+        "Date et heure; cela peut être l’entrée sur le site (changement de site), le début du cas, les vacances, la sortie d’essai ou le traitement ambulatoire à l’extérieur."@fr,
+        "Data e ora; può trattarsi dell'ammissione nella sede (cambio di sede), dell'inizio del caso, del congedo, dell'uscita di prova o del trattamento ambulatoriale esterno."@it ;
+    dcterms:identifier "episode_beginn" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db7711-c5bf-c705-9946-4c62b0326542/description> ;
+    QB:order 9 ;
+    sh:datatype xsd:date ;
+    sh:name "Beginn der Episode"@de,
+        "Début de l’épisode"@fr,
+        "Inizio dell'episodio"@it ;
+    sh:path i14y:episode_beginn .
+
+i14y:episode_ende a QB:MeasureProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08d93fba-3ba9-b231-a072-21f51c2cc731/description> ;
+    dcterms:description "Datum und Stunde; Das kann der Austritt am Standort (Standortwechsel), das Ende des Falls, des Urlaubs, der Belastungserprobung oder der externen ambulanten Behandlung sein."@de,
+        "Date et heure; cela peut être la sortie du site (changement de site), la fin du cas, les vacances, la sortie d’essai ou le traitement ambulatoire à l’extérieur."@fr,
+        "Data e ora; può trattarsi della dimissione dalla sede (cambio di sede), della fine del caso, del congedo, dell'uscita di prova o del trattamento ambulatoriale esterno."@it ;
+    dcterms:identifier "episode_ende" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08d93fba-3ba9-b231-a072-21f51c2cc731/description> ;
+    QB:order 4 ;
+    sh:datatype xsd:date ;
+    sh:name "Ende der Episode"@de,
+        "Fin de l’épisode"@fr,
+        "Fine dell'episodio"@it ;
+    sh:path i14y:episode_ende .
+
+i14y:episode_id a QB:DimensionProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db7711-c5ad-8f69-8c77-46998817c4b0/description> ;
+    dcterms:description "Identifikator zur Unterscheidung aller Episoden eines Falls. Episoden sind die Abschnitte vor und nach einem Standortwechsel (burnr-Wechsel) eines Falls, Zwischenaustritte/Wiedereintritte, externe ambulante Behandlungen, Urlaube und Belastungserprobungen. Diese Tabelle muss nur ausgefüllt werden, wenn der Fall mindestens 2 Episoden aufweist. 1 = erste Episode 2 = zweite Episode 3 = dritte Episode (…) etc. -> Unbegrenzt Hier sind nur Standortwechsel (burnr-Wechsel) innerhalb des Spitals (burnr_gesv) anzugeben. Muss aufgrund der \"Regeln und Definitionen zur Fallabrechnung\" der SwissDRG AG ein neuer Fall generiert werden, so sind diese als zwei Fälle und nicht als Standortwechsel anzugeben. Für die institutionelle Abgrenzung der Episode für Zwischenaustritte/Wiedereintritte, externe ambulante Behandlungen, Urlaube und Belastungserprobungen gilt die burnr_gesv."@de,
+        "Identificateur pour distinguer tous les épisodes d’un cas. Les épisodes sont les périodes avant et après le changement de site (changement de burnr) d’un cas, les sorties intermédiaires et les réadmissions, les traitements ambulatoires à l’extérieur, les vacances et les sorties d’essai. Ce tableau ne doit être rempli que si le cas affiche au moins 2 épisodes. 1 = premier épisode 2 = deuxième épisode 3 = troisième épisode (…) etc. -> illimité Il ne faut indiquer ici que les changements de site (changement de burnr) au sein de l’hôpital (burnr_gesv). Si les règles et définitions pour la facturation des cas de SwissDRG SA, nécessitent de créer un cas, il faut alors considérer ces épisodes comme deux cas et non comme un changement de site. Pour la délimitation institutionnelle de l'épisode pour les sorties intermédiaires/réadmissions, les traitements ambulatoires externes, les vacances et les sorties d'essai, c'est la burnr_gesv qui s'applique."@fr,
+        "Informazione che permette di distinguere tutti gli episodi di un caso. Per episodi si intendono le fasi che precedono o seguono un cambio di sede (cambio di burnr) di un caso, le dimissioni intermedie/riammissioni, i trattamenti ambulatoriali esterni, i congedi e le uscite di prova. Questa tabella va compilata solo se il caso comprende almeno due episodi. 1 = primo episodio 2 = secondo episodio 3 = terzo episodio (…) ecc. -> illimitato Nel campo vanno indicati unicamente cambi di sede (cambio di burnr) all'interno dall' ospedale (burnr_gesv). Se in base alle «Regole e definizioni per la fatturazione dei casi» di SwissDRG SA deve essere generato un nuovo caso, questo va registrato come caso separato e non come cambio di sede. Per la delimitazione istituzionale dell'episodio per dimissioni intermedie/riammissioni, trattamenti ambulatoriali esterni, congedi e uscite di prova, si applica il burnr_gesv."@it ;
+    dcterms:identifier "episode_id" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db7711-c5ad-8f69-8c77-46998817c4b0/description> ;
+    QB:order 6 ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eindeutiger numerischer Identifikator der Episode"@de,
+        "Identificateur numerique unique de l’épisode"@fr,
+        "Identificatore numerico univoco dell'episodio"@it ;
+    sh:path i14y:episode_id .
+
+i14y:fall_id a QB:DimensionProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db76ed-5387-f9b6-9933-983b133eef89/description> ;
+    dcterms:description "Diese Identifikationsnummer muss über den ganzen Datensatz und die Jahre hinweg für den Fall gleich sein, damit Angaben aus unterschiedlichen Tabellen (z.B. 1-Falldaten und 6-Behandlungen) verknüpft werden können."@de,
+        "Le cas doit garder ce numéro d’identification pour toutes les données et toutes les années, pour que les indications des différents tableaux (p. ex. 1-Données de cas et 3-Traitements) puissent être reliés."@fr,
+        "Numero. Questo identificatore deve essere lo stesso nell'intero set di dati e restare invariato nel tempo, in modo da poter collegare tra loro i dati di diverse tabelle (p. es. 1-Dati del caso e 3-Trattamenti)."@it ;
+    dcterms:identifier "fall_id" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db76ed-5387-f9b6-9933-983b133eef89/description> ;
+    QB:order 1 ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eindeutiger Identifikator des Falls"@de,
+        "Identificateur unique du cas"@fr,
+        "Identificatore univoco del caso"@it ;
+    sh:path i14y:fall_id .
+
+i14y:grund_wiedereintritt a QB:CodedProperty,
+        QB:MeasureProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1b4d-a6fe-82ac-0f6b1eb7f0c8/description> ;
+    dcterms:description "Handelt es sich bei der Episode um die Zeit zwischen einen Zwischenaustritt und einen Wiedereintritt ist der Grund des Wiedereintritts anzugeben. leer = (default) Für die institutionelle Abgrenzung gilt die burnr_gesv."@de,
+        "S’il s’agit d’un épisode couvrant la durée entre une sortie intermédiaire et une réadmission, il faut indiquer la raison de la réadmission. vide = (par défaut) Pour la délimitation institutionnelle c'est la burnr_gesv qui s'applique."@fr,
+        "Se l'episodio riguarda il periodo intercorso tra una dimissione intermedia e una riammissione va indicato il motivo della riammissione. vuoto = (per default) Per la delimitazione istituzionale si applica il burnr_gesv."@it ;
+    dcterms:identifier "grund_wiedereintritt" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1b4d-a6fe-82ac-0f6b1eb7f0c8/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1b4d-a6fe-82ac-0f6b1eb7f0c8/description> ;
+    QB:order 10 ;
+    sh:name "Grund des Wiedereintrittes"@de,
+        "Raison de la réadmission"@fr,
+        "Motivo della riammissione"@it ;
+    sh:path i14y:grund_wiedereintritt .
+
+i14y:wiedereintritt_aufenhalt a QB:CodedProperty,
+        QB:DimensionProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1a4c-110d-9d03-8a77857b1c8e/description> ;
+    dcterms:description "Handelt es sich bei der Episode um die Zeit zwischen einen Zwischenaustritt und einen Wiedereintritt ist der Aufenthaltsort nach dem Zwischenaustritt anzugeben. Für die institutionelle Abgrenzung gilt bei den Ausprägungen 4, 44, 5, 55, 6 und 66 die burnr_gesv."@de,
+        "S’il s’agit d’un épisode couvrant la durée entre une sortie intermédiaire et une réadmission, il faut indiquer le site du séjour après la sortie intermédiaire. Pour la délimitation institutionnelle, le burnr_gesv s'applique aux valeurs 4, 44, 5, 55, 6 et 66."@fr,
+        "Se l'episodio riguarda il periodo intercorso tra una dimissione intermedia e una riammissione, va indicato il luogo di residenza successivo alla dimissione intermedia. Per la delimitazione istituzionale, burnr_gesv si applica ai valori 4, 44 5, 55, 6, e 66."@it ;
+    dcterms:identifier "wiedereintritt_aufenhalt" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1a4c-110d-9d03-8a77857b1c8e/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08db76eb-1a4c-110d-9d03-8a77857b1c8e/description> ;
+    QB:order 5 ;
+    sh:name "Aufenthaltsort nach dem Zwischenaustritt"@de,
+        "Site du séjour après la sortie intermédiaire"@fr,
+        "Luogo di soggiorno dopo la dimissione intermedia"@it ;
+    sh:path i14y:wiedereintritt_aufenhalt .
+
