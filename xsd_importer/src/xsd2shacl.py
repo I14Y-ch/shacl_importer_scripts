@@ -692,7 +692,7 @@ def generate_shacl(xsd_root):
             # Handle attributes
             if 'attributes' in facets:
                 for attr_name, attribute in facets['attributes'].items():
-                    handle_attribute(attribute, xsd_root, g, node_shape, type_name)
+                    handle_attribute(attribute, xsd_root, g, node_shape)
             
             g.add((node_shape, SH.closed, Literal(True)))
 
