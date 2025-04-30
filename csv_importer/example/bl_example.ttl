@@ -1,0 +1,44 @@
+@prefix i14y: <http://i14y.admin.ch/ns#/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:Gemeinnützige_Wohnungen a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "Gemeinnützige Wohnungen nach Zimmerzahl, Gemeinde und Jahr (seit 2016)"@de ;
+    sh:property i14y:ANZAHL,
+        i14y:BFS_Gemeindenummer,
+        i14y:Gemeinde,
+        i14y:Jahr,
+        i14y:Zimmerzahl .
+
+i14y:ANZAHL a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:maxInclusive 469 ;
+    sh:minInclusive 1 ;
+    sh:name "ANZAHL"@de ;
+    sh:path i14y:ANZAHL .
+
+i14y:BFS_Gemeindenummer a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:maxInclusive 2891 ;
+    sh:minInclusive 2761 ;
+    sh:name "BFS_Gemeindenummer"@de ;
+    sh:path i14y:BFS_Gemeindenummer .
+
+i14y:Gemeinde a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:name "Gemeinde"@de ;
+    sh:path i14y:Gemeinde .
+
+i14y:Jahr a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:name "Jahr"@de ;
+    sh:path i14y:Jahr .
+
+i14y:Zimmerzahl a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:maxInclusive 9 ;
+    sh:minInclusive 1 ;
+    sh:name "Zimmerzahl"@de ;
+    sh:path i14y:Zimmerzahl .
+
