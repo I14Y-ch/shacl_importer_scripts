@@ -95,26 +95,13 @@ class CSVToSHACL:
         # Add language tag to name if default language is set
         if self.default_lang:
             self.g.add((property_uri, SH.name, Literal(property_name, lang=self.default_lang)))
+            
         else:
             self.g.add((property_uri, SH.name, Literal(property_name)))
+        self.g.add((node_shape, SH.property, property_uri))
+  
         
-        # Handle string values with language tags
-        if property_type == XSD.string and self.default_lang:
-            distinct_values = {v.strip() for v in values if v.strip()}
-            if 1 < len(distinct_values) <= 10:
-                value_list = URIRef(f"{property_uri}_values")
-                self.g.add((value_list, RDF.type, RDF.List))
-                current = value_list
-                for i, val in enumerate(distinct_values):
-                    lit = Literal(val, lang=self.default_lang)  # Add language tag here
-                    self.g.add((current, RDF.first, lit))
-                    if i < len(distinct_values) - 1:
-                        next_node = URIRef(f"{property_uri}_values_{i}")
-                        self.g.add((current, RDF.rest, next_node))
-                        current = next_node
-                    else:
-                        self.g.add((current, RDF.rest, RDF.nil))
-                self.g.add((property_uri, SH["in"], value_list))
+ 
         
     def transform_csv_to_shacl(self, csv_file: str, 
                             node_shape_name: Optional[str] = None) -> bool:
@@ -141,10 +128,15 @@ class CSVToSHACL:
                     node_shape_name = Path(csv_file).stem  
                 node_shape_uri = URIRef(f"{self.base_uri}{node_shape_name}Shape")
                 self.g.add((node_shape_uri, RDF.type, SH.NodeShape))
-                self.g.add((node_shape_uri, SH.name, Literal(node_shape_name)))
+         
+                if self.default_lang:
+                    self.g.add((node_shape_uri, SH.name, Literal(node_shape_name, lang=self.default_lang)))
+                    
+                else:
+                    self.g.add((property_uri, SH.name, Literal(property_name)))
                 
                 # Add closed shape (only defined properties allowed)
-                self.g.add((node_shape_uri, SH.closed, Literal(False)))
+                self.g.add((node_shape_uri, SH.closed, Literal(True)))
                 
                 for column in reader.fieldnames:
                     # Clean column name by removing BOM if present
@@ -175,10 +167,10 @@ if __name__ == "__main__":
     
     transformer = CSVToSHACL(base_uri, default_lang="de" )
     
-    input_csv = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/12070.csv"
+    input_csv = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/10660.csv"
     output_ttl = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/shapes.ttl"
 
-    node_shape_name = None # Optional - will use filename if None else you can state the file name "file_name"
+    node_shape_name = "Datensatz-Katalog" # Optional - will use filename if None else you can state the file name "file_name"
     
 
     if transformer.transform_csv_to_shacl(input_csv, node_shape_name):
