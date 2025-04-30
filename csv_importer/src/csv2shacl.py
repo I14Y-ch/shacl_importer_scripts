@@ -9,17 +9,16 @@ from urllib.parse import quote
 class CSVToSHACL:
     """Class to transform CSV files to SHACL shapes."""
     
-    def __init__(self, base_uri: str = "http://example.org/"):
+    def __init__(self, base_uri: str = "http://example.org/", default_lang: str = None):
         """Initialize the transformer with namespaces and RDF graph.
         
         Args:
             base_uri: Base URI for resources (default: "http://example.org/")
+            default_lang: Default language tag for string literals (e.g., "de")
         """
         self.g = Graph()
-        # Ensure base_uri ends with either / or #
-        if not base_uri.endswith(('/', '#')):
-            base_uri += '/'
-        self.base_uri = base_uri
+        self.base_uri = base_uri.rstrip('/') + '/'
+        self.default_lang = default_lang
         self._initialize_namespaces()
         
     def _initialize_namespaces(self) -> None:
@@ -80,44 +79,34 @@ class CSVToSHACL:
 
     def _add_property_shape(self, node_shape: URIRef, property_name: str, 
                         property_type: URIRef, values: List[str]) -> None:
-            """Add a property shape to the node shape with enhanced constraints."""
-            # Clean and encode the property name
-             # Create a safe property name (keep it readable)
-            safe_property_name = (
-                property_name.strip()
-                .replace(' ', '_')  # Replace spaces with underscores
-                .replace('.', '_')   # Replace dots with underscores
-                .replace('ä', 'ae')  # Replace German umlauts
-                .replace('ö', 'oe')
-                .replace('ü', 'ue')
-                .replace('Ä', 'Ae')
-                .replace('Ö', 'Oe')
-                .replace('Ü', 'Ue')
-                .replace('ß', 'ss')
-            )
-            
-            # Create URI without URL encoding (more readable)
-            property_uri = URIRef(f"{self.base_uri}{safe_property_name}")
-                
-            self.g.add((property_uri, RDF.type, SH.PropertyShape))
-            self.g.add((property_uri, SH.path, property_uri))
-            self.g.add((property_uri, SH.datatype, property_type))
+        """Add a property shape to the node shape with enhanced constraints."""
+        # Create a safe property name
+        safe_property_name = (
+            property_name.strip()
+            .replace(' ', '_')
+            .replace('.', '_')
+        )
+        property_uri = URIRef(f"{self.base_uri}{safe_property_name}")
+        
+        self.g.add((property_uri, RDF.type, SH.PropertyShape))
+        self.g.add((property_uri, SH.path, property_uri))
+        self.g.add((property_uri, SH.datatype, property_type))
+        
+        # Add language tag to name if default language is set
+        if self.default_lang:
+            self.g.add((property_uri, SH.name, Literal(property_name, lang=self.default_lang)))
+        else:
             self.g.add((property_uri, SH.name, Literal(property_name)))
-            
-            # Add maxLength for strings
-            if property_type == XSD.string:
-                max_len = max(len(v) for v in values if v.strip())
-                self.g.add((property_uri, SH.maxLength, Literal(max_len)))
-            
-            # Add value constraints for small sets of distinct values
+        
+        # Handle string values with language tags
+        if property_type == XSD.string and self.default_lang:
             distinct_values = {v.strip() for v in values if v.strip()}
             if 1 < len(distinct_values) <= 10:
-                # Add sh:in for enumerations
                 value_list = URIRef(f"{property_uri}_values")
                 self.g.add((value_list, RDF.type, RDF.List))
                 current = value_list
                 for i, val in enumerate(distinct_values):
-                    lit = Literal(val, datatype=property_type)
+                    lit = Literal(val, lang=self.default_lang)  # Add language tag here
                     self.g.add((current, RDF.first, lit))
                     if i < len(distinct_values) - 1:
                         next_node = URIRef(f"{property_uri}_values_{i}")
@@ -126,16 +115,7 @@ class CSVToSHACL:
                     else:
                         self.g.add((current, RDF.rest, RDF.nil))
                 self.g.add((property_uri, SH["in"], value_list))
-            
-            # Add numeric range constraints
-            if property_type in (XSD.integer, XSD.decimal):
-                numeric_values = [float(v) for v in values if v.strip()]
-                if numeric_values:
-                    self.g.add((property_uri, SH.minInclusive, Literal(min(numeric_values))))
-                    self.g.add((property_uri, SH.maxInclusive, Literal(max(numeric_values))))
         
-            self.g.add((node_shape, SH.property, property_uri))
-    
     def transform_csv_to_shacl(self, csv_file: str, 
                             node_shape_name: Optional[str] = None) -> bool:
         """Transform a CSV file to SHACL.
@@ -191,12 +171,16 @@ class CSVToSHACL:
 
 
 if __name__ == "__main__":
-    transformer = CSVToSHACL(base_uri="http://i14y.admin.ch/ns#")
+    base_uri = "http://i14y.admin.ch/ns#"
+    
+    transformer = CSVToSHACL(base_uri, default_lang="de" )
     
     input_csv = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/12070.csv"
     output_ttl = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/shapes.ttl"
-    node_shape_name = None # Optional - will use filename if None
+
+    node_shape_name = None # Optional - will use filename if None else you can state the file name "file_name"
     
+
     if transformer.transform_csv_to_shacl(input_csv, node_shape_name):
         transformer.save_shacl(output_ttl)
     else:
