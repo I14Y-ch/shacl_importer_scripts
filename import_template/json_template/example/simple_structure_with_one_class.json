@@ -13,9 +13,6 @@
           "name",
           "statusDate"
         ],
-        "has_relation":[
-        "postOfficeBoxAddress"
-        ], 
         "closed": true,
           "modified": "2023-09-05T00:00:00",
           "created": "2022-09-05T00:00:00",
@@ -70,19 +67,6 @@
         "conformsTo": "https://www.i14y.admin.ch/en/catalog/concepts/08d93fba-3ba9-b231-a072-21f51c2cc731/description"
       }
     ], 
-    "relations": [
-        {
-            "identifier": "postOfficeBoxAddress",
-            "names": {
-              "en": "Post Office Box Address"
-            },
-            "class": "postOfficeBoxAddressType", 
-            "constraints": {
-                "minCount": 1,
-                "maxCount": 1
-              }
-          }
-    ]
 }
 ]
   }
