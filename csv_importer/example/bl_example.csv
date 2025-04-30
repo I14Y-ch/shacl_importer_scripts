@@ -1,0 +1,921 @@
+Jahr;BFS_Gemeindenummer;Gemeinde;Zimmerzahl;ANZAHL
+2016;2761;Aesch (BL);1;1
+2016;2761;Aesch (BL);2;8
+2016;2761;Aesch (BL);3;17
+2016;2761;Aesch (BL);4;14
+2016;2761;Aesch (BL);5;4
+2016;2762;Allschwil;1;3
+2016;2762;Allschwil;2;95
+2016;2762;Allschwil;3;173
+2016;2762;Allschwil;4;112
+2016;2762;Allschwil;5;20
+2016;2762;Allschwil;6;1
+2016;2763;Arlesheim;2;7
+2016;2763;Arlesheim;3;57
+2016;2763;Arlesheim;4;33
+2016;2763;Arlesheim;5;2
+2016;2764;Biel-Benken;2;7
+2016;2764;Biel-Benken;3;6
+2016;2764;Biel-Benken;4;2
+2016;2765;Binningen;2;39
+2016;2765;Binningen;3;115
+2016;2765;Binningen;4;107
+2016;2765;Binningen;5;10
+2016;2766;Birsfelden;2;55
+2016;2766;Birsfelden;3;461
+2016;2766;Birsfelden;4;320
+2016;2767;Bottmingen;2;7
+2016;2767;Bottmingen;3;29
+2016;2767;Bottmingen;4;26
+2016;2767;Bottmingen;6;4
+2016;2767;Bottmingen;7;6
+2016;2767;Bottmingen;8;9
+2016;2768;Ettingen;3;3
+2016;2768;Ettingen;4;18
+2016;2768;Ettingen;5;3
+2016;2769;Münchenstein;1;3
+2016;2769;Münchenstein;2;10
+2016;2769;Münchenstein;3;83
+2016;2769;Münchenstein;4;90
+2016;2769;Münchenstein;5;5
+2016;2770;Muttenz;1;5
+2016;2770;Muttenz;2;26
+2016;2770;Muttenz;3;232
+2016;2770;Muttenz;4;252
+2016;2770;Muttenz;5;65
+2016;2770;Muttenz;6;10
+2016;2770;Muttenz;7;3
+2016;2770;Muttenz;8;3
+2016;2770;Muttenz;9;2
+2016;2771;Oberwil (BL);1;6
+2016;2771;Oberwil (BL);2;57
+2016;2771;Oberwil (BL);3;54
+2016;2771;Oberwil (BL);4;46
+2016;2771;Oberwil (BL);5;15
+2016;2771;Oberwil (BL);6;1
+2016;2773;Reinach (BL);2;2
+2016;2773;Reinach (BL);3;94
+2016;2773;Reinach (BL);4;97
+2016;2775;Therwil;2;3
+2016;2775;Therwil;3;6
+2016;2775;Therwil;4;3
+2016;2787;Laufen;1;1
+2016;2787;Laufen;2;7
+2016;2787;Laufen;3;10
+2016;2787;Laufen;4;30
+2016;2787;Laufen;5;25
+2016;2787;Laufen;6;2
+2016;2792;Wahlen;2;6
+2016;2792;Wahlen;3;4
+2016;2792;Wahlen;4;6
+2016;2792;Wahlen;5;2
+2016;2793;Zwingen;1;1
+2016;2793;Zwingen;2;15
+2016;2793;Zwingen;3;7
+2016;2793;Zwingen;4;2
+2016;2824;Frenkendorf;3;12
+2016;2824;Frenkendorf;4;22
+2016;2824;Frenkendorf;5;11
+2016;2828;Lausen;1;8
+2016;2828;Lausen;2;16
+2016;2828;Lausen;3;6
+2016;2828;Lausen;4;20
+2016;2828;Lausen;5;2
+2016;2829;Liestal;3;7
+2016;2829;Liestal;4;60
+2016;2829;Liestal;5;2
+2016;2831;Pratteln;1;27
+2016;2831;Pratteln;2;65
+2016;2831;Pratteln;3;156
+2016;2831;Pratteln;4;119
+2016;2831;Pratteln;5;5
+2016;2831;Pratteln;6;1
+2016;2842;Böckten;2;6
+2016;2842;Böckten;3;9
+2016;2842;Böckten;4;9
+2016;2846;Gelterkinden;2;3
+2016;2846;Gelterkinden;3;3
+2016;2846;Gelterkinden;4;3
+2016;2849;Itingen;2;5
+2016;2849;Itingen;3;7
+2016;2853;Maisprach;2;1
+2016;2853;Maisprach;3;3
+2016;2853;Maisprach;4;2
+2016;2856;Ormalingen;2;6
+2016;2856;Ormalingen;3;16
+2016;2856;Ormalingen;4;12
+2016;2856;Ormalingen;5;4
+2016;2857;Rickenbach (BL);1;2
+2016;2857;Rickenbach (BL);2;4
+2016;2857;Rickenbach (BL);3;4
+2016;2861;Sissach;4;6
+2016;2861;Sissach;5;6
+2016;2862;Tecknau;4;9
+2016;2862;Tecknau;5;3
+2016;2882;Bennwil;3;3
+2016;2882;Bennwil;4;6
+2016;2886;Hölstein;2;1
+2016;2886;Hölstein;3;6
+2016;2886;Hölstein;4;50
+2016;2886;Hölstein;5;7
+2016;2888;Langenbruck;2;2
+2016;2888;Langenbruck;3;6
+2016;2888;Langenbruck;4;8
+2016;2891;Niederdorf;1;3
+2016;2891;Niederdorf;2;4
+2016;2891;Niederdorf;3;21
+2016;2891;Niederdorf;4;28
+2017;2761;Aesch (BL);1;1
+2017;2761;Aesch (BL);2;8
+2017;2761;Aesch (BL);3;17
+2017;2761;Aesch (BL);4;14
+2017;2761;Aesch (BL);5;4
+2017;2762;Allschwil;1;3
+2017;2762;Allschwil;2;95
+2017;2762;Allschwil;3;173
+2017;2762;Allschwil;4;112
+2017;2762;Allschwil;5;20
+2017;2762;Allschwil;6;1
+2017;2763;Arlesheim;2;7
+2017;2763;Arlesheim;3;57
+2017;2763;Arlesheim;4;33
+2017;2763;Arlesheim;5;2
+2017;2764;Biel-Benken;2;7
+2017;2764;Biel-Benken;3;6
+2017;2764;Biel-Benken;4;2
+2017;2765;Binningen;2;40
+2017;2765;Binningen;3;113
+2017;2765;Binningen;4;108
+2017;2765;Binningen;5;10
+2017;2766;Birsfelden;2;55
+2017;2766;Birsfelden;3;461
+2017;2766;Birsfelden;4;320
+2017;2767;Bottmingen;2;7
+2017;2767;Bottmingen;3;29
+2017;2767;Bottmingen;4;26
+2017;2767;Bottmingen;6;4
+2017;2767;Bottmingen;7;6
+2017;2767;Bottmingen;8;9
+2017;2768;Ettingen;3;3
+2017;2768;Ettingen;4;18
+2017;2768;Ettingen;5;3
+2017;2769;Münchenstein;1;3
+2017;2769;Münchenstein;2;10
+2017;2769;Münchenstein;3;83
+2017;2769;Münchenstein;4;90
+2017;2769;Münchenstein;5;5
+2017;2770;Muttenz;1;5
+2017;2770;Muttenz;2;26
+2017;2770;Muttenz;3;232
+2017;2770;Muttenz;4;252
+2017;2770;Muttenz;5;65
+2017;2770;Muttenz;6;10
+2017;2770;Muttenz;7;3
+2017;2770;Muttenz;8;3
+2017;2770;Muttenz;9;2
+2017;2771;Oberwil (BL);1;6
+2017;2771;Oberwil (BL);2;57
+2017;2771;Oberwil (BL);3;54
+2017;2771;Oberwil (BL);4;46
+2017;2771;Oberwil (BL);5;15
+2017;2771;Oberwil (BL);6;1
+2017;2773;Reinach (BL);2;2
+2017;2773;Reinach (BL);3;94
+2017;2773;Reinach (BL);4;97
+2017;2775;Therwil;2;3
+2017;2775;Therwil;3;6
+2017;2775;Therwil;4;3
+2017;2787;Laufen;1;1
+2017;2787;Laufen;2;7
+2017;2787;Laufen;3;10
+2017;2787;Laufen;4;30
+2017;2787;Laufen;5;25
+2017;2787;Laufen;6;2
+2017;2792;Wahlen;2;6
+2017;2792;Wahlen;3;4
+2017;2792;Wahlen;4;6
+2017;2792;Wahlen;5;2
+2017;2793;Zwingen;1;1
+2017;2793;Zwingen;2;15
+2017;2793;Zwingen;3;7
+2017;2793;Zwingen;4;2
+2017;2824;Frenkendorf;3;12
+2017;2824;Frenkendorf;4;22
+2017;2824;Frenkendorf;5;11
+2017;2828;Lausen;1;8
+2017;2828;Lausen;2;16
+2017;2828;Lausen;3;6
+2017;2828;Lausen;4;20
+2017;2828;Lausen;5;2
+2017;2829;Liestal;3;7
+2017;2829;Liestal;4;60
+2017;2829;Liestal;5;2
+2017;2831;Pratteln;1;27
+2017;2831;Pratteln;2;65
+2017;2831;Pratteln;3;156
+2017;2831;Pratteln;4;119
+2017;2831;Pratteln;5;5
+2017;2831;Pratteln;6;1
+2017;2842;Böckten;2;6
+2017;2842;Böckten;3;9
+2017;2842;Böckten;4;9
+2017;2846;Gelterkinden;2;3
+2017;2846;Gelterkinden;3;3
+2017;2846;Gelterkinden;4;3
+2017;2849;Itingen;2;5
+2017;2849;Itingen;3;7
+2017;2853;Maisprach;2;1
+2017;2853;Maisprach;3;3
+2017;2853;Maisprach;4;2
+2017;2856;Ormalingen;2;6
+2017;2856;Ormalingen;3;16
+2017;2856;Ormalingen;4;12
+2017;2856;Ormalingen;5;4
+2017;2857;Rickenbach (BL);1;1
+2017;2857;Rickenbach (BL);2;5
+2017;2857;Rickenbach (BL);3;4
+2017;2861;Sissach;4;6
+2017;2861;Sissach;5;6
+2017;2862;Tecknau;4;9
+2017;2862;Tecknau;5;3
+2017;2882;Bennwil;3;3
+2017;2882;Bennwil;4;6
+2017;2886;Hölstein;2;1
+2017;2886;Hölstein;3;6
+2017;2886;Hölstein;4;50
+2017;2886;Hölstein;5;7
+2017;2888;Langenbruck;2;2
+2017;2888;Langenbruck;3;6
+2017;2888;Langenbruck;4;8
+2017;2891;Niederdorf;1;3
+2017;2891;Niederdorf;2;4
+2017;2891;Niederdorf;3;22
+2017;2891;Niederdorf;4;28
+2018;2761;Aesch (BL);1;1
+2018;2761;Aesch (BL);2;8
+2018;2761;Aesch (BL);3;17
+2018;2761;Aesch (BL);4;14
+2018;2761;Aesch (BL);5;4
+2018;2762;Allschwil;1;3
+2018;2762;Allschwil;2;95
+2018;2762;Allschwil;3;173
+2018;2762;Allschwil;4;112
+2018;2762;Allschwil;5;20
+2018;2762;Allschwil;6;1
+2018;2763;Arlesheim;2;7
+2018;2763;Arlesheim;3;56
+2018;2763;Arlesheim;4;34
+2018;2763;Arlesheim;5;2
+2018;2764;Biel-Benken;2;7
+2018;2764;Biel-Benken;3;6
+2018;2764;Biel-Benken;4;2
+2018;2765;Binningen;2;40
+2018;2765;Binningen;3;113
+2018;2765;Binningen;4;108
+2018;2765;Binningen;5;10
+2018;2766;Birsfelden;2;55
+2018;2766;Birsfelden;3;461
+2018;2766;Birsfelden;4;320
+2018;2767;Bottmingen;2;7
+2018;2767;Bottmingen;3;29
+2018;2767;Bottmingen;4;26
+2018;2767;Bottmingen;6;4
+2018;2767;Bottmingen;7;6
+2018;2767;Bottmingen;8;9
+2018;2768;Ettingen;3;3
+2018;2768;Ettingen;4;18
+2018;2768;Ettingen;5;3
+2018;2769;Münchenstein;1;3
+2018;2769;Münchenstein;2;10
+2018;2769;Münchenstein;3;83
+2018;2769;Münchenstein;4;90
+2018;2769;Münchenstein;5;5
+2018;2770;Muttenz;1;5
+2018;2770;Muttenz;2;26
+2018;2770;Muttenz;3;232
+2018;2770;Muttenz;4;252
+2018;2770;Muttenz;5;65
+2018;2770;Muttenz;6;10
+2018;2770;Muttenz;7;3
+2018;2770;Muttenz;8;3
+2018;2770;Muttenz;9;2
+2018;2771;Oberwil (BL);1;6
+2018;2771;Oberwil (BL);2;57
+2018;2771;Oberwil (BL);3;54
+2018;2771;Oberwil (BL);4;46
+2018;2771;Oberwil (BL);5;15
+2018;2771;Oberwil (BL);6;1
+2018;2773;Reinach (BL);2;2
+2018;2773;Reinach (BL);3;94
+2018;2773;Reinach (BL);4;97
+2018;2775;Therwil;2;3
+2018;2775;Therwil;3;6
+2018;2775;Therwil;4;3
+2018;2787;Laufen;1;1
+2018;2787;Laufen;2;7
+2018;2787;Laufen;3;10
+2018;2787;Laufen;4;30
+2018;2787;Laufen;5;25
+2018;2787;Laufen;6;2
+2018;2792;Wahlen;2;6
+2018;2792;Wahlen;3;4
+2018;2792;Wahlen;4;6
+2018;2792;Wahlen;5;2
+2018;2793;Zwingen;1;1
+2018;2793;Zwingen;2;15
+2018;2793;Zwingen;3;7
+2018;2793;Zwingen;4;2
+2018;2824;Frenkendorf;3;12
+2018;2824;Frenkendorf;4;22
+2018;2824;Frenkendorf;5;11
+2018;2828;Lausen;1;8
+2018;2828;Lausen;2;16
+2018;2828;Lausen;3;6
+2018;2828;Lausen;4;20
+2018;2828;Lausen;5;2
+2018;2829;Liestal;3;7
+2018;2829;Liestal;4;60
+2018;2829;Liestal;5;2
+2018;2831;Pratteln;1;27
+2018;2831;Pratteln;2;65
+2018;2831;Pratteln;3;156
+2018;2831;Pratteln;4;119
+2018;2831;Pratteln;5;5
+2018;2831;Pratteln;6;1
+2018;2842;Böckten;2;6
+2018;2842;Böckten;3;9
+2018;2842;Böckten;4;9
+2018;2846;Gelterkinden;2;3
+2018;2846;Gelterkinden;3;3
+2018;2846;Gelterkinden;4;3
+2018;2849;Itingen;2;5
+2018;2849;Itingen;3;7
+2018;2853;Maisprach;2;1
+2018;2853;Maisprach;3;3
+2018;2853;Maisprach;4;2
+2018;2856;Ormalingen;2;6
+2018;2856;Ormalingen;3;16
+2018;2856;Ormalingen;4;12
+2018;2856;Ormalingen;5;4
+2018;2857;Rickenbach (BL);1;1
+2018;2857;Rickenbach (BL);2;5
+2018;2857;Rickenbach (BL);3;4
+2018;2861;Sissach;4;6
+2018;2861;Sissach;5;6
+2018;2862;Tecknau;4;9
+2018;2862;Tecknau;5;3
+2018;2882;Bennwil;3;3
+2018;2882;Bennwil;4;6
+2018;2886;Hölstein;2;1
+2018;2886;Hölstein;3;6
+2018;2886;Hölstein;4;50
+2018;2886;Hölstein;5;7
+2018;2888;Langenbruck;2;2
+2018;2888;Langenbruck;3;6
+2018;2888;Langenbruck;4;8
+2018;2891;Niederdorf;1;3
+2018;2891;Niederdorf;2;4
+2018;2891;Niederdorf;3;22
+2018;2891;Niederdorf;4;28
+2019;2761;Aesch (BL);1;1
+2019;2761;Aesch (BL);2;8
+2019;2761;Aesch (BL);3;17
+2019;2761;Aesch (BL);4;14
+2019;2761;Aesch (BL);5;4
+2019;2762;Allschwil;1;3
+2019;2762;Allschwil;2;72
+2019;2762;Allschwil;3;154
+2019;2762;Allschwil;4;106
+2019;2762;Allschwil;5;20
+2019;2762;Allschwil;6;1
+2019;2763;Arlesheim;2;7
+2019;2763;Arlesheim;3;56
+2019;2763;Arlesheim;4;34
+2019;2763;Arlesheim;5;2
+2019;2764;Biel-Benken;2;7
+2019;2764;Biel-Benken;3;6
+2019;2764;Biel-Benken;4;2
+2019;2765;Binningen;2;40
+2019;2765;Binningen;3;113
+2019;2765;Binningen;4;108
+2019;2765;Binningen;5;10
+2019;2766;Birsfelden;2;55
+2019;2766;Birsfelden;3;461
+2019;2766;Birsfelden;4;320
+2019;2767;Bottmingen;2;7
+2019;2767;Bottmingen;3;29
+2019;2767;Bottmingen;4;26
+2019;2767;Bottmingen;6;4
+2019;2767;Bottmingen;7;6
+2019;2767;Bottmingen;8;9
+2019;2768;Ettingen;3;3
+2019;2768;Ettingen;4;18
+2019;2768;Ettingen;5;3
+2019;2769;Münchenstein;1;3
+2019;2769;Münchenstein;2;10
+2019;2769;Münchenstein;3;83
+2019;2769;Münchenstein;4;90
+2019;2769;Münchenstein;5;5
+2019;2770;Muttenz;1;5
+2019;2770;Muttenz;2;29
+2019;2770;Muttenz;3;241
+2019;2770;Muttenz;4;255
+2019;2770;Muttenz;5;65
+2019;2770;Muttenz;6;10
+2019;2770;Muttenz;7;3
+2019;2770;Muttenz;8;3
+2019;2770;Muttenz;9;2
+2019;2771;Oberwil (BL);1;6
+2019;2771;Oberwil (BL);2;57
+2019;2771;Oberwil (BL);3;54
+2019;2771;Oberwil (BL);4;46
+2019;2771;Oberwil (BL);5;15
+2019;2771;Oberwil (BL);6;1
+2019;2773;Reinach (BL);2;2
+2019;2773;Reinach (BL);3;94
+2019;2773;Reinach (BL);4;97
+2019;2775;Therwil;2;3
+2019;2775;Therwil;3;6
+2019;2775;Therwil;4;3
+2019;2787;Laufen;2;8
+2019;2787;Laufen;3;10
+2019;2787;Laufen;4;32
+2019;2787;Laufen;5;25
+2019;2787;Laufen;6;2
+2019;2792;Wahlen;2;6
+2019;2792;Wahlen;3;4
+2019;2792;Wahlen;4;5
+2019;2792;Wahlen;5;3
+2019;2793;Zwingen;1;1
+2019;2793;Zwingen;2;15
+2019;2793;Zwingen;3;7
+2019;2793;Zwingen;4;2
+2019;2824;Frenkendorf;3;12
+2019;2824;Frenkendorf;4;22
+2019;2824;Frenkendorf;5;11
+2019;2828;Lausen;1;8
+2019;2828;Lausen;2;16
+2019;2828;Lausen;3;6
+2019;2828;Lausen;4;20
+2019;2828;Lausen;5;2
+2019;2829;Liestal;3;7
+2019;2829;Liestal;4;60
+2019;2829;Liestal;5;2
+2019;2831;Pratteln;1;27
+2019;2831;Pratteln;2;65
+2019;2831;Pratteln;3;156
+2019;2831;Pratteln;4;119
+2019;2831;Pratteln;5;5
+2019;2831;Pratteln;6;1
+2019;2842;Böckten;2;6
+2019;2842;Böckten;3;9
+2019;2842;Böckten;4;9
+2019;2846;Gelterkinden;2;3
+2019;2846;Gelterkinden;3;3
+2019;2846;Gelterkinden;4;3
+2019;2849;Itingen;2;5
+2019;2849;Itingen;3;7
+2019;2853;Maisprach;2;1
+2019;2853;Maisprach;3;3
+2019;2853;Maisprach;4;2
+2019;2856;Ormalingen;2;6
+2019;2856;Ormalingen;3;16
+2019;2856;Ormalingen;4;12
+2019;2856;Ormalingen;5;4
+2019;2857;Rickenbach (BL);1;1
+2019;2857;Rickenbach (BL);2;5
+2019;2857;Rickenbach (BL);3;4
+2019;2861;Sissach;4;6
+2019;2861;Sissach;5;6
+2019;2862;Tecknau;4;9
+2019;2862;Tecknau;5;3
+2019;2882;Bennwil;3;3
+2019;2882;Bennwil;4;6
+2019;2886;Hölstein;2;1
+2019;2886;Hölstein;3;6
+2019;2886;Hölstein;4;50
+2019;2886;Hölstein;5;7
+2019;2888;Langenbruck;2;2
+2019;2888;Langenbruck;3;6
+2019;2888;Langenbruck;4;8
+2019;2891;Niederdorf;1;3
+2019;2891;Niederdorf;2;4
+2019;2891;Niederdorf;3;22
+2019;2891;Niederdorf;4;28
+2020;2761;Aesch (BL);1;1
+2020;2761;Aesch (BL);2;8
+2020;2761;Aesch (BL);3;17
+2020;2761;Aesch (BL);4;14
+2020;2761;Aesch (BL);5;4
+2020;2762;Allschwil;1;3
+2020;2762;Allschwil;2;72
+2020;2762;Allschwil;3;155
+2020;2762;Allschwil;4;109
+2020;2762;Allschwil;5;20
+2020;2762;Allschwil;6;1
+2020;2763;Arlesheim;2;7
+2020;2763;Arlesheim;3;56
+2020;2763;Arlesheim;4;34
+2020;2763;Arlesheim;5;2
+2020;2764;Biel-Benken;2;7
+2020;2764;Biel-Benken;3;6
+2020;2764;Biel-Benken;4;2
+2020;2765;Binningen;1;2
+2020;2765;Binningen;2;42
+2020;2765;Binningen;3;122
+2020;2765;Binningen;4;116
+2020;2765;Binningen;5;10
+2020;2766;Birsfelden;2;55
+2020;2766;Birsfelden;3;461
+2020;2766;Birsfelden;4;320
+2020;2767;Bottmingen;2;7
+2020;2767;Bottmingen;3;29
+2020;2767;Bottmingen;4;26
+2020;2767;Bottmingen;6;4
+2020;2767;Bottmingen;7;6
+2020;2767;Bottmingen;8;9
+2020;2768;Ettingen;2;9
+2020;2768;Ettingen;3;9
+2020;2768;Ettingen;4;29
+2020;2768;Ettingen;5;3
+2020;2769;Münchenstein;1;3
+2020;2769;Münchenstein;2;10
+2020;2769;Münchenstein;3;83
+2020;2769;Münchenstein;4;90
+2020;2769;Münchenstein;5;5
+2020;2770;Muttenz;1;5
+2020;2770;Muttenz;2;26
+2020;2770;Muttenz;3;232
+2020;2770;Muttenz;4;252
+2020;2770;Muttenz;5;65
+2020;2770;Muttenz;6;10
+2020;2770;Muttenz;7;3
+2020;2770;Muttenz;8;3
+2020;2770;Muttenz;9;2
+2020;2771;Oberwil (BL);1;6
+2020;2771;Oberwil (BL);2;60
+2020;2771;Oberwil (BL);3;62
+2020;2771;Oberwil (BL);4;66
+2020;2771;Oberwil (BL);5;16
+2020;2771;Oberwil (BL);6;1
+2020;2773;Reinach (BL);2;12
+2020;2773;Reinach (BL);3;115
+2020;2773;Reinach (BL);4;106
+2020;2775;Therwil;2;3
+2020;2775;Therwil;3;6
+2020;2775;Therwil;4;3
+2020;2782;Brislach;2;8
+2020;2782;Brislach;3;7
+2020;2787;Laufen;2;14
+2020;2787;Laufen;3;20
+2020;2787;Laufen;4;34
+2020;2787;Laufen;5;25
+2020;2787;Laufen;6;2
+2020;2792;Wahlen;2;6
+2020;2792;Wahlen;3;4
+2020;2792;Wahlen;4;5
+2020;2792;Wahlen;5;3
+2020;2793;Zwingen;1;1
+2020;2793;Zwingen;2;15
+2020;2793;Zwingen;3;7
+2020;2793;Zwingen;4;2
+2020;2824;Frenkendorf;2;4
+2020;2824;Frenkendorf;3;24
+2020;2824;Frenkendorf;4;34
+2020;2824;Frenkendorf;5;11
+2020;2828;Lausen;1;8
+2020;2828;Lausen;2;22
+2020;2828;Lausen;3;18
+2020;2828;Lausen;4;20
+2020;2828;Lausen;5;2
+2020;2829;Liestal;1;2
+2020;2829;Liestal;2;4
+2020;2829;Liestal;3;13
+2020;2829;Liestal;4;64
+2020;2829;Liestal;5;4
+2020;2831;Pratteln;1;27
+2020;2831;Pratteln;2;68
+2020;2831;Pratteln;3;176
+2020;2831;Pratteln;4;119
+2020;2831;Pratteln;5;5
+2020;2831;Pratteln;6;1
+2020;2842;Böckten;2;6
+2020;2842;Böckten;3;9
+2020;2842;Böckten;4;9
+2020;2844;Buus;2;3
+2020;2844;Buus;3;6
+2020;2846;Gelterkinden;2;3
+2020;2846;Gelterkinden;3;3
+2020;2846;Gelterkinden;4;3
+2020;2849;Itingen;2;5
+2020;2849;Itingen;3;7
+2020;2853;Maisprach;2;1
+2020;2853;Maisprach;3;3
+2020;2853;Maisprach;4;2
+2020;2856;Ormalingen;2;6
+2020;2856;Ormalingen;3;16
+2020;2856;Ormalingen;4;12
+2020;2856;Ormalingen;5;4
+2020;2857;Rickenbach (BL);1;1
+2020;2857;Rickenbach (BL);2;5
+2020;2857;Rickenbach (BL);3;4
+2020;2861;Sissach;4;6
+2020;2861;Sissach;5;6
+2020;2862;Tecknau;4;9
+2020;2862;Tecknau;5;3
+2020;2882;Bennwil;3;3
+2020;2882;Bennwil;4;6
+2020;2886;Hölstein;2;1
+2020;2886;Hölstein;3;6
+2020;2886;Hölstein;4;50
+2020;2886;Hölstein;5;7
+2020;2888;Langenbruck;2;2
+2020;2888;Langenbruck;3;6
+2020;2888;Langenbruck;4;8
+2020;2891;Niederdorf;1;3
+2020;2891;Niederdorf;2;4
+2020;2891;Niederdorf;3;22
+2020;2891;Niederdorf;4;28
+2021;2761;Aesch (BL);1;1
+2021;2761;Aesch (BL);2;8
+2021;2761;Aesch (BL);3;17
+2021;2761;Aesch (BL);4;14
+2021;2761;Aesch (BL);5;4
+2021;2762;Allschwil;1;4
+2021;2762;Allschwil;2;86
+2021;2762;Allschwil;3;186
+2021;2762;Allschwil;4;125
+2021;2762;Allschwil;5;23
+2021;2762;Allschwil;6;1
+2021;2763;Arlesheim;2;7
+2021;2763;Arlesheim;3;56
+2021;2763;Arlesheim;4;34
+2021;2763;Arlesheim;5;2
+2021;2764;Biel-Benken;2;7
+2021;2764;Biel-Benken;3;6
+2021;2764;Biel-Benken;4;2
+2021;2765;Binningen;1;2
+2021;2765;Binningen;2;42
+2021;2765;Binningen;3;122
+2021;2765;Binningen;4;116
+2021;2765;Binningen;5;10
+2021;2766;Birsfelden;1;1
+2021;2766;Birsfelden;2;55
+2021;2766;Birsfelden;3;469
+2021;2766;Birsfelden;4;330
+2021;2766;Birsfelden;5;4
+2021;2767;Bottmingen;2;7
+2021;2767;Bottmingen;3;34
+2021;2767;Bottmingen;4;36
+2021;2767;Bottmingen;6;4
+2021;2767;Bottmingen;7;6
+2021;2767;Bottmingen;8;9
+2021;2768;Ettingen;2;9
+2021;2768;Ettingen;3;9
+2021;2768;Ettingen;4;29
+2021;2768;Ettingen;5;3
+2021;2769;Münchenstein;1;3
+2021;2769;Münchenstein;2;16
+2021;2769;Münchenstein;3;91
+2021;2769;Münchenstein;4;93
+2021;2769;Münchenstein;5;5
+2021;2770;Muttenz;1;5
+2021;2770;Muttenz;2;26
+2021;2770;Muttenz;3;232
+2021;2770;Muttenz;4;252
+2021;2770;Muttenz;5;65
+2021;2770;Muttenz;6;10
+2021;2770;Muttenz;7;3
+2021;2770;Muttenz;8;3
+2021;2770;Muttenz;9;2
+2021;2771;Oberwil (BL);1;6
+2021;2771;Oberwil (BL);2;60
+2021;2771;Oberwil (BL);3;62
+2021;2771;Oberwil (BL);4;66
+2021;2771;Oberwil (BL);5;16
+2021;2771;Oberwil (BL);6;1
+2021;2773;Reinach (BL);2;14
+2021;2773;Reinach (BL);3;123
+2021;2773;Reinach (BL);4;106
+2021;2775;Therwil;2;3
+2021;2775;Therwil;3;6
+2021;2775;Therwil;4;3
+2021;2782;Brislach;2;8
+2021;2782;Brislach;3;7
+2021;2787;Laufen;2;14
+2021;2787;Laufen;3;27
+2021;2787;Laufen;4;49
+2021;2787;Laufen;5;25
+2021;2787;Laufen;6;2
+2021;2792;Wahlen;2;6
+2021;2792;Wahlen;3;4
+2021;2792;Wahlen;4;5
+2021;2792;Wahlen;5;3
+2021;2793;Zwingen;1;1
+2021;2793;Zwingen;2;16
+2021;2793;Zwingen;3;7
+2021;2793;Zwingen;4;2
+2021;2824;Frenkendorf;2;4
+2021;2824;Frenkendorf;3;24
+2021;2824;Frenkendorf;4;34
+2021;2824;Frenkendorf;5;11
+2021;2825;Füllinsdorf;3;6
+2021;2825;Füllinsdorf;4;3
+2021;2828;Lausen;1;8
+2021;2828;Lausen;2;22
+2021;2828;Lausen;3;18
+2021;2828;Lausen;4;20
+2021;2828;Lausen;5;2
+2021;2829;Liestal;1;2
+2021;2829;Liestal;2;4
+2021;2829;Liestal;3;13
+2021;2829;Liestal;4;64
+2021;2829;Liestal;5;4
+2021;2831;Pratteln;1;27
+2021;2831;Pratteln;2;74
+2021;2831;Pratteln;3;185
+2021;2831;Pratteln;4;119
+2021;2831;Pratteln;5;5
+2021;2831;Pratteln;6;1
+2021;2842;Böckten;2;6
+2021;2842;Böckten;3;9
+2021;2842;Böckten;4;9
+2021;2844;Buus;2;3
+2021;2844;Buus;3;6
+2021;2846;Gelterkinden;2;4
+2021;2846;Gelterkinden;3;5
+2021;2846;Gelterkinden;4;12
+2021;2846;Gelterkinden;5;5
+2021;2849;Itingen;2;5
+2021;2849;Itingen;3;7
+2021;2853;Maisprach;2;1
+2021;2853;Maisprach;3;3
+2021;2853;Maisprach;4;2
+2021;2856;Ormalingen;2;6
+2021;2856;Ormalingen;3;16
+2021;2856;Ormalingen;4;12
+2021;2856;Ormalingen;5;4
+2021;2857;Rickenbach (BL);1;1
+2021;2857;Rickenbach (BL);2;5
+2021;2857;Rickenbach (BL);3;4
+2021;2861;Sissach;4;6
+2021;2861;Sissach;5;6
+2021;2862;Tecknau;4;9
+2021;2862;Tecknau;5;3
+2021;2882;Bennwil;3;3
+2021;2882;Bennwil;4;6
+2021;2886;Hölstein;2;1
+2021;2886;Hölstein;3;6
+2021;2886;Hölstein;4;50
+2021;2886;Hölstein;5;7
+2021;2888;Langenbruck;2;2
+2021;2888;Langenbruck;3;6
+2021;2888;Langenbruck;4;8
+2021;2891;Niederdorf;1;3
+2021;2891;Niederdorf;2;4
+2021;2891;Niederdorf;3;22
+2021;2891;Niederdorf;4;28
+2022;2761;Aesch (BL);1;1
+2022;2761;Aesch (BL);2;8
+2022;2761;Aesch (BL);3;17
+2022;2761;Aesch (BL);4;14
+2022;2761;Aesch (BL);5;4
+2022;2762;Allschwil;1;4
+2022;2762;Allschwil;2;86
+2022;2762;Allschwil;3;186
+2022;2762;Allschwil;4;125
+2022;2762;Allschwil;5;23
+2022;2762;Allschwil;6;1
+2022;2763;Arlesheim;1;1
+2022;2763;Arlesheim;2;12
+2022;2763;Arlesheim;3;89
+2022;2763;Arlesheim;4;50
+2022;2763;Arlesheim;5;2
+2022;2764;Biel-Benken;2;7
+2022;2764;Biel-Benken;3;6
+2022;2764;Biel-Benken;4;2
+2022;2765;Binningen;1;2
+2022;2765;Binningen;2;42
+2022;2765;Binningen;3;122
+2022;2765;Binningen;4;116
+2022;2765;Binningen;5;10
+2022;2766;Birsfelden;1;1
+2022;2766;Birsfelden;2;55
+2022;2766;Birsfelden;3;469
+2022;2766;Birsfelden;4;330
+2022;2766;Birsfelden;5;4
+2022;2767;Bottmingen;2;7
+2022;2767;Bottmingen;3;33
+2022;2767;Bottmingen;4;36
+2022;2767;Bottmingen;5;1
+2022;2767;Bottmingen;6;4
+2022;2767;Bottmingen;7;6
+2022;2767;Bottmingen;8;9
+2022;2768;Ettingen;2;9
+2022;2768;Ettingen;3;9
+2022;2768;Ettingen;4;29
+2022;2768;Ettingen;5;3
+2022;2769;Münchenstein;1;3
+2022;2769;Münchenstein;2;16
+2022;2769;Münchenstein;3;91
+2022;2769;Münchenstein;4;93
+2022;2769;Münchenstein;5;5
+2022;2770;Muttenz;1;5
+2022;2770;Muttenz;2;26
+2022;2770;Muttenz;3;232
+2022;2770;Muttenz;4;252
+2022;2770;Muttenz;5;65
+2022;2770;Muttenz;6;10
+2022;2770;Muttenz;7;3
+2022;2770;Muttenz;8;3
+2022;2770;Muttenz;9;2
+2022;2771;Oberwil (BL);1;6
+2022;2771;Oberwil (BL);2;60
+2022;2771;Oberwil (BL);3;62
+2022;2771;Oberwil (BL);4;66
+2022;2771;Oberwil (BL);5;16
+2022;2771;Oberwil (BL);6;1
+2022;2773;Reinach (BL);2;14
+2022;2773;Reinach (BL);3;123
+2022;2773;Reinach (BL);4;106
+2022;2775;Therwil;2;3
+2022;2775;Therwil;3;6
+2022;2775;Therwil;4;3
+2022;2782;Brislach;2;8
+2022;2782;Brislach;3;7
+2022;2787;Laufen;2;14
+2022;2787;Laufen;3;27
+2022;2787;Laufen;4;49
+2022;2787;Laufen;5;25
+2022;2787;Laufen;6;2
+2022;2792;Wahlen;2;6
+2022;2792;Wahlen;3;4
+2022;2792;Wahlen;4;5
+2022;2792;Wahlen;5;3
+2022;2793;Zwingen;1;1
+2022;2793;Zwingen;2;16
+2022;2793;Zwingen;3;7
+2022;2793;Zwingen;4;2
+2022;2824;Frenkendorf;2;4
+2022;2824;Frenkendorf;3;24
+2022;2824;Frenkendorf;4;34
+2022;2824;Frenkendorf;5;11
+2022;2825;Füllinsdorf;3;6
+2022;2825;Füllinsdorf;4;3
+2022;2828;Lausen;1;8
+2022;2828;Lausen;2;22
+2022;2828;Lausen;3;18
+2022;2828;Lausen;4;20
+2022;2828;Lausen;5;2
+2022;2829;Liestal;1;2
+2022;2829;Liestal;2;4
+2022;2829;Liestal;3;13
+2022;2829;Liestal;4;64
+2022;2829;Liestal;5;4
+2022;2831;Pratteln;1;27
+2022;2831;Pratteln;2;74
+2022;2831;Pratteln;3;185
+2022;2831;Pratteln;4;119
+2022;2831;Pratteln;5;5
+2022;2831;Pratteln;6;1
+2022;2842;Böckten;2;6
+2022;2842;Böckten;3;9
+2022;2842;Böckten;4;9
+2022;2844;Buus;2;3
+2022;2844;Buus;3;6
+2022;2846;Gelterkinden;2;4
+2022;2846;Gelterkinden;3;5
+2022;2846;Gelterkinden;4;12
+2022;2846;Gelterkinden;5;5
+2022;2849;Itingen;2;5
+2022;2849;Itingen;3;7
+2022;2853;Maisprach;2;1
+2022;2853;Maisprach;3;3
+2022;2853;Maisprach;4;2
+2022;2856;Ormalingen;2;6
+2022;2856;Ormalingen;3;16
+2022;2856;Ormalingen;4;12
+2022;2856;Ormalingen;5;4
+2022;2857;Rickenbach (BL);1;1
+2022;2857;Rickenbach (BL);2;5
+2022;2857;Rickenbach (BL);3;4
+2022;2861;Sissach;1;6
+2022;2861;Sissach;2;19
+2022;2861;Sissach;3;5
+2022;2861;Sissach;4;6
+2022;2861;Sissach;5;6
+2022;2862;Tecknau;4;9
+2022;2862;Tecknau;5;3
+2022;2882;Bennwil;3;3
+2022;2882;Bennwil;4;6
+2022;2886;Hölstein;2;1
+2022;2886;Hölstein;3;6
+2022;2886;Hölstein;4;50
+2022;2886;Hölstein;5;7
+2022;2888;Langenbruck;2;2
+2022;2888;Langenbruck;3;6
+2022;2888;Langenbruck;4;8
+2022;2891;Niederdorf;1;3
+2022;2891;Niederdorf;2;4
+2022;2891;Niederdorf;3;22
+2022;2891;Niederdorf;4;28
