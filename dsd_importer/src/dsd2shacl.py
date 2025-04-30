@@ -113,7 +113,7 @@ class DSD2SHACLTransformer:
         
         # Add basic properties
         self.g.add((property_node, RDF.type, self.sh.PropertyShape))
-        self.g.add((property_node, self.QB.order, Literal(entry.get('position', 'N/A'))))
+        self.g.add((property_node, self.sh.order, Literal(entry.get('position', 'N/A'))))
         self.g.add((property_node, self.DCTERMS.identifier, Literal(identifier)))
         self.g.add((property_node, self.sh.path, URIRef(f"{self.i14y}{identifier}")))
         
