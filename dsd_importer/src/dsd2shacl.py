@@ -202,5 +202,5 @@ class DSD2SHACLTransformer:
 if __name__ == "__main__":
     DSD_transformer = DSD2SHACLTransformer()
     dsd_id = "08dbc5a0-9aa6-2c7a-9bc0-17e1ef0a7723"
-    output_directory = "example"
+    output_directory = "dsd_importer/example/"
     DSD_transformer.transform_to_shacl(dsd_id, output_directory)
