@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Optional, Dict, List, Set
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import RDF, XSD, SH, RDFS
+from urllib.parse import quote
 
 
 class CSVToSHACL:
@@ -15,7 +16,10 @@ class CSVToSHACL:
             base_uri: Base URI for resources (default: "http://example.org/")
         """
         self.g = Graph()
-        self.base_uri = base_uri.rstrip('/') + '/'  
+        # Ensure base_uri ends with either / or #
+        if not base_uri.endswith(('/', '#')):
+            base_uri += '/'
+        self.base_uri = base_uri
         self._initialize_namespaces()
         
     def _initialize_namespaces(self) -> None:
@@ -73,66 +77,67 @@ class CSVToSHACL:
             return XSD.date
             
         return XSD.string
-    
+
     def _add_property_shape(self, node_shape: URIRef, property_name: str, 
-                          property_type: URIRef, values: List[str]) -> None:
-        """Add a property shape to the node shape with enhanced constraints.
+                        property_type: URIRef, values: List[str]) -> None:
+            """Add a property shape to the node shape with enhanced constraints."""
+            # Clean and encode the property name
+             # Create a safe property name (keep it readable)
+            safe_property_name = (
+                property_name.strip()
+                .replace(' ', '_')  # Replace spaces with underscores
+                .replace('.', '_')   # Replace dots with underscores
+                .replace('ä', 'ae')  # Replace German umlauts
+                .replace('ö', 'oe')
+                .replace('ü', 'ue')
+                .replace('Ä', 'Ae')
+                .replace('Ö', 'Oe')
+                .replace('Ü', 'Ue')
+                .replace('ß', 'ss')
+            )
+            
+            # Create URI without URL encoding (more readable)
+            property_uri = URIRef(f"{self.base_uri}{safe_property_name}")
+                
+            self.g.add((property_uri, RDF.type, SH.PropertyShape))
+            self.g.add((property_uri, SH.path, property_uri))
+            self.g.add((property_uri, SH.datatype, property_type))
+            self.g.add((property_uri, SH.name, Literal(property_name)))
+            
+            # Add maxLength for strings
+            if property_type == XSD.string:
+                max_len = max(len(v) for v in values if v.strip())
+                self.g.add((property_uri, SH.maxLength, Literal(max_len)))
+            
+            # Add value constraints for small sets of distinct values
+            distinct_values = {v.strip() for v in values if v.strip()}
+            if 1 < len(distinct_values) <= 10:
+                # Add sh:in for enumerations
+                value_list = URIRef(f"{property_uri}_values")
+                self.g.add((value_list, RDF.type, RDF.List))
+                current = value_list
+                for i, val in enumerate(distinct_values):
+                    lit = Literal(val, datatype=property_type)
+                    self.g.add((current, RDF.first, lit))
+                    if i < len(distinct_values) - 1:
+                        next_node = URIRef(f"{property_uri}_values_{i}")
+                        self.g.add((current, RDF.rest, next_node))
+                        current = next_node
+                    else:
+                        self.g.add((current, RDF.rest, RDF.nil))
+                self.g.add((property_uri, SH["in"], value_list))
+            
+            # Add numeric range constraints
+            if property_type in (XSD.integer, XSD.decimal):
+                numeric_values = [float(v) for v in values if v.strip()]
+                if numeric_values:
+                    self.g.add((property_uri, SH.minInclusive, Literal(min(numeric_values))))
+                    self.g.add((property_uri, SH.maxInclusive, Literal(max(numeric_values))))
         
-        Args:
-            node_shape: URI of the node shape
-            property_name: Name of the property (dots replaced with underscores)
-            property_type: XSD datatype for the property
-            values: Sample values for the property
-        """
-        # Replace dots with underscores in property name
-        safe_property_name = property_name.replace('.', '_')
-        property_uri = URIRef(f"{self.base_uri}{safe_property_name}")
-        
- 
-        self.g.add((property_uri, RDF.type, SH.PropertyShape))
-        self.g.add((property_uri, SH.path, property_uri))
-        self.g.add((property_uri, SH.datatype, property_type))
-        self.g.add((property_uri, SH.name, Literal(property_name)))
-        
-        # # Add min/max count based on null values
-        # null_count = sum(1 for v in values if not v.strip())
-        # if null_count == 0:
-        #     self.g.add((property_uri, SH.minCount, Literal(1)))
-        
-        # Add maxLength for strings
-        if property_type == XSD.string:
-            max_len = max(len(v) for v in values if v.strip())
-            self.g.add((property_uri, SH.maxLength, Literal(max_len)))
-        
-        # Add value constraints for small sets of distinct values
-        distinct_values = {v.strip() for v in values if v.strip()}
-        if 1 < len(distinct_values) <= 10:
-            # Add sh:in for enumerations
-            value_list = URIRef(f"{property_uri}_values")
-            self.g.add((value_list, RDF.type, RDF.List))
-            current = value_list
-            for i, val in enumerate(distinct_values):
-                lit = Literal(val, datatype=property_type)
-                self.g.add((current, RDF.first, lit))
-                if i < len(distinct_values) - 1:
-                    next_node = URIRef(f"{property_uri}_values_{i}")
-                    self.g.add((current, RDF.rest, next_node))
-                    current = next_node
-                else:
-                    self.g.add((current, RDF.rest, RDF.nil))
-            self.g.add((property_uri, SH["in"], value_list))
-        
-        # Add numeric range constraints
-        if property_type in (XSD.integer, XSD.decimal):
-            numeric_values = [float(v) for v in values if v.strip()]
-            if numeric_values:
-                self.g.add((property_uri, SH.minInclusive, Literal(min(numeric_values))))
-                self.g.add((property_uri, SH.maxInclusive, Literal(max(numeric_values))))
-      
-        self.g.add((node_shape, SH.property, property_uri))
+            self.g.add((node_shape, SH.property, property_uri))
     
     def transform_csv_to_shacl(self, csv_file: str, 
-                             node_shape_name: Optional[str] = None) -> bool:
+                            node_shape_name: Optional[str] = None) -> bool:
         """Transform a CSV file to SHACL.
         
         Args:
@@ -143,8 +148,9 @@ class CSVToSHACL:
             True if transformation succeeded, False otherwise
         """
         try:
-            with open(csv_file, 'r', encoding='utf-8') as f:
-                reader = csv.DictReader(f)
+            with open(csv_file, 'r', encoding='utf-8-sig') as f:  # Note: utf-8-sig to handle BOM
+                reader = csv.DictReader(f, delimiter=';')  # Explicitly specify semicolon delimiter
+                
                 rows = list(reader)
                 
                 if not rows:
@@ -161,9 +167,11 @@ class CSVToSHACL:
                 self.g.add((node_shape_uri, SH.closed, Literal(False)))
                 
                 for column in reader.fieldnames:
-                    values = [row[column] for row in rows if row[column] is not None]
+                    # Clean column name by removing BOM if present
+                    clean_column = column.replace('\ufeff', '').strip()
+                    values = [row[clean_column] for row in rows if clean_column in row and row[clean_column] is not None]
                     prop_type = self._guess_property_type(values)
-                    self._add_property_shape(node_shape_uri, column, prop_type, values)
+                    self._add_property_shape(node_shape_uri, clean_column, prop_type, values)
                 
                 return True
                 
@@ -185,9 +193,9 @@ class CSVToSHACL:
 if __name__ == "__main__":
     transformer = CSVToSHACL(base_uri="http://i14y.admin.ch/ns#")
     
-    input_csv = "example/iris.csv"
-    output_ttl = "example/shapes.ttl"
-    node_shape_name = "Iris" # Optional - will use filename if None
+    input_csv = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/12070.csv"
+    output_ttl = "c:/Users/U80877014/Documents/Structure/shacl_importer/csv_importer/example_csv/shapes.ttl"
+    node_shape_name = None # Optional - will use filename if None
     
     if transformer.transform_csv_to_shacl(input_csv, node_shape_name):
         transformer.save_shacl(output_ttl)
