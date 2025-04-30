@@ -1,0 +1,88 @@
+{
+    "classes":[ {
+      
+        "identifier": "localUnitMasterDataType",
+        "names": {
+          "en": "Local Unit Master Data Type",
+          "fr": "Type de données de base de l'unité locale",
+          "de": "Grundlegende Datentypen der lokalen Einheit",
+          "it": "Tipo di dati master unità locale"
+        },
+        "has_properties": [
+          "mainUid",
+          "name",
+          "statusDate"
+        ],
+        "has_relation":[
+        "postOfficeBoxAddress"
+        ], 
+        "closed": true,
+          "modified": "2023-09-05T00:00:00",
+          "created": "2022-09-05T00:00:00",
+          "descriptions": {
+            "en": "This is a class of the structure",
+            "fr": "Celle ci est une classe du schema",
+            "it": "Questa è una classe dello schema"
+          }, 
+    "properties": [
+      {
+        "identifier": "mainUid",
+        "names": {
+          "en": "Main Uid"
+        },
+        "datatype": "string",
+        "constraints": {
+          "pattern": "^CHE[1-9][0-9]{8}$",
+          "minLength": 12,
+          "maxLength": 12,
+          "minCount": 1,
+          "maxCount": 1
+        },
+        "order": 0,
+        "conformsTo": "https://www.i14y.admin.ch/en/catalog/concepts/08d94abe-c8c8-91c1-8277-572449676426/description"
+      },
+          {
+        "identifier": "name", 
+        "names": {
+          "en": "Name"
+        },
+        "datatype": "string",
+        "constraints": {
+          "minCount": 1,
+          "maxCount": 3,
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "order": 1
+      },
+      {
+        "identifier": "statusDate",
+        "names": {
+          "en": "Status Date"
+        },
+        "datatype": "dateTime",
+        "constraints": {
+          "pattern": "^CHE[1-9][0-9]{8}$",
+          "minCount": 1,
+          "maxCount": 1
+        },
+        "order": 2,
+        "conformsTo": "https://www.i14y.admin.ch/en/catalog/concepts/08d93fba-3ba9-b231-a072-21f51c2cc731/description"
+      }
+    ], 
+    "relations": [
+        {
+            "identifier": "postOfficeBoxAddress",
+            "names": {
+              "en": "Post Office Box Address"
+            },
+            "class": "postOfficeBoxAddressType", 
+            "constraints": {
+                "minCount": 1,
+                "maxCount": 1
+              }
+          }
+    ]
+}
+]
+  }
