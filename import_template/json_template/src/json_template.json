@@ -1,0 +1,157 @@
+{
+  "classes": [
+    {
+      "identifier": "className",
+      "names": {
+        "en": "Class Name in English",
+        "fr": "Nom de la classe en français",
+        "de": "Klassenname auf Deutsch",
+        "it": "Nome della classe in italiano"
+      },
+      "has_properties": [
+        "stringProperty",
+        "decimalProperty",
+        "integerProperty",
+        "dateProperty"
+      ],
+      "has_relation": [
+        "relationToOtherClass"
+      ],
+      "closed": true,
+      "modified": "YYYY-MM-DDThh:mm:ss",
+      "created": "YYYY-MM-DDThh:mm:ss",
+      "descriptions": {
+        "en": "English description of the class",
+        "fr": "Description française de la classe",
+        "de": "Klassenbeschreibung auf Deutsch",
+        "it": "Descrizione italiana della classe"
+      },
+      "properties": [
+        {
+          "identifier": "stringProperty",
+          "names": {
+            "en": "String Property",
+            "fr": "Propriété chaîne",
+            "de": "String-Eigenschaft",
+            "it": "Proprietà stringa"
+          },
+          "datatype": "string",
+          "constraints": {
+            "pattern": "regex_pattern",
+            "minLength": 0,
+            "maxLength": 0,
+            "minCount": 0,
+            "maxCount": 0
+          },
+          "order": 0,
+          "conformsTo": "reference to I14Y concept"
+        },
+          {
+          "identifier": "decimalProperty",
+          "names": {
+            "en": "Numeric Property",
+            "fr": "Propriété numérique",
+            "de": "Numerische Eigenschaft",
+            "it": "Proprietà numerica"
+          },
+          "datatype": "decimal",
+          "constraints": {
+            "minInclusive": 0.0,
+            "maxExclusive": 100.0,
+            "minCount": 0,
+            "maxCount": 0
+          },
+          "order": 1
+        },
+        {
+          "identifier": "integerProperty",
+          "names": {
+            "en": "Numeric Property",
+            "fr": "Propriété numérique",
+            "de": "Numerische Eigenschaft",
+            "it": "Proprietà numerica"
+          },
+          "datatype": "integer",
+          "constraints": {
+            "minInclusive": 0,
+            "maxExclusive": 100,
+            "minCount": 0,
+            "maxCount": 0
+          },
+          "order": 1
+        },
+        {
+          "identifier": "dateProperty",
+          "names": {
+            "en": "Date Property",
+            "fr": "Propriété date",
+            "de": "Datums-Eigenschaft",
+            "it": "Proprietà data"
+          },
+          "datatype": "dateTime",
+          "constraints": {
+            "minCount": 0,
+            "maxCount": 0
+          },
+          "order": 2
+        }
+      ],
+      "relations": [
+        {
+          "identifier": "relationToOtherClass",
+          "names": {
+            "en": "Relation Name",
+            "fr": "Nom de la relation",
+            "de": "Name der Beziehung",
+            "it": "Nome della relazione"
+          },
+          "class": "targetClassName",
+          "constraints": {
+            "minCount": 0,
+            "maxCount": 0
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "targetClassName",
+      "names": {
+        "en": "Target Class Name",
+        "fr": "Nom de la classe cible",
+        "de": "Name der Zielklasse",
+        "it": "Nome della classe target"
+      },
+      "has_properties": [
+        "decimalProperty"
+      ],
+      "closed": true,
+      "modified": "YYYY-MM-DDThh:mm:ss",
+      "created": "YYYY-MM-DDThh:mm:ss",
+      "descriptions": {
+        "en": "English description of the target class",
+        "fr": "Description française de la classe cible",
+        "de": "Beschreibung der Zielklasse auf Deutsch",
+        "it": "Descrizione italiana della classe target"
+      },
+      "properties": [
+        {
+          "identifier": "decimalProperty",
+          "names": {
+            "en": "Decimal Property",
+            "fr": "Propriété décimale",
+            "de": "Dezimal-Eigenschaft",
+            "it": "Proprietà decimale"
+          },
+          "datatype": "decimal",
+          "constraints": {
+            "minInclusive": 0.0,
+            "maxExclusive": 100.0,
+            "minCount": 0,
+            "maxCount": 0
+          },
+          "order": 0
+        }
+      ]
+    }
+  ]
+}
