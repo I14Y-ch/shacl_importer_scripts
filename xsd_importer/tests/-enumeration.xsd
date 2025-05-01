@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://tempuri.org/po.xsd" 
+           xmlns="http://tempuri.org/po.xsd" 
+           elementFormDefault="qualified">
+  
+  <xs:complexType name="Items"> 
+    <xs:sequence>
+      <xs:element name="productName" type="xs:string"/> 
+      <xs:element name="state" type="USState"/> 
+      <xs:element name="quantity" type="xs:positiveInteger"/> 
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="USState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AK"/>
+      <xs:enumeration value="AL"/>
+      <xs:enumeration value="AR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

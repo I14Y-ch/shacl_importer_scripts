@@ -1,0 +1,26 @@
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:USAddress a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "USAddress"@en ;
+    sh:property <http://i14y.admin.ch/ns#USAddress/state>,
+        <http://i14y.admin.ch/ns#USAddress/zip> .
+
+<http://i14y.admin.ch/ns#USAddress/state> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "state"@en ;
+    sh:order 0 ;
+    sh:path i14y:state .
+
+<http://i14y.admin.ch/ns#USAddress/zip> a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "zip"@en ;
+    sh:order 1 ;
+    sh:path i14y:zip .
+

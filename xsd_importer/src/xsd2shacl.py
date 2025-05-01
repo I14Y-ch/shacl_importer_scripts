@@ -8,7 +8,6 @@ import re
 SH = Namespace("http://www.w3.org/ns/shacl#")
 I14Y = Namespace("http://i14y.admin.ch/ns#")
 DCT = Namespace("http://purl.org/dc/terms/")
-XONE = Namespace("http://www.w3.org/2001/XMLSchema#")
 
 def parse_xsd(xsd_file):
     """Parse the XSD file and return the root element."""
@@ -29,7 +28,7 @@ def resolve_imports(xsd_root, base_path):
 
 def handle_enumeration(enumerations, subject, graph):
     """
-    Handle XSD enumeration with sh:in.
+    Handle XSD enumeration with sh:in by creating a proper RDF list of the enumeration values.
     
     Args:
         enumerations: List of enumeration values
@@ -44,7 +43,9 @@ def handle_enumeration(enumerations, subject, graph):
     current = enum_list
     
     for i, enum_value in enumerate(enumerations):
-        graph.add((current, RDF.first, Literal(enum_value)))
+        # Create a literal with the appropriate datatype (string by default)
+        literal = Literal(enum_value, datatype=XSD.string)
+        graph.add((current, RDF.first, literal))
         if i < len(enumerations) - 1:
             next_node = BNode()
             graph.add((current, RDF.rest, next_node))
@@ -318,25 +319,19 @@ def handle_choice(choice,  xsd_root, graph, parent_shape, parent_type_name):
     if choice is None:
         return
     
-    # Create a blank node for the xone list
-    xone_list = URIRef(f"http://example.org/xone/{parent_shape.split('/')[-1]}")
-    last_node = None
+    # # Create a blank node for the xone list
+    # xone_list = URIRef(f"http://example.org/xone/{parent_shape.split('/')[-1]}")
+    # last_node = None
     
     elements = choice.findall('{http://www.w3.org/2001/XMLSchema}element')
     for i, element in enumerate(elements):
         element_name = element.get('name')
+        element_shape = I14Y[f"{element_name}"]
         if element_name is not None:
-            current_node = URIRef(f"{xone_list}_{i}")
-            graph.add((current_node, RDF.first, I14Y[element_name]))
-            if last_node:
-                graph.add((last_node, RDF.rest, current_node))
-            else:
-                graph.add((xone_list, RDF.first, current_node))
-            last_node = current_node
-    
-    if last_node:
-        graph.add((last_node, RDF.rest, RDF.nil))
-        graph.add((parent_shape, SH.xone, xone_list))
+           graph.add((parent_shape, SH.xone, element_shape))
+
+
+        
 
 def handle_all(all_elem, xsd_root, graph, parent_shape):
     """
@@ -655,7 +650,6 @@ def generate_shacl(xsd_root):
     g.bind("sh", SH)
     g.bind("i14y", I14Y)
     g.bind("dct", DCT)
-    g.bind("xone", XONE)
 
     # First pass: collect all element definitions
     element_defs = {}
@@ -687,7 +681,7 @@ def generate_shacl(xsd_root):
                 elif facets['compositors']['choice'] is not None:
                     handle_choice(facets['compositors']['choice'], xsd_root, g, node_shape, type_name)
                 elif facets['compositors']['all'] is not None:
-                    handle_all(facets['compositors']['all'], xsd_root, g, node_shape, type_name)
+                    handle_all(facets['compositors']['all'], xsd_root, g, node_shape)
             
             # Handle attributes
             if 'attributes' in facets:
@@ -712,4 +706,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
     
 # Example usage
-xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/output.ttl', 'xsd_importer/example')
+xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')

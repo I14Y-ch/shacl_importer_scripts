@@ -1,0 +1,39 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:Items a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "Items"@en ;
+    sh:property <http://i14y.admin.ch/ns#Items/productName>,
+        <http://i14y.admin.ch/ns#Items/quantity>,
+        <http://i14y.admin.ch/ns#Items/state> .
+
+<http://i14y.admin.ch/ns#Items/productName> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "productName"@en ;
+    sh:order 0 ;
+    sh:path i14y:productName .
+
+<http://i14y.admin.ch/ns#Items/quantity> a sh:PropertyShape ;
+    sh:datatype xsd:positiveInteger ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "quantity"@en ;
+    sh:order 2 ;
+    sh:path i14y:quantity .
+
+<http://i14y.admin.ch/ns#Items/state> a sh:PropertyShape ;
+    dct:conformsTo i14y:USState ;
+    sh:datatype xsd:string ;
+    sh:in ( "AK"^^xsd:string "AL"^^xsd:string "AR"^^xsd:string ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "state"@en ;
+    sh:order 1 ;
+    sh:path i14y:state .
+
