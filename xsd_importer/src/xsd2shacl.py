@@ -4,10 +4,12 @@ from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 import os
 import re
 
+dataset_identifier = "" # state here the dataset identifier, needed to create the URI
 
-dataset_identifier = "Bildersammlung-Max-van-Berchem"
-    
 i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
+    
+# Example usage
+xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
 
 # Define namespaces
 SH = Namespace("http://www.w3.org/ns/shacl#")
@@ -710,6 +712,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
     save_shacl(shacl_graph, output_file)
 
 
-    
-# Example usage
-xsd_to_shacl("xsd_importer/tests/complexType_simpleContent.xsd", 'xsd_importer/tests/complexType_simpleContent.ttl', 'xsd_importer/example')
+
