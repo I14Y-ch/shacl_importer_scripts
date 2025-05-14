@@ -4,8 +4,9 @@ from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 import os
 import re
 
+dataset_identifier = "" # state here the dataset identifier, needed to create the URI
+
 i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
-dataset_identifier = ""
     
 # Example usage
 xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
