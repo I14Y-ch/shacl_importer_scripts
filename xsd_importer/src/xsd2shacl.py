@@ -4,9 +4,15 @@ from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 import os
 import re
 
+i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
+dataset_identifier = ""
+    
+# Example usage
+xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
+
 # Define namespaces
 SH = Namespace("http://www.w3.org/ns/shacl#")
-I14Y = Namespace("http://i14y.admin.ch/ns#")
+I14Y = Namespace(i14y_base_path)
 DCT = Namespace("http://purl.org/dc/terms/")
 
 def parse_xsd(xsd_file):
@@ -704,6 +710,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
     save_shacl(shacl_graph, output_file)
 
 
-    
-# Example usage
-xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
+
