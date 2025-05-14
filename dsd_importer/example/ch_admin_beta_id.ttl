@@ -1,0 +1,309 @@
+@prefix QB: <http://purl.org/linked-data/cube#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:ch_admin_beta_id a QB:DataStructureDefinition,
+        rdfs:Class,
+        sh:NodeShape ;
+    rdfs:label "Beta-ID"@de,
+        "Beta-ID"@en,
+        "Beta-ID"@fr,
+        "Beta-ID"@it ;
+    pav:version "1.0.0" ;
+    schema1:validFrom "2025-02-17"^^xsd:date ;
+    schema1:validUntil "None"^^xsd:date ;
+    schema1:version "1.0.0" ;
+    sh:name "Beta-ID"@de,
+        "Beta-ID"@en,
+        "Beta-ID"@fr,
+        "Beta-ID"@it ;
+    sh:property i14y:additional_person_info,
+        i14y:age_birth_year,
+        i14y:age_over_16,
+        i14y:age_over_18,
+        i14y:age_over_65,
+        i14y:birth_date,
+        i14y:birth_place,
+        i14y:document_number,
+        i14y:expiry_date,
+        i14y:family_name,
+        i14y:given_name,
+        i14y:issuance_date,
+        i14y:issuing_authority,
+        i14y:issuing_country,
+        i14y:nationality,
+        i14y:personal_administrative_number,
+        i14y:place_of_origin,
+        i14y:portrait,
+        i14y:reference_id_type,
+        i14y:referende_id_expiry_date,
+        i14y:sex,
+        i14y:verification_organization,
+        i14y:verification_type .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/additional_person_info> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-4450-3342-8c66-cff415a0bae2/description> ;
+    dcterms:description "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"@de ;
+    dcterms:identifier "additional_person_info" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-4450-3342-8c66-cff415a0bae2/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Zusätzliche Angaben zur Person"@de ;
+    sh:order 8 ;
+    sh:path i14y:additional_person_info .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/age_birth_year> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description> ;
+    dcterms:description "Geburtsjahr der Person"@de ;
+    dcterms:identifier "age_birth_year" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description> ;
+    sh:datatype xsd:decimal ;
+    sh:name "Geburtsjahr"@de ;
+    sh:order 16 ;
+    sh:path i14y:age_birth_year .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/age_over_16> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description> ;
+    dcterms:description "Aussage, ob die Person ihr 16. Altersjahr vollendet hat."@de ;
+    dcterms:identifier "age_over_16" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description> ;
+    sh:name "Älter als 16 Jahre"@de ;
+    sh:order 14 ;
+    sh:path i14y:age_over_16 .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/age_over_18> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c86-4945-2c38-bf94-1eaf9db9dc2d/description> ;
+    dcterms:description "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."@de ;
+    dcterms:identifier "age_over_18" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c86-4945-2c38-bf94-1eaf9db9dc2d/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c86-4945-2c38-bf94-1eaf9db9dc2d/description> ;
+    sh:name "Älter als 18 Jahre"@de ;
+    sh:order 11 ;
+    sh:path i14y:age_over_18 .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/age_over_65> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9b-148b-9e0b-8832-06a0228c29b1/description> ;
+    dcterms:description "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."@de ;
+    dcterms:identifier "age_over_65" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9b-148b-9e0b-8832-06a0228c29b1/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9b-148b-9e0b-8832-06a0228c29b1/description> ;
+    sh:name "Älter als 65 Jahre"@de ;
+    sh:order 15 ;
+    sh:path i14y:age_over_65 .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/birth_date> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-345a-2672-af11-d1f2d5aad6f2/description> ;
+    dcterms:description "Geburtsdatum der Person"@de ;
+    dcterms:identifier "birth_date" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-345a-2672-af11-d1f2d5aad6f2/description> ;
+    sh:datatype xsd:date ;
+    sh:name "Geburtsdatum"@de ;
+    sh:order 2 ;
+    sh:path i14y:birth_date .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/birth_place> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-4d12-dd1a-a931-b0d878407f42/description> ;
+    dcterms:description "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren"@de ;
+    dcterms:identifier "birth_place" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-4d12-dd1a-a931-b0d878407f42/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Geburtsort"@de ;
+    sh:order 5 ;
+    sh:path i14y:birth_place .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/document_number> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-d893-ca84-8c8e-7bec90d69c8b/description> ;
+    dcterms:description "Eindeutige Nummer der Beta-ID"@de ;
+    dcterms:identifier "document_number" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-d893-ca84-8c8e-7bec90d69c8b/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Beta-ID-Nummer"@de ;
+    sh:order 9 ;
+    sh:path i14y:document_number .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/expiry_date> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9f-b5ff-812e-bd6f-6d2993378b19/description> ;
+    dcterms:description "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."@de ;
+    dcterms:identifier "expiry_date" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9f-b5ff-812e-bd6f-6d2993378b19/description> ;
+    sh:datatype xsd:date ;
+    sh:name "Gültig bis"@de ;
+    sh:order 17 ;
+    sh:path i14y:expiry_date .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/family_name> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7e-9124-0b11-a191-ac238a52ec87/description> ;
+    dcterms:description "Familienname der Person"@de ;
+    dcterms:identifier "family_name" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7e-9124-0b11-a191-ac238a52ec87/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Familienname"@de ;
+    sh:order 13 ;
+    sh:path i14y:family_name .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/given_name> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-c3a8-b3e7-8435-72cd22003476/description> ;
+    dcterms:description "Vorname(n) der Person"@de ;
+    dcterms:identifier "given_name" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-c3a8-b3e7-8435-72cd22003476/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Vorname(n)"@de ;
+    sh:order 3 ;
+    sh:path i14y:given_name .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/issuance_date> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c85-d521-7d5d-b151-3efbb8ee7bd5/description> ;
+    dcterms:description "Ausstellungsdatum der Beta-ID"@de ;
+    dcterms:identifier "issuance_date" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c85-d521-7d5d-b151-3efbb8ee7bd5/description> ;
+    sh:datatype xsd:date ;
+    sh:name "Ausstellungsdatum"@de ;
+    sh:order 10 ;
+    sh:path i14y:issuance_date .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/issuing_authority> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description> ;
+    dcterms:description "Ausgabestelle der Beta-ID"@de ;
+    dcterms:identifier "issuing_authority" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Ausgabestelle"@de ;
+    sh:order 22 ;
+    sh:path i14y:issuing_authority .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/issuing_country> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6af1-8702-6e19-8e27-b16f29d87fd8/description> ;
+    dcterms:description "Staat der Ausgabestelle"@de ;
+    dcterms:identifier "issuing_country" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd6af1-8702-6e19-8e27-b16f29d87fd8/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6af1-8702-6e19-8e27-b16f29d87fd8/description> ;
+    sh:name "Herausgebender Staat"@de ;
+    sh:order 23 ;
+    sh:path i14y:issuing_country .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/nationality> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7d-7ac1-5571-a1b9-b9531d554945/description> ;
+    dcterms:description "Nationalität der Person"@de ;
+    dcterms:identifier "nationality" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7d-7ac1-5571-a1b9-b9531d554945/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7d-7ac1-5571-a1b9-b9531d554945/description> ;
+    sh:name "Nationalität"@de ;
+    sh:order 4 ;
+    sh:path i14y:nationality .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/personal_administrative_number> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description> ;
+    dcterms:description "AHVN13"@de ;
+    dcterms:identifier "personal_administrative_number" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description> ;
+    sh:datatype xsd:decimal ;
+    sh:name "AHV-Nummer"@de ;
+    sh:order 1 ;
+    sh:path i14y:personal_administrative_number .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/place_of_origin> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-e16b-7391-a926-611864dea201/description> ;
+    dcterms:description "Heimatort der Person"@de ;
+    dcterms:identifier "place_of_origin" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-e16b-7391-a926-611864dea201/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Heimatort"@de ;
+    sh:order 6 ;
+    sh:path i14y:place_of_origin .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/portrait> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c83-b88a-b454-905f-73ae47bf62d0/description> ;
+    dcterms:description "Gesichtsbild (Portrait) der Person"@de ;
+    dcterms:identifier "portrait" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c83-b88a-b454-905f-73ae47bf62d0/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Gesichtsbild"@de ;
+    sh:order 7 ;
+    sh:path i14y:portrait .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/reference_id_type> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aa1-2ebf-e0e8-a9c2-54d82b76b152/description> ;
+    dcterms:description "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."@de ;
+    dcterms:identifier "reference_id_type" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aa1-2ebf-e0e8-a9c2-54d82b76b152/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aa1-2ebf-e0e8-a9c2-54d82b76b152/description> ;
+    sh:name "Ausweistyp"@de ;
+    sh:order 18 ;
+    sh:path i14y:reference_id_type .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/referende_id_expiry_date> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-7b83-416f-81a1-7f597d1752a0/description> ;
+    dcterms:description "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."@de ;
+    dcterms:identifier "referende_id_expiry_date" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-7b83-416f-81a1-7f597d1752a0/description> ;
+    sh:datatype xsd:date ;
+    sh:name "Ablaufdatum des Ausweises"@de ;
+    sh:order 19 ;
+    sh:path i14y:referende_id_expiry_date .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/sex> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c81-5af5-4690-8f93-942a7c02bddb/description> ;
+    dcterms:description "Geschlecht der Person"@de ;
+    dcterms:identifier "sex" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c81-5af5-4690-8f93-942a7c02bddb/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd4c81-5af5-4690-8f93-942a7c02bddb/description> ;
+    sh:name "Geschlecht"@de ;
+    sh:order 12 ;
+    sh:path i14y:sex .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/verification_organization> a QB:AttributeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description> ;
+    dcterms:description "Organisation, welche für die Identitätsprüfung zuständig war"@de ;
+    dcterms:identifier "verification_organization" ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description> ;
+    sh:datatype xsd:string ;
+    sh:name "Verifikationsverantwortliche Organisation"@de ;
+    sh:order 21 ;
+    sh:path i14y:verification_organization .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/ch_admin_beta_id/verification_type> a QB:AttributeProperty,
+        QB:CodedProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-f876-2fe7-81b6-4e3a862021e0/description> ;
+    dcterms:description "Identitätsprüfungsart"@de ;
+    dcterms:identifier "verification_type" ;
+    QB:codeList <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-f876-2fe7-81b6-4e3a862021e0/description> ;
+    QB:concept <https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-f876-2fe7-81b6-4e3a862021e0/description> ;
+    sh:name "Identitätsprüfungsart"@de ;
+    sh:order 20 ;
+    sh:path i14y:verification_type .
+

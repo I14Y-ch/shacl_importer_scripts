@@ -1,0 +1,555 @@
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:deliveryType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "deliveryType"@en ;
+    sh:property <http://i14y.admin.ch/ns#deliveryType/deliveryHeader>,
+        i14y:version_attr .
+
+i14y:individualPersonType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "individualPersonType"@en ;
+    sh:property <http://i14y.admin.ch/ns#individualPersonType/correspondenceAddress>,
+        <http://i14y.admin.ch/ns#individualPersonType/email>,
+        <http://i14y.admin.ch/ns#individualPersonType/languageOfCorrespondance>,
+        <http://i14y.admin.ch/ns#individualPersonType/levelOfAssurance>,
+        <http://i14y.admin.ch/ns#individualPersonType/personIdentification>,
+        <http://i14y.admin.ch/ns#individualPersonType/phone> .
+
+i14y:organisationRequesterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "organisationRequesterType"@en ;
+    sh:property <http://i14y.admin.ch/ns#organisationRequesterType/organisation>,
+        <http://i14y.admin.ch/ns#organisationRequesterType/requestedBy> .
+
+i14y:serviceGeneralDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceGeneralDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceGeneralDataType/serviceAction>,
+        <http://i14y.admin.ch/ns#serviceGeneralDataType/serviceId>,
+        <http://i14y.admin.ch/ns#serviceGeneralDataType/serviceName>,
+        <http://i14y.admin.ch/ns#serviceGeneralDataType/serviceOutput> .
+
+i14y:serviceGenericBusinessDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceGenericBusinessDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceGenericBusinessDataType/directive>,
+        <http://i14y.admin.ch/ns#serviceGenericBusinessDataType/document> .
+
+i14y:serviceGenericOutputDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceGenericOutputDataType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceGenericOutputDataType/comment>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/directive>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/document>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/lastUpdateDateTime>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/message>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/priority>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/redirectURL>,
+        <http://i14y.admin.ch/ns#serviceGenericOutputDataType/serviceGenericBusinessStatus> .
+
+i14y:serviceRequestMessageType a sh:NodeShape ;
+    sh:class i14y:baseMessageType ;
+    sh:closed true ;
+    sh:name "serviceRequestMessageType"@en .
+
+i14y:serviceResponseMessageType a sh:NodeShape ;
+    sh:class i14y:baseMessageLightType ;
+    sh:closed true ;
+    sh:name "serviceResponseMessageType"@en .
+
+i14y:baseMessageLightType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "baseMessageLightType"@en ;
+    sh:property <http://i14y.admin.ch/ns#baseMessageLightType/beneficiary>,
+        <http://i14y.admin.ch/ns#baseMessageLightType/requester>,
+        <http://i14y.admin.ch/ns#baseMessageLightType/serviceParameter> .
+
+<http://i14y.admin.ch/ns#baseMessageLightType/beneficiary> a sh:PropertyShape ;
+    sh:class i14y:personType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "beneficiary"@en ;
+    sh:order 1 ;
+    sh:path i14y:beneficiary .
+
+<http://i14y.admin.ch/ns#baseMessageLightType/requester> a sh:PropertyShape ;
+    sh:class i14y:personRequesterType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "requester"@en ;
+    sh:order 0 ;
+    sh:path i14y:requester .
+
+<http://i14y.admin.ch/ns#baseMessageLightType/serviceParameter> a sh:PropertyShape ;
+    sh:class i14y:serviceParameterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "serviceParameter"@en ;
+    sh:order 2 ;
+    sh:path i14y:serviceParameter .
+
+i14y:baseMessageType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "baseMessageType"@en ;
+    sh:property <http://i14y.admin.ch/ns#baseMessageType/beneficiary>,
+        <http://i14y.admin.ch/ns#baseMessageType/requester>,
+        <http://i14y.admin.ch/ns#baseMessageType/serviceParameter> .
+
+<http://i14y.admin.ch/ns#baseMessageType/beneficiary> a sh:PropertyShape ;
+    sh:class i14y:personType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "beneficiary"@en ;
+    sh:order 1 ;
+    sh:path i14y:beneficiary .
+
+<http://i14y.admin.ch/ns#baseMessageType/requester> a sh:PropertyShape ;
+    sh:class i14y:personRequesterType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "requester"@en ;
+    sh:order 0 ;
+    sh:path i14y:requester .
+
+<http://i14y.admin.ch/ns#baseMessageType/serviceParameter> a sh:PropertyShape ;
+    sh:class i14y:serviceParameterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "serviceParameter"@en ;
+    sh:order 2 ;
+    sh:path i14y:serviceParameter .
+
+<http://i14y.admin.ch/ns#commentType/commentText> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 2000 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "commentText"@en ;
+    sh:order 2 ;
+    sh:path i14y:commentText .
+
+<http://i14y.admin.ch/ns#commentType/language> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:order 0 ;
+    sh:path i14y:language .
+
+<http://i14y.admin.ch/ns#commentType/subjectText> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 2000 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "subjectText"@en ;
+    sh:order 1 ;
+    sh:path i14y:subjectText .
+
+<http://i14y.admin.ch/ns#deliveryType/deliveryHeader> a sh:PropertyShape ;
+    sh:class i14y:headerType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "deliveryHeader"@en ;
+    sh:order 0 ;
+    sh:path i14y:deliveryHeader .
+
+<http://i14y.admin.ch/ns#individualPersonType/correspondenceAddress> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "correspondenceAddress"@en ;
+    sh:order 3 ;
+    sh:path i14y:correspondenceAddress .
+
+<http://i14y.admin.ch/ns#individualPersonType/email> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 5 ;
+    sh:path i14y:email .
+
+<http://i14y.admin.ch/ns#individualPersonType/languageOfCorrespondance> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "languageOfCorrespondance"@en ;
+    sh:order 2 ;
+    sh:path i14y:languageOfCorrespondance .
+
+<http://i14y.admin.ch/ns#individualPersonType/levelOfAssurance> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:in ( "no or minimal trust"^^xsd:string "low confidence"^^xsd:string "considerable trust"^^xsd:string "high confidence"^^xsd:string ) ;
+    sh:maxCount 1 ;
+    sh:maxLength 20 ;
+    sh:minCount 1 ;
+    sh:name "levelOfAssurance"@en ;
+    sh:order 1 ;
+    sh:path i14y:levelOfAssurance .
+
+<http://i14y.admin.ch/ns#individualPersonType/personIdentification> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "personIdentification"@en ;
+    sh:order 0 ;
+    sh:path i14y:personIdentification .
+
+<http://i14y.admin.ch/ns#individualPersonType/phone> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "phone"@en ;
+    sh:order 4 ;
+    sh:path i14y:phone .
+
+i14y:infoType a sh:NodeShape ;
+    sh:class i14y:infoType ;
+    sh:closed true ;
+    sh:name "infoType"@en .
+
+<http://i14y.admin.ch/ns#organisationRequesterType/organisation> a sh:PropertyShape ;
+    sh:class i14y:organisationType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "organisation"@en ;
+    sh:order 0 ;
+    sh:path i14y:organisation .
+
+<http://i14y.admin.ch/ns#organisationRequesterType/requestedBy> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "requestedBy"@en ;
+    sh:order 1 ;
+    sh:path i14y:requestedBy .
+
+i14y:organisationType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "organisationType"@en ;
+    sh:property <http://i14y.admin.ch/ns#organisationType/correspondenceAddress>,
+        <http://i14y.admin.ch/ns#organisationType/email>,
+        <http://i14y.admin.ch/ns#organisationType/languageOfCorrespondance>,
+        <http://i14y.admin.ch/ns#organisationType/levelOfAssurance>,
+        <http://i14y.admin.ch/ns#organisationType/organisationIdentification>,
+        <http://i14y.admin.ch/ns#organisationType/phone>,
+        <http://i14y.admin.ch/ns#organisationType/website> .
+
+<http://i14y.admin.ch/ns#organisationType/correspondenceAddress> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "correspondenceAddress"@en ;
+    sh:order 3 ;
+    sh:path i14y:correspondenceAddress .
+
+<http://i14y.admin.ch/ns#organisationType/email> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 5 ;
+    sh:path i14y:email .
+
+<http://i14y.admin.ch/ns#organisationType/languageOfCorrespondance> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "languageOfCorrespondance"@en ;
+    sh:order 2 ;
+    sh:path i14y:languageOfCorrespondance .
+
+<http://i14y.admin.ch/ns#organisationType/levelOfAssurance> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:in ( "no or minimal trust"^^xsd:string "low confidence"^^xsd:string "considerable trust"^^xsd:string "high confidence"^^xsd:string ) ;
+    sh:maxCount 1 ;
+    sh:maxLength 20 ;
+    sh:minCount 1 ;
+    sh:name "levelOfAssurance"@en ;
+    sh:order 1 ;
+    sh:path i14y:levelOfAssurance .
+
+<http://i14y.admin.ch/ns#organisationType/organisationIdentification> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "organisationIdentification"@en ;
+    sh:order 0 ;
+    sh:path i14y:organisationIdentification .
+
+<http://i14y.admin.ch/ns#organisationType/phone> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "phone"@en ;
+    sh:order 4 ;
+    sh:path i14y:phone .
+
+<http://i14y.admin.ch/ns#organisationType/website> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "website"@en ;
+    sh:order 6 ;
+    sh:path i14y:website ;
+    sh:pattern "https://.*" .
+
+i14y:serviceActionType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceActionType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceActionType/action>,
+        <http://i14y.admin.ch/ns#serviceActionType/language> .
+
+<http://i14y.admin.ch/ns#serviceActionType/action> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:maxLength 2000 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "action"@en ;
+    sh:order 1 ;
+    sh:path i14y:action .
+
+<http://i14y.admin.ch/ns#serviceActionType/language> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:order 0 ;
+    sh:path i14y:language .
+
+<http://i14y.admin.ch/ns#serviceGeneralDataType/serviceAction> a sh:PropertyShape ;
+    sh:class i14y:serviceActionType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "serviceAction"@en ;
+    sh:order 3 ;
+    sh:path i14y:serviceAction .
+
+<http://i14y.admin.ch/ns#serviceGeneralDataType/serviceId> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 36 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "serviceId"@en ;
+    sh:order 0 ;
+    sh:path i14y:serviceId .
+
+<http://i14y.admin.ch/ns#serviceGeneralDataType/serviceName> a sh:PropertyShape ;
+    sh:class i14y:serviceNameType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "serviceName"@en ;
+    sh:order 1 ;
+    sh:path i14y:serviceName .
+
+<http://i14y.admin.ch/ns#serviceGeneralDataType/serviceOutput> a sh:PropertyShape ;
+    sh:class i14y:serviceOutputType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "serviceOutput"@en ;
+    sh:order 2 ;
+    sh:path i14y:serviceOutput .
+
+<http://i14y.admin.ch/ns#serviceGenericBusinessDataType/directive> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "directive"@en ;
+    sh:order 0 ;
+    sh:path i14y:directive .
+
+<http://i14y.admin.ch/ns#serviceGenericBusinessDataType/document> a sh:PropertyShape ;
+    sh:class i14y:documentType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "document"@en ;
+    sh:order 1 ;
+    sh:path i14y:document .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/comment> a sh:PropertyShape ;
+    sh:class i14y:commentType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "comment"@en ;
+    sh:order 4 ;
+    sh:path i14y:comment .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/directive> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "directive"@en ;
+    sh:order 2 ;
+    sh:path i14y:directive .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/document> a sh:PropertyShape ;
+    sh:class i14y:documentType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "document"@en ;
+    sh:order 1 ;
+    sh:path i14y:document .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/lastUpdateDateTime> a sh:PropertyShape ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "lastUpdateDateTime"@en ;
+    sh:order 3 ;
+    sh:path i14y:lastUpdateDateTime .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/message> a sh:PropertyShape ;
+    sh:class i14y:commentType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "message"@en ;
+    sh:order 6 ;
+    sh:path i14y:message .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/priority> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:in ( "low"^^xsd:string "medium"^^xsd:string "high"^^xsd:string "urgent"^^xsd:string ) ;
+    sh:maxCount 1 ;
+    sh:maxLength 10 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "priority"@en ;
+    sh:order 0 ;
+    sh:path i14y:priority .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/redirectURL> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 2048 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "redirectURL"@en ;
+    sh:order 7 ;
+    sh:path i14y:redirectURL .
+
+<http://i14y.admin.ch/ns#serviceGenericOutputDataType/serviceGenericBusinessStatus> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 50 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "serviceGenericBusinessStatus"@en ;
+    sh:order 5 ;
+    sh:path i14y:serviceGenericBusinessStatus .
+
+i14y:serviceNameType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceNameType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceNameType/language>,
+        <http://i14y.admin.ch/ns#serviceNameType/name> .
+
+<http://i14y.admin.ch/ns#serviceNameType/language> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:order 0 ;
+    sh:path i14y:language .
+
+<http://i14y.admin.ch/ns#serviceNameType/name> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:maxLength 2000 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 1 ;
+    sh:path i14y:name .
+
+i14y:serviceOutputType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceOutputType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceOutputType/language>,
+        <http://i14y.admin.ch/ns#serviceOutputType/output> .
+
+<http://i14y.admin.ch/ns#serviceOutputType/language> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:order 0 ;
+    sh:path i14y:language .
+
+<http://i14y.admin.ch/ns#serviceOutputType/output> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:maxLength 2000 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "output"@en ;
+    sh:order 1 ;
+    sh:path i14y:output .
+
+<http://i14y.admin.ch/ns#serviceParameterType/parameterName> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "parameterName"@en ;
+    sh:order 0 ;
+    sh:path i14y:parameterName .
+
+<http://i14y.admin.ch/ns#serviceParameterType/paramterValue> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 500 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "paramterValue"@en ;
+    sh:order 1 ;
+    sh:path i14y:paramterValue .
+
+i14y:version_attr a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:minCount 1 ;
+    sh:name "version"@en ;
+    sh:path i14y:version .
+
+i14y:commentType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "commentType"@en ;
+    sh:property <http://i14y.admin.ch/ns#commentType/commentText>,
+        <http://i14y.admin.ch/ns#commentType/language>,
+        <http://i14y.admin.ch/ns#commentType/subjectText> .
+
+i14y:headerType a sh:NodeShape ;
+    sh:class i14y:headerType ;
+    sh:closed true ;
+    sh:name "headerType"@en .
+
+i14y:personRequesterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "personRequesterType"@en ;
+    sh:xone i14y:individual,
+        i14y:requestingOrganisation .
+
+i14y:personType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "personType"@en ;
+    sh:xone i14y:individual,
+        i14y:organisation .
+
+i14y:serviceParameterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "serviceParameterType"@en ;
+    sh:property <http://i14y.admin.ch/ns#serviceParameterType/parameterName>,
+        <http://i14y.admin.ch/ns#serviceParameterType/paramterValue> .
+
+i14y:documentType a sh:NodeShape ;
+    sh:class i14y:documentType ;
+    sh:closed true ;
+    sh:name "documentType"@en .
+

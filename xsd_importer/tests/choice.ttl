@@ -1,0 +1,13 @@
+@prefix i14y: <http://i14y.admin.ch/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:USAddress a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "USAddress"@en ;
+    sh:xone i14y:city,
+        i14y:name,
+        i14y:state,
+        i14y:street,
+        i14y:zip .
+

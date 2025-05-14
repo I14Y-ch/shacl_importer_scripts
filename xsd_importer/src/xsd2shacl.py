@@ -4,10 +4,16 @@ from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 import os
 import re
 
+
+dataset_identifier = "Bildersammlung-Max-van-Berchem"
+    
+i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
+
 # Define namespaces
 SH = Namespace("http://www.w3.org/ns/shacl#")
-I14Y = Namespace("http://i14y.admin.ch/ns#")
+I14Y = Namespace(i14y_base_path)
 DCT = Namespace("http://purl.org/dc/terms/")
+
 
 def parse_xsd(xsd_file):
     """Parse the XSD file and return the root element."""
@@ -410,7 +416,7 @@ def translate_annotation(xsd_element, subject, graph):
             pass
 
 
-def handle_attribute(attribute, xsd_root, graph, parent_shape=None):
+def handle_attribute(attribute, xsd_root, graph, parent_shape=None, parent_type_name=None):
     """
     Handles XSD attribute definitions by creating PropertyShapes.
     
@@ -433,7 +439,7 @@ def handle_attribute(attribute, xsd_root, graph, parent_shape=None):
             return None
     
     # Create a PropertyShape for the attribute
-    attr_shape = I14Y[f"{attr_name}_attr"]
+    attr_shape = I14Y[f"{parent_type_name}/{attr_name}"]
     graph.add((attr_shape, RDF.type, SH.PropertyShape))
     graph.add((attr_shape, SH.path, I14Y[attr_name]))
     graph.add((attr_shape, SH.name, Literal(attr_name, lang='en')))
@@ -595,8 +601,8 @@ def process_element_details(element, xsd_root, graph, prop_shape):
     
     if type_kind in ['simple', 'complex', 'complex_mixed', 'complex_simple_content', 'union']:
         type_name = element.get('type').split(':')[-1] if element.get('type') else None
-        if type_name:
-            graph.add((prop_shape, DCT.conformsTo, I14Y[type_name]))
+        # if type_name:
+        #     graph.add((prop_shape, DCT.conformsTo, I14Y[type_name]))
 
     # Handle minOccurs and maxOccurs
     min_occurs = element.get('minOccurs', '1')
@@ -686,7 +692,7 @@ def generate_shacl(xsd_root):
             # Handle attributes
             if 'attributes' in facets:
                 for attr_name, attribute in facets['attributes'].items():
-                    handle_attribute(attribute, xsd_root, g, node_shape)
+                    handle_attribute(attribute, xsd_root, g, node_shape, type_name)
             
             g.add((node_shape, SH.closed, Literal(True)))
 
@@ -706,4 +712,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
     
 # Example usage
-xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
+xsd_to_shacl("xsd_importer/tests/complexType_simpleContent.xsd", 'xsd_importer/tests/complexType_simpleContent.ttl', 'xsd_importer/example')

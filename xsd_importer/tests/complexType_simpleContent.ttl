@@ -1,0 +1,16 @@
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:USAddress a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "USAddress"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/USAddress/country> .
+
+<https://www.i14y.admin.ch/resources/datasets/Bildersammlung-Max-van-Berchem/structure/USAddress/country> a sh:PropertyShape ;
+    sh:datatype xsd:NMTOKEN ;
+    sh:hasValue "US" ;
+    sh:minCount 0 ;
+    sh:name "country"@en ;
+    sh:path i14y:country .
+
