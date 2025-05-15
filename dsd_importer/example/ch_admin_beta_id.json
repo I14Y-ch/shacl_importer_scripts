@@ -1,0 +1,699 @@
+{
+    "@context": {
+        "QB": "http://purl.org/linked-data/cube#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "i14y": "https://www.i14y.admin.ch/resources/datasets/ch_admin_beta_id/structure/",
+        "pav": "http://purl.org/pav/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "i14y:ch_admin_beta_id/issuing_authority",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Ausgabestelle der Beta-ID"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Ausgabestelle"
+            },
+            "sh:order": 22,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/issuing_authority"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/age_over_65",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9b-148b-9e0b-8832-06a0228c29b1/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Aussage, ob die Person ihr 65. Altersjahr vollendet hat."
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Älter als 65 Jahre"
+            },
+            "sh:order": 15,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/age_over_65"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/personal_administrative_number",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dbcbbc-6826-fad6-973d-c76ab6ff6579/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "AHVN13"
+            },
+            "sh:datatype": {
+                "@id": "xsd:decimal"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "AHV-Nummer"
+            },
+            "sh:order": 1,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/personal_administrative_number"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/portrait",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c83-b88a-b454-905f-73ae47bf62d0/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Gesichtsbild (Portrait) der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Gesichtsbild"
+            },
+            "sh:order": 7,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/portrait"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/document_number",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-d893-ca84-8c8e-7bec90d69c8b/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Eindeutige Nummer der Beta-ID"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Beta-ID-Nummer"
+            },
+            "sh:order": 9,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/document_number"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/age_birth_year",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9d-53dd-71d4-a3e7-852ff5503f7c/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Geburtsjahr der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:decimal"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Geburtsjahr"
+            },
+            "sh:order": 16,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/age_birth_year"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/family_name",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7e-9124-0b11-a191-ac238a52ec87/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Familienname der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Familienname"
+            },
+            "sh:order": 13,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/family_name"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/given_name",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-c3a8-b3e7-8435-72cd22003476/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Vorname(n) der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Vorname(n)"
+            },
+            "sh:order": 3,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/given_name"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/nationality",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c7d-7ac1-5571-a1b9-b9531d554945/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Nationalität der Person"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Nationalität"
+            },
+            "sh:order": 4,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/nationality"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/birth_date",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c77-345a-2672-af11-d1f2d5aad6f2/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Geburtsdatum der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:date"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Geburtsdatum"
+            },
+            "sh:order": 2,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/birth_date"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/place_of_origin",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-e16b-7391-a926-611864dea201/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Heimatort der Person"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Heimatort"
+            },
+            "sh:order": 6,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/place_of_origin"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/sex",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c81-5af5-4690-8f93-942a7c02bddb/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Geschlecht der Person"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Geschlecht"
+            },
+            "sh:order": 12,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/sex"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/expiry_date",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6a9f-b5ff-812e-bd6f-6d2993378b19/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Datum, bis und mit zu welchem eine Beta-ID als gültig gilt. Ein Überschreiten des Datums ist nicht gleichgesetzt mit einem Widerruf der Beta-ID."
+            },
+            "sh:datatype": {
+                "@id": "xsd:date"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Gültig bis"
+            },
+            "sh:order": 17,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/expiry_date"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/additional_person_info",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c84-4450-3342-8c66-cff415a0bae2/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Zusätzliche Angaben zur Person im Ausweisdokument (IDK, Pass, Ausländerausweis)"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Zusätzliche Angaben zur Person"
+            },
+            "sh:order": 8,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/additional_person_info"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/referende_id_expiry_date",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-7b83-416f-81a1-7f597d1752a0/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Ablaufdatum des Referenzdokuments, welches bei der Ausstellung einer Beta-ID beigezogen wurde."
+            },
+            "sh:datatype": {
+                "@id": "xsd:date"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Ablaufdatum des Ausweises"
+            },
+            "sh:order": 19,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/referende_id_expiry_date"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id",
+            "@type": [
+                "QB:DataStructureDefinition",
+                "rdfs:Class",
+                "sh:NodeShape"
+            ],
+            "pav:version": "1.0.0",
+            "rdfs:label": [
+                {
+                    "@language": "de",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "fr",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "it",
+                    "@value": "Beta-ID"
+                }
+            ],
+            "schema:validFrom": {
+                "@type": "xsd:date",
+                "@value": "2025-02-17"
+            },
+            "schema:validUntil": {
+                "@type": "xsd:date",
+                "@value": "None"
+            },
+            "schema:version": "1.0.0",
+            "sh:name": [
+                {
+                    "@language": "de",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "en",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "fr",
+                    "@value": "Beta-ID"
+                },
+                {
+                    "@language": "it",
+                    "@value": "Beta-ID"
+                }
+            ],
+            "sh:property": [
+                {
+                    "@id": "i14y:ch_admin_beta_id/additional_person_info"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/age_birth_year"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/age_over_16"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/age_over_18"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/age_over_65"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/birth_date"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/birth_place"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/document_number"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/expiry_date"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/family_name"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/given_name"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/issuance_date"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/issuing_authority"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/issuing_country"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/nationality"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/personal_administrative_number"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/place_of_origin"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/portrait"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/reference_id_type"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/referende_id_expiry_date"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/sex"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/verification_organization"
+                },
+                {
+                    "@id": "i14y:ch_admin_beta_id/verification_type"
+                }
+            ]
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/birth_place",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c80-4d12-dd1a-a931-b0d878407f42/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Geburt in der Schweiz: Gemeinde inkl. Kantons-Kürzel, in welcher die Person geboren ist. Geburt im Ausland: Ort, Land der Geburt gemäss amtlichen Ausweispapieren"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Geburtsort"
+            },
+            "sh:order": 5,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/birth_place"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/age_over_16",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4ce2-e77f-9b1f-9373-c73daf9e6a3b/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Aussage, ob die Person ihr 16. Altersjahr vollendet hat."
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Älter als 16 Jahre"
+            },
+            "sh:order": 14,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/age_over_16"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/issuance_date",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c85-d521-7d5d-b151-3efbb8ee7bd5/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Ausstellungsdatum der Beta-ID"
+            },
+            "sh:datatype": {
+                "@id": "xsd:date"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Ausstellungsdatum"
+            },
+            "sh:order": 10,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/issuance_date"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/issuing_country",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6af1-8702-6e19-8e27-b16f29d87fd8/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Staat der Ausgabestelle"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Herausgebender Staat"
+            },
+            "sh:order": 23,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/issuing_country"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/verification_type",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6aec-f876-2fe7-81b6-4e3a862021e0/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Identitätsprüfungsart"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Identitätsprüfungsart"
+            },
+            "sh:order": 20,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/verification_type"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/verification_organization",
+            "@type": [
+                "QB:AttributeProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6aef-bb09-360c-9c5d-27917961992f/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Organisation, welche für die Identitätsprüfung zuständig war"
+            },
+            "sh:datatype": {
+                "@id": "xsd:string"
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Verifikationsverantwortliche Organisation"
+            },
+            "sh:order": 21,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/verification_organization"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/age_over_18",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd4c86-4945-2c38-bf94-1eaf9db9dc2d/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Aussage, ob die Person ihr 18. Altersjahr vollendet hat."
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Älter als 18 Jahre"
+            },
+            "sh:order": 11,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/age_over_18"
+            }
+        },
+        {
+            "@id": "i14y:ch_admin_beta_id/reference_id_type",
+            "@type": [
+                "QB:AttributeProperty",
+                "QB:CodedProperty",
+                "sh:PropertyShape"
+            ],
+            "dcterms:conformsTo": {
+                "@id": "https://www.i14y.admin.ch/it/catalog/concepts/08dd6aa1-2ebf-e0e8-a9c2-54d82b76b152/description"
+            },
+            "dcterms:description": {
+                "@language": "de",
+                "@value": "Ausweistyp des Referenzdokuments, welches bei der Beantragung für die Beta-ID genutzt wurde und der Beta-ID zu Grunde liegt."
+            },
+            "sh:name": {
+                "@language": "de",
+                "@value": "Ausweistyp"
+            },
+            "sh:order": 18,
+            "sh:path": {
+                "@id": "i14y:ch_admin_beta_id/reference_id_type"
+            }
+        }
+    ]
+}

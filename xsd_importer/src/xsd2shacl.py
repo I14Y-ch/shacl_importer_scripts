@@ -706,4 +706,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 
 # Example usage
-xsd_to_shacl("xsd_importer/tests/union.xsd", 'xsd_importer/tests/union.ttl', 'xsd_importer/tests')
+xsd_to_shacl("xsd_importer/tests/choice.xsd", 'xsd_importer/tests/choice.ttl', 'xsd_importer/tests')
