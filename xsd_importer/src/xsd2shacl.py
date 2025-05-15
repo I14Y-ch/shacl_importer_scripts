@@ -4,7 +4,7 @@ from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 import os
 import re
 
-dataset_identifier = "" # state here the dataset identifier, needed to create the URI
+dataset_identifier = "dataset_identifier" # state here the dataset identifier, needed to create the URI
 
 i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
     
@@ -339,8 +339,7 @@ def handle_choice(choice,  xsd_root, graph, parent_shape, parent_type_name):
 
 
         
-
-def handle_all(all_elem, xsd_root, graph, parent_shape):
+def handle_all(all_elem, xsd_root, graph, parent_shape, parent_type_name):
     """
     Handle XSD all compositor (all properties required, no order).
     """
@@ -349,10 +348,30 @@ def handle_all(all_elem, xsd_root, graph, parent_shape):
     
     for element in all_elem.findall('{http://www.w3.org/2001/XMLSchema}element'):
         element_name = element.get('name')
-        if element_name:
-            prop_shape = I14Y[element_name]
-            # All elements are required (minCount=1)
-            graph.add((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)))
+        element_ref = element.get('ref')
+        if element_name or element_ref:
+            # Use ref if name not available
+            elem_id = element_name if element_name else element_ref.split(':')[-1]
+            
+            # Create property shape with consistent URI pattern
+            prop_shape = I14Y[f"{parent_type_name}/{elem_id}"]
+            graph.add((prop_shape, RDF.type, SH.PropertyShape))
+            graph.add((prop_shape, SH.path, I14Y[elem_id]))
+            graph.add((prop_shape, SH.name, Literal(elem_id, lang='en')))
+            
+            # Handle min/max occurs
+            min_occurs = element.get('minOccurs', '1')
+            max_occurs = element.get('maxOccurs', '1')
+            
+            graph.add((prop_shape, SH.minCount, Literal(int(min_occurs), datatype=XSD.integer)))
+            if max_occurs == 'unbounded':
+                graph.add((prop_shape, SH.maxCount, SH.unbounded))
+            else:
+                graph.add((prop_shape, SH.maxCount, Literal(int(max_occurs), datatype=XSD.integer)))
+            
+            # Process element details
+            process_element_details(element, xsd_root, graph, prop_shape)
+            
             graph.add((parent_shape, SH.property, prop_shape))
 
 
@@ -688,7 +707,7 @@ def generate_shacl(xsd_root):
                 elif facets['compositors']['choice'] is not None:
                     handle_choice(facets['compositors']['choice'], xsd_root, g, node_shape, type_name)
                 elif facets['compositors']['all'] is not None:
-                    handle_all(facets['compositors']['all'], xsd_root, g, node_shape)
+                    handle_all(facets['compositors']['all'], xsd_root, g, node_shape, type_name)
             
             # Handle attributes
             if 'attributes' in facets:
@@ -713,4 +732,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 
 # Example usage
-xsd_to_shacl("xsd_importer/tests/-enumeration.xsd", 'xsd_importer/tests/-enumeration.ttl', 'xsd_importer/tests')
+xsd_to_shacl("xsd_importer/tests/-minmaxInclusive.xsd", 'xsd_importer/tests/-minmaxInclusive.ttl', 'xsd_importer/tests')

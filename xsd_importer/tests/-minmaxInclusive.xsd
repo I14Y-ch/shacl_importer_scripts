@@ -1,271 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:eCH-0010="http://www.ech.ch/xmlns/eCH-0010/8"
-	xmlns:eCH-0011="http://www.ech.ch/xmlns/eCH-0011/9"
-	xmlns:eCH-0039="http://www.ech.ch/xmlns/eCH-0039/3"
-	xmlns:eCH-0044="http://www.ech.ch/xmlns/eCH-0044/4"
-	xmlns:eCH-0046="http://www.ech.ch/xmlns/eCH-0046/6"
-	xmlns:eCH-0058="http://www.ech.ch/xmlns/eCH-0058/5"
-	xmlns:eCH-0098="http://www.ech.ch/xmlns/eCH-0098/8"
-	xmlns:eCH-0108="http://www.ech.ch/xmlns/eCH-0108/7"
-	xmlns:eCH-0258="http://www.ech.ch/xmlns/eCH-0258/2"
-	targetNamespace="http://www.ech.ch/xmlns/eCH-0258/2"
-	elementFormDefault="qualified"
-	attributeFormDefault="unqualified"
-	version="2.0">
-	<xs:annotation>
-		<xs:documentation>Ausgabedatum:30.01.2025</xs:documentation>
-	</xs:annotation>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0010/8" schemaLocation="http://www.ech.ch/xmlns/eCH-0010/8/eCH-0010-8-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0011/9" schemaLocation="http://www.ech.ch/xmlns/eCH-0011/9/eCH-0011-9-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0039/3" schemaLocation="http://www.ech.ch/xmlns/eCH-0039/3/eCH-0039-3.1.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0044/4" schemaLocation="http://www.ech.ch/xmlns/eCH-0044/4/eCH-0044-4-1.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0046/6" schemaLocation="http://www.ech.ch/xmlns/eCH-0046/6/eCH-0046-6-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0058/5" schemaLocation="http://www.ech.ch/xmlns/eCH-0058/5/eCH-0058-5-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0098/8" schemaLocation="http://www.ech.ch/xmlns/eCH-0098/8/eCH-0098-8-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0108/7" schemaLocation="http://www.ech.ch/xmlns/eCH-0108/7/eCH-0108-7-0.xsd"/>
-	<xs:element name="extension">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:simpleType name="URIType">
-		<xs:restriction base="xs:token">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="2048"/>
-		</xs:restriction>
-	</xs:simpleType>
-		<xs:simpleType name="internetAddressType">
-		<xs:restriction base="xs:token">
-			<xs:maxLength value="100"/>
-			<xs:whiteSpace value="collapse"/>
-			<xs:pattern value="http://.*"/>
-			<xs:pattern value="https://.*"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="levelOfAssuranceType">
-		<xs:restriction base="xs:token">
-			<xs:maxLength value="20"/>
-			<xs:enumeration value="no or minimal trust"/>
-			<xs:enumeration value="low confidence"/>
-			<xs:enumeration value="considerable trust"/>
-			<xs:enumeration value="high confidence"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="headerType">
-		<xs:complexContent>
-			<xs:extension base="eCH-0058:headerType"/>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:simpleType name="infoTextType">
-		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="2000"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="commentType">
-		<xs:sequence>
-			<xs:element name="language" type="eCH-0011:languageType"/>
-			<xs:element name="subjectText" type="eCH-0258:commentTextType" minOccurs="0"/>
-			<xs:element name="commentText" type="eCH-0258:commentTextType"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:simpleType name="commentTextType">
-		<xs:restriction base="xs:token">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="2000"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="infoType">
-		<xs:complexContent>
-			<xs:extension base="eCH-0058:infoType"/>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="individualPersonType">
-		<xs:sequence>
-			<xs:element name="personIdentification" type="eCH-0044:personIdentificationLightType"/>
-			<xs:element name="levelOfAssurance" type="eCH-0258:levelOfAssuranceType"/>
-			<xs:element name="languageOfCorrespondance" type="eCH-0011:languageType" minOccurs="0"/>
-			<xs:element name="correspondenceAddress" type="eCH-0010:addressInformationType" minOccurs="0"/>
-			<xs:element name="phone" type="eCH-0046:phoneNumberType" minOccurs="0"/>
-			<xs:element name="email" type="eCH-0046:emailAddressType" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="organisationType">
-		<xs:sequence>
-			<xs:element name="organisationIdentification" type="eCH-0098:organisationIdentificationType"/>
-			<xs:element name="levelOfAssurance" type="eCH-0258:levelOfAssuranceType"/>
-			<xs:element name="languageOfCorrespondance" type="eCH-0011:languageType" minOccurs="0"/>
-			<xs:element name="correspondenceAddress" type="eCH-0010:addressInformationType" minOccurs="0"/>
-			<xs:element name="phone" type="eCH-0046:phoneNumberType" minOccurs="0"/>
-			<xs:element name="email" type="eCH-0046:emailAddressType" minOccurs="0"/>
-			<xs:element name="website" type="eCH-0046:internetAddressType" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="organisationRequesterType">
-		<xs:sequence>
-			<xs:element name="organisation" type="eCH-0258:organisationType"/>
-			<xs:element name="requestedBy" type="eCH-0044:personIdentificationLightType"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="personType">
-		<xs:choice>
-			<xs:element name="individual" type="eCH-0258:individualPersonType"/>
-			<xs:element name="organisation" type="eCH-0258:organisationType"/>
-		</xs:choice>
-	</xs:complexType>
-	<xs:complexType name="personRequesterType">
-		<xs:choice>
-			<xs:element name="individual" type="eCH-0258:individualPersonType"/>
-			<xs:element name="requestingOrganisation" type="eCH-0258:organisationRequesterType"/>
-		</xs:choice>
-	</xs:complexType>
-	<xs:simpleType name="serviceIdType">
-		<xs:restriction base="xs:token">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="36"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="serviceNameType">
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="language" type="eCH-0011:languageType"/>
-			<xs:element name="name" type="eCH-0258:infoTextType" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceOutputType">
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="language" type="eCH-0011:languageType"/>
-			<xs:element name="output" type="eCH-0258:infoTextType" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceActionType">
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="language" type="eCH-0011:languageType"/>
-			<xs:element name="action" type="eCH-0258:infoTextType" minOccurs="1"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:simpleType name="priorityType">
-		<xs:restriction base="xs:token">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="10"/>
-			<xs:enumeration value="low"/>
-			<xs:enumeration value="medium"/>
-			<xs:enumeration value="high"/>
-			<xs:enumeration value="urgent"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="documentType">
-		<xs:complexContent>
-			<xs:extension base="eCH-0039:documentType">
-				<xs:sequence>
-					<xs:element name="namedMetaData" type="eCH-0058:namedMetaDataType" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="serviceGeneralDataType">
-		<xs:sequence>
-			<xs:element name="serviceId" type="eCH-0258:serviceIdType" minOccurs="1"/>
-			<xs:element name="serviceName" type="eCH-0258:serviceNameType" minOccurs="0"/>
-			<xs:element name="serviceOutput" type="eCH-0258:serviceOutputType" minOccurs="0"/>
-			<xs:element name="serviceAction" type="eCH-0258:serviceActionType" minOccurs="0"/>
-			<xs:element ref="eCH-0258:extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceGenericBusinessDataType">
-		<xs:sequence>
-			<xs:element name="directive" type="eCH-0039:directiveType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="document" type="eCH-0258:documentType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="eCH-0258:extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceGenericOutputDataType">
-		<xs:sequence>
-			<xs:element name="priority" type="eCH-0258:priorityType" minOccurs="0"/>
-			<xs:element name="document" type="eCH-0258:documentType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="directive" type="eCH-0039:directiveType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="lastUpdateDateTime" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="comment" type="eCH-0258:commentType" minOccurs="0"/>
-			<xs:element name="serviceGenericBusinessStatus" type="eCH-0258:serviceGenericBusinessStatusType" minOccurs="0"/>
-			<xs:element name="message" type="eCH-0258:commentType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="redirectURL" type="eCH-0258:URIType" minOccurs="0"/>
-			<xs:element ref="eCH-0258:extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceParameterType">
-		<xs:sequence>
-			<xs:element name="parameterName" type="xs:token"/>
-			<xs:element name="paramterValue">
-				<xs:simpleType>
-					<xs:restriction base="xs:token">
-						<xs:maxLength value="500"/>
-						<xs:minLength value="1"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="baseMessageType">
-		<xs:sequence>
-			<xs:element name="requester" type="eCH-0258:personRequesterType"/>
-			<xs:element name="beneficiary" type="eCH-0258:personType" minOccurs="1"/>
-			<xs:element name="serviceParameter" type="eCH-0258:serviceParameterType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="eCH-0258:extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="baseMessageLightType">
-		<xs:sequence>
-			<xs:element name="requester" type="eCH-0258:personRequesterType"/>
-			<xs:element name="beneficiary" type="eCH-0258:personType" minOccurs="0"/>
-			<xs:element name="serviceParameter" type="eCH-0258:serviceParameterType" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="eCH-0258:extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="serviceRequestMessageType">
-		<xs:complexContent>
-			<xs:extension base="eCH-0258:baseMessageType">
-				<xs:sequence>
-					<xs:element name="serviceGeneralData" type="eCH-0258:serviceGeneralDataType"/>
-					<xs:element name="serviceGenericBusinessData" type="eCH-0258:serviceGenericBusinessDataType" minOccurs="0"/>
-					<xs:element name="serviceSpecificBusinessData" type="xs:anyType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="serviceResponseMessageType">
-		<xs:complexContent>
-			<xs:extension base="eCH-0258:baseMessageLightType">
-				<xs:sequence>
-					<xs:element name="serviceId" type="eCH-0258:serviceIdType" minOccurs="1"/>
-					<xs:element name="serviceGenericOutputData" type="eCH-0258:serviceGenericOutputDataType" minOccurs="0"/>
-					<xs:element name="serviceSpecificOutputData" type="xs:anyType" minOccurs="0"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="deliveryType">
-		<xs:sequence>
-			<xs:element name="deliveryHeader" type="eCH-0058:headerType"/>
-			<xs:choice>
-				<xs:element name="serviceRequestMessage" type="eCH-0258:serviceRequestMessageType"/>
-				<xs:element name="serviceResponseMessage" type="eCH-0258:serviceResponseMessageType"/>
-			</xs:choice>
-		</xs:sequence>
-		<xs:attribute name="version" use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:token">
-					<xs:enumeration value="3.0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
-	<xs:element name="delivery" type="eCH-0258:deliveryType"/>
-	<xs:simpleType name="serviceGenericBusinessStatusType">
-		<xs:restriction base="xs:token">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="50"/>
-		</xs:restriction>
-	</xs:simpleType>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/po.xsd" xmlns="http://tempuri.org/po.xsd" elementFormDefault="qualified"> 
+  
+  <xs:element name="purchaseOrder" type="PurchaseOrderType"/> 
+
+  <xs:element name="comment" type="xs:string"/> 
+
+  <xs:complexType name="PurchaseOrderType"> 
+    <xs:all> 
+      <xs:element ref="comment" minOccurs="0"/> 
+      <xs:element name="items" type="Items"/> 
+    </xs:all> 
+    <xs:attribute name="orderDate" type="xs:date"/> 
+  </xs:complexType>
+
+  <xs:complexType name="Items"> 
+    <xs:all> 
+      <xs:element name="item" minOccurs="0" maxOccurs="unbounded"> 
+        <xs:complexType> 
+          <xs:all> 
+            <xs:element name="productName" type="xs:string"/> 
+            <xs:element name="quantity"> 
+              <xs:simpleType> 
+                <xs:restriction base="xs:positiveInteger"> 
+                  <xs:maxExclusive value="100"/> 
+                </xs:restriction> 
+              </xs:simpleType> 
+            </xs:element> 
+          </xs:all> 
+        </xs:complexType> 
+      </xs:element> 
+    </xs:all>
+  </xs:complexType>
+
 </xs:schema>

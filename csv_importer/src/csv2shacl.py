@@ -14,7 +14,7 @@ class CSVToSHACL:
         'it': ['anno', 'annata']
     }
     
-    def __init__(self, base_uri: str = "http://example.org/", default_lang: str = None):
+    def __init__(self, base_uri, default_lang: str = None):
         self.g = Graph()
         self.base_uri = base_uri.rstrip('/') + '/'
         self.default_lang = default_lang
@@ -95,7 +95,7 @@ class CSVToSHACL:
     def _add_property_shape(self, node_shape: URIRef, property_name: str, 
                          property_type: URIRef, values: List[str]) -> None:
         safe_name = property_name.replace(' ', '_').replace('.', '_')
-        prop_uri = URIRef(f"{self.base_uri}{safe_name}")
+        prop_uri = URIRef(f"{node_shape}/{safe_name}")
         
         self.g.add((prop_uri, RDF.type, SH.PropertyShape))
         self.g.add((prop_uri, SH.path, prop_uri))
@@ -159,12 +159,13 @@ class CSVToSHACL:
 
 
 if __name__ == "__main__":
-    base_uri = "http://i14y.admin.ch/ns#"
+    dataset_identifier = "dataset_identifier"
+    base_uri = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
     default_lang = "de" #change with your default language
     transformer = CSVToSHACL(base_uri)
     
-    input_csv = "example/file.csv"
-    output_ttl = "example/file.ttl"
+    input_csv = "csv_importer/example/iris.csv"
+    output_ttl = "csv_importer/example/iris.ttl"
 
     node_shape_name = " " # Optional - will use filename if None else you can state the file name "file_name"
     shape_identifer = " " # Optional - identifier to use in the uri -> base_uri/{shape_identifier} - will use the file name if None (but file name should not contain spaces)
