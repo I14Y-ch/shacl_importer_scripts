@@ -1,1 +1,30 @@
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:SKU a sh:NodeShape ;
+    sh:name "SKU"@en ;
+    sh:or ( [ sh:datatype xsd:integer ;
+                sh:pattern "\\\\d{3}-[A-Z]{2}" ] [ sh:datatype xsd:string ;
+                sh:pattern "\\\\d{3}-[A-Z]{4}" ] ) .
+
+i14y:SKU1 a sh:NodeShape ;
+    sh:datatype xsd:integer ;
+    sh:name "SKU1"@en ;
+    sh:pattern "\\\\d{3}-[A-Z]{2}" .
+
+i14y:SKU2 a sh:NodeShape ;
+    sh:datatype xsd:string ;
+    sh:name "SKU2"@en ;
+    sh:pattern "\\\\d{3}-[A-Z]{4}" .
+
+i14y:partNum a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "partNum"@en ;
+    sh:or ( [ sh:datatype xsd:integer ;
+                sh:pattern "\\\\d{3}-[A-Z]{2}" ] [ sh:datatype xsd:string ;
+                sh:pattern "\\\\d{3}-[A-Z]{4}" ] ) ;
+    sh:path i14y:partNum .
 
