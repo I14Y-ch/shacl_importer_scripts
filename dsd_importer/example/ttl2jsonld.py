@@ -64,5 +64,5 @@ def ttl_to_jsonld_strict_prefixes(ttl_file_path, jsonld_file_path):
 # Example usage
 if __name__ == "__main__":
     input_ttl = "C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/dsd_importer/example/ch_admin_beta_id.ttl"  # Replace with your input TTL file
-    output_jsonld = "C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/dsd_importer/example/ch_admin_beta_id.json"  # Replace with desired output JSON-LD file
+    output_jsonld = "C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/dsd_importer/example/ch_admin_beta_id.jsonld"  # Replace with desired output JSON-LD file
     ttl_to_jsonld_strict_prefixes(input_ttl, output_jsonld)
