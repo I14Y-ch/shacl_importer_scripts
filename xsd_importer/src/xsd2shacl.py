@@ -1,6 +1,7 @@
 from lxml import etree
 from rdflib import Graph, Namespace, Literal, URIRef, BNode
 from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
+from rdflib.collection import Collection
 import os
 import re
 
@@ -316,32 +317,108 @@ def handle_sequence(sequence, xsd_root, graph, parent_shape, parent_type_name):
             graph.add((parent_shape, SH.property, prop_shape))
             order += 1
 
-def handle_choice(choice,  xsd_root, graph, parent_shape, parent_type_name):
+def handle_choice(choice, xsd_root, graph, parent_shape, parent_type_name):
     """
-    Handle XSD choice with sh:xone (exclusive or).
+    Handle XSD choice with sh:xone.
+    
+    Args:
+        choice: The XSD choice element
+        xsd_root: The root of the XSD document
+        graph: The RDF graph
+        parent_shape: The parent NodeShape
+        parent_type_name: The name of the parent type
     """
     if choice is None:
         return
     
-    # Create a blank node for the xone list
-    xone_list = URIRef(f"http://example.org/xone/{parent_shape.split('/')[-1]}")
-    last_node = None
+    options = []
     
-    elements = choice.findall('{http://www.w3.org/2001/XMLSchema}element')
-    for i, element in enumerate(elements):
-        element_name = element.get('name')
-        if element_name is not None:
-            current_node = URIRef(f"{xone_list}_{i}")
-            graph.add((current_node, RDF.first, I14Y[f"{parent_type_name}/{element_name}"] ))
-            if last_node:
-                graph.add((last_node, RDF.rest, current_node))
-            else:
-                graph.add((xone_list, RDF.first, current_node))
-            last_node = current_node
+    # Process each option in the choice
+    for option in choice:
+        if option.tag.endswith('element'):
+            # Simple element choice
+            element_name = option.get('name')
+            if element_name:
+                # Create property shape for this element
+                prop_shape = I14Y[f"{parent_type_name}/{element_name}"]
+                graph.add((prop_shape, RDF.type, SH.PropertyShape))
+                graph.add((prop_shape, SH.path, I14Y[f"{parent_type_name}/{element_name}"]))
+                graph.add((prop_shape, SH.name, Literal(element_name, lang='en')))
+                
+                # Process element details
+                process_element_details(option, xsd_root, graph, prop_shape)
+                
+                # Add to options list as a single property constraint
+                option_node = BNode()
+                graph.add((option_node, SH.property, prop_shape))
+                options.append(option_node)
+                
+        elif option.tag.endswith('sequence'):
+            # Sequence choice - create a node for the sequence
+            seq_node = BNode()
+            order = 0
+            
+            for seq_element in option.findall('{http://www.w3.org/2001/XMLSchema}element'):
+                element_name = seq_element.get('name')
+                if element_name:
+                    # Create property shape for this element
+                    prop_shape = I14Y[f"{parent_type_name}/{element_name}"]
+                    graph.add((prop_shape, RDF.type, SH.PropertyShape))
+                    graph.add((prop_shape, SH.path, I14Y[f"{parent_type_name}/{element_name}"]))
+                    graph.add((prop_shape, SH.name, Literal(element_name, lang='en')))
+                    graph.add((prop_shape, SH.order, Literal(order, datatype=XSD.integer)))
+                    
+                    # Process element details
+                    process_element_details(seq_element, xsd_root, graph, prop_shape)
+                    
+                    # Add to sequence node
+                    graph.add((seq_node, SH.property, prop_shape))
+                    order += 1
+            
+            options.append(seq_node)
+            
+        elif option.tag.endswith('all'):
+            # All choice - create a node for the all compositor
+            all_node = BNode()
+            
+            for all_element in option.findall('{http://www.w3.org/2001/XMLSchema}element'):
+                element_name = all_element.get('name')
+                if element_name:
+                    # Create property shape for this element
+                    prop_shape = I14Y[f"{parent_type_name}/{element_name}"]
+                    graph.add((prop_shape, RDF.type, SH.PropertyShape))
+                    graph.add((prop_shape, SH.path, I14Y[f"{parent_type_name}/{element_name}"]))
+                    graph.add((prop_shape, SH.name, Literal(element_name, lang='en')))
+                    
+                    # Process element details
+                    process_element_details(all_element, xsd_root, graph, prop_shape)
+                    
+                    # Add to all node
+                    graph.add((all_node, SH.property, prop_shape))
+            
+            options.append(all_node)
     
-    if last_node:
-        graph.add((last_node, RDF.rest, RDF.nil))
-        graph.add((parent_shape, SH.xone, xone_list))
+    # Create the xone list if we have options
+    if options:
+        if len(options) == 1:
+            # For single option, just add the properties directly
+            for stmt in graph.triples((options[0], None, None)):
+                graph.add((parent_shape, stmt[1], stmt[2]))
+        else:
+            # Create xone list
+            xone_list = BNode()
+            current = xone_list
+            
+            for i, option in enumerate(options):
+                graph.add((current, RDF.first, option))
+                if i < len(options) - 1:
+                    next_node = BNode()
+                    graph.add((current, RDF.rest, next_node))
+                    current = next_node
+                else:
+                    graph.add((current, RDF.rest, RDF.nil))
+            
+            graph.add((parent_shape, SH.xone, xone_list))
 
 def handle_all(all_elem, xsd_root, graph, parent_shape, parent_type_name):
     """
@@ -716,4 +793,5 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 
 # Example usage
-xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/master_unit.ttl', 'xsd_importer/example')
+#xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/master_unit.ttl', 'xsd_importer/example')
+xsd_to_shacl("xsd_importer/tests/choice.xsd", 'xsd_importer/tests/choice.ttl', 'xsd_importer/tests')

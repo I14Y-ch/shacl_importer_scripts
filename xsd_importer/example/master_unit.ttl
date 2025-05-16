@@ -29,11 +29,6 @@ i14y:localUnitMasterDataType a sh:NodeShape ;
         <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/statusDate>,
         <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/website> .
 
-<http://example.org/xone/zipCodeType> rdf:first <http://example.org/xone/zipCodeType_0> .
-
-<http://example.org/xone/zipCodeType_0> rdf:first <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/foreignZipCode> ;
-    rdf:rest () .
-
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/addressCategory> a sh:PropertyShape ;
     dct:conformsTo i14y:addressCategoryType ;
     sh:datatype xsd:token ;
@@ -1352,6 +1347,32 @@ i14y:soleProprietorshipPersonType a sh:NodeShape ;
     sh:order 0 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/socialSecurityNumber> .
 
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/foreignZipCode> a sh:PropertyShape ;
+    dct:description "is only expected for foreign addresses. Must be null for swiss addresses"@en ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "foreignZipCode"@en ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/foreignZipCode> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/swissZipCode> a sh:PropertyShape ;
+    dct:description "is only expected for swiss addresses. Must be null for foreign addresses"@en ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "swissZipCode"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/swissZipCode> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/zipCodeAddOn> a sh:PropertyShape ;
+    dct:description "is only expected for swiss addresses. Must be null for foreign addresses"@en ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "zipCodeAddOn"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/zipCodeAddOn> .
+
 i14y:additionalLocationAddressType a sh:NodeShape ;
     sh:closed true ;
     sh:name "additionalLocationAddressType"@en ;
@@ -1409,5 +1430,6 @@ i14y:mainAddressType a sh:NodeShape ;
 i14y:zipCodeType a sh:NodeShape ;
     sh:closed true ;
     sh:name "zipCodeType"@en ;
-    sh:xone <http://example.org/xone/zipCodeType> .
+    sh:xone ( [ sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/swissZipCode>,
+                    <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/zipCodeAddOn> ] [ sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/foreignZipCode> ] ) .
 
