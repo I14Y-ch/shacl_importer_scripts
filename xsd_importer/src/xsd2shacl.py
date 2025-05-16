@@ -15,7 +15,6 @@ SH = Namespace("http://www.w3.org/ns/shacl#")
 I14Y = Namespace(i14y_base_path)
 DCT = Namespace("http://purl.org/dc/terms/")
 
-
 def parse_xsd(xsd_file):
     """Parse the XSD file and return the root element."""
     with open(xsd_file, 'rb') as f:
@@ -35,7 +34,7 @@ def resolve_imports(xsd_root, base_path):
 
 def handle_enumeration(enumerations, subject, graph):
     """
-    Handle XSD enumeration with sh:in by creating a proper RDF list of the enumeration values.
+    Handle XSD enumeration with sh:in.
     
     Args:
         enumerations: List of enumeration values
@@ -50,9 +49,7 @@ def handle_enumeration(enumerations, subject, graph):
     current = enum_list
     
     for i, enum_value in enumerate(enumerations):
-        # Create a literal with the appropriate datatype (string by default)
-        literal = Literal(enum_value, datatype=XSD.string)
-        graph.add((current, RDF.first, literal))
+        graph.add((current, RDF.first, Literal(enum_value)))
         if i < len(enumerations) - 1:
             next_node = BNode()
             graph.add((current, RDF.rest, next_node))
@@ -65,11 +62,17 @@ def handle_enumeration(enumerations, subject, graph):
 def handle_union(union, xsd_root, subject, graph):
     """
     Handle XSD union with sh:or.
+    
+    Args:
+        union: The XSD union element
+        xsd_root: The root of the XSD document
+        subject: The RDF subject to add constraints to
+        graph: The RDF graph
     """
     if union is None:
         return
     
-    member_types = union.get('memberTypes', '').split()
+    member_types = union.findall('{http://www.w3.org/2001/XMLSchema}simpleType')
     if not member_types:
         return
     
@@ -78,37 +81,33 @@ def handle_union(union, xsd_root, subject, graph):
     current = or_list
     
     for i, member_type in enumerate(member_types):
-        member_type = member_type.split(':')[-1]  # Remove namespace if present
-        
-        # Find the member type definition
-        simple_type = xsd_root.find(f'.//{{http://www.w3.org/2001/XMLSchema}}simpleType[@name="{member_type}"]')
-        if simple_type is None:
-            continue
-            
-        # Process the member type
-        type_kind, base_type, facets = _process_simple_type(simple_type, xsd_root)
-        
-        # Create a node for each member type
-        member_node = BNode()
-        
-        if type_kind == 'simple' and base_type:
-            graph.add((member_node, SH.datatype, XSD[base_type]))
-            
-            # Add facets if any
-            for facet_name, facet_value in facets.get('facets', {}).items():
-                translate_restriction(facet_name, facet_value, base_type, member_node, graph)
-        
-        # Add to or list
-        graph.add((current, RDF.first, member_node))
-        if i < len(member_types) - 1:
-            next_node = BNode()
-            graph.add((current, RDF.rest, next_node))
-            current = next_node
-        else:
-            graph.add((current, RDF.rest, RDF.nil))
+        restriction = member_type.find('{http://www.w3.org/2001/XMLSchema}restriction')
+        if restriction:
+            base = restriction.get('base')
+            if base and ('xs:' in base or 'xsd:' in base):
+                base_type = base.split(':')[-1]
+                # Create a node for each member type
+                member_node = BNode()
+                graph.add((member_node, SH.datatype, XSD[base_type]))
+                
+                # Add facets if any
+                for facet in restriction:
+                    facet_name = facet.tag.split('}')[-1]
+                    facet_value = facet.get('value')
+                    if facet_value:
+                        translate_restriction(facet_name, facet_value, base_type, member_node, graph)
+                
+                # Add to or list
+                graph.add((current, RDF.first, member_node))
+                if i < len(member_types) - 1:
+                    next_node = BNode()
+                    graph.add((current, RDF.rest, next_node))
+                    current = next_node
+                else:
+                    graph.add((current, RDF.rest, RDF.nil))
     
     if or_list:
-        graph.add((subject, SH["or"], or_list))
+        graph.add((subject, SH.or_, or_list))
 
 def handle_extension(extension, xsd_root, subject, graph):
     """
@@ -178,16 +177,12 @@ def handle_extension(extension, xsd_root, subject, graph):
             graph.add((current, RDF.first, extension_node))
         
         graph.add((current, RDF.rest, RDF.nil))
-        graph.add((subject, SH["and"], and_list))
+        graph.add((subject, SH.and_, and_list))
 
 def _process_simple_type(simple_type, xsd_root):
     """Process a simpleType definition and return type details."""
     restriction = simple_type.find('{http://www.w3.org/2001/XMLSchema}restriction')
     union = simple_type.find('{http://www.w3.org/2001/XMLSchema}union')
-    
-    if union is not None:
-        member_types = union.get('memberTypes', '').split()
-        return ('union', member_types, {})
     
     if restriction is not None:
         base = restriction.get('base')
@@ -208,6 +203,29 @@ def _process_simple_type(simple_type, xsd_root):
                 'facets': facets,
                 'enumerations': enumerations
             })
+        elif base:
+            # Handle custom base types
+            base_type_name = base.split(':')[-1]
+            base_simple_type = xsd_root.find(f'.//{{http://www.w3.org/2001/XMLSchema}}simpleType[@name="{base_type_name}"]')
+            if base_simple_type:
+                base_kind, base_type, base_facets = _process_simple_type(base_simple_type, xsd_root)
+                # Merge facets
+                facets.update(base_facets.get('facets', {}))
+                enumerations.extend(base_facets.get('enumerations', []))
+                return ('simple', base_type, {
+                    'facets': facets,
+                    'enumerations': enumerations
+                })
+    
+    elif union is not None:
+        member_types = []
+        for member in union.findall('{http://www.w3.org/2001/XMLSchema}simpleType'):
+            restriction = member.find('{http://www.w3.org/2001/XMLSchema}restriction')
+            if restriction:
+                base = restriction.get('base')
+                if base and ('xs:' in base or 'xsd:' in base):
+                    member_types.append(base.split(':')[-1])
+        return ('union', member_types, {})
     
     return ('simple', 'string', {})
 
@@ -288,7 +306,7 @@ def handle_sequence(sequence, xsd_root, graph, parent_shape, parent_type_name):
             # Create unique property shape URI based on parent type and element name
             prop_shape = I14Y[f"{parent_type_name}/{element_name}"]   # THIS IS THE SOLUTION FOR THE BUG, BUT IT COULD BE _ OR /
             graph.add((prop_shape, RDF.type, SH.PropertyShape))
-            graph.add((prop_shape, SH.path, I14Y[element_name]))
+            graph.add((prop_shape, SH.path, I14Y[f"{parent_type_name}/{element_name}"] ))
             graph.add((prop_shape, SH.name, Literal(element_name, lang='en')))
             graph.add((prop_shape, SH.order, Literal(order, datatype=XSD.integer)))
             
@@ -305,19 +323,26 @@ def handle_choice(choice,  xsd_root, graph, parent_shape, parent_type_name):
     if choice is None:
         return
     
-    # # Create a blank node for the xone list
-    # xone_list = URIRef(f"http://example.org/xone/{parent_shape.split('/')[-1]}")
-    # last_node = None
+    # Create a blank node for the xone list
+    xone_list = URIRef(f"http://example.org/xone/{parent_shape.split('/')[-1]}")
+    last_node = None
     
     elements = choice.findall('{http://www.w3.org/2001/XMLSchema}element')
     for i, element in enumerate(elements):
         element_name = element.get('name')
-        element_shape =  I14Y[f"{parent_type_name}/{element_name}"]
         if element_name is not None:
-           graph.add((parent_shape, SH.xone, element_shape))
+            current_node = URIRef(f"{xone_list}_{i}")
+            graph.add((current_node, RDF.first, I14Y[f"{parent_type_name}/{element_name}"] ))
+            if last_node:
+                graph.add((last_node, RDF.rest, current_node))
+            else:
+                graph.add((xone_list, RDF.first, current_node))
+            last_node = current_node
+    
+    if last_node:
+        graph.add((last_node, RDF.rest, RDF.nil))
+        graph.add((parent_shape, SH.xone, xone_list))
 
-
-        
 def handle_all(all_elem, xsd_root, graph, parent_shape, parent_type_name):
     """
     Handle XSD all compositor (all properties required, no order).
@@ -327,30 +352,10 @@ def handle_all(all_elem, xsd_root, graph, parent_shape, parent_type_name):
     
     for element in all_elem.findall('{http://www.w3.org/2001/XMLSchema}element'):
         element_name = element.get('name')
-        element_ref = element.get('ref')
-        if element_name or element_ref:
-            # Use ref if name not available
-            elem_id = element_name if element_name else element_ref.split(':')[-1]
-            
-            # Create property shape with consistent URI pattern
-            prop_shape = I14Y[f"{parent_type_name}/{elem_id}"]
-            graph.add((prop_shape, RDF.type, SH.PropertyShape))
-            graph.add((prop_shape, SH.path, I14Y[elem_id]))
-            graph.add((prop_shape, SH.name, Literal(elem_id, lang='en')))
-            
-            # Handle min/max occurs
-            min_occurs = element.get('minOccurs', '1')
-            max_occurs = element.get('maxOccurs', '1')
-            
-            graph.add((prop_shape, SH.minCount, Literal(int(min_occurs), datatype=XSD.integer)))
-            if max_occurs == 'unbounded':
-                graph.add((prop_shape, SH.maxCount, SH.unbounded))
-            else:
-                graph.add((prop_shape, SH.maxCount, Literal(int(max_occurs), datatype=XSD.integer)))
-            
-            # Process element details
-            process_element_details(element, xsd_root, graph, prop_shape)
-            
+        if element_name:
+            prop_shape = I14Y[f"{parent_type_name}/{element_name}"] 
+            # All elements are required (minCount=1)
+            graph.add((prop_shape, SH.minCount, Literal(1, datatype=XSD.integer)))
             graph.add((parent_shape, SH.property, prop_shape))
 
 
@@ -438,9 +443,9 @@ def handle_attribute(attribute, xsd_root, graph, parent_shape=None, parent_type_
             return None
     
     # Create a PropertyShape for the attribute
-    attr_shape = I14Y[f"{parent_type_name}/{attr_name}"]
+    attr_shape = I14Y[f"{parent_type_name}/{attr_name}"] 
     graph.add((attr_shape, RDF.type, SH.PropertyShape))
-    graph.add((attr_shape, SH.path, I14Y[attr_name]))
+    graph.add((attr_shape, SH.path, I14Y[f"{parent_type_name}/{attr_name}"] ))
     graph.add((attr_shape, SH.name, Literal(attr_name, lang='en')))
     
     # Handle attribute type
@@ -572,23 +577,15 @@ def _process_complex_type(complex_type, xsd_root):
     })
 
 def process_element_details(element, xsd_root, graph, prop_shape):
-    """Process element details and add to property shape."""
+    """
+    Process element details and add to property shape.
+    """
     translate_annotation(element, prop_shape, graph)
 
     type_kind, base_type, facets = get_element_type_details(xsd_root, element)
     
-    if type_kind == 'union':
-        # Find the union element in the schema
-        type_name = element.get('type')
-        if type_name is not None:
-            type_name = type_name.split(':')[-1]
-            simple_type = xsd_root.find(f'.//{{http://www.w3.org/2001/XMLSchema}}simpleType[@name="{type_name}"]')
-            if simple_type is not None:
-                union = simple_type.find('{http://www.w3.org/2001/XMLSchema}union')
-                if union is not None:
-                    handle_union(union, xsd_root, prop_shape, graph)
-    elif type_kind in ['builtin', 'simple']:
-        if base_type is not None:
+    if type_kind in ['builtin', 'simple']:
+        if base_type:
             graph.add((prop_shape, SH.datatype, XSD[base_type]))
         
         if 'facets' in facets:
@@ -598,6 +595,19 @@ def process_element_details(element, xsd_root, graph, prop_shape):
         if 'enumerations' in facets:
             handle_enumeration(facets['enumerations'], prop_shape, graph)
     
+    elif type_kind == 'union':
+        handle_union(element.find('{http://www.w3.org/2001/XMLSchema}union'), xsd_root, prop_shape, graph)
+    
+    elif type_kind in ['complex', 'complex_mixed', 'complex_simple_content']:
+        type_name = element.get('type').split(':')[-1] if element.get('type') else None
+        if type_name:
+            graph.add((prop_shape, SH['class'], I14Y[type_name]))
+    
+    if type_kind in ['simple', 'complex', 'complex_mixed', 'complex_simple_content', 'union']:
+        type_name = element.get('type').split(':')[-1] if element.get('type') else None
+        if type_name:
+            graph.add((prop_shape, DCT.conformsTo, I14Y[type_name]))
+
     # Handle minOccurs and maxOccurs
     min_occurs = element.get('minOccurs', '1')
     max_occurs = element.get('maxOccurs', '1')
@@ -651,44 +661,44 @@ def generate_shacl(xsd_root):
     g.bind("i14y", I14Y)
     g.bind("dct", DCT)
 
-    # Process simple types first
-    for simple_type in xsd_root.findall('.//{http://www.w3.org/2001/XMLSchema}simpleType'):
-        type_name = simple_type.get('name')
-        if type_name is not None:
-            type_kind, base_type, facets = _process_simple_type(simple_type, xsd_root)
-            
-            # Create a node shape for the simple type
+    # First pass: collect all element definitions
+    element_defs = {}
+    for element in xsd_root.findall('.//{http://www.w3.org/2001/XMLSchema}element'):
+        name = element.get('name')
+        if name:
+            element_defs[name] = element
+
+    # Process complex types to create NodeShapes
+    type_map = {}
+    for complex_type in xsd_root.findall('.//{http://www.w3.org/2001/XMLSchema}complexType'):
+        type_name = complex_type.get('name')
+        if type_name:
+            type_map[type_name] = complex_type
             node_shape = I14Y[type_name]
             g.add((node_shape, RDF.type, SH.NodeShape))
             g.add((node_shape, SH.name, Literal(type_name, lang='en')))
-            
-            if type_kind == 'union':
-                union = simple_type.find('{http://www.w3.org/2001/XMLSchema}union')
-                if union is not None:
-                    handle_union(union, xsd_root, node_shape, g)
-            elif type_kind == 'simple' and base_type:
-                g.add((node_shape, SH.datatype, XSD[base_type]))
-                
-                # Add facets if any
-                for facet_name, facet_value in facets.get('facets', {}).items():
-                    translate_restriction(facet_name, facet_value, base_type, node_shape, g)
-                
-                # Handle enumerations
-                if 'enumerations' in facets:
-                    handle_enumeration(facets['enumerations'], node_shape, g)
 
-    # Process elements
-    for element in xsd_root.findall('.//{http://www.w3.org/2001/XMLSchema}element'):
-        element_name = element.get('name')
-        if element_name:
-            # Create a property shape for the element
-            prop_shape = I14Y[element_name]
-            g.add((prop_shape, RDF.type, SH.PropertyShape))
-            g.add((prop_shape, SH.path, I14Y[element_name]))
-            g.add((prop_shape, SH.name, Literal(element_name, lang='en')))
+            type_kind, base_type, facets = _process_complex_type(complex_type, xsd_root)
             
-            # Process element details
-            process_element_details(element, xsd_root, g, prop_shape)
+            # Handle inheritance
+            if base_type and type_kind == 'complex':
+                g.add((node_shape, SH['class'], I14Y[base_type]))
+            
+            # Handle compositors
+            if 'compositors' in facets:
+                if facets['compositors']['sequence'] is not None:
+                    handle_sequence(facets['compositors']['sequence'], xsd_root, g, node_shape, type_name)
+                elif facets['compositors']['choice'] is not None:
+                    handle_choice(facets['compositors']['choice'], xsd_root, g, node_shape, type_name)
+                elif facets['compositors']['all'] is not None:
+                    handle_all(facets['compositors']['all'], xsd_root, g, node_shape, type_name)
+            
+            # Handle attributes
+            if 'attributes' in facets:
+                for attr_name, attribute in facets['attributes'].items():
+                    handle_attribute(attribute, xsd_root, g, node_shape)
+            
+            g.add((node_shape, SH.closed, Literal(True)))
 
     return g
 
@@ -706,4 +716,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 
 # Example usage
-xsd_to_shacl("xsd_importer/tests/choice.xsd", 'xsd_importer/tests/choice.ttl', 'xsd_importer/tests')
+xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/master_unit.ttl', 'xsd_importer/example')

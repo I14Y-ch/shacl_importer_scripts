@@ -1,0 +1,1413 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:legalUnitType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitAdditionalData>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitKeyData> .
+
+i14y:localUnitMasterDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "localUnitMasterDataType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/activityDescription>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalLocationAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalPostOfficeBoxAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/email>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/localId>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainUid>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/name>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaCode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaVersion>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/sizeClassFte>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/status>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/statusDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/website> .
+
+<http://example.org/xone/zipCodeType> rdf:first <http://example.org/xone/zipCodeType_0> .
+
+<http://example.org/xone/zipCodeType_0> rdf:first <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/zipCodeType/foreignZipCode> ;
+    rdf:rest () .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/addressCategory> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressCategoryType ;
+    sh:datatype xsd:token ;
+    sh:in ( "correspondenceAddress" "liquidationAddress" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "addressCategory"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/addressCategory> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/attentionOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:attentionOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 60 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "attentionOfAddressLine"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/attentionOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/careOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/complementAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/locationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:locationAddressDetailsType ;
+    sh:class i14y:locationAddressDetailsType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "locationAddressDetails"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/locationAddressDetails> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityCheckDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/addressCategory> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressCategoryType ;
+    sh:datatype xsd:token ;
+    sh:in ( "correspondenceAddress" "liquidationAddress" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "addressCategory"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/addressCategory> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/attentionOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:attentionOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 60 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "attentionOfAddressLine"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/attentionOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/cantonAbbreviation> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "cantonAbbreviation"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/cantonAbbreviation> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/careOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/complementAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/country> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/country> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityCheckDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postOfficeBoxNumber> a sh:PropertyShape ;
+    dct:conformsTo i14y:postOfficeBoxNumberType ;
+    sh:datatype xsd:unsignedInt ;
+    sh:maxCount 1 ;
+    sh:maxInclusive "99999999"^^xsd:unsignedInt ;
+    sh:minCount 0 ;
+    sh:name "postOfficeBoxNumber"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postOfficeBoxNumber> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/town> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/town> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/zipCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:zipCodeType ;
+    sh:class i14y:zipCodeType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "zipCode"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/zipCode> .
+
+i14y:foreignLocationAddressDetailType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignLocationAddressDetailType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/country>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/foreignZipCode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/houseNumber>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/street>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/town> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/country> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/country> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/foreignZipCode> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignZipCode"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/foreignZipCode> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/houseNumber> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "houseNumber"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/houseNumber> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/street> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "street"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/street> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/town> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressDetailType/town> .
+
+i14y:foreignLocationAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignLocationAddressType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/careOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/complementAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/foreignLocationAddressDetails> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/careOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/complementAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/foreignLocationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLocationAddressDetailType ;
+    sh:class i14y:foreignLocationAddressDetailType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "foreignLocationAddressDetails"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignLocationAddressType/foreignLocationAddressDetails> .
+
+i14y:foreignOrganisationInformationType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignOrganisationInformationType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/ISICCode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/NACECode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormCode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignRegister>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/name>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/otherName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/qualification> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/ISICCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:ISICCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 2 ;
+    sh:minCount 0 ;
+    sh:minLength 2 ;
+    sh:name "ISICCode"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/ISICCode> ;
+    sh:pattern "[0-9]{2}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/NACECode> a sh:PropertyShape ;
+    dct:conformsTo i14y:NACECodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 0 ;
+    sh:minLength 4 ;
+    sh:name "NACECode"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/NACECode> ;
+    sh:pattern "[0-9]{4}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLocationAddressType ;
+    sh:class i14y:foreignLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "foreignAddress"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLegalFormCodeType ;
+    dct:description "\"ELF Code\" of the following CodeList is expected : https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 0 ;
+    sh:minLength 4 ;
+    sh:name "foreignLegalFormCode"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormCode> ;
+    sh:pattern "[A-Z0-9]{4}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormName> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignLegalFormNameType ;
+    dct:description "\"Entity Legal Form name Transliterated name\" of the following CodeList is expected : https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignLegalFormName"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignLegalFormName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignRegister> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignRegisterType ;
+    sh:class i14y:foreignRegisterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "foreignRegister"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/foreignRegister> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/name> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/otherName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount sh:unbounded ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "otherName"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/otherName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/qualification> a sh:PropertyShape ;
+    dct:conformsTo i14y:qualificationType ;
+    sh:datatype xsd:token ;
+    sh:in ( "ENTITY_SUPPLIED_ONLY" "PARTIALLY_CORROBORATED" "FULLY_CORROBORATED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "qualification"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignOrganisationInformationType/qualification> .
+
+i14y:foreignRegisterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "foreignRegisterType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryId>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterId>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/registrationDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryId> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 36 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterEntryId"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryId> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignRegisterEntryStatus"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterEntryStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterId> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterId"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterId> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterName> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "foreignRegisterName"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/foreignRegisterName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/registrationDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registrationDate"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/foreignRegisterType/registrationDate> .
+
+i14y:legalUnitAdditionalDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitAdditionalDataType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/activityDescription>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/additionalLocationAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/cessationReason>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterActivationDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterCessationDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/correspondenceLanguage>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/email>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/firstRegistrationDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/foreignOrganisationInformation>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/legalUnitType>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaCode>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaVersion>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/otherRegister>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/publicStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/replacementUid>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/soleProprietorshipPerson>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/website> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/activityDescription> a sh:PropertyShape ;
+    dct:conformsTo i14y:activityDescriptionType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10000 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "activityDescription"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/activityDescription> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/additionalLocationAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalLocationAddressType ;
+    sh:class i14y:additionalLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalLocationAddress"@en ;
+    sh:order 15 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/additionalLocationAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/cessationReason> a sh:PropertyShape ;
+    dct:conformsTo i14y:cessationReasonType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "cessationReason"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/cessationReason> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterActivationDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterActivationDate"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterActivationDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterCessationDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterCessationDate"@en ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/commercialRegisterCessationDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/correspondenceLanguage> a sh:PropertyShape ;
+    dct:conformsTo i14y:correspondenceLanguageType ;
+    sh:datatype xsd:token ;
+    sh:in ( "de" "rm" "fr" "it" "en" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "correspondenceLanguage"@en ;
+    sh:order 14 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/correspondenceLanguage> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/email> a sh:PropertyShape ;
+    dct:conformsTo i14y:emailType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 12 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/email> ;
+    sh:pattern "[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*@[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/firstRegistrationDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "firstRegistrationDate"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/firstRegistrationDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/foreignOrganisationInformation> a sh:PropertyShape ;
+    dct:conformsTo i14y:foreignOrganisationInformationType ;
+    sh:class i14y:foreignOrganisationInformationType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "foreignOrganisationInformation"@en ;
+    sh:order 16 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/foreignOrganisationInformation> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/legalUnitType> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitTypeType ;
+    sh:datatype xsd:token ;
+    sh:in ( "mainLegalUnit" "branchLegalUnit" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "legalUnitType"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/legalUnitType> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 6 ;
+    sh:minCount 0 ;
+    sh:minLength 6 ;
+    sh:name "nogaCode"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaCode> ;
+    sh:pattern "[0-9]{6}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaVersion> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaVersionType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "nogaVersion"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/nogaVersion> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/otherRegister> a sh:PropertyShape ;
+    dct:conformsTo i14y:otherRegisterType ;
+    sh:class i14y:otherRegisterType ;
+    sh:maxCount sh:unbounded ;
+    sh:minCount 0 ;
+    sh:name "otherRegister"@en ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/otherRegister> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/publicStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidPublicStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "public" "nonPublic" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "publicStatus"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/publicStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/replacementUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "replacementUid"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/replacementUid> ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/soleProprietorshipPerson> a sh:PropertyShape ;
+    dct:conformsTo i14y:soleProprietorshipPersonType ;
+    sh:class i14y:soleProprietorshipPersonType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "soleProprietorshipPerson"@en ;
+    sh:order 11 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/soleProprietorshipPerson> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/website> a sh:PropertyShape ;
+    dct:conformsTo i14y:websiteType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "website"@en ;
+    sh:order 13 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitAdditionalDataType/website> ;
+    sh:pattern "https?://[a-zA-Z0-9\\\\.-]+\\\\.[a-zA-Z]{2,4}(/\\\\S*)?" .
+
+i14y:legalUnitKeyDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitKeyDataType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/commercialRegisterStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/legalUnitMasterData>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/lei>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/leiRegisterRelationStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatEndOfObligation>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatRegisterStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatStartOfObligation>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatUid> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/commercialRegisterStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "commercialRegisterStatus"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/commercialRegisterStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/legalUnitMasterData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitMasterDataType ;
+    sh:class i14y:legalUnitMasterDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "legalUnitMasterData"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/legalUnitMasterData> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/lei> a sh:PropertyShape ;
+    dct:conformsTo i14y:leiRegisterStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "ISSUED" "DUPLICATE" "LAPSED" "MERGED" "RETIRED" "ANNULLED" "CANCELLED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "lei"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/lei> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/leiRegisterRelationStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:leiRegisterStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "ISSUED" "DUPLICATE" "LAPSED" "MERGED" "RETIRED" "ANNULLED" "CANCELLED" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "leiRegisterRelationStatus"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/leiRegisterRelationStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatEndOfObligation> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatEndOfObligation"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatEndOfObligation> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatRegisterStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatRegisterStatus"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatRegisterStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatStartOfObligation> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "vatStartOfObligation"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatStartOfObligation> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "vatUid"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitKeyDataType/vatUid> ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+i14y:legalUnitMasterDataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "legalUnitMasterDataType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalPostOfficeBoxAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/legalForm>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainAddress>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainUid>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/name>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/status>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/statusDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/translatedName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/uid> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "additionalName"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalPostOfficeBoxAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalPostOfficeBoxAddressType ;
+    sh:class i14y:additionalPostOfficeBoxAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalPostOfficeBoxAddress"@en ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/additionalPostOfficeBoxAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/legalForm> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalFormType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 4 ;
+    sh:minCount 1 ;
+    sh:minLength 4 ;
+    sh:name "legalForm"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/legalForm> ;
+    sh:pattern "[0-9]{4}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:mainAddressType ;
+    sh:class i14y:mainAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "mainAddress"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "mainUid"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/mainUid> ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/name> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/status> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "deleted" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "status"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/status> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/statusDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "statusDate"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/statusDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/translatedName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "translatedName"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/translatedName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/uid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "uid"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitMasterDataType/uid> ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitAdditionalData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitAdditionalDataType ;
+    sh:class i14y:legalUnitAdditionalDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "legalUnitAdditionalData"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitAdditionalData> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitKeyData> a sh:PropertyShape ;
+    dct:conformsTo i14y:legalUnitKeyDataType ;
+    sh:class i14y:legalUnitKeyDataType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "legalUnitKeyData"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/legalUnitType/legalUnitKeyData> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/activityDescription> a sh:PropertyShape ;
+    dct:conformsTo i14y:activityDescriptionType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 10000 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "activityDescription"@en ;
+    sh:order 11 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/activityDescription> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalLocationAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalLocationAddressType ;
+    sh:class i14y:additionalLocationAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalLocationAddress"@en ;
+    sh:order 13 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalLocationAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalName> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "additionalName"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalPostOfficeBoxAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:additionalPostOfficeBoxAddressType ;
+    sh:class i14y:additionalPostOfficeBoxAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "additionalPostOfficeBoxAddress"@en ;
+    sh:order 14 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/additionalPostOfficeBoxAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/email> a sh:PropertyShape ;
+    dct:conformsTo i14y:emailType ;
+    dct:description "Email address"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/email> ;
+    sh:pattern "[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*@[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+(\\\\.[A-Za-zäöüÄÖÜàáâãåæçèéêëìíîïðñòóôõøùúûýþÿ0-9!#-'\\\\*\\\\+\\\\-/=\\\\?\\\\^_`\\\\{-~]+)*" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/localId> a sh:PropertyShape ;
+    dct:conformsTo i14y:localIdType ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:maxLength 9 ;
+    sh:minCount 0 ;
+    sh:minLength 9 ;
+    sh:name "localId"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/localId> ;
+    sh:pattern "[A-B][1-9][0-9]{7}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainAddress> a sh:PropertyShape ;
+    dct:conformsTo i14y:mainAddressType ;
+    sh:class i14y:mainAddressType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "mainAddress"@en ;
+    sh:order 12 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainAddress> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainUid> a sh:PropertyShape ;
+    dct:conformsTo i14y:uidType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 0 ;
+    sh:minLength 12 ;
+    sh:name "mainUid"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/mainUid> ;
+    sh:pattern "CHE[1-9][0-9]{8}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/name> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "name"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/name> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaCodeType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 6 ;
+    sh:minCount 0 ;
+    sh:minLength 6 ;
+    sh:name "nogaCode"@en ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaCode> ;
+    sh:pattern "[0-9]{6}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaVersion> a sh:PropertyShape ;
+    dct:conformsTo i14y:nogaVersionType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "nogaVersion"@en ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/nogaVersion> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/sizeClassFte> a sh:PropertyShape ;
+    dct:conformsTo i14y:sizeClassFteType ;
+    dct:description "DataType is defined in the schema or in one of its subschemas and possible values are documented on the platform i14y : https://www.i14y.admin.ch/en/home"@en ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:maxCount 1 ;
+    sh:maxInclusive "12"^^xsd:nonNegativeInteger ;
+    sh:minCount 0 ;
+    sh:minInclusive "1"^^xsd:nonNegativeInteger ;
+    sh:name "sizeClassFte"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/sizeClassFte> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/status> a sh:PropertyShape ;
+    dct:conformsTo i14y:unitStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "deleted" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "status"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/status> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/statusDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "statusDate"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/statusDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/website> a sh:PropertyShape ;
+    dct:conformsTo i14y:websiteType ;
+    dct:description "Internet address / web site"@en ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 0 ;
+    sh:name "website"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/localUnitMasterDataType/website> ;
+    sh:pattern "https?://[a-zA-Z0-9\\\\.-]+\\\\.[a-zA-Z]{2,4}(/\\\\S*)?" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EDID> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EDID"@en ;
+    sh:order 11 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EDID> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGAID> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EGAID"@en ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGAID> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGID> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "EGID"@en ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGID> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/ESID> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "ESID"@en ;
+    sh:order 12 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/ESID> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/GDEID> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "GDEID"@en ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/GDEID> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/cantonAbbreviation> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "cantonAbbreviation"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/cantonAbbreviation> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesEast> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "coordinatesEast"@en ;
+    sh:order 14 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesEast> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesNorth> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "coordinatesNorth"@en ;
+    sh:order 13 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesNorth> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/country> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "country"@en ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/country> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/houseNumber> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "houseNumber"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/houseNumber> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/language> a sh:PropertyShape ;
+    dct:conformsTo i14y:addressLanguageType ;
+    sh:datatype xsd:token ;
+    sh:in ( "de" "rm" "fr" "it" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "language"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/language> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/municipality> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "municipality"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/municipality> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/street> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "street"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/street> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/town> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "town"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/town> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/zipCode> a sh:PropertyShape ;
+    dct:conformsTo i14y:zipCodeType ;
+    sh:class i14y:zipCodeType ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "zipCode"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/zipCode> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/careOfAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:careOfAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 150 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "careOfAddressLine"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/careOfAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/complementAddressLine> a sh:PropertyShape ;
+    dct:conformsTo i14y:complementAddressLineType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 200 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "complementAddressLine"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/complementAddressLine> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/locationAddressDetails> a sh:PropertyShape ;
+    dct:conformsTo i14y:locationAddressDetailsType ;
+    sh:class i14y:locationAddressDetailsType ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "locationAddressDetails"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/locationAddressDetails> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityCheckDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityCheckDate"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityCheckDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:postDeliverabilityStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "unchecked" "isDeliverable" "isNotDeliverable" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "postDeliverabilityStatus"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityStatus> .
+
+i14y:otherRegisterType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "otherRegisterType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/isResponsibleRegister>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryId>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryIdPrefix>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerId>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registrationDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/isResponsibleRegister> a sh:PropertyShape ;
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "isResponsibleRegister"@en ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/isResponsibleRegister> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryId> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 36 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerEntryId"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryId> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryIdPrefix> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 30 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerEntryIdPrefix"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryIdPrefix> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryStatus> a sh:PropertyShape ;
+    dct:conformsTo i14y:registerStatusType ;
+    sh:datatype xsd:token ;
+    sh:in ( "active" "inactive" "noRelation" ) ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registerEntryStatus"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerEntryStatus> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerId> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 12 ;
+    sh:minCount 1 ;
+    sh:minLength 12 ;
+    sh:name "registerId"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerId> ;
+    sh:pattern "REG[1-9][0-9]{8}" .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerName> a sh:PropertyShape ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 255 ;
+    sh:minCount 0 ;
+    sh:minLength 1 ;
+    sh:name "registerName"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registerName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registrationDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "registrationDate"@en ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/otherRegisterType/registrationDate> .
+
+i14y:soleProprietorshipPersonType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "soleProprietorshipPersonType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/birthDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/deathDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/firstName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/lastName>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/socialSecurityNumber> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/birthDate> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "birthDate"@en ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/birthDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/deathDate> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "deathDate"@en ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/deathDate> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/firstName> a sh:PropertyShape ;
+    dct:conformsTo i14y:firstNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "firstName"@en ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/firstName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/lastName> a sh:PropertyShape ;
+    dct:conformsTo i14y:lastNameType ;
+    sh:datatype xsd:token ;
+    sh:maxCount 1 ;
+    sh:maxLength 100 ;
+    sh:minCount 1 ;
+    sh:minLength 1 ;
+    sh:name "lastName"@en ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/lastName> .
+
+<https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/socialSecurityNumber> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:name "socialSecurityNumber"@en ;
+    sh:order 0 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/soleProprietorshipPersonType/socialSecurityNumber> .
+
+i14y:additionalLocationAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "additionalLocationAddressType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/addressCategory>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/attentionOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/careOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/complementAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/locationAddressDetails>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityCheckDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalLocationAddressType/postDeliverabilityStatus> .
+
+i14y:additionalPostOfficeBoxAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "additionalPostOfficeBoxAddressType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/addressCategory>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/attentionOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/cantonAbbreviation>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/careOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/complementAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/country>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityCheckDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postDeliverabilityStatus>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/postOfficeBoxNumber>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/town>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/additionalPostOfficeBoxAddressType/zipCode> .
+
+i14y:locationAddressDetailsType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "locationAddressDetailsType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EDID>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGAID>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/EGID>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/ESID>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/GDEID>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/cantonAbbreviation>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesEast>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/coordinatesNorth>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/country>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/houseNumber>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/language>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/municipality>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/street>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/town>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/locationAddressDetailsType/zipCode> .
+
+i14y:mainAddressType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "mainAddressType"@en ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/careOfAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/complementAddressLine>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/locationAddressDetails>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityCheckDate>,
+        <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/mainAddressType/postDeliverabilityStatus> .
+
+i14y:zipCodeType a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "zipCodeType"@en ;
+    sh:xone <http://example.org/xone/zipCodeType> .
+
