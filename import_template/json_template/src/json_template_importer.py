@@ -65,7 +65,10 @@ def json_to_shacl(json_input, output_file):
 
             for lang, name in prop.get("names", {}).items():
                 g.add((prop_uri, SH.name, Literal(name, lang=lang)))
-
+                
+            for lang, desc in rel.get("descriptions", {}).items():
+                g.add((rel_uri, DCTERMS.description, Literal(desc, lang=lang)))
+            
             datatype_map = {
                 "string": XSD.string,
                 "dateTime": XSD.dateTime,
@@ -108,7 +111,9 @@ def json_to_shacl(json_input, output_file):
             for lang, name in rel.get("names", {}).items():
                 g.add((rel_uri, SH.name, Literal(name, lang=lang)))
             
-
+            for lang, desc in rel.get("descriptions", {}).items():
+                g.add((rel_uri, DCTERMS.description, Literal(desc, lang=lang)))
+                
             if "class" in rel:
                 target_class_uri = URIRef(f"{BASE_URI}{rel['class']}")
                 g.add((rel_uri, SH["class"], target_class_uri))
