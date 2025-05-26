@@ -35,6 +35,12 @@
             "de": "String-Eigenschaft",
             "it": "Proprietà stringa"
           },
+          "descriptions": {
+            "en": "String Property",
+            "fr": "Propriété chaîne",
+            "de": "String-Eigenschaft",
+            "it": "Proprietà stringa"
+          },
           "datatype": "string",
           "constraints": {
             "pattern": "regex_pattern",
@@ -104,6 +110,12 @@
             "fr": "Nom de la relation",
             "de": "Name der Beziehung",
             "it": "Nome della relazione"
+          },
+          "descriptions": {
+            "en": "String Property",
+            "fr": "Propriété chaîne",
+            "de": "String-Eigenschaft",
+            "it": "Proprietà stringa"
           },
           "class": "targetClassName",
           "constraints": {
