@@ -66,14 +66,21 @@ def json_to_shacl(json_input, output_file):
             for lang, name in prop.get("names", {}).items():
                 g.add((prop_uri, SH.name, Literal(name, lang=lang)))
                 
-            for lang, desc in rel.get("descriptions", {}).items():
-                g.add((rel_uri, DCTERMS.description, Literal(desc, lang=lang)))
+            for lang, desc in prop.get("descriptions", {}).items():
+                g.add((prop_uri, DCTERMS.description, Literal(desc, lang=lang)))
             
             datatype_map = {
                 "string": XSD.string,
-                "dateTime": XSD.dateTime,
+                "boolean": XSD.boolean,
                 "integer": XSD.integer,
-                "boolean": XSD.boolean
+                "decimal": XSD.decimal,
+                "float": XSD.float,
+                "double": XSD.double,
+                "date": XSD.date,
+                "time": XSD.time,
+                "dateTime": XSD.dateTime,
+                "anyURI": XSD.anyURI,
+                "language": XSD.language,
             }
             if "datatype" in prop:
                 datatype = prop["datatype"]
