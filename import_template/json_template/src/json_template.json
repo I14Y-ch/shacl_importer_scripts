@@ -35,6 +35,12 @@
             "de": "String-Eigenschaft",
             "it": "Proprietà stringa"
           },
+          "descriptions": {
+            "en": "String Property",
+            "fr": "Propriété chaîne",
+            "de": "String-Eigenschaft",
+            "it": "Proprietà stringa"
+          },
           "datatype": "string",
           "constraints": {
             "pattern": "regex_pattern",
@@ -44,7 +50,7 @@
             "maxCount": 0
           },
           "order": 0,
-          "conformsTo": "reference to I14Y concept"
+          "conformsTo": "www.example.org"
         },
           {
           "identifier": "decimalProperty",
@@ -56,8 +62,8 @@
           },
           "datatype": "decimal",
           "constraints": {
-            "minInclusive": 0.0,
-            "maxExclusive": 100.0,
+            "minInclusive": 0,
+            "maxExclusive": 0,
             "minCount": 0,
             "maxCount": 0
           },
@@ -74,7 +80,7 @@
           "datatype": "integer",
           "constraints": {
             "minInclusive": 0,
-            "maxExclusive": 100,
+            "maxExclusive": 0,
             "minCount": 0,
             "maxCount": 0
           },
@@ -104,6 +110,12 @@
             "fr": "Nom de la relation",
             "de": "Name der Beziehung",
             "it": "Nome della relazione"
+          },
+          "descriptions": {
+            "en": "String Property",
+            "fr": "Propriété chaîne",
+            "de": "String-Eigenschaft",
+            "it": "Proprietà stringa"
           },
           "class": "targetClassName",
           "constraints": {
@@ -144,8 +156,8 @@
           },
           "datatype": "decimal",
           "constraints": {
-            "minInclusive": 0.0,
-            "maxExclusive": 100.0,
+            "minInclusive": 0,
+            "maxExclusive": 0,
             "minCount": 0,
             "maxCount": 0
           },
