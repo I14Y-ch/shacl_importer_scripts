@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import Optional, List
 from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import RDF, XSD, SH
+from rdflib.namespace import RDF, XSD, SH, OWL
 
 class CSVToSHACL:
     """Enhanced CSV to SHACL transformer with better year detection and numeric constraints."""
@@ -18,10 +18,22 @@ class CSVToSHACL:
         self.g = Graph()
         self.base_uri = base_uri.rstrip('/') + '/'
         self.default_lang = default_lang
-        self.sh = SH
-        self.g.bind("sh", SH)
-        self.ex = Namespace(self.base_uri)
-        self.g.bind("i14y", self.ex)
+
+        self.SH = Namespace("http://www.w3.org/ns/shacl#")
+        self.QB = Namespace("http://purl.org/linked-data/cube#")
+        self.DCTERMS = Namespace("http://purl.org/dc/terms/")
+        self.schema = Namespace("https://schema.org/")
+        self.pav = Namespace("http://purl.org/pav/")
+        self.rdfs = Namespace("http://www.w3.org/2000/01/rdf-schema#")
+        self.OWL = Namespace("http://www.w3.org/2002/07/owl#")
+
+        self.g.bind("sh", self.SH)
+        self.g.bind("QB", self.QB)
+        self.g.bind("dcterms", self.DCTERMS)
+        self.g.bind("schema", self.schema)
+        self.g.bind("pav", self.pav)
+        self.g.bind("rdfs", self.rdfs)
+        self.g.bind("owl", self.OWL)
 
     def _is_year_column(self, column_name: str) -> bool:
         lower_name = column_name.lower()
@@ -98,6 +110,7 @@ class CSVToSHACL:
         prop_uri = URIRef(f"{node_shape}/{safe_name}")
         
         self.g.add((prop_uri, RDF.type, SH.PropertyShape))
+        self.g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
         self.g.add((prop_uri, SH.path, prop_uri))
         self.g.add((prop_uri, SH.datatype, property_type))
         
@@ -135,6 +148,7 @@ class CSVToSHACL:
                 shape_uri = URIRef(f"{self.base_uri}{shape_identifier or shape_name}")
                 
                 self.g.add((shape_uri, RDF.type, SH.NodeShape))
+                self.g.add((shape_uri, RDF.type, self.rdfs.Class))
                 self.g.add((shape_uri, SH.closed, Literal(True)))
                 
                 if self.default_lang:
@@ -167,8 +181,8 @@ if __name__ == "__main__":
     input_csv = "csv_importer/example/iris.csv"
     output_ttl = "csv_importer/example/iris.ttl"
 
-    node_shape_name = " " # Optional - will use filename if None else you can state the file name "file_name"
-    shape_identifer = " " # Optional - identifier to use in the uri -> base_uri/{shape_identifier} - will use the file name if None (but file name should not contain spaces)
+    node_shape_name = "" # Optional - will use filename if None else you can state the file name "file_name"
+    shape_identifer = "" # Optional - identifier to use in the uri -> base_uri/{shape_identifier} - will use the file name if None (but file name should not contain spaces)
 
     if transformer.transform_csv_to_shacl(input_csv, node_shape_name, shape_identifer):
         transformer.save_shacl(output_ttl)
