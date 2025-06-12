@@ -1,6 +1,6 @@
 import json
 from rdflib import Graph, URIRef, Literal, Namespace
-from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
+from rdflib.namespace import RDF, RDFS, XSD, DCTERMS, OWL
 
 def json_to_shacl(json_input, output_file):
 
@@ -28,6 +28,7 @@ def json_to_shacl(json_input, output_file):
         class_uri = URIRef(f"{BASE_URI}{cls['identifier']}")
         node_shapes[cls['identifier']] = class_uri
         g.add((class_uri, RDF.type, SH.NodeShape))
+        g.add((class_uri, RDF.type, RDFS.Class))
         
 
         for lang, name in cls.get("names", {}).items():
@@ -60,6 +61,7 @@ def json_to_shacl(json_input, output_file):
             prop_uri = URIRef(f"{BASE_URI}{cls['identifier']}/{prop['identifier']}")
             g.add((class_uri, SH.property, prop_uri))
             g.add((prop_uri, RDF.type, SH.PropertyShape))
+            g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
             g.add((prop_uri, SH.path, prop_uri))
             
 
@@ -112,6 +114,7 @@ def json_to_shacl(json_input, output_file):
             rel_uri = URIRef(f"{BASE_URI}{cls['identifier']}/{rel['identifier']}")
             g.add((class_uri, SH.property, rel_uri))
             g.add((rel_uri, RDF.type, SH.PropertyShape))
+            g.add((rel_uri, RDF.type, OWL.ObjectProperty))
             g.add((rel_uri, SH.path, rel_uri))
             
 
@@ -123,7 +126,7 @@ def json_to_shacl(json_input, output_file):
                 
             if "class" in rel:
                 target_class_uri = URIRef(f"{BASE_URI}{rel['class']}")
-                g.add((rel_uri, SH["class"], target_class_uri))
+                g.add((rel_uri, SH["node"], target_class_uri))
             
        
             constraints = rel.get("constraints", {})
@@ -151,7 +154,7 @@ def json_to_shacl(json_input, output_file):
 
 if __name__ == "__main__":
   
-    with open("json_template/template_json.json", "r", encoding="utf-8") as f:
+    with open("structure_with_two_classes.json", "r", encoding="utf-8") as f:
         json_input = f.read()
     
 
