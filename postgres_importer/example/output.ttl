@@ -1,0 +1,40 @@
+@prefix db: <http://example.org/database#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+db:Customers a sh:NodeShape ;
+    sh:closed true ;
+    sh:property <http://example.org/database#Customers/customer_id>,
+        <http://example.org/database#Customers/customer_name> ;
+    sh:targetClass db:Customers .
+
+<http://example.org/database#Customers/customer_id> a sh:PropertyShape ;
+    sh:datatype "bigint" ;
+    sh:minCount 1 ;
+    sh:name "customer_id"@en ;
+    sh:path db:customer_id .
+
+<http://example.org/database#Customers/customer_name> a sh:PropertyShape ;
+    sh:datatype "\"char\"" ;
+    sh:minCount 0 ;
+    sh:name "customer_name"@en ;
+    sh:path db:customer_name .
+
+db:Invoice a sh:NodeShape ;
+    sh:closed true ;
+    sh:property <http://example.org/database#Invoice/amount>,
+        <http://example.org/database#Invoice/paying_customer> ;
+    sh:targetClass db:Invoice .
+
+<http://example.org/database#Invoice/amount> a sh:PropertyShape ;
+    sh:datatype "bigint" ;
+    sh:minCount 0 ;
+    sh:name "amount"@en ;
+    sh:path db:amount .
+
+<http://example.org/database#Invoice/paying_customer> a sh:PropertyShape ;
+    sh:datatype "bigint" ;
+    sh:minCount 0 ;
+    sh:name "paying_customer"@en ;
+    sh:path db:paying_customer .
+
