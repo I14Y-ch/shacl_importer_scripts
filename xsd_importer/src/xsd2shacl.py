@@ -1,15 +1,11 @@
 from lxml import etree
 from rdflib import Graph, Namespace, Literal, URIRef, BNode
-from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
-from rdflib.collection import Collection
+from rdflib.namespace import RDF, RDFS, XSD, OWL
 import os
-import re
 
 dataset_identifier = "dataset_identifier" # state here the dataset identifier, needed to create the URI
 
 i14y_base_path = "https://www.i14y.admin.ch/resources/datasets/" + dataset_identifier + "/structure/"
-    
-
 
 # Define namespaces
 SH = Namespace("http://www.w3.org/ns/shacl#")
@@ -159,7 +155,7 @@ def handle_extension(extension, xsd_root, subject, graph):
         # Handle custom base types
         type_name = base.split(':')[-1]
         base_node = BNode()
-        graph.add((base_node, SH['class'], I14Y[type_name]))
+        graph.add((base_node, SH['node'], I14Y[type_name]))
         graph.add((current, RDF.first, base_node))
         
         # Add extension constraints
@@ -522,6 +518,7 @@ def handle_attribute(attribute, xsd_root, graph, parent_shape=None, parent_type_
     # Create a PropertyShape for the attribute
     attr_shape = I14Y[f"{parent_type_name}/{attr_name}"] 
     graph.add((attr_shape, RDF.type, SH.PropertyShape))
+    graph.add((attr_shape, RDF.type, OWL.DatatypeProperty)) 
     graph.add((attr_shape, SH.path, I14Y[f"{parent_type_name}/{attr_name}"] ))
     graph.add((attr_shape, SH.name, Literal(attr_name, lang='en')))
     
@@ -532,6 +529,7 @@ def handle_attribute(attribute, xsd_root, graph, parent_shape=None, parent_type_
             # Built-in type
             datatype = attr_type.split(':')[-1]
             graph.add((attr_shape, SH.datatype, XSD[datatype]))
+            graph.add((attr_shape, RDFS.range, XSD[datatype]))
         else:
             # Custom type
             type_name = attr_type.split(':')[-1]
@@ -664,6 +662,9 @@ def process_element_details(element, xsd_root, graph, prop_shape):
     if type_kind in ['builtin', 'simple']:
         if base_type:
             graph.add((prop_shape, SH.datatype, XSD[base_type]))
+            # Add as DatatypeProperty
+            graph.add((prop_shape, RDF.type, OWL.DatatypeProperty))
+            graph.add((prop_shape, RDFS.range, XSD[base_type]))
         
         if 'facets' in facets:
             for facet_name, facet_value in facets['facets'].items():
@@ -678,12 +679,12 @@ def process_element_details(element, xsd_root, graph, prop_shape):
     elif type_kind in ['complex', 'complex_mixed', 'complex_simple_content']:
         type_name = element.get('type').split(':')[-1] if element.get('type') else None
         if type_name:
-            graph.add((prop_shape, SH['class'], I14Y[type_name]))
+            graph.add((prop_shape, SH['node'], I14Y[type_name]))
+            graph.add((prop_shape, RDF.type, OWL.ObjectProperty))
     
     if type_kind in ['simple', 'complex', 'complex_mixed', 'complex_simple_content', 'union']:
         type_name = element.get('type').split(':')[-1] if element.get('type') else None
-        if type_name:
-            graph.add((prop_shape, DCT.conformsTo, I14Y[type_name]))
+
 
     # Handle minOccurs and maxOccurs
     min_occurs = element.get('minOccurs', '1')
@@ -753,13 +754,14 @@ def generate_shacl(xsd_root):
             type_map[type_name] = complex_type
             node_shape = I14Y[type_name]
             g.add((node_shape, RDF.type, SH.NodeShape))
+            g.add((node_shape, RDF.type, RDFS.Class))
             g.add((node_shape, SH.name, Literal(type_name, lang='en')))
 
             type_kind, base_type, facets = _process_complex_type(complex_type, xsd_root)
             
             # Handle inheritance
             if base_type and type_kind == 'complex':
-                g.add((node_shape, SH['class'], I14Y[base_type]))
+                g.add((node_shape, SH['node'], I14Y[base_type]))
             
             # Handle compositors
             if 'compositors' in facets:
@@ -794,4 +796,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 # Example usage
 #xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/master_unit.ttl', 'xsd_importer/example')
-xsd_to_shacl("xsd_importer/tests/attributes.xsd", 'xsd_importer/tests/attributes.ttl', 'xsd_importer/tests')
+xsd_to_shacl("C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/xsd_importer/example/do-d-14.04-SPIGES-2024-02.xsd", 'xsd_importer/example/do-d-14-04-SPIGES-2024-02.ttl', 'xsd_importer/example')
