@@ -2,15 +2,20 @@ import psycopg2
 from rdflib import Graph, Namespace, Literal, URIRef, BNode
 from rdflib.namespace import RDF, RDFS, XSD, DCTERMS
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Define namespaces
 SH = Namespace("http://www.w3.org/ns/shacl#")
 DB = Namespace("http://example.org/database#")
 DCT = Namespace("http://purl.org/dc/terms/")
 
-def connect_to_postgres(host, database, user, password):
+def connect_to_postgres(host, port, database, user, password):
     """Connect to the PostgreSQL database."""
     conn = psycopg2.connect(
         host=host,
+        port=port,
         database=database,
         user=user,
         password=password
@@ -23,7 +28,7 @@ def fetch_schema_info(conn):
     cursor.execute("""
         SELECT table_name, column_name, data_type, is_nullable
         FROM information_schema.columns
-        WHERE table_schema = 'public'
+        WHERE table_schema = 'data'
         ORDER BY table_name, ordinal_position;
     """)
     return cursor.fetchall()
@@ -58,9 +63,9 @@ def save_shacl(g, output_file):
     """Save the SHACL graph to an RDF file."""
     g.serialize(destination=output_file, format="turtle")
 
-def postgres_to_shacl(host, database, user, password, output_file):
+def postgres_to_shacl(host, port, database, user, password, output_file):
     """Convert a PostgreSQL database schema to a SHACL RDF file."""
-    conn = connect_to_postgres(host, database, user, password)
+    conn = connect_to_postgres(host, port, database, user, password)
     schema_info = fetch_schema_info(conn)
     conn.close()
 
@@ -68,4 +73,4 @@ def postgres_to_shacl(host, database, user, password, output_file):
     save_shacl(shacl_graph, output_file)
 
 # Example usage
-postgres_to_shacl("localhost", "FSA_TEST", "postgres", "password", "postgres_importer/example/output.ttl")
+#postgres_to_shacl("localhost", 5432, "TEST", "postgres", os.environ.get("password"), "postgres_importer/example/output.ttl")
