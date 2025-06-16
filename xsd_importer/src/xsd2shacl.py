@@ -3,7 +3,7 @@
 # Source: https://github.com/dtai-kg/XSD2SHACL
 # License: Apache License 2.0
 #
-# Changes were made to tailor the code for I14Y.
+# This script reimplements some of the core ideas described in their paper and project.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
