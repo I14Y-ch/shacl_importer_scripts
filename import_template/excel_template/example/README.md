@@ -13,6 +13,12 @@ The converter is available in multiple formats: online API, command-line app, Ja
 - Upload your Excel file  
 - Check the box "Ignore SKOS post-processings"  
 - Click "Convert" and download the resulting SHACL file
+![online form screenshot](skos-play-sparna_screenshot.png)
+
+## Template file structure
+The files has three sheets.
+
+The first sheet (named "prefixes") defines the prefixes necessary for the structure. Here you have to state the datasetIdentifier that will be attached to the structure. This identifier will then be used to build the I14Y PREFIX. 
 
 ## Acknowledgements and License
 This project includes material from the [xls2rdf GitHub repository](https://github.com/sparna-git/xls2rdf?tab=readme-ov-file) licensed under LGPL-3.0. Any modifications or additions in this repository are in accordance with that license.
