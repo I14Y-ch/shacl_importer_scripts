@@ -775,7 +775,7 @@ def generate_shacl(xsd_root):
             # Handle attributes
             if 'attributes' in facets:
                 for attr_name, attribute in facets['attributes'].items():
-                    handle_attribute(attribute, xsd_root, g, node_shape, attr_name)
+                    handle_attribute(attribute, xsd_root, g, node_shape, type_name)
             
             g.add((node_shape, SH.closed, Literal(True)))
 
@@ -796,4 +796,4 @@ def xsd_to_shacl(xsd_file, output_file, base_path):
 
 # Example usage
 #xsd_to_shacl("xsd_importer/example/eCH-0108-7-0.xsd", 'xsd_importer/example/master_unit.ttl', 'xsd_importer/example')
-xsd_to_shacl("C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/xsd_importer/example/do-d-14.04-SPIGES-2024-02.xsd", 'xsd_importer/example/do-d-14-04-SPIGES-2024-02.ttl', 'xsd_importer/example')
+xsd_to_shacl("C:/Users/U80877014/Documents/Structure/shacl_importer_scripts/xsd_importer/example/do-d-14.04-SPIGES-2024-02.xsd", 'xsd_importer/example/do-d-14.04-SPIGES-2024-02.ttl', 'xsd_importer/example')
