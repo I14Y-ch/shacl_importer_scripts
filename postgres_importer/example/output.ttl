@@ -1,0 +1,3847 @@
+@prefix db: <http://example.org/database#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+db:__EFMigrationsHistory a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "__EFMigrationsHistory"@en ;
+    sh:property <http://example.org/database#__EFMigrationsHistory/MigrationId>,
+        <http://example.org/database#__EFMigrationsHistory/ProductVersion> ;
+    sh:targetClass db:__EFMigrationsHistory .
+
+<http://example.org/database#__EFMigrationsHistory/MigrationId> a sh:PropertyShape ;
+    sh:datatype "character varying" ;
+    sh:minCount 1 ;
+    sh:name "MigrationId"@en ;
+    sh:path db:MigrationId .
+
+<http://example.org/database#__EFMigrationsHistory/ProductVersion> a sh:PropertyShape ;
+    sh:datatype "character varying" ;
+    sh:minCount 1 ;
+    sh:name "ProductVersion"@en ;
+    sh:path db:ProductVersion .
+
+<http://example.org/database#agent/classification> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "classification"@en ;
+    sh:path db:classification .
+
+<http://example.org/database#agent/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#agent/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#agent/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#agent/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#agent/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#agent/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#agent/home_page> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "home_page"@en ;
+    sh:path db:home_page .
+
+<http://example.org/database#agent/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#agent/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#agent/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#agent/name_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_de"@en ;
+    sh:path db:name_de .
+
+<http://example.org/database#agent/name_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_en"@en ;
+    sh:path db:name_en .
+
+<http://example.org/database#agent/name_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_fr"@en ;
+    sh:path db:name_fr .
+
+<http://example.org/database#agent/name_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_it"@en ;
+    sh:path db:name_it .
+
+<http://example.org/database#agent/name_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_rm"@en ;
+    sh:path db:name_rm .
+
+<http://example.org/database#agent/spatial> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "spatial"@en ;
+    sh:path db:spatial .
+
+<http://example.org/database#agent/spatial_ch> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "spatial_ch"@en ;
+    sh:path db:spatial_ch .
+
+<http://example.org/database#agent/uid> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "uid"@en ;
+    sh:path db:uid .
+
+db:agent_sub_agent_relation a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "agent_sub_agent_relation"@en ;
+    sh:property <http://example.org/database#agent_sub_agent_relation/agent_id>,
+        <http://example.org/database#agent_sub_agent_relation/created_at>,
+        <http://example.org/database#agent_sub_agent_relation/id>,
+        <http://example.org/database#agent_sub_agent_relation/modified_at>,
+        <http://example.org/database#agent_sub_agent_relation/sub_agent_id> ;
+    sh:targetClass db:agent_sub_agent_relation .
+
+<http://example.org/database#agent_sub_agent_relation/agent_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "agent_id"@en ;
+    sh:path db:agent_id .
+
+<http://example.org/database#agent_sub_agent_relation/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#agent_sub_agent_relation/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#agent_sub_agent_relation/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#agent_sub_agent_relation/sub_agent_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "sub_agent_id"@en ;
+    sh:path db:sub_agent_id .
+
+db:annotations a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "annotations"@en ;
+    sh:property <http://example.org/database#annotations/code_list_entry_id>,
+        <http://example.org/database#annotations/created_at>,
+        <http://example.org/database#annotations/id>,
+        <http://example.org/database#annotations/identifier>,
+        <http://example.org/database#annotations/modified_at>,
+        <http://example.org/database#annotations/position>,
+        <http://example.org/database#annotations/text_de>,
+        <http://example.org/database#annotations/text_en>,
+        <http://example.org/database#annotations/text_fr>,
+        <http://example.org/database#annotations/text_it>,
+        <http://example.org/database#annotations/text_rm>,
+        <http://example.org/database#annotations/title>,
+        <http://example.org/database#annotations/type>,
+        <http://example.org/database#annotations/uri> ;
+    sh:targetClass db:annotations .
+
+<http://example.org/database#annotations/code_list_entry_id> a sh:PropertyShape ;
+    sh:class db:code_list_entries ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "code_list_entry_id"@en ;
+    sh:path db:code_list_entry_id .
+
+<http://example.org/database#annotations/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#annotations/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#annotations/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#annotations/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#annotations/position> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "position"@en ;
+    sh:path db:position .
+
+<http://example.org/database#annotations/text_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_de"@en ;
+    sh:path db:text_de .
+
+<http://example.org/database#annotations/text_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_en"@en ;
+    sh:path db:text_en .
+
+<http://example.org/database#annotations/text_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_fr"@en ;
+    sh:path db:text_fr .
+
+<http://example.org/database#annotations/text_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_it"@en ;
+    sh:path db:text_it .
+
+<http://example.org/database#annotations/text_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_rm"@en ;
+    sh:path db:text_rm .
+
+<http://example.org/database#annotations/title> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title"@en ;
+    sh:path db:title .
+
+<http://example.org/database#annotations/type> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "type"@en ;
+    sh:path db:type .
+
+<http://example.org/database#annotations/uri> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "uri"@en ;
+    sh:path db:uri .
+
+db:channel_owned_bys a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "channel_owned_bys"@en ;
+    sh:property <http://example.org/database#channel_owned_bys/channel_id>,
+        <http://example.org/database#channel_owned_bys/created_at>,
+        <http://example.org/database#channel_owned_bys/id>,
+        <http://example.org/database#channel_owned_bys/modified_at>,
+        <http://example.org/database#channel_owned_bys/owned_by_id> ;
+    sh:targetClass db:channel_owned_bys .
+
+<http://example.org/database#channel_owned_bys/channel_id> a sh:PropertyShape ;
+    sh:class db:channels ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "channel_id"@en ;
+    sh:path db:channel_id .
+
+<http://example.org/database#channel_owned_bys/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#channel_owned_bys/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#channel_owned_bys/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#channel_owned_bys/owned_by_id> a sh:PropertyShape ;
+    sh:class db:public_organisations ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "owned_by_id"@en ;
+    sh:path db:owned_by_id .
+
+<http://example.org/database#channels/address_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "address_de"@en ;
+    sh:path db:address_de .
+
+<http://example.org/database#channels/address_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "address_en"@en ;
+    sh:path db:address_en .
+
+<http://example.org/database#channels/address_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "address_fr"@en ;
+    sh:path db:address_fr .
+
+<http://example.org/database#channels/address_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "address_it"@en ;
+    sh:path db:address_it .
+
+<http://example.org/database#channels/address_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "address_rm"@en ;
+    sh:path db:address_rm .
+
+<http://example.org/database#channels/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#channels/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#channels/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#channels/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#channels/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#channels/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#channels/email> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "email"@en ;
+    sh:path db:email .
+
+<http://example.org/database#channels/fax> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fax"@en ;
+    sh:path db:fax .
+
+<http://example.org/database#channels/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#channels/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#channels/mobile> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "mobile"@en ;
+    sh:path db:mobile .
+
+<http://example.org/database#channels/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#channels/opening_hours> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "opening_hours"@en ;
+    sh:path db:opening_hours .
+
+<http://example.org/database#channels/phone> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "phone"@en ;
+    sh:path db:phone .
+
+<http://example.org/database#channels/public_service_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "public_service_id"@en ;
+    sh:path db:public_service_id .
+
+<http://example.org/database#channels/type> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "type"@en ;
+    sh:path db:type .
+
+<http://example.org/database#channels/url> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "url"@en ;
+    sh:path db:url .
+
+db:check_sum a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "check_sum"@en ;
+    sh:property <http://example.org/database#check_sum/algorithm>,
+        <http://example.org/database#check_sum/check_sum_value>,
+        <http://example.org/database#check_sum/created_at>,
+        <http://example.org/database#check_sum/distribution_checksum_id>,
+        <http://example.org/database#check_sum/id>,
+        <http://example.org/database#check_sum/modified_at> ;
+    sh:targetClass db:check_sum .
+
+<http://example.org/database#check_sum/algorithm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "algorithm"@en ;
+    sh:path db:algorithm .
+
+<http://example.org/database#check_sum/check_sum_value> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "check_sum_value"@en ;
+    sh:path db:check_sum_value .
+
+<http://example.org/database#check_sum/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#check_sum/distribution_checksum_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_checksum_id"@en ;
+    sh:path db:distribution_checksum_id .
+
+<http://example.org/database#check_sum/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#check_sum/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#code_list_entries/code> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "code"@en ;
+    sh:path db:code .
+
+<http://example.org/database#code_list_entries/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#code_list_entries/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#code_list_entries/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#code_list_entries/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#code_list_entries/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#code_list_entries/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#code_list_entries/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#code_list_entries/iop_concept_id> a sh:PropertyShape ;
+    sh:class db:iop_concepts ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "iop_concept_id"@en ;
+    sh:path db:iop_concept_id .
+
+<http://example.org/database#code_list_entries/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#code_list_entries/name_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_de"@en ;
+    sh:path db:name_de .
+
+<http://example.org/database#code_list_entries/name_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_en"@en ;
+    sh:path db:name_en .
+
+<http://example.org/database#code_list_entries/name_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_fr"@en ;
+    sh:path db:name_fr .
+
+<http://example.org/database#code_list_entries/name_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_it"@en ;
+    sh:path db:name_it .
+
+<http://example.org/database#code_list_entries/name_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_rm"@en ;
+    sh:path db:name_rm .
+
+<http://example.org/database#code_list_entries/parent_code_list_entry_id> a sh:PropertyShape ;
+    sh:class db:code_list_entries ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "parent_code_list_entry_id"@en ;
+    sh:path db:parent_code_list_entry_id .
+
+<http://example.org/database#code_list_entries/position> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "position"@en ;
+    sh:path db:position .
+
+db:concept a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "concept"@en ;
+    sh:property <http://example.org/database#concept/agent_type_id>,
+        <http://example.org/database#concept/created_at>,
+        <http://example.org/database#concept/dataset_type_id>,
+        <http://example.org/database#concept/distribution_availability_id>,
+        <http://example.org/database#concept/distribution_status_id>,
+        <http://example.org/database#concept/id>,
+        <http://example.org/database#concept/modified_at>,
+        <http://example.org/database#concept/pref_label_de>,
+        <http://example.org/database#concept/pref_label_en>,
+        <http://example.org/database#concept/pref_label_fr>,
+        <http://example.org/database#concept/pref_label_it>,
+        <http://example.org/database#concept/pref_label_rm> ;
+    sh:targetClass db:concept .
+
+<http://example.org/database#concept/agent_type_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "agent_type_id"@en ;
+    sh:path db:agent_type_id .
+
+<http://example.org/database#concept/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#concept/dataset_type_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_type_id"@en ;
+    sh:path db:dataset_type_id .
+
+<http://example.org/database#concept/distribution_availability_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_availability_id"@en ;
+    sh:path db:distribution_availability_id .
+
+<http://example.org/database#concept/distribution_status_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_status_id"@en ;
+    sh:path db:distribution_status_id .
+
+<http://example.org/database#concept/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#concept/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#concept/pref_label_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_de"@en ;
+    sh:path db:pref_label_de .
+
+<http://example.org/database#concept/pref_label_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_en"@en ;
+    sh:path db:pref_label_en .
+
+<http://example.org/database#concept/pref_label_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_fr"@en ;
+    sh:path db:pref_label_fr .
+
+<http://example.org/database#concept/pref_label_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_it"@en ;
+    sh:path db:pref_label_it .
+
+<http://example.org/database#concept/pref_label_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_rm"@en ;
+    sh:path db:pref_label_rm .
+
+db:concepts a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "concepts"@en ;
+    sh:property <http://example.org/database#concepts/created_at>,
+        <http://example.org/database#concepts/id>,
+        <http://example.org/database#concepts/modified_at>,
+        <http://example.org/database#concepts/registration_status>,
+        <http://example.org/database#concepts/registration_status_proposal> ;
+    sh:targetClass db:concepts .
+
+<http://example.org/database#concepts/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#concepts/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#concepts/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#concepts/registration_status> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "registration_status"@en ;
+    sh:path db:registration_status .
+
+<http://example.org/database#concepts/registration_status_proposal> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "registration_status_proposal"@en ;
+    sh:path db:registration_status_proposal .
+
+<http://example.org/database#data_service/access_rights> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "access_rights"@en ;
+    sh:path db:access_rights .
+
+<http://example.org/database#data_service/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#data_service/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#data_service/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#data_service/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#data_service/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#data_service/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#data_service/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#data_service/license> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "license"@en ;
+    sh:path db:license .
+
+<http://example.org/database#data_service/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#data_service/previous_version_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "previous_version_id"@en ;
+    sh:path db:previous_version_id .
+
+<http://example.org/database#data_service/publication_level> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "publication_level"@en ;
+    sh:path db:publication_level .
+
+<http://example.org/database#data_service/publication_level_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "publication_level_proposal"@en ;
+    sh:path db:publication_level_proposal .
+
+<http://example.org/database#data_service/publisher_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "publisher_id"@en ;
+    sh:path db:publisher_id .
+
+<http://example.org/database#data_service/registration_status> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "registration_status"@en ;
+    sh:path db:registration_status .
+
+<http://example.org/database#data_service/registration_status_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "registration_status_proposal"@en ;
+    sh:path db:registration_status_proposal .
+
+<http://example.org/database#data_service/theme> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "theme"@en ;
+    sh:path db:theme .
+
+<http://example.org/database#data_service/title_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_de"@en ;
+    sh:path db:title_de .
+
+<http://example.org/database#data_service/title_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_en"@en ;
+    sh:path db:title_en .
+
+<http://example.org/database#data_service/title_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_fr"@en ;
+    sh:path db:title_fr .
+
+<http://example.org/database#data_service/title_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_it"@en ;
+    sh:path db:title_it .
+
+<http://example.org/database#data_service/title_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_rm"@en ;
+    sh:path db:title_rm .
+
+<http://example.org/database#data_service/version> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version"@en ;
+    sh:path db:version .
+
+<http://example.org/database#data_service/version_notes_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_de"@en ;
+    sh:path db:version_notes_de .
+
+<http://example.org/database#data_service/version_notes_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_en"@en ;
+    sh:path db:version_notes_en .
+
+<http://example.org/database#data_service/version_notes_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_fr"@en ;
+    sh:path db:version_notes_fr .
+
+<http://example.org/database#data_service/version_notes_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_it"@en ;
+    sh:path db:version_notes_it .
+
+<http://example.org/database#data_service/version_notes_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_rm"@en ;
+    sh:path db:version_notes_rm .
+
+db:data_service_dataset a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "data_service_dataset"@en ;
+    sh:property <http://example.org/database#data_service_dataset/created_at>,
+        <http://example.org/database#data_service_dataset/data_service_id>,
+        <http://example.org/database#data_service_dataset/dataset_id>,
+        <http://example.org/database#data_service_dataset/id>,
+        <http://example.org/database#data_service_dataset/modified_at> ;
+    sh:targetClass db:data_service_dataset .
+
+<http://example.org/database#data_service_dataset/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#data_service_dataset/data_service_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "data_service_id"@en ;
+    sh:path db:data_service_id .
+
+<http://example.org/database#data_service_dataset/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#data_service_dataset/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#data_service_dataset/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+db:data_service_distribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "data_service_distribution"@en ;
+    sh:property <http://example.org/database#data_service_distribution/created_at>,
+        <http://example.org/database#data_service_distribution/data_service_id>,
+        <http://example.org/database#data_service_distribution/distribution_id>,
+        <http://example.org/database#data_service_distribution/id>,
+        <http://example.org/database#data_service_distribution/modified_at> ;
+    sh:targetClass db:data_service_distribution .
+
+<http://example.org/database#data_service_distribution/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#data_service_distribution/data_service_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "data_service_id"@en ;
+    sh:path db:data_service_id .
+
+<http://example.org/database#data_service_distribution/distribution_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "distribution_id"@en ;
+    sh:path db:distribution_id .
+
+<http://example.org/database#data_service_distribution/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#data_service_distribution/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset/access_rights> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "access_rights"@en ;
+    sh:path db:access_rights .
+
+<http://example.org/database#dataset/confidentiality_person> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "confidentiality_person"@en ;
+    sh:path db:confidentiality_person .
+
+<http://example.org/database#dataset/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dataset/data_owner> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "data_owner"@en ;
+    sh:path db:data_owner .
+
+<http://example.org/database#dataset/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#dataset/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#dataset/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#dataset/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#dataset/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#dataset/frequency> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "frequency"@en ;
+    sh:path db:frequency .
+
+<http://example.org/database#dataset/geo_iv_id> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "geo_iv_id"@en ;
+    sh:path db:geo_iv_id .
+
+<http://example.org/database#dataset/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dataset/identifier> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#dataset/issued> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "issued"@en ;
+    sh:path db:issued .
+
+<http://example.org/database#dataset/language> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:path db:language .
+
+<http://example.org/database#dataset/modified> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified"@en ;
+    sh:path db:modified .
+
+<http://example.org/database#dataset/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset/other_identifier> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "other_identifier"@en ;
+    sh:path db:other_identifier .
+
+<http://example.org/database#dataset/previous_version_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "previous_version_id"@en ;
+    sh:path db:previous_version_id .
+
+<http://example.org/database#dataset/process_id> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "process_id"@en ;
+    sh:path db:process_id .
+
+<http://example.org/database#dataset/publication_level> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "publication_level"@en ;
+    sh:path db:publication_level .
+
+<http://example.org/database#dataset/publication_level_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "publication_level_proposal"@en ;
+    sh:path db:publication_level_proposal .
+
+<http://example.org/database#dataset/publisher_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "publisher_id"@en ;
+    sh:path db:publisher_id .
+
+<http://example.org/database#dataset/qualified_attribution_complement_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "qualified_attribution_complement_de"@en ;
+    sh:path db:qualified_attribution_complement_de .
+
+<http://example.org/database#dataset/qualified_attribution_complement_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "qualified_attribution_complement_en"@en ;
+    sh:path db:qualified_attribution_complement_en .
+
+<http://example.org/database#dataset/qualified_attribution_complement_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "qualified_attribution_complement_fr"@en ;
+    sh:path db:qualified_attribution_complement_fr .
+
+<http://example.org/database#dataset/qualified_attribution_complement_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "qualified_attribution_complement_it"@en ;
+    sh:path db:qualified_attribution_complement_it .
+
+<http://example.org/database#dataset/qualified_attribution_complement_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "qualified_attribution_complement_rm"@en ;
+    sh:path db:qualified_attribution_complement_rm .
+
+<http://example.org/database#dataset/registration_status> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "registration_status"@en ;
+    sh:path db:registration_status .
+
+<http://example.org/database#dataset/registration_status_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "registration_status_proposal"@en ;
+    sh:path db:registration_status_proposal .
+
+<http://example.org/database#dataset/responsible_person_deputy_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "responsible_person_deputy_id"@en ;
+    sh:path db:responsible_person_deputy_id .
+
+<http://example.org/database#dataset/responsible_person_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "responsible_person_id"@en ;
+    sh:path db:responsible_person_id .
+
+<http://example.org/database#dataset/retention_period> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "retention_period"@en ;
+    sh:path db:retention_period .
+
+<http://example.org/database#dataset/retention_period_description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "retention_period_description_de"@en ;
+    sh:path db:retention_period_description_de .
+
+<http://example.org/database#dataset/retention_period_description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "retention_period_description_en"@en ;
+    sh:path db:retention_period_description_en .
+
+<http://example.org/database#dataset/retention_period_description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "retention_period_description_fr"@en ;
+    sh:path db:retention_period_description_fr .
+
+<http://example.org/database#dataset/retention_period_description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "retention_period_description_it"@en ;
+    sh:path db:retention_period_description_it .
+
+<http://example.org/database#dataset/retention_period_description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "retention_period_description_rm"@en ;
+    sh:path db:retention_period_description_rm .
+
+<http://example.org/database#dataset/spatial> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "spatial"@en ;
+    sh:path db:spatial .
+
+<http://example.org/database#dataset/theme> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "theme"@en ;
+    sh:path db:theme .
+
+<http://example.org/database#dataset/title_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_de"@en ;
+    sh:path db:title_de .
+
+<http://example.org/database#dataset/title_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_en"@en ;
+    sh:path db:title_en .
+
+<http://example.org/database#dataset/title_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_fr"@en ;
+    sh:path db:title_fr .
+
+<http://example.org/database#dataset/title_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_it"@en ;
+    sh:path db:title_it .
+
+<http://example.org/database#dataset/title_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_rm"@en ;
+    sh:path db:title_rm .
+
+<http://example.org/database#dataset/version> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version"@en ;
+    sh:path db:version .
+
+<http://example.org/database#dataset/version_notes_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_de"@en ;
+    sh:path db:version_notes_de .
+
+<http://example.org/database#dataset/version_notes_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_en"@en ;
+    sh:path db:version_notes_en .
+
+<http://example.org/database#dataset/version_notes_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_fr"@en ;
+    sh:path db:version_notes_fr .
+
+<http://example.org/database#dataset/version_notes_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_it"@en ;
+    sh:path db:version_notes_it .
+
+<http://example.org/database#dataset/version_notes_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "version_notes_rm"@en ;
+    sh:path db:version_notes_rm .
+
+<http://example.org/database#dataset_quality_answer_option/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dataset_quality_answer_option/dataset_quality_question_id> a sh:PropertyShape ;
+    sh:class db:dataset_quality_question ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dataset_quality_question_id"@en ;
+    sh:path db:dataset_quality_question_id .
+
+<http://example.org/database#dataset_quality_answer_option/detail_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail_de"@en ;
+    sh:path db:detail_de .
+
+<http://example.org/database#dataset_quality_answer_option/detail_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail_en"@en ;
+    sh:path db:detail_en .
+
+<http://example.org/database#dataset_quality_answer_option/detail_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail_fr"@en ;
+    sh:path db:detail_fr .
+
+<http://example.org/database#dataset_quality_answer_option/detail_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail_it"@en ;
+    sh:path db:detail_it .
+
+<http://example.org/database#dataset_quality_answer_option/detail_mandatory> a sh:PropertyShape ;
+    sh:datatype xsd:boolean ;
+    sh:minCount 1 ;
+    sh:name "detail_mandatory"@en ;
+    sh:path db:detail_mandatory .
+
+<http://example.org/database#dataset_quality_answer_option/detail_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail_rm"@en ;
+    sh:path db:detail_rm .
+
+<http://example.org/database#dataset_quality_answer_option/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dataset_quality_answer_option/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset_quality_answer_option/name_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_de"@en ;
+    sh:path db:name_de .
+
+<http://example.org/database#dataset_quality_answer_option/name_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_en"@en ;
+    sh:path db:name_en .
+
+<http://example.org/database#dataset_quality_answer_option/name_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_fr"@en ;
+    sh:path db:name_fr .
+
+<http://example.org/database#dataset_quality_answer_option/name_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_it"@en ;
+    sh:path db:name_it .
+
+<http://example.org/database#dataset_quality_answer_option/name_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_rm"@en ;
+    sh:path db:name_rm .
+
+<http://example.org/database#dataset_quality_answer_option/value> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "value"@en ;
+    sh:path db:value .
+
+db:dataset_quality_information a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dataset_quality_information"@en ;
+    sh:property <http://example.org/database#dataset_quality_information/answer_id>,
+        <http://example.org/database#dataset_quality_information/created_at>,
+        <http://example.org/database#dataset_quality_information/dataset_id>,
+        <http://example.org/database#dataset_quality_information/detail>,
+        <http://example.org/database#dataset_quality_information/id>,
+        <http://example.org/database#dataset_quality_information/modified_at>,
+        <http://example.org/database#dataset_quality_information/question_id> ;
+    sh:targetClass db:dataset_quality_information .
+
+<http://example.org/database#dataset_quality_information/answer_id> a sh:PropertyShape ;
+    sh:class db:dataset_quality_answer_option ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "answer_id"@en ;
+    sh:path db:answer_id .
+
+<http://example.org/database#dataset_quality_information/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dataset_quality_information/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#dataset_quality_information/detail> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "detail"@en ;
+    sh:path db:detail .
+
+<http://example.org/database#dataset_quality_information/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dataset_quality_information/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset_quality_information/question_id> a sh:PropertyShape ;
+    sh:class db:dataset_quality_question ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "question_id"@en ;
+    sh:path db:question_id .
+
+db:dataset_quality_information_link a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dataset_quality_information_link"@en ;
+    sh:property <http://example.org/database#dataset_quality_information_link/created_at>,
+        <http://example.org/database#dataset_quality_information_link/dataset_id>,
+        <http://example.org/database#dataset_quality_information_link/href>,
+        <http://example.org/database#dataset_quality_information_link/id>,
+        <http://example.org/database#dataset_quality_information_link/label_de>,
+        <http://example.org/database#dataset_quality_information_link/label_en>,
+        <http://example.org/database#dataset_quality_information_link/label_fr>,
+        <http://example.org/database#dataset_quality_information_link/label_it>,
+        <http://example.org/database#dataset_quality_information_link/label_rm>,
+        <http://example.org/database#dataset_quality_information_link/modified_at> ;
+    sh:targetClass db:dataset_quality_information_link .
+
+<http://example.org/database#dataset_quality_information_link/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dataset_quality_information_link/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#dataset_quality_information_link/href> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "href"@en ;
+    sh:path db:href .
+
+<http://example.org/database#dataset_quality_information_link/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dataset_quality_information_link/label_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_de"@en ;
+    sh:path db:label_de .
+
+<http://example.org/database#dataset_quality_information_link/label_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_en"@en ;
+    sh:path db:label_en .
+
+<http://example.org/database#dataset_quality_information_link/label_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_fr"@en ;
+    sh:path db:label_fr .
+
+<http://example.org/database#dataset_quality_information_link/label_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_it"@en ;
+    sh:path db:label_it .
+
+<http://example.org/database#dataset_quality_information_link/label_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_rm"@en ;
+    sh:path db:label_rm .
+
+<http://example.org/database#dataset_quality_information_link/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset_quality_question/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dataset_quality_question/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dataset_quality_question/mandatory> a sh:PropertyShape ;
+    sh:datatype xsd:boolean ;
+    sh:minCount 1 ;
+    sh:name "mandatory"@en ;
+    sh:path db:mandatory .
+
+<http://example.org/database#dataset_quality_question/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dataset_quality_question/order> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "order"@en ;
+    sh:path db:order .
+
+<http://example.org/database#dataset_quality_question/question_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "question_de"@en ;
+    sh:path db:question_de .
+
+<http://example.org/database#dataset_quality_question/question_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "question_en"@en ;
+    sh:path db:question_en .
+
+<http://example.org/database#dataset_quality_question/question_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "question_fr"@en ;
+    sh:path db:question_fr .
+
+<http://example.org/database#dataset_quality_question/question_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "question_it"@en ;
+    sh:path db:question_it .
+
+<http://example.org/database#dataset_quality_question/question_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "question_rm"@en ;
+    sh:path db:question_rm .
+
+<http://example.org/database#dcat_catalog/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dcat_catalog/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#dcat_catalog/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#dcat_catalog/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#dcat_catalog/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#dcat_catalog/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#dcat_catalog/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dcat_catalog/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dcat_catalog/publisher_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "publisher_id"@en ;
+    sh:path db:publisher_id .
+
+<http://example.org/database#dcat_catalog/theme_taxonomy> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "theme_taxonomy"@en ;
+    sh:path db:theme_taxonomy .
+
+<http://example.org/database#dcat_catalog/title_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_de"@en ;
+    sh:path db:title_de .
+
+<http://example.org/database#dcat_catalog/title_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_en"@en ;
+    sh:path db:title_en .
+
+<http://example.org/database#dcat_catalog/title_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_fr"@en ;
+    sh:path db:title_fr .
+
+<http://example.org/database#dcat_catalog/title_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_it"@en ;
+    sh:path db:title_it .
+
+<http://example.org/database#dcat_catalog/title_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_rm"@en ;
+    sh:path db:title_rm .
+
+<http://example.org/database#dcat_catalog_record/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dcat_catalog_record/dcat_catalog_id> a sh:PropertyShape ;
+    sh:class db:dcat_catalog ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dcat_catalog_id"@en ;
+    sh:path db:dcat_catalog_id .
+
+<http://example.org/database#dcat_catalog_record/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dcat_catalog_record/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+db:dcat_catalog_resource a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dcat_catalog_resource"@en ;
+    sh:property <http://example.org/database#dcat_catalog_resource/created_at>,
+        <http://example.org/database#dcat_catalog_resource/dcat_catalog_record_id>,
+        <http://example.org/database#dcat_catalog_resource/id>,
+        <http://example.org/database#dcat_catalog_resource/modified_at>,
+        <http://example.org/database#dcat_catalog_resource/resource_id>,
+        <http://example.org/database#dcat_catalog_resource/resource_type> ;
+    sh:targetClass db:dcat_catalog_resource .
+
+<http://example.org/database#dcat_catalog_resource/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dcat_catalog_resource/dcat_catalog_record_id> a sh:PropertyShape ;
+    sh:class db:dcat_catalog_record ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dcat_catalog_record_id"@en ;
+    sh:path db:dcat_catalog_record_id .
+
+<http://example.org/database#dcat_catalog_resource/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dcat_catalog_resource/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dcat_catalog_resource/resource_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "resource_id"@en ;
+    sh:path db:resource_id .
+
+<http://example.org/database#dcat_catalog_resource/resource_type> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "resource_type"@en ;
+    sh:path db:resource_type .
+
+db:dcat_catalog_theme a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dcat_catalog_theme"@en ;
+    sh:property <http://example.org/database#dcat_catalog_theme/code>,
+        <http://example.org/database#dcat_catalog_theme/created_at>,
+        <http://example.org/database#dcat_catalog_theme/dcat_catalog_record_id>,
+        <http://example.org/database#dcat_catalog_theme/id>,
+        <http://example.org/database#dcat_catalog_theme/modified_at>,
+        <http://example.org/database#dcat_catalog_theme/theme_taxonomy> ;
+    sh:targetClass db:dcat_catalog_theme .
+
+<http://example.org/database#dcat_catalog_theme/code> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "code"@en ;
+    sh:path db:code .
+
+<http://example.org/database#dcat_catalog_theme/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#dcat_catalog_theme/dcat_catalog_record_id> a sh:PropertyShape ;
+    sh:class db:dcat_catalog_record ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dcat_catalog_record_id"@en ;
+    sh:path db:dcat_catalog_record_id .
+
+<http://example.org/database#dcat_catalog_theme/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#dcat_catalog_theme/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#dcat_catalog_theme/theme_taxonomy> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "theme_taxonomy"@en ;
+    sh:path db:theme_taxonomy .
+
+<http://example.org/database#distribution/availability_vocabulary> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "availability_vocabulary"@en ;
+    sh:path db:availability_vocabulary .
+
+<http://example.org/database#distribution/byte_size> a sh:PropertyShape ;
+    sh:datatype xsd:numeric ;
+    sh:minCount 0 ;
+    sh:name "byte_size"@en ;
+    sh:path db:byte_size .
+
+<http://example.org/database#distribution/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#distribution/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#distribution/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#distribution/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#distribution/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#distribution/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#distribution/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#distribution/format> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "format"@en ;
+    sh:path db:format .
+
+<http://example.org/database#distribution/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#distribution/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#distribution/issued> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "issued"@en ;
+    sh:path db:issued .
+
+<http://example.org/database#distribution/language> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "language"@en ;
+    sh:path db:language .
+
+<http://example.org/database#distribution/license> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "license"@en ;
+    sh:path db:license .
+
+<http://example.org/database#distribution/media_type> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "media_type"@en ;
+    sh:path db:media_type .
+
+<http://example.org/database#distribution/modified> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified"@en ;
+    sh:path db:modified .
+
+<http://example.org/database#distribution/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#distribution/packaging_format> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "packaging_format"@en ;
+    sh:path db:packaging_format .
+
+<http://example.org/database#distribution/rights> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "rights"@en ;
+    sh:path db:rights .
+
+<http://example.org/database#distribution/spatial_resolution> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "spatial_resolution"@en ;
+    sh:path db:spatial_resolution .
+
+<http://example.org/database#distribution/temporal_resolution> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "temporal_resolution"@en ;
+    sh:path db:temporal_resolution .
+
+<http://example.org/database#distribution/title_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_de"@en ;
+    sh:path db:title_de .
+
+<http://example.org/database#distribution/title_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_en"@en ;
+    sh:path db:title_en .
+
+<http://example.org/database#distribution/title_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_fr"@en ;
+    sh:path db:title_fr .
+
+<http://example.org/database#distribution/title_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_it"@en ;
+    sh:path db:title_it .
+
+<http://example.org/database#distribution/title_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_rm"@en ;
+    sh:path db:title_rm .
+
+db:distribution_data_service_relations a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "distribution_data_service_relations"@en ;
+    sh:property <http://example.org/database#distribution_data_service_relations/created_at>,
+        <http://example.org/database#distribution_data_service_relations/data_service_id>,
+        <http://example.org/database#distribution_data_service_relations/distribution_id>,
+        <http://example.org/database#distribution_data_service_relations/id>,
+        <http://example.org/database#distribution_data_service_relations/modified_at> ;
+    sh:targetClass db:distribution_data_service_relations .
+
+<http://example.org/database#distribution_data_service_relations/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#distribution_data_service_relations/data_service_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "data_service_id"@en ;
+    sh:path db:data_service_id .
+
+<http://example.org/database#distribution_data_service_relations/distribution_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "distribution_id"@en ;
+    sh:path db:distribution_id .
+
+<http://example.org/database#distribution_data_service_relations/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#distribution_data_service_relations/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#iop_concepts/code_list_entry_default_sort_property> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "code_list_entry_default_sort_property"@en ;
+    sh:path db:code_list_entry_default_sort_property .
+
+<http://example.org/database#iop_concepts/code_list_entry_value_max_length> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "code_list_entry_value_max_length"@en ;
+    sh:path db:code_list_entry_value_max_length .
+
+<http://example.org/database#iop_concepts/code_list_entry_value_type> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "code_list_entry_value_type"@en ;
+    sh:path db:code_list_entry_value_type .
+
+<http://example.org/database#iop_concepts/concept_type> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "concept_type"@en ;
+    sh:path db:concept_type .
+
+<http://example.org/database#iop_concepts/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#iop_concepts/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#iop_concepts/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#iop_concepts/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#iop_concepts/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#iop_concepts/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#iop_concepts/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#iop_concepts/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#iop_concepts/is_locked> a sh:PropertyShape ;
+    sh:datatype xsd:boolean ;
+    sh:minCount 1 ;
+    sh:name "is_locked"@en ;
+    sh:path db:is_locked .
+
+<http://example.org/database#iop_concepts/max_length> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "max_length"@en ;
+    sh:path db:max_length .
+
+<http://example.org/database#iop_concepts/max_value> a sh:PropertyShape ;
+    sh:datatype xsd:numeric ;
+    sh:minCount 0 ;
+    sh:name "max_value"@en ;
+    sh:path db:max_value .
+
+<http://example.org/database#iop_concepts/measurement_unit> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "measurement_unit"@en ;
+    sh:path db:measurement_unit .
+
+<http://example.org/database#iop_concepts/min_length> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "min_length"@en ;
+    sh:path db:min_length .
+
+<http://example.org/database#iop_concepts/min_value> a sh:PropertyShape ;
+    sh:datatype xsd:numeric ;
+    sh:minCount 0 ;
+    sh:name "min_value"@en ;
+    sh:path db:min_value .
+
+<http://example.org/database#iop_concepts/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#iop_concepts/name_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_de"@en ;
+    sh:path db:name_de .
+
+<http://example.org/database#iop_concepts/name_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_en"@en ;
+    sh:path db:name_en .
+
+<http://example.org/database#iop_concepts/name_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_fr"@en ;
+    sh:path db:name_fr .
+
+<http://example.org/database#iop_concepts/name_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_it"@en ;
+    sh:path db:name_it .
+
+<http://example.org/database#iop_concepts/name_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_rm"@en ;
+    sh:path db:name_rm .
+
+<http://example.org/database#iop_concepts/number_decimals> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "number_decimals"@en ;
+    sh:path db:number_decimals .
+
+<http://example.org/database#iop_concepts/pattern> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pattern"@en ;
+    sh:path db:pattern .
+
+<http://example.org/database#iop_concepts/publication_level> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "publication_level"@en ;
+    sh:path db:publication_level .
+
+<http://example.org/database#iop_concepts/publication_level_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "publication_level_proposal"@en ;
+    sh:path db:publication_level_proposal .
+
+<http://example.org/database#iop_concepts/publisher_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "publisher_id"@en ;
+    sh:path db:publisher_id .
+
+<http://example.org/database#iop_concepts/registration_status> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "registration_status"@en ;
+    sh:path db:registration_status .
+
+<http://example.org/database#iop_concepts/registration_status_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "registration_status_proposal"@en ;
+    sh:path db:registration_status_proposal .
+
+<http://example.org/database#iop_concepts/responsible_deputy_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "responsible_deputy_id"@en ;
+    sh:path db:responsible_deputy_id .
+
+<http://example.org/database#iop_concepts/responsible_person_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "responsible_person_id"@en ;
+    sh:path db:responsible_person_id .
+
+<http://example.org/database#iop_concepts/themes> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "themes"@en ;
+    sh:path db:themes .
+
+<http://example.org/database#iop_concepts/valid_from> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "valid_from"@en ;
+    sh:path db:valid_from .
+
+<http://example.org/database#iop_concepts/valid_to> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "valid_to"@en ;
+    sh:path db:valid_to .
+
+<http://example.org/database#iop_concepts/version> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "version"@en ;
+    sh:path db:version .
+
+db:iop_persons a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "iop_persons"@en ;
+    sh:property <http://example.org/database#iop_persons/created_at>,
+        <http://example.org/database#iop_persons/email>,
+        <http://example.org/database#iop_persons/family_name>,
+        <http://example.org/database#iop_persons/first_login_date>,
+        <http://example.org/database#iop_persons/given_name>,
+        <http://example.org/database#iop_persons/id>,
+        <http://example.org/database#iop_persons/last_login_date>,
+        <http://example.org/database#iop_persons/modified_at> ;
+    sh:targetClass db:iop_persons .
+
+<http://example.org/database#iop_persons/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#iop_persons/email> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "email"@en ;
+    sh:path db:email .
+
+<http://example.org/database#iop_persons/family_name> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "family_name"@en ;
+    sh:path db:family_name .
+
+<http://example.org/database#iop_persons/first_login_date> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:minCount 1 ;
+    sh:name "first_login_date"@en ;
+    sh:path db:first_login_date .
+
+<http://example.org/database#iop_persons/given_name> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "given_name"@en ;
+    sh:path db:given_name .
+
+<http://example.org/database#iop_persons/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#iop_persons/last_login_date> a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:minCount 1 ;
+    sh:name "last_login_date"@en ;
+    sh:path db:last_login_date .
+
+<http://example.org/database#iop_persons/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+db:keyword a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "keyword"@en ;
+    sh:property <http://example.org/database#keyword/created_at>,
+        <http://example.org/database#keyword/data_service_id>,
+        <http://example.org/database#keyword/dataset_id>,
+        <http://example.org/database#keyword/id>,
+        <http://example.org/database#keyword/iop_concept_id>,
+        <http://example.org/database#keyword/modified_at>,
+        <http://example.org/database#keyword/public_service_id>,
+        <http://example.org/database#keyword/text_de>,
+        <http://example.org/database#keyword/text_en>,
+        <http://example.org/database#keyword/text_fr>,
+        <http://example.org/database#keyword/text_it>,
+        <http://example.org/database#keyword/text_rm> ;
+    sh:targetClass db:keyword .
+
+<http://example.org/database#keyword/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#keyword/data_service_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_id"@en ;
+    sh:path db:data_service_id .
+
+<http://example.org/database#keyword/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#keyword/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#keyword/iop_concept_id> a sh:PropertyShape ;
+    sh:class db:iop_concepts ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "iop_concept_id"@en ;
+    sh:path db:iop_concept_id .
+
+<http://example.org/database#keyword/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#keyword/public_service_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "public_service_id"@en ;
+    sh:path db:public_service_id .
+
+<http://example.org/database#keyword/text_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_de"@en ;
+    sh:path db:text_de .
+
+<http://example.org/database#keyword/text_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_en"@en ;
+    sh:path db:text_en .
+
+<http://example.org/database#keyword/text_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_fr"@en ;
+    sh:path db:text_fr .
+
+<http://example.org/database#keyword/text_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_it"@en ;
+    sh:path db:text_it .
+
+<http://example.org/database#keyword/text_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "text_rm"@en ;
+    sh:path db:text_rm .
+
+db:period_of_time a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "period_of_time"@en ;
+    sh:property <http://example.org/database#period_of_time/created_at>,
+        <http://example.org/database#period_of_time/distribution_coverage_id>,
+        <http://example.org/database#period_of_time/end>,
+        <http://example.org/database#period_of_time/id>,
+        <http://example.org/database#period_of_time/modified_at>,
+        <http://example.org/database#period_of_time/start>,
+        <http://example.org/database#period_of_time/temporal_coverage_id> ;
+    sh:targetClass db:period_of_time .
+
+<http://example.org/database#period_of_time/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#period_of_time/distribution_coverage_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_coverage_id"@en ;
+    sh:path db:distribution_coverage_id .
+
+<http://example.org/database#period_of_time/end> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "end"@en ;
+    sh:path db:end .
+
+<http://example.org/database#period_of_time/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#period_of_time/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#period_of_time/start> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "start"@en ;
+    sh:path db:start .
+
+<http://example.org/database#period_of_time/temporal_coverage_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "temporal_coverage_id"@en ;
+    sh:path db:temporal_coverage_id .
+
+<http://example.org/database#public_organisations/classification> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "classification"@en ;
+    sh:path db:classification .
+
+<http://example.org/database#public_organisations/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#public_organisations/id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#public_organisations/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#public_organisations/pref_label_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_de"@en ;
+    sh:path db:pref_label_de .
+
+<http://example.org/database#public_organisations/pref_label_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_en"@en ;
+    sh:path db:pref_label_en .
+
+<http://example.org/database#public_organisations/pref_label_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_fr"@en ;
+    sh:path db:pref_label_fr .
+
+<http://example.org/database#public_organisations/pref_label_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_it"@en ;
+    sh:path db:pref_label_it .
+
+<http://example.org/database#public_organisations/pref_label_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "pref_label_rm"@en ;
+    sh:path db:pref_label_rm .
+
+<http://example.org/database#public_organisations/spatial> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "spatial"@en ;
+    sh:path db:spatial .
+
+<http://example.org/database#public_organisations/spatial_ch> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "spatial_ch"@en ;
+    sh:path db:spatial_ch .
+
+db:public_service_is_described_ats a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "public_service_is_described_ats"@en ;
+    sh:property <http://example.org/database#public_service_is_described_ats/created_at>,
+        <http://example.org/database#public_service_is_described_ats/id>,
+        <http://example.org/database#public_service_is_described_ats/is_described_at_id>,
+        <http://example.org/database#public_service_is_described_ats/modified_at>,
+        <http://example.org/database#public_service_is_described_ats/public_service_id> ;
+    sh:targetClass db:public_service_is_described_ats .
+
+<http://example.org/database#public_service_is_described_ats/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#public_service_is_described_ats/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#public_service_is_described_ats/is_described_at_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "is_described_at_id"@en ;
+    sh:path db:is_described_at_id .
+
+<http://example.org/database#public_service_is_described_ats/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#public_service_is_described_ats/public_service_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "public_service_id"@en ;
+    sh:path db:public_service_id .
+
+db:public_service_relations a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "public_service_relations"@en ;
+    sh:property <http://example.org/database#public_service_relations/created_at>,
+        <http://example.org/database#public_service_relations/id>,
+        <http://example.org/database#public_service_relations/modified_at>,
+        <http://example.org/database#public_service_relations/public_service_id>,
+        <http://example.org/database#public_service_relations/relation_id> ;
+    sh:targetClass db:public_service_relations .
+
+<http://example.org/database#public_service_relations/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#public_service_relations/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#public_service_relations/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#public_service_relations/public_service_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "public_service_id"@en ;
+    sh:path db:public_service_id .
+
+<http://example.org/database#public_service_relations/relation_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "relation_id"@en ;
+    sh:path db:relation_id .
+
+db:public_service_requires a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "public_service_requires"@en ;
+    sh:property <http://example.org/database#public_service_requires/created_at>,
+        <http://example.org/database#public_service_requires/id>,
+        <http://example.org/database#public_service_requires/modified_at>,
+        <http://example.org/database#public_service_requires/public_service_id>,
+        <http://example.org/database#public_service_requires/requires_id> ;
+    sh:targetClass db:public_service_requires .
+
+<http://example.org/database#public_service_requires/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#public_service_requires/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#public_service_requires/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#public_service_requires/public_service_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "public_service_id"@en ;
+    sh:path db:public_service_id .
+
+<http://example.org/database#public_service_requires/requires_id> a sh:PropertyShape ;
+    sh:class db:public_services ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "requires_id"@en ;
+    sh:path db:requires_id .
+
+<http://example.org/database#public_services/business_events> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "business_events"@en ;
+    sh:path db:business_events .
+
+<http://example.org/database#public_services/competent_authority_id> a sh:PropertyShape ;
+    sh:class db:public_organisations ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "competent_authority_id"@en ;
+    sh:path db:competent_authority_id .
+
+<http://example.org/database#public_services/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#public_services/description_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_de"@en ;
+    sh:path db:description_de .
+
+<http://example.org/database#public_services/description_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_en"@en ;
+    sh:path db:description_en .
+
+<http://example.org/database#public_services/description_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_fr"@en ;
+    sh:path db:description_fr .
+
+<http://example.org/database#public_services/description_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_it"@en ;
+    sh:path db:description_it .
+
+<http://example.org/database#public_services/description_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "description_rm"@en ;
+    sh:path db:description_rm .
+
+<http://example.org/database#public_services/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#public_services/identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en ;
+    sh:path db:identifier .
+
+<http://example.org/database#public_services/language> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "language"@en ;
+    sh:path db:language .
+
+<http://example.org/database#public_services/life_events> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "life_events"@en ;
+    sh:path db:life_events .
+
+<http://example.org/database#public_services/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#public_services/publication_level> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "publication_level"@en ;
+    sh:path db:publication_level .
+
+<http://example.org/database#public_services/publication_level_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "publication_level_proposal"@en ;
+    sh:path db:publication_level_proposal .
+
+<http://example.org/database#public_services/registration_status> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:name "registration_status"@en ;
+    sh:path db:registration_status .
+
+<http://example.org/database#public_services/registration_status_proposal> a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:minCount 0 ;
+    sh:name "registration_status_proposal"@en ;
+    sh:path db:registration_status_proposal .
+
+<http://example.org/database#public_services/sector> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "sector"@en ;
+    sh:path db:sector .
+
+<http://example.org/database#public_services/spatial> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "spatial"@en ;
+    sh:path db:spatial .
+
+<http://example.org/database#public_services/spatial_ch> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 0 ;
+    sh:name "spatial_ch"@en ;
+    sh:path db:spatial_ch .
+
+<http://example.org/database#public_services/thematic_area> a sh:PropertyShape ;
+    sh:datatype "ARRAY" ;
+    sh:minCount 1 ;
+    sh:name "thematic_area"@en ;
+    sh:path db:thematic_area .
+
+<http://example.org/database#public_services/title_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_de"@en ;
+    sh:path db:title_de .
+
+<http://example.org/database#public_services/title_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_en"@en ;
+    sh:path db:title_en .
+
+<http://example.org/database#public_services/title_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_fr"@en ;
+    sh:path db:title_fr .
+
+<http://example.org/database#public_services/title_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_it"@en ;
+    sh:path db:title_it .
+
+<http://example.org/database#public_services/title_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "title_rm"@en ;
+    sh:path db:title_rm .
+
+db:qualified_attribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "qualified_attribution"@en ;
+    sh:property <http://example.org/database#qualified_attribution/agent_id>,
+        <http://example.org/database#qualified_attribution/created_at>,
+        <http://example.org/database#qualified_attribution/dataset_id>,
+        <http://example.org/database#qualified_attribution/had_role>,
+        <http://example.org/database#qualified_attribution/id>,
+        <http://example.org/database#qualified_attribution/modified_at> ;
+    sh:targetClass db:qualified_attribution .
+
+<http://example.org/database#qualified_attribution/agent_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "agent_id"@en ;
+    sh:path db:agent_id .
+
+<http://example.org/database#qualified_attribution/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#qualified_attribution/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#qualified_attribution/had_role> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "had_role"@en ;
+    sh:path db:had_role .
+
+<http://example.org/database#qualified_attribution/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#qualified_attribution/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#qualified_relation/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#qualified_relation/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#qualified_relation/had_role> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "had_role"@en ;
+    sh:path db:had_role .
+
+<http://example.org/database#qualified_relation/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#qualified_relation/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+db:resource a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "resource"@en ;
+    sh:property <http://example.org/database#resource/created_at>,
+        <http://example.org/database#resource/data_service_conforms_to_id>,
+        <http://example.org/database#resource/data_service_documentation_id>,
+        <http://example.org/database#resource/data_service_endpoint_description_id>,
+        <http://example.org/database#resource/data_service_endpoint_url_id>,
+        <http://example.org/database#resource/data_service_landing_page_id>,
+        <http://example.org/database#resource/data_set_conforms_to_id>,
+        <http://example.org/database#resource/data_set_image_id>,
+        <http://example.org/database#resource/data_set_is_referenced_by_id>,
+        <http://example.org/database#resource/data_set_relation_id>,
+        <http://example.org/database#resource/dataset_documentation_id>,
+        <http://example.org/database#resource/dataset_landing_page_id>,
+        <http://example.org/database#resource/distribution_access_url_id>,
+        <http://example.org/database#resource/distribution_conforms_to_id>,
+        <http://example.org/database#resource/distribution_documentation_id>,
+        <http://example.org/database#resource/distribution_download_url_id>,
+        <http://example.org/database#resource/distribution_image_id>,
+        <http://example.org/database#resource/href>,
+        <http://example.org/database#resource/id>,
+        <http://example.org/database#resource/iop_concept_conforms_to_id>,
+        <http://example.org/database#resource/label_de>,
+        <http://example.org/database#resource/label_en>,
+        <http://example.org/database#resource/label_fr>,
+        <http://example.org/database#resource/label_it>,
+        <http://example.org/database#resource/label_rm>,
+        <http://example.org/database#resource/modified_at>,
+        <http://example.org/database#resource/qualified_relation_id> ;
+    sh:targetClass db:resource .
+
+<http://example.org/database#resource/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#resource/data_service_conforms_to_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_conforms_to_id"@en ;
+    sh:path db:data_service_conforms_to_id .
+
+<http://example.org/database#resource/data_service_documentation_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_documentation_id"@en ;
+    sh:path db:data_service_documentation_id .
+
+<http://example.org/database#resource/data_service_endpoint_description_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_endpoint_description_id"@en ;
+    sh:path db:data_service_endpoint_description_id .
+
+<http://example.org/database#resource/data_service_endpoint_url_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_endpoint_url_id"@en ;
+    sh:path db:data_service_endpoint_url_id .
+
+<http://example.org/database#resource/data_service_landing_page_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_landing_page_id"@en ;
+    sh:path db:data_service_landing_page_id .
+
+<http://example.org/database#resource/data_set_conforms_to_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_set_conforms_to_id"@en ;
+    sh:path db:data_set_conforms_to_id .
+
+<http://example.org/database#resource/data_set_image_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_set_image_id"@en ;
+    sh:path db:data_set_image_id .
+
+<http://example.org/database#resource/data_set_is_referenced_by_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_set_is_referenced_by_id"@en ;
+    sh:path db:data_set_is_referenced_by_id .
+
+<http://example.org/database#resource/data_set_relation_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_set_relation_id"@en ;
+    sh:path db:data_set_relation_id .
+
+<http://example.org/database#resource/dataset_documentation_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_documentation_id"@en ;
+    sh:path db:dataset_documentation_id .
+
+<http://example.org/database#resource/dataset_landing_page_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_landing_page_id"@en ;
+    sh:path db:dataset_landing_page_id .
+
+<http://example.org/database#resource/distribution_access_url_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_access_url_id"@en ;
+    sh:path db:distribution_access_url_id .
+
+<http://example.org/database#resource/distribution_conforms_to_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_conforms_to_id"@en ;
+    sh:path db:distribution_conforms_to_id .
+
+<http://example.org/database#resource/distribution_documentation_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_documentation_id"@en ;
+    sh:path db:distribution_documentation_id .
+
+<http://example.org/database#resource/distribution_download_url_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_download_url_id"@en ;
+    sh:path db:distribution_download_url_id .
+
+<http://example.org/database#resource/distribution_image_id> a sh:PropertyShape ;
+    sh:class db:distribution ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "distribution_image_id"@en ;
+    sh:path db:distribution_image_id .
+
+<http://example.org/database#resource/href> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "href"@en ;
+    sh:path db:href .
+
+<http://example.org/database#resource/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#resource/iop_concept_conforms_to_id> a sh:PropertyShape ;
+    sh:class db:iop_concepts ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "iop_concept_conforms_to_id"@en ;
+    sh:path db:iop_concept_conforms_to_id .
+
+<http://example.org/database#resource/label_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_de"@en ;
+    sh:path db:label_de .
+
+<http://example.org/database#resource/label_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_en"@en ;
+    sh:path db:label_en .
+
+<http://example.org/database#resource/label_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_fr"@en ;
+    sh:path db:label_fr .
+
+<http://example.org/database#resource/label_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_it"@en ;
+    sh:path db:label_it .
+
+<http://example.org/database#resource/label_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "label_rm"@en ;
+    sh:path db:label_rm .
+
+<http://example.org/database#resource/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#resource/qualified_relation_id> a sh:PropertyShape ;
+    sh:class db:qualified_relation ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "qualified_relation_id"@en ;
+    sh:path db:qualified_relation_id .
+
+db:sms_link a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "sms_link"@en ;
+    sh:property <http://example.org/database#sms_link/created_at>,
+        <http://example.org/database#sms_link/dataset_id>,
+        <http://example.org/database#sms_link/id>,
+        <http://example.org/database#sms_link/modified_at>,
+        <http://example.org/database#sms_link/sms_id>,
+        <http://example.org/database#sms_link/sms_identifier>,
+        <http://example.org/database#sms_link/sms_type>,
+        <http://example.org/database#sms_link/sms_version> ;
+    sh:targetClass db:sms_link .
+
+<http://example.org/database#sms_link/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#sms_link/dataset_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "dataset_id"@en ;
+    sh:path db:dataset_id .
+
+<http://example.org/database#sms_link/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#sms_link/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#sms_link/sms_id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "sms_id"@en ;
+    sh:path db:sms_id .
+
+<http://example.org/database#sms_link/sms_identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "sms_identifier"@en ;
+    sh:path db:sms_identifier .
+
+<http://example.org/database#sms_link/sms_type> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "sms_type"@en ;
+    sh:path db:sms_type .
+
+<http://example.org/database#sms_link/sms_version> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "sms_version"@en ;
+    sh:path db:sms_version .
+
+db:vcard a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "vcard"@en ;
+    sh:property <http://example.org/database#vcard/adr_work_de>,
+        <http://example.org/database#vcard/adr_work_en>,
+        <http://example.org/database#vcard/adr_work_fr>,
+        <http://example.org/database#vcard/adr_work_it>,
+        <http://example.org/database#vcard/adr_work_rm>,
+        <http://example.org/database#vcard/agent_contact_point_id>,
+        <http://example.org/database#vcard/child>,
+        <http://example.org/database#vcard/created_at>,
+        <http://example.org/database#vcard/data_service_contact_point_id>,
+        <http://example.org/database#vcard/dataset_contact_point_id>,
+        <http://example.org/database#vcard/email_internet>,
+        <http://example.org/database#vcard/fn_de>,
+        <http://example.org/database#vcard/fn_en>,
+        <http://example.org/database#vcard/fn_fr>,
+        <http://example.org/database#vcard/fn_it>,
+        <http://example.org/database#vcard/fn_rm>,
+        <http://example.org/database#vcard/id>,
+        <http://example.org/database#vcard/modified_at>,
+        <http://example.org/database#vcard/note_de>,
+        <http://example.org/database#vcard/note_en>,
+        <http://example.org/database#vcard/note_fr>,
+        <http://example.org/database#vcard/note_it>,
+        <http://example.org/database#vcard/note_rm>,
+        <http://example.org/database#vcard/org_de>,
+        <http://example.org/database#vcard/org_en>,
+        <http://example.org/database#vcard/org_fr>,
+        <http://example.org/database#vcard/org_it>,
+        <http://example.org/database#vcard/org_rm>,
+        <http://example.org/database#vcard/tel_work_voice> ;
+    sh:targetClass db:vcard .
+
+<http://example.org/database#vcard/adr_work_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "adr_work_de"@en ;
+    sh:path db:adr_work_de .
+
+<http://example.org/database#vcard/adr_work_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "adr_work_en"@en ;
+    sh:path db:adr_work_en .
+
+<http://example.org/database#vcard/adr_work_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "adr_work_fr"@en ;
+    sh:path db:adr_work_fr .
+
+<http://example.org/database#vcard/adr_work_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "adr_work_it"@en ;
+    sh:path db:adr_work_it .
+
+<http://example.org/database#vcard/adr_work_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "adr_work_rm"@en ;
+    sh:path db:adr_work_rm .
+
+<http://example.org/database#vcard/agent_contact_point_id> a sh:PropertyShape ;
+    sh:class db:agent ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "agent_contact_point_id"@en ;
+    sh:path db:agent_contact_point_id .
+
+<http://example.org/database#vcard/child> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "child"@en ;
+    sh:path db:child .
+
+<http://example.org/database#vcard/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#vcard/data_service_contact_point_id> a sh:PropertyShape ;
+    sh:class db:data_service ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "data_service_contact_point_id"@en ;
+    sh:path db:data_service_contact_point_id .
+
+<http://example.org/database#vcard/dataset_contact_point_id> a sh:PropertyShape ;
+    sh:class db:dataset ;
+    sh:datatype "uuid" ;
+    sh:minCount 0 ;
+    sh:name "dataset_contact_point_id"@en ;
+    sh:path db:dataset_contact_point_id .
+
+<http://example.org/database#vcard/email_internet> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "email_internet"@en ;
+    sh:path db:email_internet .
+
+<http://example.org/database#vcard/fn_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fn_de"@en ;
+    sh:path db:fn_de .
+
+<http://example.org/database#vcard/fn_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fn_en"@en ;
+    sh:path db:fn_en .
+
+<http://example.org/database#vcard/fn_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fn_fr"@en ;
+    sh:path db:fn_fr .
+
+<http://example.org/database#vcard/fn_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fn_it"@en ;
+    sh:path db:fn_it .
+
+<http://example.org/database#vcard/fn_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "fn_rm"@en ;
+    sh:path db:fn_rm .
+
+<http://example.org/database#vcard/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#vcard/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#vcard/note_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "note_de"@en ;
+    sh:path db:note_de .
+
+<http://example.org/database#vcard/note_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "note_en"@en ;
+    sh:path db:note_en .
+
+<http://example.org/database#vcard/note_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "note_fr"@en ;
+    sh:path db:note_fr .
+
+<http://example.org/database#vcard/note_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "note_it"@en ;
+    sh:path db:note_it .
+
+<http://example.org/database#vcard/note_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "note_rm"@en ;
+    sh:path db:note_rm .
+
+<http://example.org/database#vcard/org_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "org_de"@en ;
+    sh:path db:org_de .
+
+<http://example.org/database#vcard/org_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "org_en"@en ;
+    sh:path db:org_en .
+
+<http://example.org/database#vcard/org_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "org_fr"@en ;
+    sh:path db:org_fr .
+
+<http://example.org/database#vcard/org_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "org_it"@en ;
+    sh:path db:org_it .
+
+<http://example.org/database#vcard/org_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "org_rm"@en ;
+    sh:path db:org_rm .
+
+<http://example.org/database#vcard/tel_work_voice> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "tel_work_voice"@en ;
+    sh:path db:tel_work_voice .
+
+db:vocabulary_config a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "vocabulary_config"@en ;
+    sh:property <http://example.org/database#vocabulary_config/concept_identifier>,
+        <http://example.org/database#vocabulary_config/concept_version>,
+        <http://example.org/database#vocabulary_config/created_at>,
+        <http://example.org/database#vocabulary_config/id>,
+        <http://example.org/database#vocabulary_config/modified_at>,
+        <http://example.org/database#vocabulary_config/vocabulary_identifier> ;
+    sh:targetClass db:vocabulary_config .
+
+<http://example.org/database#vocabulary_config/concept_identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "concept_identifier"@en ;
+    sh:path db:concept_identifier .
+
+<http://example.org/database#vocabulary_config/concept_version> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "concept_version"@en ;
+    sh:path db:concept_version .
+
+<http://example.org/database#vocabulary_config/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#vocabulary_config/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#vocabulary_config/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#vocabulary_config/vocabulary_identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "vocabulary_identifier"@en ;
+    sh:path db:vocabulary_identifier .
+
+db:vocabulary_entry a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "vocabulary_entry"@en ;
+    sh:property <http://example.org/database#vocabulary_entry/code>,
+        <http://example.org/database#vocabulary_entry/created_at>,
+        <http://example.org/database#vocabulary_entry/id>,
+        <http://example.org/database#vocabulary_entry/modified_at>,
+        <http://example.org/database#vocabulary_entry/name_de>,
+        <http://example.org/database#vocabulary_entry/name_en>,
+        <http://example.org/database#vocabulary_entry/name_fr>,
+        <http://example.org/database#vocabulary_entry/name_it>,
+        <http://example.org/database#vocabulary_entry/name_rm>,
+        <http://example.org/database#vocabulary_entry/uri>,
+        <http://example.org/database#vocabulary_entry/vocabulary_identifier> ;
+    sh:targetClass db:vocabulary_entry .
+
+<http://example.org/database#vocabulary_entry/code> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "code"@en ;
+    sh:path db:code .
+
+<http://example.org/database#vocabulary_entry/created_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 1 ;
+    sh:name "created_at"@en ;
+    sh:path db:created_at .
+
+<http://example.org/database#vocabulary_entry/id> a sh:PropertyShape ;
+    sh:datatype "uuid" ;
+    sh:minCount 1 ;
+    sh:name "id"@en ;
+    sh:path db:id .
+
+<http://example.org/database#vocabulary_entry/modified_at> a sh:PropertyShape ;
+    sh:datatype "timestamp with time zone" ;
+    sh:minCount 0 ;
+    sh:name "modified_at"@en ;
+    sh:path db:modified_at .
+
+<http://example.org/database#vocabulary_entry/name_de> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_de"@en ;
+    sh:path db:name_de .
+
+<http://example.org/database#vocabulary_entry/name_en> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_en"@en ;
+    sh:path db:name_en .
+
+<http://example.org/database#vocabulary_entry/name_fr> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_fr"@en ;
+    sh:path db:name_fr .
+
+<http://example.org/database#vocabulary_entry/name_it> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_it"@en ;
+    sh:path db:name_it .
+
+<http://example.org/database#vocabulary_entry/name_rm> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "name_rm"@en ;
+    sh:path db:name_rm .
+
+<http://example.org/database#vocabulary_entry/uri> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 0 ;
+    sh:name "uri"@en ;
+    sh:path db:uri .
+
+<http://example.org/database#vocabulary_entry/vocabulary_identifier> a sh:PropertyShape ;
+    sh:datatype "text" ;
+    sh:minCount 1 ;
+    sh:name "vocabulary_identifier"@en ;
+    sh:path db:vocabulary_identifier .
+
+db:channels a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "channels"@en ;
+    sh:property <http://example.org/database#channels/address_de>,
+        <http://example.org/database#channels/address_en>,
+        <http://example.org/database#channels/address_fr>,
+        <http://example.org/database#channels/address_it>,
+        <http://example.org/database#channels/address_rm>,
+        <http://example.org/database#channels/created_at>,
+        <http://example.org/database#channels/description_de>,
+        <http://example.org/database#channels/description_en>,
+        <http://example.org/database#channels/description_fr>,
+        <http://example.org/database#channels/description_it>,
+        <http://example.org/database#channels/description_rm>,
+        <http://example.org/database#channels/email>,
+        <http://example.org/database#channels/fax>,
+        <http://example.org/database#channels/id>,
+        <http://example.org/database#channels/identifier>,
+        <http://example.org/database#channels/mobile>,
+        <http://example.org/database#channels/modified_at>,
+        <http://example.org/database#channels/opening_hours>,
+        <http://example.org/database#channels/phone>,
+        <http://example.org/database#channels/public_service_id>,
+        <http://example.org/database#channels/type>,
+        <http://example.org/database#channels/url> ;
+    sh:targetClass db:channels .
+
+db:dataset_quality_answer_option a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dataset_quality_answer_option"@en ;
+    sh:property <http://example.org/database#dataset_quality_answer_option/created_at>,
+        <http://example.org/database#dataset_quality_answer_option/dataset_quality_question_id>,
+        <http://example.org/database#dataset_quality_answer_option/detail_de>,
+        <http://example.org/database#dataset_quality_answer_option/detail_en>,
+        <http://example.org/database#dataset_quality_answer_option/detail_fr>,
+        <http://example.org/database#dataset_quality_answer_option/detail_it>,
+        <http://example.org/database#dataset_quality_answer_option/detail_mandatory>,
+        <http://example.org/database#dataset_quality_answer_option/detail_rm>,
+        <http://example.org/database#dataset_quality_answer_option/id>,
+        <http://example.org/database#dataset_quality_answer_option/modified_at>,
+        <http://example.org/database#dataset_quality_answer_option/name_de>,
+        <http://example.org/database#dataset_quality_answer_option/name_en>,
+        <http://example.org/database#dataset_quality_answer_option/name_fr>,
+        <http://example.org/database#dataset_quality_answer_option/name_it>,
+        <http://example.org/database#dataset_quality_answer_option/name_rm>,
+        <http://example.org/database#dataset_quality_answer_option/value> ;
+    sh:targetClass db:dataset_quality_answer_option .
+
+db:dcat_catalog a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dcat_catalog"@en ;
+    sh:property <http://example.org/database#dcat_catalog/created_at>,
+        <http://example.org/database#dcat_catalog/description_de>,
+        <http://example.org/database#dcat_catalog/description_en>,
+        <http://example.org/database#dcat_catalog/description_fr>,
+        <http://example.org/database#dcat_catalog/description_it>,
+        <http://example.org/database#dcat_catalog/description_rm>,
+        <http://example.org/database#dcat_catalog/id>,
+        <http://example.org/database#dcat_catalog/modified_at>,
+        <http://example.org/database#dcat_catalog/publisher_id>,
+        <http://example.org/database#dcat_catalog/theme_taxonomy>,
+        <http://example.org/database#dcat_catalog/title_de>,
+        <http://example.org/database#dcat_catalog/title_en>,
+        <http://example.org/database#dcat_catalog/title_fr>,
+        <http://example.org/database#dcat_catalog/title_it>,
+        <http://example.org/database#dcat_catalog/title_rm> ;
+    sh:targetClass db:dcat_catalog .
+
+db:qualified_relation a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "qualified_relation"@en ;
+    sh:property <http://example.org/database#qualified_relation/created_at>,
+        <http://example.org/database#qualified_relation/dataset_id>,
+        <http://example.org/database#qualified_relation/had_role>,
+        <http://example.org/database#qualified_relation/id>,
+        <http://example.org/database#qualified_relation/modified_at> ;
+    sh:targetClass db:qualified_relation .
+
+db:code_list_entries a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "code_list_entries"@en ;
+    sh:property <http://example.org/database#code_list_entries/code>,
+        <http://example.org/database#code_list_entries/created_at>,
+        <http://example.org/database#code_list_entries/description_de>,
+        <http://example.org/database#code_list_entries/description_en>,
+        <http://example.org/database#code_list_entries/description_fr>,
+        <http://example.org/database#code_list_entries/description_it>,
+        <http://example.org/database#code_list_entries/description_rm>,
+        <http://example.org/database#code_list_entries/id>,
+        <http://example.org/database#code_list_entries/iop_concept_id>,
+        <http://example.org/database#code_list_entries/modified_at>,
+        <http://example.org/database#code_list_entries/name_de>,
+        <http://example.org/database#code_list_entries/name_en>,
+        <http://example.org/database#code_list_entries/name_fr>,
+        <http://example.org/database#code_list_entries/name_it>,
+        <http://example.org/database#code_list_entries/name_rm>,
+        <http://example.org/database#code_list_entries/parent_code_list_entry_id>,
+        <http://example.org/database#code_list_entries/position> ;
+    sh:targetClass db:code_list_entries .
+
+db:dataset_quality_question a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dataset_quality_question"@en ;
+    sh:property <http://example.org/database#dataset_quality_question/created_at>,
+        <http://example.org/database#dataset_quality_question/id>,
+        <http://example.org/database#dataset_quality_question/mandatory>,
+        <http://example.org/database#dataset_quality_question/modified_at>,
+        <http://example.org/database#dataset_quality_question/order>,
+        <http://example.org/database#dataset_quality_question/question_de>,
+        <http://example.org/database#dataset_quality_question/question_en>,
+        <http://example.org/database#dataset_quality_question/question_fr>,
+        <http://example.org/database#dataset_quality_question/question_it>,
+        <http://example.org/database#dataset_quality_question/question_rm> ;
+    sh:targetClass db:dataset_quality_question .
+
+db:dcat_catalog_record a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dcat_catalog_record"@en ;
+    sh:property <http://example.org/database#dcat_catalog_record/created_at>,
+        <http://example.org/database#dcat_catalog_record/dcat_catalog_id>,
+        <http://example.org/database#dcat_catalog_record/id>,
+        <http://example.org/database#dcat_catalog_record/modified_at> ;
+    sh:targetClass db:dcat_catalog_record .
+
+db:public_organisations a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "public_organisations"@en ;
+    sh:property <http://example.org/database#public_organisations/classification>,
+        <http://example.org/database#public_organisations/created_at>,
+        <http://example.org/database#public_organisations/id>,
+        <http://example.org/database#public_organisations/modified_at>,
+        <http://example.org/database#public_organisations/pref_label_de>,
+        <http://example.org/database#public_organisations/pref_label_en>,
+        <http://example.org/database#public_organisations/pref_label_fr>,
+        <http://example.org/database#public_organisations/pref_label_it>,
+        <http://example.org/database#public_organisations/pref_label_rm>,
+        <http://example.org/database#public_organisations/spatial>,
+        <http://example.org/database#public_organisations/spatial_ch> ;
+    sh:targetClass db:public_organisations .
+
+db:iop_concepts a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "iop_concepts"@en ;
+    sh:property <http://example.org/database#iop_concepts/code_list_entry_default_sort_property>,
+        <http://example.org/database#iop_concepts/code_list_entry_value_max_length>,
+        <http://example.org/database#iop_concepts/code_list_entry_value_type>,
+        <http://example.org/database#iop_concepts/concept_type>,
+        <http://example.org/database#iop_concepts/created_at>,
+        <http://example.org/database#iop_concepts/description_de>,
+        <http://example.org/database#iop_concepts/description_en>,
+        <http://example.org/database#iop_concepts/description_fr>,
+        <http://example.org/database#iop_concepts/description_it>,
+        <http://example.org/database#iop_concepts/description_rm>,
+        <http://example.org/database#iop_concepts/id>,
+        <http://example.org/database#iop_concepts/identifier>,
+        <http://example.org/database#iop_concepts/is_locked>,
+        <http://example.org/database#iop_concepts/max_length>,
+        <http://example.org/database#iop_concepts/max_value>,
+        <http://example.org/database#iop_concepts/measurement_unit>,
+        <http://example.org/database#iop_concepts/min_length>,
+        <http://example.org/database#iop_concepts/min_value>,
+        <http://example.org/database#iop_concepts/modified_at>,
+        <http://example.org/database#iop_concepts/name_de>,
+        <http://example.org/database#iop_concepts/name_en>,
+        <http://example.org/database#iop_concepts/name_fr>,
+        <http://example.org/database#iop_concepts/name_it>,
+        <http://example.org/database#iop_concepts/name_rm>,
+        <http://example.org/database#iop_concepts/number_decimals>,
+        <http://example.org/database#iop_concepts/pattern>,
+        <http://example.org/database#iop_concepts/publication_level>,
+        <http://example.org/database#iop_concepts/publication_level_proposal>,
+        <http://example.org/database#iop_concepts/publisher_id>,
+        <http://example.org/database#iop_concepts/registration_status>,
+        <http://example.org/database#iop_concepts/registration_status_proposal>,
+        <http://example.org/database#iop_concepts/responsible_deputy_id>,
+        <http://example.org/database#iop_concepts/responsible_person_id>,
+        <http://example.org/database#iop_concepts/themes>,
+        <http://example.org/database#iop_concepts/valid_from>,
+        <http://example.org/database#iop_concepts/valid_to>,
+        <http://example.org/database#iop_concepts/version> ;
+    sh:targetClass db:iop_concepts .
+
+db:public_services a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "public_services"@en ;
+    sh:property <http://example.org/database#public_services/business_events>,
+        <http://example.org/database#public_services/competent_authority_id>,
+        <http://example.org/database#public_services/created_at>,
+        <http://example.org/database#public_services/description_de>,
+        <http://example.org/database#public_services/description_en>,
+        <http://example.org/database#public_services/description_fr>,
+        <http://example.org/database#public_services/description_it>,
+        <http://example.org/database#public_services/description_rm>,
+        <http://example.org/database#public_services/id>,
+        <http://example.org/database#public_services/identifier>,
+        <http://example.org/database#public_services/language>,
+        <http://example.org/database#public_services/life_events>,
+        <http://example.org/database#public_services/modified_at>,
+        <http://example.org/database#public_services/publication_level>,
+        <http://example.org/database#public_services/publication_level_proposal>,
+        <http://example.org/database#public_services/registration_status>,
+        <http://example.org/database#public_services/registration_status_proposal>,
+        <http://example.org/database#public_services/sector>,
+        <http://example.org/database#public_services/spatial>,
+        <http://example.org/database#public_services/spatial_ch>,
+        <http://example.org/database#public_services/thematic_area>,
+        <http://example.org/database#public_services/title_de>,
+        <http://example.org/database#public_services/title_en>,
+        <http://example.org/database#public_services/title_fr>,
+        <http://example.org/database#public_services/title_it>,
+        <http://example.org/database#public_services/title_rm> ;
+    sh:targetClass db:public_services .
+
+db:agent a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "agent"@en ;
+    sh:property <http://example.org/database#agent/classification>,
+        <http://example.org/database#agent/created_at>,
+        <http://example.org/database#agent/description_de>,
+        <http://example.org/database#agent/description_en>,
+        <http://example.org/database#agent/description_fr>,
+        <http://example.org/database#agent/description_it>,
+        <http://example.org/database#agent/description_rm>,
+        <http://example.org/database#agent/home_page>,
+        <http://example.org/database#agent/id>,
+        <http://example.org/database#agent/identifier>,
+        <http://example.org/database#agent/modified_at>,
+        <http://example.org/database#agent/name_de>,
+        <http://example.org/database#agent/name_en>,
+        <http://example.org/database#agent/name_fr>,
+        <http://example.org/database#agent/name_it>,
+        <http://example.org/database#agent/name_rm>,
+        <http://example.org/database#agent/spatial>,
+        <http://example.org/database#agent/spatial_ch>,
+        <http://example.org/database#agent/uid> ;
+    sh:targetClass db:agent .
+
+db:data_service a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "data_service"@en ;
+    sh:property <http://example.org/database#data_service/access_rights>,
+        <http://example.org/database#data_service/created_at>,
+        <http://example.org/database#data_service/description_de>,
+        <http://example.org/database#data_service/description_en>,
+        <http://example.org/database#data_service/description_fr>,
+        <http://example.org/database#data_service/description_it>,
+        <http://example.org/database#data_service/description_rm>,
+        <http://example.org/database#data_service/id>,
+        <http://example.org/database#data_service/license>,
+        <http://example.org/database#data_service/modified_at>,
+        <http://example.org/database#data_service/previous_version_id>,
+        <http://example.org/database#data_service/publication_level>,
+        <http://example.org/database#data_service/publication_level_proposal>,
+        <http://example.org/database#data_service/publisher_id>,
+        <http://example.org/database#data_service/registration_status>,
+        <http://example.org/database#data_service/registration_status_proposal>,
+        <http://example.org/database#data_service/theme>,
+        <http://example.org/database#data_service/title_de>,
+        <http://example.org/database#data_service/title_en>,
+        <http://example.org/database#data_service/title_fr>,
+        <http://example.org/database#data_service/title_it>,
+        <http://example.org/database#data_service/title_rm>,
+        <http://example.org/database#data_service/version>,
+        <http://example.org/database#data_service/version_notes_de>,
+        <http://example.org/database#data_service/version_notes_en>,
+        <http://example.org/database#data_service/version_notes_fr>,
+        <http://example.org/database#data_service/version_notes_it>,
+        <http://example.org/database#data_service/version_notes_rm> ;
+    sh:targetClass db:data_service .
+
+db:distribution a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "distribution"@en ;
+    sh:property <http://example.org/database#distribution/availability_vocabulary>,
+        <http://example.org/database#distribution/byte_size>,
+        <http://example.org/database#distribution/created_at>,
+        <http://example.org/database#distribution/dataset_id>,
+        <http://example.org/database#distribution/description_de>,
+        <http://example.org/database#distribution/description_en>,
+        <http://example.org/database#distribution/description_fr>,
+        <http://example.org/database#distribution/description_it>,
+        <http://example.org/database#distribution/description_rm>,
+        <http://example.org/database#distribution/format>,
+        <http://example.org/database#distribution/id>,
+        <http://example.org/database#distribution/identifier>,
+        <http://example.org/database#distribution/issued>,
+        <http://example.org/database#distribution/language>,
+        <http://example.org/database#distribution/license>,
+        <http://example.org/database#distribution/media_type>,
+        <http://example.org/database#distribution/modified>,
+        <http://example.org/database#distribution/modified_at>,
+        <http://example.org/database#distribution/packaging_format>,
+        <http://example.org/database#distribution/rights>,
+        <http://example.org/database#distribution/spatial_resolution>,
+        <http://example.org/database#distribution/temporal_resolution>,
+        <http://example.org/database#distribution/title_de>,
+        <http://example.org/database#distribution/title_en>,
+        <http://example.org/database#distribution/title_fr>,
+        <http://example.org/database#distribution/title_it>,
+        <http://example.org/database#distribution/title_rm> ;
+    sh:targetClass db:distribution .
+
+db:dataset a sh:NodeShape ;
+    sh:closed true ;
+    sh:name "dataset"@en ;
+    sh:property <http://example.org/database#dataset/access_rights>,
+        <http://example.org/database#dataset/confidentiality_person>,
+        <http://example.org/database#dataset/created_at>,
+        <http://example.org/database#dataset/data_owner>,
+        <http://example.org/database#dataset/description_de>,
+        <http://example.org/database#dataset/description_en>,
+        <http://example.org/database#dataset/description_fr>,
+        <http://example.org/database#dataset/description_it>,
+        <http://example.org/database#dataset/description_rm>,
+        <http://example.org/database#dataset/frequency>,
+        <http://example.org/database#dataset/geo_iv_id>,
+        <http://example.org/database#dataset/id>,
+        <http://example.org/database#dataset/identifier>,
+        <http://example.org/database#dataset/issued>,
+        <http://example.org/database#dataset/language>,
+        <http://example.org/database#dataset/modified>,
+        <http://example.org/database#dataset/modified_at>,
+        <http://example.org/database#dataset/other_identifier>,
+        <http://example.org/database#dataset/previous_version_id>,
+        <http://example.org/database#dataset/process_id>,
+        <http://example.org/database#dataset/publication_level>,
+        <http://example.org/database#dataset/publication_level_proposal>,
+        <http://example.org/database#dataset/publisher_id>,
+        <http://example.org/database#dataset/qualified_attribution_complement_de>,
+        <http://example.org/database#dataset/qualified_attribution_complement_en>,
+        <http://example.org/database#dataset/qualified_attribution_complement_fr>,
+        <http://example.org/database#dataset/qualified_attribution_complement_it>,
+        <http://example.org/database#dataset/qualified_attribution_complement_rm>,
+        <http://example.org/database#dataset/registration_status>,
+        <http://example.org/database#dataset/registration_status_proposal>,
+        <http://example.org/database#dataset/responsible_person_deputy_id>,
+        <http://example.org/database#dataset/responsible_person_id>,
+        <http://example.org/database#dataset/retention_period>,
+        <http://example.org/database#dataset/retention_period_description_de>,
+        <http://example.org/database#dataset/retention_period_description_en>,
+        <http://example.org/database#dataset/retention_period_description_fr>,
+        <http://example.org/database#dataset/retention_period_description_it>,
+        <http://example.org/database#dataset/retention_period_description_rm>,
+        <http://example.org/database#dataset/spatial>,
+        <http://example.org/database#dataset/theme>,
+        <http://example.org/database#dataset/title_de>,
+        <http://example.org/database#dataset/title_en>,
+        <http://example.org/database#dataset/title_fr>,
+        <http://example.org/database#dataset/title_it>,
+        <http://example.org/database#dataset/title_rm>,
+        <http://example.org/database#dataset/version>,
+        <http://example.org/database#dataset/version_notes_de>,
+        <http://example.org/database#dataset/version_notes_en>,
+        <http://example.org/database#dataset/version_notes_fr>,
+        <http://example.org/database#dataset/version_notes_it>,
+        <http://example.org/database#dataset/version_notes_rm> ;
+    sh:targetClass db:dataset .
+

@@ -1,3 +1,16 @@
+# This file includes adapted code from the XSD2SHACL project,
+# originally developed by Xuemin Duan, David Chaves-Fraga, and Anastasia Dimou.
+# Source: https://github.com/dtai-kg/XSD2SHACL
+# License: Apache License 2.0
+#
+# This script reimplements some of the core ideas described in their paper and project.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+
+
 from lxml import etree
 from rdflib import Graph, Namespace, Literal, URIRef, BNode
 from rdflib.namespace import RDF, RDFS, XSD, OWL
