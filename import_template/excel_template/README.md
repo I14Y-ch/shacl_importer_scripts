@@ -8,7 +8,7 @@ This repository contains an Excel template you can use to create SHACL structure
 2. **Fill in the Excel file**  
 3. **Convert the Excel into SHACL using xls2rdf**  
 
-The converter is available in multiple formats: online API, command-line app, Java library, and a user-friendly [online form](https://xls2rdf.sparna.fr/rest/doc.html):
+The converter is available in multiple formats: online API, command-line app, Java library, and a user-friendly [online form](https://skos-play.sparna.fr/play/convert):
 
 - Upload your Excel file  
 - Check the box "Ignore SKOS post-processings"  
