@@ -104,8 +104,7 @@ class CSVToSHACL:
             self.g.add((prop_uri, SH.minInclusive, Literal(min_val, datatype=datatype)))
             self.g.add((prop_uri, SH.maxInclusive, Literal(max_val, datatype=datatype)))
     
-    def _add_property_shape(self, node_shape: URIRef, property_name: str, 
-                         property_type: URIRef, values: List[str]) -> None:
+    def _add_property_shape(self, node_shape: URIRef, property_name: str, property_type: URIRef, values: List[str], order: int) -> None:
         safe_name = property_name.replace(' ', '_').replace('.', '_')
         prop_uri = URIRef(f"{node_shape}/{safe_name}")
         
@@ -113,6 +112,7 @@ class CSVToSHACL:
         self.g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
         self.g.add((prop_uri, SH.path, prop_uri))
         self.g.add((prop_uri, SH.datatype, property_type))
+        self.g.add((prop_uri, SH.order, Literal(order)))  
         
         if self.default_lang:
             self.g.add((prop_uri, SH.name, Literal(property_name, lang=self.default_lang)))
@@ -153,14 +153,16 @@ class CSVToSHACL:
                 
                 if self.default_lang:
                     self.g.add((shape_uri, SH.name, Literal(shape_name, lang=self.default_lang)))
+                    self.g.add((shape_uri, self.rdfs.label, Literal(shape_name, lang=self.default_lang)))
                 else:
                     self.g.add((shape_uri, SH.name, Literal(shape_name)))
+                    self.g.add((shape_uri, self.rdfs.label, Literal(shape_name)))
                 
-                for column in reader.fieldnames:
+                for order, column in enumerate(reader.fieldnames, start=0):  
                     clean_col = column.strip('\ufeff')
                     values = [row[clean_col] for row in rows if clean_col in row and row[clean_col]]
                     prop_type = self._guess_property_type(values, clean_col)
-                    self._add_property_shape(shape_uri, clean_col, prop_type, values)
+                    self._add_property_shape(shape_uri, clean_col, prop_type, values, order)
                 
                 return True
         except Exception as e:
