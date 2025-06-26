@@ -214,9 +214,6 @@ class DSD2SHACLTransformer:
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(self.g.serialize(format="turtle"))
 
-        output_file = f"{output_path}{identifier_dsd}_jsonld.json"
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write(self.g.serialize(format="turtle"))
             
         print(f"\nDSD correctly transformed to SHACL \nIdentifier: {identifier_dsd} \nID: {id_dsd}  ")
         return True

@@ -1,0 +1,178 @@
+@prefix QB: <http://purl.org/linked-data/cube#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:DSD_MASTERDATA_DWELLING a QB:DataStructureDefinition,
+        rdfs:Class,
+        sh:NodeShape ;
+    rdfs:label "Wohnungen"@de,
+        "Dwellings"@en,
+        "Logements"@fr,
+        "Abitazioni"@it ;
+    pav:version "1.0.0" ;
+    sh:name "Wohnungen"@de,
+        "Dwellings"@en,
+        "Logements"@fr,
+        "Abitazioni"@it ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EDID>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EGID>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EWID>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAREA>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAZIM>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WBEZ>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WKCHE>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WMEHRG>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTAT>,
+        <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTWK> ;
+    schema:validFrom "2022-08-23"^^xsd:date ;
+    schema:version "1.0.0" .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EDID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da6fda-d9d3-7ad5-ab6e-a219f8aef238/description> ;
+    dcterms:description "Der EGID + EDID bilden in Kombination eine gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäudeeingänge. Der EDID wird in Abhängigkeit des Gebäudes pro Gebäudeeingang vergeben und bleibt bei allen Veränderungen wie Neuadressierungen, Umbauten usw. unverändert. (www.housing-stat.ch/de/help/42.html#EDID)"@de,
+        "La combinaison EGID + EDID forme un numéro d'identification unique sur l'ensemble du territoire suisse pour toutes les entrées de bâtiment. L'identificateur EDID est attribué en relation avec le bâtiment pour chaque entrée de celui-ci. Il résiste à tous les changements tels que les nouvelles adresses, les transformations etc. (www.housing-stat.ch/fr/help/42.html#EDID)"@fr,
+        "La combinazione EGID + EDID costituisce un numero d'identificazione unico a livello nazionale per tutte le entrate degli edifici. L'EDID è attribuito a ogni entrata in funzione dell'edificio. Esta invariato in caso di modifiche come nuovo indirizzo, rinnovo ecc. (www.housing-stat.ch/it/help/42.html#EDID)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Eingangsidentifikator"@de,
+        "Identificateur fédéral de l'entrée"@fr,
+        "Identificatore federale dell'entrata"@it ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EDID> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EGID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9994b-6516-1cdb-bb6c-5636efad4a24/description> ;
+    dcterms:description "Der EGID ist eine gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäude. Er wird pro Gebäude unabhängig der Gemeindezugehörigkeit vergeben und bleibt bei allen Veränderungen wie Gemeindefusionen, Eigentümerwechseln, Umbauten usw. unverändert. Der EGID ist einmalig, d.h. bei Abbruch oder Nichtrealisierung eines Gebäudes bleibt das Gebäude im Datenbestand des eidg. GWR gespeichert. Auch wenn am gleichen Standort ein Neubau entsteht, erhält das neu erstellte Gebäude einen neuen EGID, unabhängig davon, ob der Neubau die gleiche Adresse trägt wie das abgebrochene resp. nicht realisierte Gebäude. Wenn ein Gebäude durch einen Brand, Naturgefahren (Hangrutsch, Unwetter, Erdbeben, Überschwemmung usw.) oder allgemein durch ein Ereignis höherer Gewalt komplett zerstört und anschliessend wieder errichtet wird, dann wird ein neuer EGID vergeben. Ist das Gebäude infolge eines solchen Ereignisses nur beschädigt, aber nicht mehr nutzbar, wurde es als gesundheitsgefährdend deklariert oder sind nur noch Trümmer übrig, bleibt es aktiv und erhält den Status eines nicht nutzbaren Gebäudes. (www.housing-stat.ch/de/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/de/standards/60465)"@de,
+        "Il s’agit d’un numéro d’identification unique pour l’ensemble du territoire suisse et pour tous les bâtiments. Il est attribué par bâtiment, indépendamment de la commune concernée, et reste inchangé en cas de fusions communales, de changements de propriétaires, de transformations etc. L’EGID est unique : en cas de démolition ou de non réalisation d’un bâtiment, celui-ci reste enregistré dans les données du RegBL fédéral. Si une nouvelle construction est érigée à l’emplacement du bâtiment démoli ou non réalisé, celle-ci reçoit un nouvel EGID, même si le nouveau bâtiment se voit attribuer la même adresse que le bâtiment démoli ou non réalisé. Si un bâtiment est complétement détruit par un incendie, suite à des évènements naturels (glissement de terrain, avalanche, inondation, tremblement de terre etc.) ou accident majeur et ensuite reconstruit, un nouveau EGID lui est attribué. Si le bâtiment n’est qu’endommagé à la suite d’un tel évènement, mais au point de ne plus pouvoir être utilisé, s’il est déclaré insalubre ou s’il est réduit à l’état de ruines, il reste actif avec un statut inutilisable. (www.housing-stat.ch/fr/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/fr/standards/60465)"@fr,
+        "È un numero d’identificazione assegnato a ogni edificio, unico a livello svizzero. È attribuito a prescindere dal Comune d’appartenenza e resta invariato anche in caso di modifiche come fusioni di Comuni, cambiamenti di proprietario, rinnovi ecc. L’EGID è unico: in caso di demolizione di un edificio resta memorizzato nella banca dati del REA federale. Un edificio nuovo costruito al posto di uno demolito o non realizzato riceve un nuovo EGID anche se mantiene lo stesso indirizzo di questi ultimi. A un edificio completamente distrutto da un incendio, in seguito a eventi naturali (smottamenti di terreno, valanghe, inondazioni, terremoti ecc.) o a un grave incidente viene attribuito un nuovo EGID. Se un edificio rimane danneggiato da tali eventi, al punto di non poter più essere utilizzato, se è dichiarato insalubre o se è ridotto a rovina, resta attivo con lo statuto inutilizzabile. (www.housing-stat.ch/de/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/fr/standards/60465)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Gebäudeidentifikator"@de,
+        "Fed. Building identification number"@en,
+        "Identificateur fédéral de bâtiment"@fr,
+        "Identificatore federale dell’edificio"@it ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EGID> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EWID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da6fdd-4701-50a2-8fd7-29137b5cb91f/description> ;
+    dcterms:description "Der EGID + EWID bilden in Kombination eine gesamtschweizerisch eindeutige Identifikationsnummer für alle Wohnungen. Der EWID bleibt bei allen Veränderungen wie Umnutzungen, Mieterwechsel usw. unverändert. Jede Wohnung ist zwingend an einen Eingang gebunden, dem eine EDID-Nummer zugewiesen ist. Der EWID wird innerhalb des Gebäudes in zufälliger Reihenfolge vergeben ohne Bezug zum Stockwerk der Wohnung o.dgl. Auch für Einfamilienhäuser wird im eidg. GWR eine Wohnung gebildet mit einer aus der Kombination EGID + EWID bestehenden Identifikationsnummer. (www.housing-stat.ch/de/help/42.html#EWID)"@de,
+        "Combinés, les numéros EGID + EWID forment un numéro d'identification unique sur l'ensemble du territoire suisse pour tous les logements. Le numéro EWID reste inchangé lors de toutes les modifications telles que les changements d'affectation, de locataires etc. Chaque logement est obligatoirement rattaché à une entrée identifiée par le numéro EDID. L'EWID est attribué à l'intérieur d'un bâtiment dans un ordre aléatoire, sans rapport avec l'étage du logement etc. Le RegBL fédéral construit également un logement pour les maisons individuelles, avec un numéro d'identification composé des numéros EGID + EWID combinés. (www.housing-stat.ch/fr/help/42.html#EWID)"@fr,
+        "La combinazione EGID + EWID costituisce un numero d'identificazione unico a livello nazionale per tutte le abitazioni. L'EWID resta invariato in caso di modifiche come cambiamento di destinazione, di inquilino ecc. Ogni abitazione è obbligatoriamente associata ad un'entrata identificata dal numero EDID. All'interno dell'edificio, l'EWID è attribuito in ordine casuale, senza alcuna relazione con il piano dell'abitazione o simili. Anche per le case unifamiliari, nel REA viene formata un'abitazione con un numero d'identificazione composto dalla combinazione EGID + EWID. (www.housing-stat.ch/it/help/42.html#EWID)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Wohnungsidentifikator"@de,
+        "--"@en,
+        "Identificateur fédéral de logement"@fr,
+        "Identificatore federale dell'abitazione"@it,
+        "--"@rm ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/EWID> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAREA> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d94c47-e6cd-a10d-b8de-a8a6bb8f65c3/description> ;
+    dcterms:description "Bewohnbare Fläche der Wohnung in Quadratmetern. Als Wohnungsfläche ist die Summe der Flächen sämtlicher Zimmer, Küchen, Kochnischen, Badezimmer, Toiletten, Abstellräume, Gänge, Veranden usw. einer Wohnung erfasst. Zusätzliche separate Wohnräume (z.B. Mansarden), offene Balkone und Terrassen sowie nicht bewohnbare Keller- und Dachgeschossräume fallen bei der Berechnung der Wohnungsfläche ausser Betracht. (www.housing-stat.ch/de/help/42.html#WAREA)"@de,
+        "Surface habitable du logement en mètres carrés. La surface du logement enregistrée correspond à la somme des surfaces de toutes ses pièces, cuisines, cuisinettes, salles de bain, toilettes, réduits, corridors, vérandas etc. Ne sont pas pris en compte dans le calcul de la surface du logement : les pièces d’habitation indépendantes (par exemple les mansardes), les balcons ouverts et les terrasses ainsi que les pièces non habitables situées à la cave ou dans les combles. (www.housing-stat.ch/fr/help/42.html#WAREA)"@fr,
+        "Superficie abitabile dell’edificio in metri quadrati. La superficie dell'abitazione registrata equivale alla somma delle superfici di tutti i locali, cucine, cucinotti, bagni, gabinetti, sgabuzzini, corridoi, verande ecc. Non sono presi in considerazione nel calcolo della superficie dell’abitazione: i locali abitabili indipendenti (p. es. le mansarde), i balconi aperti e le terrazze, nonché i locali non abitabili situati in cantina o nei solai. Per ulteriori informazioni, vedere il catalogo delle caratteristiche del REA. (www.housing-stat.ch/it/help/42.html#WAREA)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Wohnungsfläche"@de,
+        "Surface du logement"@fr,
+        "Superficie dell’abitazione"@it ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAREA> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAZIM> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d99959-523f-417e-a982-a7843e3baf07/description> ;
+    dcterms:description "Anzahl Zimmer innerhalb der Wohnung. Die Anzahl Zimmer umfasst alle bewohnbaren Räume der Wohnung wie Wohnzimmer, Schlafzimmer usw. Nicht gezählt werden Küche, Badezimmer, Duschen, Toiletten, Abstellräume, Korridore, halbe Zimmer, Veranden sowie zusätzliche separate Wohnräume ausserhalb der Wohnung. Die Anzahl Zimmer ist abgerundet. Eine 4.5-Zimmer-Wohnung ist z.B. als eine 4-Zimmer-Wohnung erfasst. (www.housing-stat.ch/de/help/42.html#WAZIM)"@de,
+        "Nombre de pièces situées à l’intérieur du logement. Le nombre de pièces comprend toutes les pièces d’habitation formant le logement telles que séjours, chambres à coucher etc. Ne sont pas comptées comme des pièces d’habitation : les cuisines, les salles de bain, les douches, les toilettes, les réduits, les corridors, les demi-pièces, les vérandas, ainsi que toute pièce d’habitation supplémentaire située en dehors du logement. Le nombre de pièces est arrondi vers le bas. Un logement de 4.5 pièces p.ex. est saisi comme logement de 4 pièces. (www.housing-stat.ch/fr/help/42.html#WAZIM)"@fr,
+        "Numero di locali all’interno dell’abitazione. Il numero di locali comprende tutti i locali dell’abitazione, quali il soggiorno, le camere da letto ecc. Non sono considerati come locali dell’abitazione: le cucine, i bagni, le docce, i gabinetti, gli sgabuzzini, i corridoi, i mezzi locali, le verande nonché tutti i locali abitabili supplementari che si trovano all'ester­no dell'abitazione. Il numero di locali è arrotondato al ribasso. P.es.: un'abitazione di 4.5 locali è registrata come un'abitazione di 4 locali. (www.housing-stat.ch/it/help/42.html#WAZIM)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Anzahl Zimmer"@de,
+        "Nombre de pièces"@fr,
+        "Numero di locali"@it ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WAZIM> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WBEZ> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7494-980e-d6c7-ae38-f148442485df/description> ;
+    dcterms:description "Die Lage auf dem Stockwerk dient dazu, einzelne Wohnungen eines Gebäudes, welche bezüglich der Stockwerkangabe und der Anzahl Zimmer identisch sind, voneinander zu unterscheiden. Es kann sich um Angaben wie \"Links\" / \"Mitte\" / \"Rechts\" oder andere eindeutige und beständige Charakteristiken wie \"Nord\" / \"Ost\" / \"Süd\" / \"West\" handeln. (www.housing-stat.ch/de/help/42.html#WBEZ)"@de,
+        "La situation sur l'étage permet de faire la distinction entre les logements d'un bâtiment dont l'indication d'étage et le nombre de pièces sont identiques. Il peut s'agir d'indications telles que \"gauche\" / \"milieu\" / \"droite\" ou d'autres caractéristiques univoques et permanentes, telles que \"nord\" / \"est\" / \"sud\" / \"ouest\". (www.housing-stat.ch/fr/help/42.html#WBEZ)"@fr,
+        "La situazione sul piano permette di distinguere tra le abitazioni di un edificio per il quale l'indicazione del piano e il numero dei locali sono identici. Può trattarsi di indicazioni come \"sinistra\" / \"centro\" / \"destra\" o di altre caratteristiche uniche e permanenti, come \"nord\" / \"est\" / \"sud\" / \"ovest\". (www.housing-stat.ch/it/help/42.html#WBEZ)"@it ;
+    sh:datatype xsd:string ;
+    sh:name "Lage auf dem Stockwerk"@de,
+        "Situation sur l'étage"@fr,
+        "Situazione sul piano"@it ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WBEZ> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WKCHE> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da79e0-4cee-be17-b441-088500d4ba99/description> ;
+    dcterms:description "Feste Installationen die für die Zubereitung von Mahlzeiten und das Spülen von Geschirr vorbereitet sind. Hinweis Mit der Einführung des Bundesgesetzes über Zweitwohnungen werden Wohnungen als solche gezählt, sobald technische Installationen für eine Kocheinrichtung vorhanden sind, auch wenn die Kocheinrichtung nicht ausgebaut ist (Botschaft zum Bundesgesetz über Zweitwohnungen vom 19. Februar 2014). (www.housing-stat.ch/de/help/42.html#WKCHE)"@de,
+        "Installation fixe destinée à la préparation des repas et au lavage de la vaisselle. Remarque Lors de l'introduction de la loi sur les résidences secondaires, le législateur a prévu de considérer les logements comme tels dès que des installations techniques existent, même si la cuisine n'est pas agencée (message concernant la loi fédérale sur les résidences secondaires du 19 février 2014). (www.housing-stat.ch/fr/help/42.html#WKCHE)"@fr,
+        "Installazione fissa destinata alla preparazione dei pasti e al lavaggio delle stoviglie. Osservazione Quando è stata varata la legge sulle abitazioni secondarie, il legislatore ha previsto di considerare come abitazioni quelle provviste delle installazioni tecniche, anche se la cucina non è stata installata (messaggio concernente la legge federale sulle abitazioni secondarie del 19 febbraio 2014). (www.housing-stat.ch/it/help/42.html#WKCHE)"@it ;
+    sh:name "Kocheinrichtung"@de,
+        "Equipement de cuisine"@fr,
+        "Cucina"@it ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WKCHE> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WMEHRG> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7491-d06c-75c6-ae7f-5925376e8805/description> ;
+    dcterms:description "Gibt an, dass die Wohnung über mehrere Stockwerke gebaut ist (Maisonette). (www.housing-stat.ch/de/help/42.html#WMEHRG)"@de,
+        "Indique que le logement est construit sur plusieurs étages (duplex). (www.housing-stat.ch/fr/help/42.html#WMEHRG)"@fr,
+        "Indica che l'abitazione è costruita su più piani (duplex). (www.housing-stat.ch/it/help/42.html#WMEHRG)"@it ;
+    sh:name "Mehrgeschossige Wohnung"@de,
+        "Logement sur plusieurs étages"@fr,
+        "Abitazione su più piani"@it ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WMEHRG> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTAT> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7496-e293-9664-bbef-58b4b4d009a2/description> ;
+    dcterms:description "Im eidg. GWR sind nicht nur bestehende Wohnungen erfasst, sondern auch aufgehobene (ab 2001) sowie projektierte, nicht nutzbare, aufgehobene, nicht reali­siert bzw. sich im Bau befindende Wohnungen. (www.housing-stat.ch/de/help/42.html#WSTAT)"@de,
+        "Le RegBL fédéral répertorie non seulement les logements existants, mais aussi ceux qui ont été démolis (dès 2001), ainsi que les logements qui se trouvent à l'état de projet, en construction, non utilisables, éliminés et non réalisés. (www.housing-stat.ch/fr/help/42.html#WSTAT)"@fr,
+        "Nel REA federale sono registrate non solo le abitazioni esistenti, ma anche quelle demolite (a partire dal 2001) così come le abitazioni in progetto, in costruzione, non utilizzabili, eliminate o non realizzate. (www.housing-stat.ch/it/help/42.html#WSTAT)"@it ;
+    sh:name "Wohnungsstatus"@de,
+        "Statut du logement"@fr,
+        "Stato dell'abitazione"@it ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTAT> .
+
+<https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTWK> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7483-fb80-07bd-9d85-5e71cca93d8c/description> ;
+    dcterms:description "Die Stockwerkangabe bezeichnet das Stockwerk bezogen auf den Eingang des Gebäudes (= Parterre). Bei Wohnungen mit mehreren Stockwerken wird das Stockwerk erfasst, auf dem sich der (Haupt-)-Eingang der Wohnung befindet. (www.housing-stat.ch/de/help/42.html#WSTWK)"@de,
+        "Les indications en question désignent la position de l'étage par rapport à l'entrée du bâtiment (= rez-de-chaussée). Pour les logements construits sur plusieurs étages, on enregistrera l'étage sur lequel se situe l'entrée (principale) du logement. (www.housing-stat.ch/fr/help/42.html#WSTWK)"@fr,
+        "L'indicazione del piano designa il piano rispetto all'entrata dell'edificio(= pianterreno). Per le abitazioni costruite su più piani, va registrato il piano sul quale si situa l'entrata (principale) dell'abitazione. (www.housing-stat.ch/it/help/42.html#WSTWK)"@it ;
+    sh:name "Stockwerk"@de,
+        "Etage"@fr,
+        "Piano"@it ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/DSD_MASTERDATA_DWELLING/structure/DSD_MASTERDATA_DWELLING/WSTWK> .
+

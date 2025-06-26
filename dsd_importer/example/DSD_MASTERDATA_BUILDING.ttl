@@ -1,0 +1,658 @@
+@prefix QB: <http://purl.org/linked-data/cube#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix i14y: <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+i14y:DSD_MASTERDATA_BUILDING a QB:DataStructureDefinition,
+        rdfs:Class,
+        sh:NodeShape ;
+    rdfs:label "Stammdaten der Gebäude"@de,
+        "Données de référence des bâtiments"@fr ;
+    pav:version "1.0.0" ;
+    sh:name "Stammdaten der Gebäude"@de,
+        "Données de référence des bâtiments"@fr ;
+    sh:property <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DEINR>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODE>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODN>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DOFFADR>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZ4>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZNAME>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZZ>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EDID>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGAID>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGID>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/ESID>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GAREA>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GASTW>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDEKT>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDENAME>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GEBF>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDEHISTID>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDENR>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKAT>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKLAS>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODE>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODN>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GSTAT>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW1>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW2>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRNAME>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STROFFIZIEL>,
+        <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRSP> ;
+    schema:validFrom "2021-12-31"^^xsd:date ;
+    schema:validUntil "2099-12-31"^^xsd:date ;
+    schema:version "1.0.0" .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DEINR> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9993e-b805-51f2-9d9d-5b426f9bee96/description> ;
+    dcterms:description "Hausnummer als Teil der Gebäudeadresse. Zusammen mit der Strassenbezeichnung bildet die Hausnummer die Gebäudeadresse im engeren Sinne. Meist handelt es sich um eine so genannte Polizeinummer, welche von der Gemeinde strassenweise vergeben wird (z.B. rechte Strassenseite mit geraden Nummern, linke Strassenseite mit ungeraden Nummern). In gewissen Gemeinden wird z.Z. noch die Versicherungsnummer als Hausnummer verwendet (gemeindeweise Hausnummerierung). In der Hausnummer kommen gelegentlich auch so genannte Suffixe (8a, 8b usw.) vor. (eCH-0129 : https://www.ech.ch/index.php/de/standards/60465 - Merkmalskatalog : www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/publikationen.html)"@de,
+        "Numéro de maison faisant partie de l’adresse du bâtiment. Avec la désignation de la rue, le numéro de maison constitue l’adresse du bâtiment au sens strict du terme. Il s’agit en général d’un numéro dit de police attribué par rue au niveau communal (par exemple numéros pairs du côté droit et numéros impairs du côté gauche de la rue). Dans certaines communes, on utilise encore les numéros d’assurance immobilière (numérotation communale des maisons). Dans le numéro de maison apparaissent occasionnellement des suffixes (8a, 8b etc.). (eCH-0129 : https://www.ech.ch/index.php/fr/standards/60465 - Catalogue des caractères : www.bfs.admin.ch/bfs/fr/home/registres/registre-batiments-logements/publications.html)"@fr,
+        "Numero dell’entrata ufficiale, che figura nell’indirizzo dell’edificio. Insieme alla denominazione della via, il numero civico costituisce l’indirizzo dell’edificio in senso stretto. Di norma si tratta di numeri assegnati agli edifici dal Comune via per via (per es. pari sul lato destro della via, dispari sul lato sinistro). In alcuni Comuni, come numero civico si utilizza ancora il numero d’assicurazione immobiliare (numerazione comunale delle case). Del numero civico fanno parte occasionalmente anche i cosiddetti suffissi (8a, 8b ecc.) (eCH-0129 : https://www.ech.ch/index.php/fr/standards/60465 - Catalogo delle caratteristiche : www.bfs.admin.ch/bfs/it/home/registri/registro-edifici-abitazioni/pubblicazioni.html)"@it ;
+    sh:datatype xsd:string ;
+    sh:name "Eingangsnummer Gebäude"@de,
+        "Numéro d’entrée du bâtiment"@fr,
+        "Numero dell’entrata dell’edificio"@it ;
+    sh:order 40 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DEINR> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODE> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Als geografischer Referenzpunkt des Eingangs gelten die von der amtlichen Vermessung übermittelten Eingangskoordinaten. Bei besonderen Grundrissformen (Winkel, U-Form usw.) wird jedoch darauf geachtet, dass der Referenzpunkt in jedem Fall innerhalb der Grundrissfläche liegt. Als Datenquelle ist ausschliesslich die amtliche Vermessung vorgesehen. (www.housing-stat.ch/de/help/42.html#DKODE)"@de,
+        "Les coordonnées de l'entrée transmises par la mensuration officielle sont considérées comme le point de référence géographique de l'entrée. Dans le cas de formes particulières (angle, fer à cheval etc.), on s'assurera toutefois que le point de référence fait bien partie de la surface au sol du bâtiment. La seule source prévue est la mensuration officielle. (www.housing-stat.ch/fr/help/42.html#DKODE)"@fr,
+        "Per il punto di riferimento geografico dell'entrata valgono le coordinate dall'entrata fornite dalla misurazione ufficiale. Nel caso di forme particolari (ad angolo, a ferro di cavallo ecc.), si fa in modo che il punto di riferimento sia all'interno della superficie al suolo dell'edificio. L'unica fonte di dati prevista è la misurazione ufficiale. (www.housing-stat.ch/it/help/42.html#DKODE)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "E-Eingangskoordinate"@de,
+        "Coordinate E of the entry"@en,
+        "Coordonnée E de l'entrée"@fr,
+        "Coordinata E dell'entrata"@it ;
+    sh:order 29 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODE> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODN> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Als geografischer Referenzpunkt des Eingangs gelten die von der amtlichen Vermessung übermittelten Eingangskoordinaten. Bei besonderen Grundrissformen (Winkel, U-Form usw.) wird jedoch darauf geachtet, dass der Referenzpunkt in jedem Fall innerhalb der Grundrissfläche liegt. Als Datenquelle ist ausschliesslich die amtliche Vermessung vorgesehen. (www.housing-stat.ch/de/help/42.html#DKODN)"@de,
+        "Les coordonnées de l'entrée transmises par la mensuration officielle sont considérées comme le point de référence géographique de l'entrée. Dans le cas de formes particulières (angle, fer à cheval etc.), on s'assurera toutefois que le point de référence fait bien partie de la surface au sol du bâtiment. La seule source prévue est la mensuration officielle. (www.housing-stat.ch/fr/help/42.html#DKODN)"@fr,
+        "Per il punto di riferimento geografico dell'entrata valgono le coordinate dall'entrata fornite dalla misurazione ufficiale. Nel caso di forme particolari (ad angolo, a ferro di cavallo ecc.), si fa in modo che il punto di riferimento sia all'interno della superficie al suolo dell'edificio. L'unica fonte di dati prevista è la misurazione ufficiale. (www.housing-stat.ch/it/help/42.html#DKODN)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "N-Eingangskoordinate"@de,
+        "Coordinate N of the entry"@en,
+        "Coordonnée N de l'entrée"@fr,
+        "Coordinata N dell'entrata"@it ;
+    sh:order 21 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DKODN> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DOFFADR> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7ae1-d49c-9e96-8804-a22d083934c1/description> ;
+    dcterms:description "Gibt an, ob die Adresse von der Gemeinde validiert wurde. Alle Adressen sind Teil des Amtliches Verzeichnis der Gebäudeadressen nach Art. 26c der Verordnung über die geografischen Namen. Nur offizielle Adressen sind für die Behörden verbindlich. (www.housing-stat.ch/de/help/42.html#DOFFADR)"@de,
+        "Indique si l'adresse est validée par la commune. Toutes les adresses font partie du répertoire officiel des adresses de bâtiments selon l'article 26c de l'ordonnance sur les noms géographiques. Seules les adresses officielles ont force obligatoire pour les autorités. (www.housing-stat.ch/fr/help/42.html#DOFFADR)"@fr,
+        "Indica se l'indirizzo è stato validato dal Comune. Tutti gli indirizzi fanno parte dell'elenco ufficiale degli indirizzi degli edifici secondo l'art. 26c dell'ordinanza sui nomi geografici. Solo gli indirizzi ufficiali sono vincolanti per le autorità. (www.housing-stat.ch/it/help/42.html#DOFFADR)"@it ;
+    sh:name "Offizielle Adresse"@de,
+        "Adresse officielle"@fr,
+        "Indirizzo ufficiale"@it ;
+    sh:order 25 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DOFFADR> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZ4> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9993f-6433-2c81-889c-9808d7d59a15/description> ;
+    dcterms:description "Die Postleitzahl (PLZ) ist ein numerischer Wert mit 4+2 Stellen, der dem offiziellen PLZ-Verzeichnis der Schweizerischen Post entnommen wird. Das Bundesamt für Landestopografie swisstopo erstellt, führt und veröffentlicht das Amtliche Ortschaftenverzeichnis, das die Postleitzahlen mit den dazugehörigen geografischen Perimetern übernimmt. Die Kombination von DPLZ4+DPLZ weist der Gebäudeadresse eine gültige Ortschaft gemäss der Schweizerischen Post zu. Die PLZ-Zusatzziffer ist notwendig, da nicht alle Ortschaften anhand der PLZ4 eindeutig bestimmt sind. Ortschaften, die nicht mit einer 6-stelligen PLZ im PLZ-Verzeichnis geführt werden, können auch im GWR nicht erfasst werden. Die Postleitzahl ist ein Schlüsselelement für die Strassenliste. Die sechsstelligen Postleitzahlen werden vierteljährlich anhand des aktuellen PLZ-Verzeichnisses aktualisiert. (swisstopo, Amtliches Ortschaftenverzeichnis : https://www.cadastre.ch/content/cadastre-internet/de/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-de.pdf - Merkmalskatalog : www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/publikationen.html)"@de,
+        "Le NPA est un numéro à 4+2 positions tiré de la liste officielle des numéros postaux établie par La Poste. L’Office fédéral de topographie établit, gère et publie le Répertoire officiel des localités qui reprend le code postal complété par son périmètre géographique. La combinaison DPLZ4+DPLZZ confère aux entrées de bâtiment une désignation de localité selon La Poste. Le chiffre complémentaire du NPA s’avère nécessaire, étant donné que toutes les localités ne disposent pas forcément de leur propre numéro postal d’acheminement à 4 positions. Les localités qui ne sont pas mentionnées dans la liste des NPA avec un numéro postal à 6 positions ne sont pas relevées dans le RegBL fédéral. Le numéro postal constitue également un caractère-clé pour la liste des rues. Le numéro postal à 6 positions est mis à jour trimestriellement sur la base de l’état actuel de la liste des NPA. (swisstopo, Répertoire officiel des localités : https://www.cadastre.ch/content/cadastre-internet/fr/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-fr.pdf - Catalogue des caractères : www.bfs.admin.ch/bfs/fr/home/registres/registre-batiments-logements/publications.html)"@fr,
+        "Il NPA è un numero a 4+2 cifre secondo l’elenco ufficiale dei numeri postali di avviamento della Posta. L’Ufficio federale di topografia allestisce, gestisce e pubblica l’elenco ufficiale delle località con i numeri postali di avviamento e i relativi perimetri geografici. La combinazione DPLZ4+DPLZZ attribuisce alle entrate degli edifici una denominazione di località valida per la Posta. Le cifre supplementari del NPA sono necessarie perché non tutte le località dispongono di un proprio numero postale di avviamento a quattro cifre. Le località non menzionate nell’elenco ufficiale dei numeri postali di avviamento con un numero postale di avviamento a 6 cifre non sono considerate nel REA federale. Il numero postale di avviamento serve inoltre da caratteristica di riferimento per l’elenco delle vie. Il numero postale di avviamento a 6 cifre è aggiornato trimestralmente in base all’elenco dei NPA. (swisstopo, Elenco ufficiale delle località : https://www.cadastre.ch/content/cadastre-internet/it/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-it.pdf - Catalogo delle caratteristiche : www.bfs.admin.ch/bfs/it/home/registri/registro-edifici-abitazioni/pubblicazioni.html)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Postleitzahl"@de,
+        "Numéro postal d’acheminement"@fr,
+        "Numero postale di avviamento"@it ;
+    sh:order 30 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZ4> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZNAME> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d99949-1d50-9ad2-b9d2-d0fb35d25b71/description> ;
+    dcterms:description "Die 40-stellige Ortsbezeichnung enthält den langen Namen des Ortes. (swisstopo, Amtliches Ortschaftenverzeichnis : www.cadastre.ch/content/cadastre-internet/de/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-de.pdf)"@de,
+        "La désignation de la localité à 40 caractères contient le nom long de la localité. (swisstopo, Répertoire officiel des localités : www.cadastre.ch/content/cadastre-internet/fr/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-fr.pdf)"@fr,
+        "La designazione della località a 40 caratteri contiene il nome lungo della località. (swisstopo, Elenco ufficiale delle località : www.cadastre.ch/content/cadastre-internet/it/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-it.pdf)"@it ;
+    sh:datatype xsd:string ;
+    sh:name "Ortsbezeichnung"@de,
+        "Désignation de la localité"@fr,
+        "Designazione della località"@it ;
+    sh:order 18 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZNAME> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZZ> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9993f-d5ca-cfa8-8d3c-4e6854c4fa0a/description> ;
+    dcterms:description "Die Postleitzahl (PLZ) ist ein numerischer Wert mit 4+2 Stellen, der dem offiziellen PLZ-Verzeichnis der Schweizerischen Post entnommen wird. Das Bundesamt für Landestopografie swisstopo erstellt, führt und veröffentlicht das Amtliche Ortschaftenverzeichnis, das die Postleitzahlen mit den dazugehörigen geografischen Perimetern übernimmt. Die Kombination von DPLZ4+DPLZ weist der Gebäudeadresse eine gültige Ortschaft gemäss der Schweizerischen Post zu. Die PLZ-Zusatzziffer ist notwendig, da nicht alle Ortschaften anhand der PLZ4 eindeutig bestimmt sind. Ortschaften, die nicht mit einer 6-stelligen PLZ im PLZ-Verzeichnis geführt werden, können auch im GWR nicht erfasst werden. Die Postleitzahl ist ein Schlüsselelement für die Strassenliste. Die sechsstelligen Postleitzahlen werden vierteljährlich anhand des aktuellen PLZ-Verzeichnisses aktualisiert. (swisstopo, Amtliches Ortschaftenverzeichnis : www.cadastre.ch/content/cadastre-internet/de/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-de.pdf - Merkmalskatalog : www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/publikationen.html)"@de,
+        "Le NPA est un numéro à 4+2 positions tiré de la liste officielle des numéros postaux établie par La Poste. L’Office fédéral de topographie établit, gère et publie le Répertoire officiel des localités qui reprend le code postal complété par son périmètre géographique. La combinaison DPLZ4+DPLZZ confère aux entrées de bâtiment une désignation de localité selon La Poste. Le chiffre complémentaire du NPA s’avère nécessaire, étant donné que toutes les localités ne disposent pas forcément de leur propre numéro postal d’acheminement à 4 positions. Les localités qui ne sont pas mentionnées dans la liste des NPA avec un numéro postal à 6 positions ne sont pas relevées dans le RegBL fédéral. Le numéro postal constitue également un caractère-clé pour la liste des rues. Le numéro postal à 6 positions est mis à jour trimestriellement sur la base de l’état actuel de la liste des NPA. (swisstopo, Répertoire officiel des localités : www.cadastre.ch/content/cadastre-internet/fr/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-fr.pdf - Catalogue des caractères : www.bfs.admin.ch/bfs/fr/home/registres/registre-batiments-logements/publications.html)"@fr,
+        "Il NPA è un numero a 4+2 cifre secondo l’elenco ufficiale dei numeri postali di avviamento della Posta. L’Ufficio federale di topografia allestisce, gestisce e pubblica l’elenco ufficiale delle località con i numeri postali di avviamento e i relativi perimetri geografici. La combinazione DPLZ4+DPLZZ attribuisce alle entrate degli edifici una denominazione di località valida per la Posta. Le cifre supplementari del NPA sono necessarie perché non tutte le località dispongono di un proprio numero postale di avviamento a quattro cifre. Le località non menzionate nell’elenco ufficiale dei numeri postali di avviamento con un numero postale di avviamento a 6 cifre non sono considerate nel REA federale. Il numero postale di avviamento serve inoltre da caratteristica di riferimento per l’elenco delle vie. Il numero postale di avviamento a 6 cifre è aggiornato trimestralmente in base all’elenco dei NPA. (swisstopo, Elenco ufficiale delle località : www.cadastre.ch/content/cadastre-internet/it/services/service/registry/plz/_jcr_content/contentPar/tabs/items/dokumente/tabPar/downloadlist/downloadItems/517_1469711943806.download/Ortschaftenverzeichnis-Produktinfo-it.pdf - Catalogo delle caratteristiche : www.bfs.admin.ch/bfs/it/home/registri/registro-edifici-abitazioni/pubblicazioni.html)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Postleitzahl-Zusatzziffer"@de,
+        "Chiffre complémentaire du NPA"@fr,
+        "Cifre supplementari del NPA"@it ;
+    sh:order 17 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/DPLZZ> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EDID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da6fda-d9d3-7ad5-ab6e-a219f8aef238/description> ;
+    dcterms:description "Der EGID + EDID bilden in Kombination eine gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäudeeingänge. Der EDID wird in Abhängigkeit des Gebäudes pro Gebäudeeingang vergeben und bleibt bei allen Veränderungen wie Neuadressierungen, Umbauten usw. unverändert. (www.housing-stat.ch/de/help/42.html#EDID)"@de,
+        "La combinaison EGID + EDID forme un numéro d'identification unique sur l'ensemble du territoire suisse pour toutes les entrées de bâtiment. L'identificateur EDID est attribué en relation avec le bâtiment pour chaque entrée de celui-ci. Il résiste à tous les changements tels que les nouvelles adresses, les transformations etc. (www.housing-stat.ch/fr/help/42.html#EDID)"@fr,
+        "La combinazione EGID + EDID costituisce un numero d'identificazione unico a livello nazionale per tutte le entrate degli edifici. L'EDID è attribuito a ogni entrata in funzione dell'edificio. Esta invariato in caso di modifiche come nuovo indirizzo, rinnovo ecc. (www.housing-stat.ch/it/help/42.html#EDID)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Eingangsidentifikator"@de,
+        "Identificateur fédéral de l'entrée"@fr,
+        "Identificatore federale dell'entrata"@it ;
+    sh:order 38 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EDID> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGAID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7b67-e293-fe74-b502-424cdfe4b508/description> ;
+    dcterms:description "Es handelt sich um eine für die ganze Schweiz und für jede Gebäudeadresse eindeutige Identifikationsnummer. (www.housing-stat.ch/de/help/42.html#EGAID)"@de,
+        "Il s'agit d'un numéro d'identification unique pour l'ensemble du territoire suisse et pour chaque adresse de bâtiment. (www.housing-stat.ch/fr/help/42.html#EGAID)"@fr,
+        "E un numero d'identificazione assegnato a ogni indirizzo di edificio, unico a livello svizzero. (www.housing-stat.ch/it/help/42.html#EGAID)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Gebäudeadressidentifikator"@de,
+        "Identificateur fédéral d'adresse de bâtiment"@fr,
+        "Identificatore federale di indirizzo d'edificio"@it ;
+    sh:order 34 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGAID> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGID> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9994b-6516-1cdb-bb6c-5636efad4a24/description> ;
+    dcterms:description "Der EGID ist eine gesamtschweizerisch eindeutige Identifikationsnummer für alle Gebäude. Er wird pro Gebäude unabhängig der Gemeindezugehörigkeit vergeben und bleibt bei allen Veränderungen wie Gemeindefusionen, Eigentümerwechseln, Umbauten usw. unverändert. Der EGID ist einmalig, d.h. bei Abbruch oder Nichtrealisierung eines Gebäudes bleibt das Gebäude im Datenbestand des eidg. GWR gespeichert. Auch wenn am gleichen Standort ein Neubau entsteht, erhält das neu erstellte Gebäude einen neuen EGID, unabhängig davon, ob der Neubau die gleiche Adresse trägt wie das abgebrochene resp. nicht realisierte Gebäude. Wenn ein Gebäude durch einen Brand, Naturgefahren (Hangrutsch, Unwetter, Erdbeben, Überschwemmung usw.) oder allgemein durch ein Ereignis höherer Gewalt komplett zerstört und anschliessend wieder errichtet wird, dann wird ein neuer EGID vergeben. Ist das Gebäude infolge eines solchen Ereignisses nur beschädigt, aber nicht mehr nutzbar, wurde es als gesundheitsgefährdend deklariert oder sind nur noch Trümmer übrig, bleibt es aktiv und erhält den Status eines nicht nutzbaren Gebäudes. (www.housing-stat.ch/de/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/de/standards/60465)"@de,
+        "Il s’agit d’un numéro d’identification unique pour l’ensemble du territoire suisse et pour tous les bâtiments. Il est attribué par bâtiment, indépendamment de la commune concernée, et reste inchangé en cas de fusions communales, de changements de propriétaires, de transformations etc. L’EGID est unique : en cas de démolition ou de non réalisation d’un bâtiment, celui-ci reste enregistré dans les données du RegBL fédéral. Si une nouvelle construction est érigée à l’emplacement du bâtiment démoli ou non réalisé, celle-ci reçoit un nouvel EGID, même si le nouveau bâtiment se voit attribuer la même adresse que le bâtiment démoli ou non réalisé. Si un bâtiment est complétement détruit par un incendie, suite à des évènements naturels (glissement de terrain, avalanche, inondation, tremblement de terre etc.) ou accident majeur et ensuite reconstruit, un nouveau EGID lui est attribué. Si le bâtiment n’est qu’endommagé à la suite d’un tel évènement, mais au point de ne plus pouvoir être utilisé, s’il est déclaré insalubre ou s’il est réduit à l’état de ruines, il reste actif avec un statut inutilisable. (www.housing-stat.ch/fr/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/fr/standards/60465)"@fr,
+        "È un numero d’identificazione assegnato a ogni edificio, unico a livello svizzero. È attribuito a prescindere dal Comune d’appartenenza e resta invariato anche in caso di modifiche come fusioni di Comuni, cambiamenti di proprietario, rinnovi ecc. L’EGID è unico: in caso di demolizione di un edificio resta memorizzato nella banca dati del REA federale. Un edificio nuovo costruito al posto di uno demolito o non realizzato riceve un nuovo EGID anche se mantiene lo stesso indirizzo di questi ultimi. A un edificio completamente distrutto da un incendio, in seguito a eventi naturali (smottamenti di terreno, valanghe, inondazioni, terremoti ecc.) o a un grave incidente viene attribuito un nuovo EGID. Se un edificio rimane danneggiato da tali eventi, al punto di non poter più essere utilizzato, se è dichiarato insalubre o se è ridotto a rovina, resta attivo con lo statuto inutilizzabile. (www.housing-stat.ch/de/help/42.html#EGID / eCH-0219 : www.ech.ch/index.php/fr/standards/60465)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Gebäudeidentifikator"@de,
+        "Fed. Building identification number"@en,
+        "Identificateur fédéral de bâtiment"@fr,
+        "Identificatore federale dell’edificio"@it ;
+    sh:order 41 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/EGID> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/ESID> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d99950-f4b9-e498-9e8e-1182aee72d95/description> ;
+    dcterms:description "Eine Strasse ist ein eindeutiges geografisches Objekt in der Gemeinde, das anhand seiner Achse lokalisiert werden kann. Der eidgenössische Strassenidentifikator ist ein schweizweit eindeutiger Identifikator. (www.housing-stat.ch/de/help/42.html#ESID)"@de,
+        "Une rue constitue un objet géographique unique dans la commune, qui peut être localisée par son axe. L’identificateur fédéral de rue est un numéro d’identification unique pour l’ensemble du territoire suisse. (www.housing-stat.ch/fr/help/42.html#ESID)"@fr,
+        "Una via costituisce un oggetto geografico unico nel Comune, che può essere localizzato mediante il suo asse. L’identificatore federale della via è un numero di identificazione unico per l’insieme del territorio svizzero. (www.housing-stat.ch/it/help/42.html#ESID)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Eidgenössischer Strassenidentifikator"@de,
+        "Identificateur fédéral de rue"@fr,
+        "Identificatore federale della via"@it ;
+    sh:order 5 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/ESID> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GAREA> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08dab2ab-6d51-3d07-98ce-db92889b9508/description> ;
+    dcterms:description "Unter Gebäudefläche ist die Grundrissfläche des Gebäudes zu verstehen, nicht die gesamte Fläche aller Wohnungen eines Gebäudes. Grundsätzlich sind als Gebäudefläche im eidg. GWR die Werte der amtlichen Vermessung erfasst. Sind diese Werte (noch) nicht verfügbar, sind Schätzwerte z.B. aus Bau­ge­suchen zugelassen. (www.housing-stat.ch/de/help/42.html#GAREA)"@de,
+        "Par surface du bâtiment, on entend la surface au sol de celui-ci et non pas la surface totale de l'ensemble des logements d'un bâtiment. Le RegBL fédéral reprend les valeurs de la mensuration officielle pour la surface au sol des bâtiments. Si ces valeurs ne sont pas (encore) disponibles, on admet des valeurs estimées provenant par exemple de demandes de permis de construire. (www.housing-stat.ch/fr/help/42.html#GAREA)"@fr,
+        "Per superficie dell'edificio s'intende la sua superficie al suolo e non quella totale di tutte le abitazioni che lo compongono. In linea di massima, nel REA federale sono registrati come superficie dell'edificio i valori della misurazione ufficiale. Se non sono (ancora) disponibili, sono ammesse stime, ad esempio in base alle domande di costruzione. (www.housing-stat.ch/it/help/42.html#GAREA)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Gebäudefläche"@de,
+        "Surface du bâtiment"@fr,
+        "Superficie dell'edificio"@it ;
+    sh:order 42 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GAREA> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GASTW> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d94c47-c283-5317-bebe-c77da45e429f/description> ;
+    dcterms:description "Anzahl Geschosse und Untergeschosse, einschliesslich Erdgeschoss. Das Merkmal informiert über die Anzahl Geschosse und Untergeschosse eines Gebäudes, einschliesslich Erdgeschoss. Dach- und Untergeschosse werden nur mitgezählt, sofern sie zumindest teilweise für Wohnzwecke dienen oder geheizt sind. Nicht mitzuzählen sind Kellergeschosse. (www.housing-stat.ch/de/help/42.html#GASTW)"@de,
+        "Nombre d’étages et de sous-sols, rez-de-chaussée inclus. Ce caractère indique le nombre d’étages et de sous-sols du bâtiment, y compris le rez-de-chaussée. Les combles et les sous-sols ne sont pris en compte qu’à condition d’être aménagés, même partiellement, pour l’habitation ou chauffés. Les caves ne sont en revanche pas prises en considération. (www.housing-stat.ch/fr/help/42.html#GASTW)"@fr,
+        "Numero di piani compreso il pianterreno. Questa caratteristica indica il numero di piani (sopra e sotto il livello del terreno), compreso il pianterreno. Le soffitte ed i seminterrati sono considerati solo a condizione di essere, anche parzialmente, abitabili. Non vanno presi in considerazione gli scantinati. (www.housing-stat.ch/de/help/42.html#GASTW)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Anzahl Geschosse"@de,
+        "Number of floors"@en,
+        "Nombre de niveaux"@fr,
+        "Numero di piani"@it ;
+    sh:order 1 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GASTW> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDEKT> a QB:CodedProperty,
+        QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d94b89-bf4d-a423-8add-dde94d0cd1f4/description> ;
+    dcterms:description "Kanton, auf dessen Gebiet das Gebäude errichtet ist."@de,
+        "Canton on whose territory the building is constructed"@en,
+        "Canton sur le territoire duquel le bâtiment est construit."@fr,
+        "Cantone in cui è costruito l'edificio."@it ;
+    sh:name "Kanton"@de,
+        "Canton"@en,
+        "Canton"@fr,
+        "Cantone"@it ;
+    sh:order 8 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDEKT> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDENAME> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Quelle: DV_HGDE_GDE"@de,
+        "Source : DV_HGDE_GDE"@fr,
+        "Fonte: DV_HGDE_GDE"@it ;
+    sh:datatype xsd:string ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08dc23f0-d04d-2d2f-a9f5-9cea80695acf/description> ;
+    sh:name "Gemeindename"@de,
+        "Nom de la commune"@fr,
+        "Nome del Comune"@it ;
+    sh:order 11 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GDENAME> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GEBF> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a1e-7cb1-cb73-aa3b-c360d0934d35/description> ;
+    dcterms:description "Die Energiebezugsfläche (EBF) ist gemäss Definition der SIA-Norm 416/1:2007 die Summe aller ober- und unterirdischen Geschossflächen, die innerhalb der thermischen Gebäudehülle liegen und für deren Nutzung ein Beheizen oder Klimatisieren notwendig ist. Die Geschossflächen umfassen auch die Bauflächen (Mauern). Die zu berücksichtigenden Flächen sind: - Hauptnutzflächen - Verkehrsflächen (ausser Bewegungsflächen für Fahrzeuge wie Rampen und Aufzüge) - Flächen der sanitären Räume (WC, Bad, Dusche) und der Garderobe (Teil der Nebennutzflächen), sofern sie innerhalb der thermischen Gebäudehülle liegen. Dies gilt auch, wenn diese Flächen nicht beheizt sind. - vertikale Versorgungs- oder Evakuierungskanäle sowie Abstellräume von weniger als 10 m2, wenn sie von in der EBF berücksichtigten Räumen oder von der thermischen Gebäudehülle umgeben sind. Hingegen dürfen folgende Flächen bei der Berechnung der EBF nicht berücksichtigt werden: - Nebennutzflächen (Garagen, Waschküche, Estriche und Keller, Abstellräume, Schutzräume, Kehrrichträume usw., ausser sanitäre Räume und Garderoben - Bewegungsflächen für Fahrzeuge (einschliesslich Rampen und Aufzüge für Fahrzeuge) und Installationsflächen - Flächenteile mit einer lichten Raumhöhe kleiner als 1.0 m werden nicht berücksichtigt. (www.housing-stat.ch/de/help/42.html#GEBF)"@de,
+        "La Surface de Référence Energétique (SRE), selon la définition de la norme SIA 416/1:2007, est la somme de toutes les surfaces de plancher des étages et des sous-sols qui sont inclus dans l'enveloppe thermique et dont l'utilisation nécessite un chauffage ou une climatisation. La surface de plancher comprend aussi les surfaces de construction (murs). Les surfaces à prendre en compte sont : - les surfaces utiles principales, - les surfaces de dégagement (à l'exclusion des surfaces de circulation de véhicules comprenant les rampes et les ascenseurs), - les surfaces des locaux sanitaires (WC, bains, douches) et des vestiaires (parties des surfaces utiles secondaires), le tout dans la mesure où ces surfaces se trouvent à l'intérieur de l'enveloppe thermique. Ceci est également valable pour le cas où ces surfaces ne sont pas chauffées, - les gaines techniques verticales d'approvisionnement ou d'évacuation et les débarras d'une surface de moins de 10 m2, s'ils sont entourés par des locaux pris en compte dans la SRE ou par l'enveloppe thermique du bâtiment. A l'inverse, les surfaces suivantes ne doivent pas être prises en compte dans le calcul de la SRE : - les surfaces utiles secondaires (garages, buanderies, greniers et caves, débarras, abris PC, locaux à poubelles etc., à l'exception des locaux sanitaires et des vestiaires), - les surfaces de circulation de véhicules (comprenant les rampes et les ascenseurs pour véhicules) et les surfaces d'installations, - les zones dont la hauteur libre est inférieure à 1,0 m ne sont pas prises en compte. (www.housing-stat.ch/fr/help/42.html#GEBF)"@fr,
+        "La superficie di riferimento energetico (SRE) ai sensi della norma SIA 416/1:2007, è la somma di tutte le superfici dei piani, sia sopra che sotto il livello del suolo, che si trovano all'interno dell'involucro termico dell'edificio e per il cui utilizzo è richiesto un riscaldamento o una climatizzazione. La superficie di piano include anche le superfici di costruzione (muri). Appartengono alla superficie di riferimento energetico: - le superfici utili principali, - le superfici di circolazione AVF (escluse le superfici per il traffico veicolare, con le rampe e gli ascensori per i veicoli), - le superfici dei locali sanitari e dei guardaroba (parti delle superfici utili secondarie), qualora situate all'interno dell'involucro termico dell'edificio (vale anche se non sono riscaldate), - i vani tecnici per sistemi di approvvigionamento e smaltimento e i depositi con una superficie inferiore a 10 m2, se circondati da locali assegnati alla superficie di riferimento energetico o circondati dall'involucro termico dell'edificio. Non vengono attribuite alla superficie di riferimento energetico: - le superfici utili secondarie (garage, lavanderie, granai e cantine, ripostigli, rifugi della protezione civile, locali per la spazzatura (esclusi i locali sanitari e i guardaroba), - le superfici per il traffico veicolare (incluse le rampe e gli ascensori per i veicoli) e le superfici delle installazioni. - Le superfici parziali con un'altezza inferiore a 1,0 m non vengono considerate nel calcolo della superficie di riferimento energetico. (www.housing-stat.ch/it/help/42.html#GEBF)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "Energiebezugsfläche"@de,
+        "Surface de référence énergétique"@fr,
+        "Superficie di riferimento energetico"@it ;
+    sh:order 4 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GEBF> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a0f-978f-8ca7-93a6-6f0f9a056cbc/description> ;
+    dcterms:description "Gibt die vom Wärmeerzeuger genutzte Hauptenergiequelle an. (www.housing-stat.ch/de/help/42.html#GENH)"@de,
+        "Indique la source d'énergie principale utilisée par le générateur de chaleur. (www.housing-stat.ch/fr/help/42.html#GENH)"@fr,
+        "Indica la fonte di energia principale utilizzata dal generatore di calore. (www.housing-stat.ch/it/help/42.html#GENH)"@it ;
+    sh:name "Energie-/Wärmequelle Heizung 1"@de,
+        "Source d'énergie / de chaleur du chauffage 1"@fr,
+        "Fonte di energia / di calore per il riscaldamento 1"@it ;
+    sh:order 24 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a0f-978f-8ca7-93a6-6f0f9a056cbc/description> ;
+    dcterms:description "Gibt die vom Wärmeerzeuger genutzte Hauptenergiequelle an. (www.housing-stat.ch/de/help/42.html#GENH)"@de,
+        "Indique la source d'énergie principale utilisée par le générateur de chaleur. (www.housing-stat.ch/fr/help/42.html#GENH)"@fr,
+        "Indica la fonte di energia principale utilizzata dal generatore di calore. (www.housing-stat.ch/it/help/42.html#GENH)"@it ;
+    sh:name "Energie-/Wärmequelle Heizung 2"@de,
+        "Source d'énergie / de chaleur du chauffage 2"@fr,
+        "Fonte di energia / di calore per il riscaldamento 2"@it ;
+    sh:order 26 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENH2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a0f-978f-8ca7-93a6-6f0f9a056cbc/description> ;
+    dcterms:description "Gibt die vom Wärmeerzeuger genutzte Hauptenergiequelle an. Die Hilfsenergie, die für das Funktionieren der Installation genutzt wird (z.B. Elektrizität für Wärmepumpen), ist nicht zu nennen. (www.housing-stat.ch/de/help/42.html#GENW)"@de,
+        "Indique la source d'énergie principale utilisée par le générateur de chaleur. L'énergie auxiliaire utilisée pour le fonctionnement de l'installation (par exemple électricité pour les pompes à chaleur) ne doit pas être mentionnée. (www.housing-stat.ch/fr/help/42.html#GENW)"@fr,
+        "Indica la fonte di energia principale utilizzata dal generatore di calore. L'energia ausiliaria utilizzata per il funzionamento dell'impianto (per esempio l'elettricità per le pompe a calore) non va menzionata. (www.housing-stat.ch/it/help/42.html#GENW)"@it ;
+    sh:name "Energie-/Wärmequelle Warmwasser 1"@de,
+        "Source d'énergie / de chaleur de l'eau chaude 1"@fr,
+        "Fonte d'energia / di calore per l'acqua calda 1"@it ;
+    sh:order 15 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a0f-978f-8ca7-93a6-6f0f9a056cbc/description> ;
+    dcterms:description "Gibt die vom Wärmeerzeuger genutzte Hauptenergiequelle an. Die Hilfsenergie, die für das Funktionieren der Installation genutzt wird (z.B. Elektrizität für Wärmepumpen), ist nicht zu nennen. (www.housing-stat.ch/de/help/42.html#GENW)"@de,
+        "Indique la source d'énergie principale utilisée par le générateur de chaleur. L'énergie auxiliaire utilisée pour le fonctionnement de l'installation (par exemple électricité pour les pompes à chaleur) ne doit pas être mentionnée. (www.housing-stat.ch/fr/help/42.html#GENW)"@fr,
+        "Indica la fonte di energia principale utilizzata dal generatore di calore. L'energia ausiliaria utilizzata per il funzionamento dell'impianto (per esempio l'elettricità per le pompe a calore) non va menzionata. (www.housing-stat.ch/it/help/42.html#GENW)"@it ;
+    sh:name "Energie-/Wärmequelle Warmwasser 2"@de,
+        "Source d'énergie / de chaleur de l'eau chaude 2"@fr,
+        "Fonte d'energia / di calore per l'acqua calda 2"@it ;
+    sh:order 37 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GENW2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDEHISTID> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08dc23f0-d04d-2d2f-a9f5-9cea80695acf/description> ;
+    dcterms:description "Das amtliche Gemeindeverzeichnis der Schweiz umfasst die politischen Gemeinden der Schweiz. Das Bundesamt für Statistik (BFS) führt dieses und übernimmt darin alle von der Eidgenössischen Vermessungsdirektion (swisstopo) im Bundesblatt publizierten Änderungen. Ausstrahlungscodes gemäß do-f-00.04-hgv-01 und do-d-00.04-hgv-01 in der Beschreibung."@de,
+        "Swiss official commune’s list contains Switzerland’s political communes. The Federal Statistical Office (FSO) maintains the list and makes in it all changes published in the Federal gazette by the Federal directorate of cadastral surveying (swisstopo). Radiation codes according to do-f-00.04-hgv-01 and do-d-00.04-hgv-01 in the description."@en,
+        "La liste officielle des communes de la Suisse présente les communes politiques. La tenue de cette liste incombe à l’Office fédéral de la statistique (OFS), qui y intègre toutes les modifications publiées dans la Feuille fédérale par la Géodésie et Direction fédérale des mensurations cadastrales (swisstopo). Codes de radiation selon do-f-00.04-hgv-01 dans la description."@fr,
+        "L'elenco ufficiale dei Comuni della Svizzera comprende i Comuni politici della Svizzera. L'Ufficio federale di statistica (UST) mantiene questo elenco e incorpora tutte le modifiche pubblicate dalla Direzione federale delle misurazioni catastali (swisstopo) nel foglio federale. Codici di radiazione secondo do-f-00.04-hgv-01 e do-d-00.04-hgv-01 nella descrizione."@it ;
+    sh:name "Schweizer Gemeinden (5-stellige Bezeichnung HISTID)"@de,
+        "Swiss communes (5-digit identifier HISTID)"@en,
+        "Communes suisses (Identifiant à 5 chiffres HISTID)"@fr,
+        "Comuni svizzeri (identificatore a 5 cifre HISTID)"@it ;
+    sh:order 9 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDEHISTID> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDENR> a QB:DimensionProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Die BFS-Gemeindenummer ordnet die Gebäude einer politischen Gemeinde zu. Diese Zuordnung ist notwendig, um u.a. Parzellennummern und amtliche Gebäudenummern eindeutig identifizieren zu können. Die BFS-Gemeindenummer dient zudem als Schlüsselmerkmal zum Gemeindeverzeichnis und zum Strassenverzeichnis. Änderungen in der Gemeindestruktur (Gemeindefusionen und -trennungen) führen dazu, dass die BFS-Gemeindenummer eines Gebäudes ändert. Die BFS-Gemeindenummer wird dem amtlichen Gemeindeverzeichnis der Schweiz entnommen. Quelle: DV_HGDE_GDE"@de,
+        "Le numéro OFS de la commune attribue le bâtiment en question à une commune politique. Cette attribution est nécessaire, notamment pour identifier sans équivoque des numéros de parcelle et des numéros officiels de bâtiment. Le numéro OFS de la commune constitue également le caractère-clé par rapport au répertoire des communes et à la liste des rues. En cas de changements structurels au niveau communal (fusion ou séparation de communes), le numéro OFS de la commune d'un bâtiment change. Le numéro OFS de la commune est repris du répertoire officiel des communes de Suisse. Source : DV_HGDE_GDE"@fr,
+        "Il numero UST del Comune attribuisce gli edifici a un Comune politico. Questa attribuzione è necessaria tra l'altro per poter identificare inequivoca­bilmente i numeri delle particelle e i numeri ufficiali degli edifici. Il numero UST del Comune serve inoltre da caratteristica di riferimento per l'elenco dei Comuni e delle vie. Le modifiche nella struttura dei Comuni (fusioni e scissioni comunali) comportano una modifica del numero UST del Comune dell'edificio. Il numero UST del Comune è ripreso dall'elenco ufficiale dei Comuni della Svizzera. Fonte: DV_HGDE_GDE"@it ;
+    sh:datatype xsd:string ;
+    sh:name "BFS-Gemeindenummer"@de,
+        "Numéro OFS de la commune"@fr,
+        "Numero UST del Comune"@it ;
+    sh:order 36 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GGDENR> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKAT> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d94c47-db65-64e8-ba11-2785533705c8/description> ;
+    dcterms:description "Einteilung der Gebäude entsprechend ihrer Zweckbestimmung. Die im eidg. GWR erfassten Gebäude werden nach ihrer vorwiegenden Nutzungsart unterteilt. Für weitere Informationen siehe Merkmalskatalog des GWR. (www.housing-stat.ch/de/help/42.html#GKAT)"@de,
+        "Subdivision des bâtiments selon leur affectation. Les bâtiments relevés dans le RegBL fédéral sont ventilés selon leur usage dominant. Pour plus d'informations, voir le catalogue des caractères du RegBL. (www.housing-stat.ch/fr/help/42.html#GKAT)"@fr,
+        "Suddivisione degli edifici secondo la destinazione. Gli edifici registrati nel REA federale sono suddivisi in base al loro uso principale Per ulteriori informazioni, vedere il catalogo delle caratteristiche del REA. (www.housing-stat.ch/it/help/42.html#GKAT)"@it ;
+    sh:name "Gebäudekategorie"@de,
+        "Building category"@en,
+        "Catégorie de bâtiment"@fr,
+        "Categoria di edificio"@it ;
+    sh:order 33 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKAT> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKLAS> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7ac5-604c-de25-8884-97f0c89aa8f3/description> ;
+    dcterms:description "Die heute gültige EUROSTAT-Klassifikation* unterteilt sämtliche Bauwerke in 2 Abschnitte (Hochbau/Tiefbau), 6 Abteilungen (2/4), 20 Gruppen (10/10) sowie 46 Klassen (21/25). Die Erfahrung hat gezeigt, dass einige Gebäude innerhalb der EUROSTAT-Klassifikation nicht korrekt eingeteilt werden konnten. Aus diesem Grund wurden im eidg. GWR zwei zusätzliche Klassen definiert: 1231 \"Restaurants und Bars in Gebäuden ohne Wohnnutzung\" und 1275 \"Andere Gebäude für die kollektive Unterkunft\". Für die Zwecke der Raumplanung wird die ehemalige Klasse 1271 \"Gebäude für landwirtschaftliche Betriebe\" in drei Klassen unterteilt: 1276 \"Gebäude für die Tierhaltung\", 1277 \"Gebäude für den Pflanzenbau\" und 1278 \"Sonstige Gebäude für landwirtschaftliche Betriebe\". Die vervollständigte, im eidg. GWR verwendete EUROSTAT-Klassifikation umfasst somit 26 Gebäudeklassen. Die Gebäude sollen im eidg. GWR nach den EUROSTAT-Kriterien eingeteilt werden: Die Klasse für Gebäude mit gemischter Nutzung wird nach der vorwiegenden Nutzung, gemäss der für die jeweilige Nutzung zur Verfügung stehenden Fläche, zugeteilt. *) Klassifikation der Bauwerke, EUROSTAT, 15.10.1997. (www.housing-stat.ch/de/help/42.html#GKLAS)"@de,
+        "La classification actuelle d'EUROSTAT* subdivise l'ensemble des ouvrages de construction en 2 sections (bâtiment / génie civil), 6 divisions (2/4), 20 groupes (10/10) et 46 classes (21/25). L'expérience a montré que certains bâtiments ne pouvaient pas être correctement classés à l'intérieur de la nomenclature EUROSTAT. C'est la raison pour laquelle, deux classes supplémentaires sont définies dans le RegBL fédéral : 1231 \"Restaurants et bars dans des bâtiments sans usage résidentiel\" et 1275 \"Autres bâtiments pour l'hébergement collectif\". Pour les besoins de la planification du territoire, l'ancienne classe 1271 \"Bâtiment d'exploitation agricole\" est divisée en 3 classes : 1276 \"Bâtiments pour la garde d'animaux\", 1277 \"Bâtiments pour la culture végétale\" et 1278 \"Autres bâtiments d'exploitation agricole\". Ainsi, la nomenclature EUROSTAT complétée utilisée dans le RegBL fédéral comprend 26 classes de bâtiments. Les bâtiments sont à classer dans le RegBL fédéral selon les critères d'EUROSTAT : pour les bâtiments à usage mixte, la classe sera attribuée selon la part prépondérante d'utilisation, relativement à la surface consentie à chacune des utilisations. *) Nomenclature des ouvrages de construction, EUROSTAT, 15.10.1997. (www.housing-stat.ch/fr/help/42.html#GKLAS)"@fr,
+        "La classificazione di EUROSTAT* in vigore suddivide tutte le costruzioni in 2 sezioni (edilizia/genio civile), 6 divisioni (2/4), 20 gruppi (10/10) e 46 classi (21/25). L'esperienza ha dimostrato che alcuni edifici non potevano essere classificati interamente all'interno della nomenclatura EUROSTAT. Per questo sono state definite due classi supplementari nel REA federale:1231 \"Ristoranti e bar in edifici non residenziali\" e 1275 \"Altri edifici che ospitano collettività\". Per esigenze di pianificazione del territorio, la vecchia classe 1271 \"Fabbricati rurali non residenziali\" è divisa in tre classi: 1276 \"Edifici per la tenuta di animali\", 1277 \"Edifici per le colture vegetali\" e 1278 \"Altri fabbricati rurali non residenziali\". La nomenclatura EUROSTAT completa utilizzata nel REA federale comprende pertanto 26 classi di edifici. Gli edifici vanno classificati nel REA federale secondo i criteri di EUROSTAT: per gli edifici a utilizzazione mista, la classe viene attribuita in base a quella prevalente, relativamente alla superficie consentita a ciascuna delle utilizzazioni. *) Nomenclatura delle costruzioni, EUROSTAT, 15.10.1997. (www.housing-stat.ch/it/help/42.html#GKLAS)"@it ;
+    sh:name "Gebäudeklasse"@de,
+        "Classe de bâtiment"@fr,
+        "Classe di edificio"@it ;
+    sh:order 19 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKLAS> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODE> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Als geografischer Referenzpunkt gilt im Prinzip die Grundrissmitte des Gebäudes. Bei besonderen Grundrissformen (Winkel, U-Form usw.) wird jedoch darauf geachtet, dass der Referenzpunkt in jedem Fall innerhalb der Grundrissfläche liegt. Die Gebäudekoordinaten dienen der numerischen Lokalisierung des Gebäudes. Bei geokodierten Informationen dienen die Gebäudekoordinaten als geografischer Referenzpunkt. Die Koordinaten werden gemäss Bezugsrahmen LV95 gespeichert. (www.housing-stat.ch/de/help/42.html#GKODE)"@de,
+        "Le point de référence géographique correspond en principe au milieu de la surface au sol du bâtiment. Si celle-ci est d'une forme particulière (angle, fer à cheval etc.), on s'assurera toutefois que le point de référence fait bien partie de la surface au sol du bâtiment. Les coordonnées du bâtiment servent à la localisation numérique du bâtiment. Dans le cas d'informations géocodées, les coordonnées du bâtiment servent de point de référence géographique. Les coordonnées sont enregistrées selon le cadre de référence MN95. (www.housing-stat.ch/fr/help/42.html#GKODE)"@fr,
+        "In linea di massima il punto di riferimento geografico è il centro della superficie al suolo dell'edificio. Tuttavia, in caso di forme particolari della superficie al suolo (ad angolo, a ferro di cavallo ecc.), si fa in modo che si trovi sempre all'interno della superficie al suolo. Le coordinate dell'edificio servono alla sua localizzazione numerica. Nel sistema d'informazioni geocodificate, le coordinate dell'edificio servono da punto di riferimento geografico. Le coordinate sono registrate secondo il sistema di riferimento MN95. (www.housing-stat.ch/it/help/42.html#GKODE)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "E-Gebäudekoordinate"@de,
+        "Coordinate E of the building"@en,
+        "Coordonnée E du bâtiment"@fr,
+        "Coordinata E dell'edificio"@it ;
+    sh:order 28 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODE> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODN> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:description "Als geografischer Referenzpunkt gilt im Prinzip die Grundrissmitte des Gebäudes. Bei besonderen Grundrissformen (Winkel, U-Form usw.) wird jedoch darauf geachtet, dass der Referenzpunkt in jedem Fall innerhalb der Grundrissfläche liegt. Die Gebäudekoordinaten dienen der numerischen Lokalisierung des Gebäudes. Bei geokodierten Informationen dienen die Gebäudekoordinaten als geografischer Referenzpunkt. Die Koordinaten werden gemäss Bezugsrahmen LV95 gespeichert. (www.housing-stat.ch/de/help/42.html#GKODN)"@de,
+        "Le point de référence géographique correspond en principe au milieu de la surface au sol du bâtiment. Si celle-ci est d'une forme particulière (angle, fer à cheval etc.), on s'assurera toutefois que le point de référence fait bien partie de la surface au sol du bâtiment. Les coordonnées du bâtiment servent à la localisation numérique du bâtiment. Dans le cas d'informations géocodées, les coordonnées du bâtiment servent de point de référence géographique. Les coordonnées sont enregistrées selon le cadre de référence MN95. (www.housing-stat.ch/fr/help/42.html#GKODN)"@fr,
+        "In linea di massima il punto di riferimento geografico è il centro della superficie al suolo dell'edificio. Tuttavia, in caso di forme particolari della superficie al suolo (ad angolo, a ferro di cavallo ecc.), si fa in modo che si trovi sempre all'interno della superficie al suolo. Le coordinate dell'edificio servono alla sua localizzazione numerica. Nel sistema d'informazioni geocodificate, le coordinate dell'edificio servono da punto di riferimento geografico. Le coordinate sono registrate secondo il sistema di riferimento MN95. (www.housing-stat.ch/it/help/42.html#GKODN)"@it ;
+    sh:datatype xsd:decimal ;
+    sh:name "N-Gebäudekoordinate"@de,
+        "Coordinate N of the building"@en,
+        "Coordonnée N du bâtiment"@fr,
+        "Coordinata N dell'edificio"@it ;
+    sh:order 35 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GKODN> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GSTAT> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7ad6-3251-c878-9638-ec69b92eaf71/description> ;
+    dcterms:description "Neben den bestehenden Gebäuden beinhaltet das eidg. GWR auch die projektierten, die bewilligten, die im Bau stehenden, die nicht reali­sierten, die nicht nutzbaren Gebäude und die abgebrochenen (seit 2001 oder gemäss VZ90, BZ95/96 und BZ98). Der Gebäudestatus ist wie folgt definiert: Projektiert Bei einem projektierten Gebäude wurde das Bau­ge­such bei der zuständigen Behörde ein­ge­reicht, die offizielle Baubewilli­gung für den Baustart wurde jedoch noch nicht erteilt. Bewilligt Der Status \"bewilligt\" wird zugewiesen, sobald die definitive Baubewilli­gung in Kraft tritt. Im Bau Ein Gebäude wird als bau­be­gonnen betrachtet, sobald mit den Aushubarbeiten gestartet wurde. Umfasst ein Bau­projekt mehrere bewilligte, aber nacheinander erstellte Gebäude, ist der Status \"Im Bau\" nur jenen Gebäuden zuzuweisen, bei denen die Bauarbeiten tatsächlich begonnen haben. Der Status \"Im Bau\" darf nie einem bereits bestehenden Gebäude zugewiesen werden, auch wenn am Gebäude umfangreiche Renovations- oder Umnutzungsarbeiten vorgenommen werden. Bestehend Ein Gebäude ist \"bestehend\", wenn es vollständig genutzt werden kann. Nicht nutzbar Ein Gebäude, das – infolge fortgeschrittener Baufälligkeit – auf Entscheid der Behörde hin nicht mehr genutzt werden kann. Abgebrochen Bezeichnet ein vollständig abgebrochenes Gebäude. Nicht realisiert Bezeichnet ein Gebäude, für das ein Bau­ge­such (bewilligt oder nicht) ein­ge­reicht wurde, das dann aber nicht reali­siert wurde. (www.housing-stat.ch/de/help/42.html#GSTAT)"@de,
+        "Le RegBL fédéral répertorie non seulement les bâtiments existants, mais aussi ceux qui ont été démolis (dès 2001 ou selon RFP90, REE95/96 et REE98), ainsi que les bâtiments qui se trouvent à l'état de projet, autorisé, en construction, non réalisé ou non utilisable. Les différents statuts sont à comprendre selon les définitions suivantes : En projet Un bâtiment projeté est un bâtiment dont la demande de construction a été déposée auprès de l'autorité compétente, mais pour lequel aucune décision administrative autorisant le début de la construction n'est délivrée. Autorisé Le statut \"Autorisé\" est attribué dès que l'autorisation définitive de construire entre en force. En construction Un bâtiment est considéré comme étant en construction dès que les travaux de terrassement commencent. Lorsqu'un projet de construction concerne plusieurs bâtiments autorisés, mais réalisés de manière successive, le statut \"En construction\" ne doit être attribué qu'aux bâtiments pour lesquels les travaux ont effectivement commencé. Le statut \"En construction\" ne doit jamais être attribué à un bâtiment déjà existant, même dans le cas où ce bâtiment subit des travaux de rénovation ou de transformation conséquents. Existant Un bâtiment est existant dès qu'il peut être occupé dans sa globalité. Non utilisable Permet de qualifier un bâtiment qui, en raison d'un délabrement avancé, ne peut plus être occupé sur ordre d'une décision de l'autorité. Démoli Qualifie un bâtiment entièrement démoli. Non réalisé Désigne un bâtiment ayant fait l'objet d'une demande de permis de construire (autorisé ou non), mais qui n'a pas été réalisé. (www.housing-stat.ch/fr/help/42.html#GSTAT)"@fr,
+        "Nel REA federale sono registrati non solo gli edifici esistenti, ma anche quelli demoliti (a partire dal 2001 risp. in base al CFP90, al CA95/96 e al CA98) così come gli edifici in progetto, autorizzati, in costruzione, non realizzati o non utilizzabili. I diversi stati sono definiti come segue: In progetto Si definisce \"In progetto \" un edificio la cui domanda è stata depositata presso l'autorità competente, ma per il quale non è stata ancora emessa alcuna decisione amministrativa che autorizzi l'inizio dei lavori di costruzione. Autorizzato Lo stato \"Autorizzato \" è attribuito quando l'autorizzazione edilizia definitiva entra in vigore. In costruzione Un edificio è considerato \"In costruzione \" non appena prendono il via i lavori di sterro. Se un progetto di costruzione riguarda più edifici autorizzati, ma realizzati in successione, lo stato \"In costruzione \" va attribuito unicamente a quelli per i quali i lavori sono effettivamente iniziati. Lo stato \"In costruzione \" non deve mai essere attribuito a un edificio esistente, anche nel caso in cui tale edifico sia soggetto a lavori di rinnovo o trasformazione. Esistente Un edificio è \"Esistente \" a partire dal momento in cui può essere occupato nella sua integralità. Non utilizzabile Consente di qualificare un edificio che, in seguito ad avanzato stato di degrado, non può essere occupato per decisione dell'autorità. Demolito Qualifica un edificio interamente demolito. Non realizzato Indica un edificio oggetto di una domanda di costruzione (autorizzata o meno), ma non ancora realizzato. (www.housing-stat.ch/it/help/42.html#GSTAT)"@it ;
+    sh:name "Gebäudestatus"@de,
+        "Statut du bâtiment"@fr,
+        "Stato dell'edificio"@it ;
+    sh:order 6 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GSTAT> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH1> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a9c-6184-bb71-9661-fb10bd70415f/description> ;
+    dcterms:description "Gibt das Datum der Erfassung oder der letzten Aktualisierung der Angaben über die Wärmeerzeugung im Gebäude an. (www.housing-stat.ch/de/help/42.html#GWAERDATH) Das im Merkmalskatalog beschriebene Format wird von der VGWR garantiert (www.fedlex.admin.ch/eli/cc/2017/376/de#art_3 )."@de,
+        "Indique la date de la saisie ou de la dernière mise à jour des indications sur la production de chaleur dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERDATH) Le format décrit dans le catalogue des caractères est garanti par l'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/fr#art_3 )."@fr,
+        "Indica la data della rilevazione o l'ultimo aggiornamento dei dati sulla produzione di calore nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERDATH) Il formato descritto nel catalogo delle caratteristiche è garantito dall'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/it#art_3 )."@it ;
+    sh:datatype xsd:date ;
+    sh:name "Aktualisierungsdatum Heizung 1"@de,
+        "Date de mise à jour pour le chauffage 1"@fr,
+        "Data dell'aggiornamento per il riscaldamento 1"@it ;
+    sh:order 32 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH2> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a9c-6184-bb71-9661-fb10bd70415f/description> ;
+    dcterms:description "Gibt das Datum der Erfassung oder der letzten Aktualisierung der Angaben über die Wärmeerzeugung im Gebäude an. (www.housing-stat.ch/de/help/42.html#GWAERDATH) Das im Merkmalskatalog beschriebene Format wird von der VGWR garantiert (www.fedlex.admin.ch/eli/cc/2017/376/de#art_3)."@de,
+        "Indique la date de la saisie ou de la dernière mise à jour des indications sur la production de chaleur dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERDATH) Le format décrit dans le catalogue des caractères est garanti par l'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/fr#art_3)."@fr,
+        "Indica la data della rilevazione o l'ultimo aggiornamento dei dati sulla produzione di calore nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERDATH) Il formato descritto nel catalogo delle caratteristiche è garantito dall'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/it#art_3)."@it ;
+    sh:datatype xsd:date ;
+    sh:name "Aktualisierungsdatum Heizung 2"@de,
+        "Date de mise à jour pour le chauffage 2"@fr,
+        "Data dell'aggiornamento per il riscaldamento 2"@it ;
+    sh:order 14 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATH2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW1> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a9c-6184-bb71-9661-fb10bd70415f/description> ;
+    dcterms:description "Gibt das Datum der Erfassung oder der letzten Aktualisierung der Angaben über die Warmwasseraufbereitung im Gebäude an. (www.housing-stat.ch/de/help/42.html#GWAERDATW) Das im Merkmalskatalog beschriebene Format wird von der VGWR garantiert (www.fedlex.admin.ch/eli/cc/2017/376/de#art_3 )."@de,
+        "Indique la date de la saisie ou de la dernière mise à jour des indications sur la production d'eau chaude dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERDATW) Le format décrit dans le catalogue des caractères est garanti par l'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/fr#art_3 )."@fr,
+        "Indica la data della rilevazione o l'ultimo aggiornamento dei dati sulla produzione di acqua calda nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERDATW) Il formato descritto nel catalogo delle caratteristiche è garantito dall'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/it#art_3 )."@it ;
+    sh:datatype xsd:date ;
+    sh:name "Aktualisierungsdatum Warmwasser 1"@de,
+        "Date de mise à jour pour l'eau chaude 1"@fr,
+        "Data d'aggiornamento per l'acqua calda 1"@it ;
+    sh:order 23 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW2> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a9c-6184-bb71-9661-fb10bd70415f/description> ;
+    dcterms:description "Gibt das Datum der Erfassung oder der letzten Aktualisierung der Angaben über die Warmwasseraufbereitung im Gebäude an. (www.housing-stat.ch/de/help/42.html#GWAERDATW) Das im Merkmalskatalog beschriebene Format wird von der VGWR garantiert (www.fedlex.admin.ch/eli/cc/2017/376/de#art_3 )."@de,
+        "Indique la date de la saisie ou de la dernière mise à jour des indications sur la production d'eau chaude dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERDATW) Le format décrit dans le catalogue des caractères est garanti par l'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/fr#art_3 )."@fr,
+        "Indica la data della rilevazione o l'ultimo aggiornamento dei dati sulla produzione di acqua calda nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERDATW) Il formato descritto nel catalogo delle caratteristiche è garantito dall'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/it#art_3 )."@it ;
+    sh:datatype xsd:date ;
+    sh:name "Aktualisierungsdatum Warmwasser 2"@de,
+        "Date de mise à jour pour l'eau chaude 2"@fr,
+        "Data d'aggiornamento per l'acqua calda 2"@it ;
+    sh:order 10 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERDATW2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a03-283f-528d-ae89-262af4f9a74c/description> ;
+    dcterms:description "Gibt die Datenquelle an, die für die Erfassung oder die letzte Aktualisierung der Angaben über die Wärmeerzeugung im Gebäude genutzt wurde. (www.housing-stat.ch/de/help/42.html#GWAERSCEH)"@de,
+        "Indique la source de données utilisée pour la saisie ou la dernière mise à jour des indications sur la production de chaleur dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERSCEH)"@fr,
+        "Indica la fonte di dati utilizzata per la rilevazione o l'ultimo aggiornamento dei dati sulla produzione di calore nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERSCEH)"@it ;
+    sh:name "Informationsquelle Heizung 1"@de,
+        "Source d'information pour le chauffage 1"@fr,
+        "Fonte d'informazione per il riscaldamento 1"@it ;
+    sh:order 27 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a03-283f-528d-ae89-262af4f9a74c/description> ;
+    dcterms:description "Gibt die Datenquelle an, die für die Erfassung oder die letzte Aktualisierung der Angaben über die Wärmeerzeugung im Gebäude genutzt wurde. (www.housing-stat.ch/de/help/42.html#GWAERSCEH)"@de,
+        "Indique la source de données utilisée pour la saisie ou la dernière mise à jour des indications sur la production de chaleur dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERSCEH)"@fr,
+        "Indica la fonte di dati utilizzata per la rilevazione o l'ultimo aggiornamento dei dati sulla produzione di calore nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERSCEH)"@it ;
+    sh:name "Informationsquelle Heizung 2"@de,
+        "Source d'information pour le chauffage 2"@fr,
+        "Fonte d'informazione per il riscaldamento 2"@it ;
+    sh:order 31 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEH2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a03-283f-528d-ae89-262af4f9a74c/description> ;
+    dcterms:description "Gibt die Datenquelle an, die für die Erfassung oder die letzte Aktualisierung der Angaben über die Warmwasseraufbereitung im Gebäude genutzt wurde. (www.housing-stat.ch/de/help/42.html#GWAERSCEW)"@de,
+        "Indique la source de données utilisée pour la saisie ou la dernière mise à jour des indications sur la production d'eau chaude dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERSCEW)"@fr,
+        "Indica la fonte di dati utilizzata per la rilevazione o l'ultimo aggiornamento dei dati sulla produzione di acqua calda nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERSCEW)"@it ;
+    sh:name "Informationsquelle Warmwasser 1"@de,
+        "Source d'information pour l'eau chaude 1"@fr,
+        "Fonte d'informazione per l'acqua calda 1"@it ;
+    sh:order 12 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a03-283f-528d-ae89-262af4f9a74c/description> ;
+    dcterms:description "Gibt die Datenquelle an, die für die Erfassung oder die letzte Aktualisierung der Angaben über die Warmwasseraufbereitung im Gebäude genutzt wurde. (www.housing-stat.ch/de/help/42.html#GWAERSCEW)"@de,
+        "Indique la source de données utilisée pour la saisie ou la dernière mise à jour des indications sur la production d'eau chaude dans le bâtiment. (www.housing-stat.ch/fr/help/42.html#GWAERSCEW)"@fr,
+        "Indica la fonte di dati utilizzata per la rilevazione o l'ultimo aggiornamento dei dati sulla produzione di acqua calda nell'edificio. (www.housing-stat.ch/it/help/42.html#GWAERSCEW)"@it ;
+    sh:name "Informationsquelle Warmwasser 2"@de,
+        "Source d'information pour l'eau chaude 2"@fr,
+        "Fonte d'informazione per l'acqua calda 2"@it ;
+    sh:order 13 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERSCEW2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a19-b7c5-fd74-b104-543e00c33884/description> ;
+    dcterms:description "Der Wärmeerzeuger entspricht der Art der technischen Installation, die im Gebäude für die Heizung der Räume genutzt wird. (www.housing-stat.ch/de/help/42.html#GWAERZH)"@de,
+        "Le générateur de chaleur correspond au type d'installation technique utilisée dans le bâtiment pour le chauffage des locaux. (www.housing-stat.ch/fr/help/42.html#GWAERZH)"@fr,
+        "Il generatore di calore corrisponde al tipo di installazione tecnica utilizzata nell'edificio per il riscaldamento dei locali. (www.housing-stat.ch/it/help/42.html#GWAERZH)"@it ;
+    sh:name "Wärmeerzeuger Heizung 1"@de,
+        "Générateur de chaleur pour le chauffage 1"@fr,
+        "Generatore di calore per il riscaldamento 1"@it ;
+    sh:order 16 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a19-b7c5-fd74-b104-543e00c33884/description> ;
+    dcterms:description "Der Wärmeerzeuger entspricht der Art der technischen Installation, die im Gebäude für die Heizung der Räume genutzt wird. (www.housing-stat.ch/de/help/42.html#GWAERZH)"@de,
+        "Le générateur de chaleur correspond au type d'installation technique utilisée dans le bâtiment pour le chauffage des locaux. (www.housing-stat.ch/fr/help/42.html#GWAERZH)"@fr,
+        "Il generatore di calore corrisponde al tipo di installazione tecnica utilizzata nell'edificio per il riscaldamento dei locali. (www.housing-stat.ch/it/help/42.html#GWAERZH)"@it ;
+    sh:name "Wärmeerzeuger Heizung 2"@de,
+        "Générateur de chaleur pour le chauffage 2"@fr,
+        "Generatore di calore per il riscaldamento 2"@it ;
+    sh:order 22 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZH2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW1> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a16-f6cf-9fbd-b63f-0fe9103f7905/description> ;
+    dcterms:description "Der Wärmeerzeuger entspricht der Art der technischen Installation, die im Gebäude für das Aufbereiten von Brauchwarmwasser genutzt wird. Kleinboiler sind dezentrale Installationen, die in der Regel Warmwasser für einen einzigen Wasserhahn oder eine einzige Dusche aufbereiten. Zentrale Gasboiler werden als Heizkessel erfasst. (www.housing-stat.ch/de/help/42.html#GWAERZW)"@de,
+        "Le générateur de chaleur correspond au type d'installation technique utilisée dans le bâtiment pour la production d'eau chaude sanitaire. Les petits boilers sont des installations décentralisées ne fournissant en principe de l'eau chaude qu'à un seul robinet ou une seule douche. Les boilers à gaz centraux doivent être saisis comme chaudières. (www.housing-stat.ch/fr/help/42.html#GWAERZW)"@fr,
+        "Il generatore di calore corrisponde al tipo di installazione tecnica utilizzata nell'edificio per la produzione d'acqua calda. I piccoli boiler sono degli impianti decentralizzati che forniscono in principio acqua calda solamente a un rubinetto o a una sola doccia. I boiler a gas centrali devono essere registrati come caldaie. (www.housing-stat.ch/it/help/42.html#GWAERZW)"@it ;
+    sh:name "Wärmeerzeuger Warmwasser 1"@de,
+        "Générateur de chaleur pour l'eau chaude 1"@fr,
+        "Generatore di calore per l'acqua calda 1"@it ;
+    sh:order 20 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW1> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW2> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7a16-f6cf-9fbd-b63f-0fe9103f7905/description> ;
+    dcterms:description "Der Wärmeerzeuger entspricht der Art der technischen Installation, die im Gebäude für das Aufbereiten von Brauchwarmwasser genutzt wird. Kleinboiler sind dezentrale Installationen, die in der Regel Warmwasser für einen einzigen Wasserhahn oder eine einzige Dusche aufbereiten. Zentrale Gasboiler werden als Heizkessel erfasst. (www.housing-stat.ch/de/help/42.html#GWAERZW)"@de,
+        "Le générateur de chaleur correspond au type d'installation technique utilisée dans le bâtiment pour la production d'eau chaude sanitaire. Les petits boilers sont des installations décentralisées ne fournissant en principe de l'eau chaude qu'à un seul robinet ou une seule douche. Les boilers à gaz centraux doivent être saisis comme chaudières. (www.housing-stat.ch/fr/help/42.html#GWAERZW)"@fr,
+        "Il generatore di calore corrisponde al tipo di installazione tecnica utilizzata nell'edificio per la produzione d'acqua calda. I piccoli boiler sono degli impianti decentralizzati che forniscono in principio acqua calda solamente a un rubinetto o a una sola doccia. I boiler a gas centrali devono essere registrati come caldaie. (www.housing-stat.ch/it/help/42.html#GWAERZW)"@it ;
+    sh:name "Wärmeerzeuger Warmwasser 2"@de,
+        "Générateur de chaleur pour l'eau chaude 2"@fr,
+        "Generatore di calore per l'acqua calda 2"@it ;
+    sh:order 39 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/GWAERZW2> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRNAME> a QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08d9993d-6898-4ef8-a1dc-51cdf305804c/description> ;
+    dcterms:description "Mit der Strassenbezeichnung, oder Strassennamen, kann eine Strasse innerhalb einer politischen Gemeinde und einer Ortschaft eindeutig identifiziert werden. Eine Strasse hat immer nur einen einzigen Namen. In zweisprachigen Gemeinden kann der Name übersetzt und in mehreren Sprachen erfasst werden. Bei einigen allein stehenden Gebäuden (landwirtschaftliche Gebäude, Berghütten usw.) kann die Gebäudeadresse nicht mit einer Strasse in Verbindung gebracht werden. In diesem Fall kann der Strassenname durch den Namen eines benannten Gebiets ersetzt werden. (eCH-0129 : www.ech.ch/index.php/de/standards/60465 - Merkmalskatalog : www.bfs.admin.ch/bfs/de/home/register/gebaeude-wohnungsregister/publikationen.html)"@de,
+        "La désignation de rue, ou nom de rue, permet d’identifier de manière univoque une rue à l’intérieur d’une commune politique ou d’une localité. Une rue est toujours dotée d’un seul nom. Dans les communes bilingues, ce nom peut être traduit et enregistré dans plusieurs langues. Pour certains bâtiments isolés (bâtiments agricoles, cabanes de montagnes etc.) il n’est pas possible de rattacher l’adresse du bâtiment à une rue. Dans ce cas, le nom de rue peut être remplacé par un nom de lieu dénommé. (eCH-0129 : www.ech.ch/index.php/fr/standards/60465 - Catalogue des caractères : www.bfs.admin.ch/bfs/fr/home/registres/registre-batiments-logements/publications.html)"@fr,
+        "Il nome della via permette di identificare in maniera univoca una via all’interno di un Comune politico o di una località. Una via dispone sempre di un solo nome. Nei Comuni bilingue questo nome può essere tradotto e registrato in varie lingue. Per alcuni edifici isolati (edifici agricoli, rifugi di montagna ecc.) non è possibile associare l’indirizzo dell’edificio ad una determinata via. In questo caso, il nome della via può essere sostituito dal nome di una zona provvista di denominazione. (eCH-0129 : www.ech.ch/index.php/fr/standards/60465 - Catalogo delle caratteristiche : www.bfs.admin.ch/bfs/it/home/registri/registro-edifici-abitazioni/pubblicazioni.html)"@it ;
+    sh:datatype xsd:string ;
+    sh:name "Strassenbezeichnung"@de,
+        "Désignation de rue"@fr,
+        "Nome della via"@it ;
+    sh:order 7 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRNAME> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STROFFIZIEL> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7ae3-0429-12c6-8f72-fae28cb09f46/description> ;
+    dcterms:description "Dieser Status gibt an, dass der Lokalisationsname und die Schreibweise korrekt sind. Gemäss Art. 26a der Verordnung über die geografischen Namen sind die als \"offiziell\" bezeichneten Strassen für die Behördenverbindlich. (www.housing-stat.ch/de/help/42.html#STROFFIZIEL)"@de,
+        "Ce statut indique que le nom de la localisation ainsi que sa graphie sont correctes. Les désignations de rues désignées comme \"officielles\" ont un caractère contraignant pour les autorités, conformément à l'article 26a de l'ordonnance sur les noms géographiques. (www.housing-stat.ch/fr/help/42.html#STROFFIZIEL)"@fr,
+        "Questo stato indica che il nome della localizzazione e la sua grafia sono corretti. I nomi di vie considerati come \"ufficiali\" hanno carattere vincolante per le autorità, conformemente all'art. 26a dell'ordinanza sui nomi geografici. (www.housing-stat.ch/it/help/42.html#STROFFIZIEL)"@it ;
+    sh:name "Strassenbezeichnung offiziell"@de,
+        "Désignation officielle"@fr,
+        "Nome ufficiale"@it ;
+    sh:order 3 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STROFFIZIEL> .
+
+<https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRSP> a QB:CodedProperty,
+        QB:MeasureProperty,
+        owl:DatatypeProperty,
+        sh:PropertyShape ;
+    dcterms:conformsTo <https://www.i14y.admin.ch/catalog/concepts/08da7ae3-e189-96ec-ac6d-aec8f6332c2b/description> ;
+    dcterms:description "Die Strassenbezeichnungen werden grundsätzlich in der Hauptsprache der jeweiligen Gemeinde erfasst. Um die korrekte Handhabung in zweisprachigen Gebieten zu ermöglichen, können die Strassenbezeichnungen in mehreren Sprachen verwaltet werden. Für jede Strassenbezeichnung der Gemeinde ist nur ein Eintrag pro Sprache möglich (keine Alternativschreibweisen von Strassennamen zulässig!). (www.housing-stat.ch/de/help/42.html#STRSP) Das im Merkmalskatalog beschriebene Format wird von der VGWR garantiert (www.fedlex.admin.ch/eli/cc/2017/376/de#art_3 )."@de,
+        "Les désignations de rues sont en principe saisies dans la langue principale de la commune. Afin de pouvoir traiter correctement les territoires bilingues, les désignations de rues peuvent être saisies dans plusieurs langues. Pour chaque désignation de rue d'une commune, il n'y a qu'une possibilité par langue (pas de nom de rue alternatif admis !). (www.housing-stat.ch/fr/help/42.html#STRSP) Le format décrit dans le catalogue des caractères est garanti par l'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/fr#art_3 )"@fr,
+        "In linea di massima, i nomi delle vie sono registrati nella lingua principale del Comune. Per poter trattare correttamente i territori bilingue, i nomi delle vie possono essere registrati in più lingue. Per ogni nome di via di un Comune esiste una sola possibilità per ogni lingua (non sono ammessi nomi di vie alternativi!). (www.housing-stat.ch/it/help/42.html#STRSP) Il formato descritto nel catalogo delle caratteristiche è garantito dall'ORegBL (www.fedlex.admin.ch/eli/cc/2017/376/it#art_3 )."@it ;
+    sh:name "Strassenbezeichnung Sprache"@de,
+        "Langue de rue"@fr,
+        "Lingua della via"@it ;
+    sh:order 2 ;
+    sh:path <https://www.i14y.admin.ch/resources/datasets/BUILDING_MASTER_DATA/structure/DSD_MASTERDATA_BUILDING/STRSP> .
+
