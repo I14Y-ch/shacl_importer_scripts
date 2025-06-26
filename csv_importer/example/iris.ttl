@@ -5,6 +5,7 @@
 
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris> a rdfs:Class,
         sh:NodeShape ;
+    rdfs:label "iris" ;
     sh:closed true ;
     sh:name "iris" ;
     sh:property <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/petal_length>,
@@ -19,6 +20,7 @@
     sh:maxInclusive 6.9 ;
     sh:minInclusive 1.0 ;
     sh:name "petal.length" ;
+    sh:order 2 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/petal_length> .
 
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/petal_width> a owl:DatatypeProperty,
@@ -27,6 +29,7 @@
     sh:maxInclusive 2.5 ;
     sh:minInclusive 0.1 ;
     sh:name "petal.width" ;
+    sh:order 3 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/petal_width> .
 
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/sepal_length> a owl:DatatypeProperty,
@@ -35,6 +38,7 @@
     sh:maxInclusive 7.9 ;
     sh:minInclusive 4.3 ;
     sh:name "sepal.length" ;
+    sh:order 0 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/sepal_length> .
 
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/sepal_width> a owl:DatatypeProperty,
@@ -43,11 +47,13 @@
     sh:maxInclusive 4.4 ;
     sh:minInclusive 2.0 ;
     sh:name "sepal.width" ;
+    sh:order 1 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/sepal_width> .
 
 <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/variety> a owl:DatatypeProperty,
         sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "variety" ;
+    sh:order 4 ;
     sh:path <https://www.i14y.admin.ch/resources/datasets/dataset_identifier/structure/iris/variety> .
 
