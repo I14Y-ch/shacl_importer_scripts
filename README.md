@@ -7,6 +7,15 @@ A collection of scripts for importing data structures and transforming them to S
 - Import data structures from various sources
 - Create SHACL shapes corresponding to those structures
 
+Available converters: 
+- CSV importer
+- DSD importer (to recover the old structures of I14Y)
+- Import template to build structure from scratch
+    - Excel template
+    - Json template
+- Postgres importer
+- XSD importer
+
 ## Requirements
 
 - Python 3.8+
