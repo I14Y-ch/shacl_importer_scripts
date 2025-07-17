@@ -38,7 +38,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
     sh:PropertyShape, owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Person/name>;
   sh:name "Nom"@fr, "Namen"@de, "Nome"@it, "Name"@en;
-  dcterms:description "le nom de la personne"@fr, "Name der Person"@de, "il nome della persona"@it,
+  sh:description "le nom de la personne"@fr, "Name der Person"@de, "il nome della persona"@it,
     "the person's name"@en;
   sh:order "1";
   sh:minCount "1"^^xsd:integer;
@@ -50,7 +50,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
     owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Person/age>;
   sh:name "Age"@fr, "Alter"@de, "Età"@it, "Age"@en;
-  dcterms:description "l'âge de la personne"@fr, "Alter der Person"@de, "l'età già compiuta della persona"@it,
+  sh:description "l'âge de la personne"@fr, "Alter der Person"@de, "l'età già compiuta della persona"@it,
     "the person's age"@en;
   sh:order "3";
   sh:minCount "1"^^xsd:integer;
@@ -61,7 +61,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
     owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Person/sex>;
   sh:name "Sexe"@fr, "Geschlecht"@de, "Sesso"@it, "Sex"@en;
-  dcterms:description "le sexe de la personne (Femme, Homme, Autre)"@fr, "Geschlecht der Person (Frau, Mann, Andere)"@de,
+  sh:description "le sexe de la personne (Femme, Homme, Autre)"@fr, "Geschlecht der Person (Frau, Mann, Andere)"@de,
     "il sesso della persona (Femmina, Maschio, Altro)"@it, "the person's gender (Female, Male, Other)"@en;
   sh:order "2";
   sh:minCount "1"^^xsd:integer;
@@ -82,7 +82,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
     sh:PropertyShape, owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Address/town>;
   sh:name "Ville"@fr, "Stadt"@de, "Città"@it, "City"@en;
-  dcterms:description "le nom de la ville"@fr, "Der Name der Stadt"@de, "il nome della città"@it,
+  sh:description "le nom de la ville"@fr, "Der Name der Stadt"@de, "il nome della città"@it,
     "the name of the city"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
@@ -92,7 +92,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
   a sh:PropertyShape, owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Address/country>;
   sh:name "Pays"@fr, "Land"@de, "Paese"@it, "Country"@en;
-  dcterms:description "le nom de l'État"@fr, "Der Name des Bundesstaates"@de, "il nome dello stato"@it,
+  sh:description "le nom de l'État"@fr, "Der Name des Bundesstaates"@de, "il nome dello stato"@it,
     "the name of the state"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
@@ -103,7 +103,7 @@ i14y:Address a sh:NodeShape, rdfs:Class;
   a sh:PropertyShape, owl:DatatypeProperty;
   sh:path <https://www.i14y.admin.ch/resources/datasets/IDENTIFIER/structure/Address/zipCode>;
   sh:name "Code postal"@fr, "PLZ"@de, "CAP"@it, "Postcode"@en;
-  dcterms:description "le code postal"@fr, "Die Postleitzahl"@de, "Il numero postale"@it,
+  sh:description "le code postal"@fr, "Die Postleitzahl"@de, "Il numero postale"@it,
     "The postal code"@en;
   sh:minCount "1"^^xsd:integer;
   sh:maxCount "1"^^xsd:integer;
