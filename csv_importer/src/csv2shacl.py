@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import Optional, List
 from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import RDF, XSD, SH, OWL
+from rdflib.namespace import RDF, XSD, SH, OWL, RDFS
 
 class CSVToSHACL:
     """Enhanced CSV to SHACL transformer with better year detection and numeric constraints."""
@@ -116,8 +116,10 @@ class CSVToSHACL:
         
         if self.default_lang:
             self.g.add((prop_uri, SH.name, Literal(property_name, lang=self.default_lang)))
+            self.g.add((prop_uri, RDFS.label, Literal(property_name, lang=self.default_lang)))
         else:
             self.g.add((prop_uri, SH.name, Literal(property_name)))
+            self.g.add((prop_uri, RDFS.label, Literal(property_name)))
         
         if property_type in (XSD.integer, XSD.decimal):
             self._add_numeric_constraints(prop_uri, values, property_type)

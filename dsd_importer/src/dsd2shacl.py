@@ -162,6 +162,8 @@ class DSD2SHACLTransformer:
             if value:
                 cleaned_value = self._clean_text(value) #remove html tags
                 self.g.add((node, self.DCTERMS.description, Literal(cleaned_value, lang=lang)))
+                self.g.add((node, self.sh.description, Literal(cleaned_value, lang=lang)))
+                self.g.add((node, self.RDFS.comment, Literal(cleaned_value, lang=lang)))
     
 
     def _add_role_properties(self, node: URIRef, role: str) -> None:

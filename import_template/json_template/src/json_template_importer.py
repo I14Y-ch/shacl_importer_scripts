@@ -33,11 +33,14 @@ def json_to_shacl(json_input, output_file):
 
         for lang, name in cls.get("names", {}).items():
             g.add((class_uri, SH.name, Literal(name, lang=lang)))
+            g.add((class_uri, RDFS.label, Literal(name, lang=lang)))
         
 
         if "descriptions" in cls:
             for lang, desc in cls["descriptions"].items():
                 g.add((class_uri, DCTERMS.description, Literal(desc, lang=lang)))
+                g.add((class_uri, SH.description, Literal(desc, lang=lang)))
+                g.add((class_uri, RDFS.comment, Literal(desc, lang=lang)))
         
         if "modified" in cls:
             g.add((class_uri, DCTERMS.modified, Literal(cls["modified"], datatype=XSD.dateTime)))
@@ -67,9 +70,12 @@ def json_to_shacl(json_input, output_file):
 
             for lang, name in prop.get("names", {}).items():
                 g.add((prop_uri, SH.name, Literal(name, lang=lang)))
+    
                 
             for lang, desc in prop.get("descriptions", {}).items():
                 g.add((prop_uri, DCTERMS.description, Literal(desc, lang=lang)))
+                g.add((class_uri, SH.description, Literal(desc, lang=lang)))
+                g.add((class_uri, RDFS.comment, Literal(desc, lang=lang)))
             
             datatype_map = {
                 "string": XSD.string,

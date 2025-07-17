@@ -499,6 +499,8 @@ def translate_annotation(xsd_element, subject, graph):
             lang = doc.get('{http://www.w3.org/XML/1998/namespace}lang', 'en')
             if doc.text and doc.text.strip():
                 graph.add((subject, DCT.description, Literal(doc.text.strip(), lang=lang)))
+                graph.add((subject, RDFS.comment, Literal(doc.text.strip(), lang=lang)))
+                graph.add((subject, SH.description, Literal(doc.text.strip(), lang=lang)))
         
         # Handle appinfo elements (could be used for other metadata)
         for appinfo in annotations.findall('.//{http://www.w3.org/2001/XMLSchema}appinfo'):
@@ -769,6 +771,7 @@ def generate_shacl(xsd_root):
             g.add((node_shape, RDF.type, SH.NodeShape))
             g.add((node_shape, RDF.type, RDFS.Class))
             g.add((node_shape, SH.name, Literal(type_name, lang='en')))
+            g.add((node_shape, RDFS.label, Literal(type_name, lang='en')))
 
             type_kind, base_type, facets = _process_complex_type(complex_type, xsd_root)
             
