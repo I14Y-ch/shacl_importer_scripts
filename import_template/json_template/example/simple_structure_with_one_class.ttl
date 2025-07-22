@@ -8,10 +8,9 @@ i14y:localUnitMasterDataType a sh:NodeShape ;
     dcterms:description "This is a class of the structure"@en,
         "Celle ci est une classe du schema"@fr,
         "Questa è una classe dello schema"@it ;
-    dcterms:identifier "localUnitMasterDataType" ;
     dcterms:modified "2023-09-05T00:00:00"^^xsd:dateTime ;
     sh:closed true ;
-    sh:name "Grundlegende Datentypen der lokalen Einheit"@de,
+    rdfs:label "Grundlegende Datentypen der lokalen Einheit"@de,
         "Local Unit Master Data Type"@en,
         "Type de données de base de l'unité locale"@fr,
         "Tipo di dati master unità locale"@it ;
